@@ -1,6 +1,7 @@
 /* ==========================================================================
    TechText Component Styles (from React Bits)
    Interactive technical typography canvas with spring physics & outline reveal
+   Unboxed & seamlessly blended throughout the hero section
    ========================================================================== */
 
 .tech-text {
@@ -9,6 +10,8 @@
   height: 100%;
   touch-action: pan-y;
   user-select: none;
+  background: transparent;
+  border: none;
 }
 
 .tech-text-canvas {
@@ -17,53 +20,40 @@
   height: 100%;
 }
 
-.hero-tech-text-wrapper {
+/* Unboxed Hero Headline Integration — Zero Box / Seamless */
+.hero-headline-tech {
+  width: 100%;
+  margin-bottom: 24px;
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-tech-line {
   position: relative;
   width: 100%;
-  height: 160px;
-  margin-bottom: 24px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px dashed rgba(52, 53, 69, 0.2);
-  backdrop-filter: blur(8px);
-  overflow: hidden;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.hero-tech-text-wrapper:hover {
-  border-color: var(--color-coral);
-  box-shadow: 0 8px 30px rgba(255, 76, 66, 0.08);
-}
-
-.tech-text-hint {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-coral);
-  opacity: 0.8;
-  pointer-events: none;
-  z-index: 2;
+  height: clamp(80px, 9.8vw, 128px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
 }
 
 @media (max-width: 768px) {
-  .hero-tech-text-wrapper {
-    height: 125px;
+  .hero-headline-tech {
     margin-bottom: 20px;
   }
-  .tech-text-hint {
-    font-size: 8px;
-    top: 6px;
-    right: 8px;
+  .hero-tech-line {
+    height: clamp(60px, 12vw, 92px);
   }
 }
 
 @media (max-width: 480px) {
-  .hero-tech-text-wrapper {
-    height: 95px;
+  .hero-tech-line {
+    height: 64px;
   }
 }

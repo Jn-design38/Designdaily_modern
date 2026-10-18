@@ -7,80 +7,88 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // --- 0. LENIS SMOOTH SCROLL INITIALIZATION ---
-  let lenis = null;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (typeof Lenis !== 'undefined' && !prefersReducedMotion) {
-    lenis = new Lenis({
-      duration: 1.25,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.5,
-      infinite: false,
-    });
-
-    // Main animation frame loop
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Synchronize anchor scrolling with Lenis
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (!href || href === '#') return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          lenis.scrollTo(target, {
-            offset: -80,
-            duration: 1.25,
-          });
-          if (history.pushState) {
-            history.pushState(null, null, href);
-          }
+  // --- 0. SMOOTH SCROLLING FOR IN-PAGE ANCHORS (NATIVE) ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        if (history.pushState) {
+          history.pushState(null, null, href);
         }
-      });
+      }
     });
-  }
+  });
 
-  // --- 0.1. TECHTEXT INTERACTIVE WORDMARK (REACT BITS) ---
-  const heroTechTextEl = document.getElementById('hero-tech-text');
-  if (heroTechTextEl && typeof TechText !== 'undefined') {
-    new TechText(heroTechTextEl, {
-      text: 'DESIGN DAILY',
-      fontFamily: "'Barlow Condensed', sans-serif",
-      fontWeight: 800,
-      fontSize: 140,
-      letterSpacing: -0.02,
-      color: '#121316',
-      accentColor: '#FF4C42',
-      align: 'center',
-      reach: 220,
-      softness: 0.7,
-      dashLength: 4,
-      dashGap: 2,
-      strokeWidth: 1.5,
-      lineStyle: 'dashed',
-      reveal: 'letter',
-      specks: 15,
-      selection: true,
-      labels: true,
-      draggable: true,
-      bounce: 0.42,
-      clickKick: true,
-      intro: 'none',
-      introDuration: 2,
-      guides: false,
-      sweep: true,
-      speed: 1
-    });
+  // --- 0.1. TECHTEXT UNBOXED HERO HEADLINES (REACT BITS) ---
+  const heroLine1El = document.getElementById('hero-tech-line-1');
+  const heroLine2El = document.getElementById('hero-tech-line-2');
+
+  if (typeof TechText !== 'undefined') {
+    if (heroLine1El) {
+      new TechText(heroLine1El, {
+        text: 'GOOD DESIGN.',
+        fontFamily: "'Barlow Condensed', sans-serif",
+        fontWeight: 900,
+        fontSize: 140,
+        letterSpacing: -0.02,
+        color: '#121316',
+        accentColor: '#FF4C42',
+        align: 'left',
+        reach: 220,
+        softness: 0.7,
+        dashLength: 4,
+        dashGap: 2,
+        strokeWidth: 1.5,
+        lineStyle: 'dashed',
+        reveal: 'letter',
+        specks: 15,
+        selection: true,
+        labels: true,
+        draggable: true,
+        bounce: 0.42,
+        clickKick: true,
+        intro: 'none',
+        introDuration: 2,
+        guides: false,
+        sweep: true,
+        speed: 1
+      });
+    }
+
+    if (heroLine2El) {
+      new TechText(heroLine2El, {
+        text: 'EVERY DAY.',
+        fontFamily: "'Barlow Condensed', sans-serif",
+        fontWeight: 900,
+        fontSize: 140,
+        letterSpacing: -0.02,
+        color: '#FF4C42',
+        accentColor: '#121316',
+        align: 'left',
+        reach: 220,
+        softness: 0.7,
+        dashLength: 4,
+        dashGap: 2,
+        strokeWidth: 1.5,
+        lineStyle: 'dashed',
+        reveal: 'letter',
+        specks: 15,
+        selection: true,
+        labels: true,
+        draggable: true,
+        bounce: 0.42,
+        clickKick: true,
+        intro: 'none',
+        introDuration: 2,
+        guides: false,
+        sweep: true,
+        speed: 1
+      });
+    }
   }
 
   // --- 1. HEADER SCROLL & MOBILE NAVIGATION ---
@@ -107,10 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileToggle.classList.toggle('active', isOpen);
       mobileToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
-      if (lenis) {
-        if (isOpen) lenis.stop();
-        else lenis.start();
-      }
     });
 
     // Close mobile nav when clicking any nav link
@@ -121,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
           mobileToggle.classList.remove('active');
           mobileToggle.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
-          if (lenis) lenis.start();
         }
       });
     });
@@ -133,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
-        if (lenis) lenis.start();
       }
     });
   }
@@ -166,38 +168,142 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(sec => sectionObserver.observe(sec));
   }
 
-  // --- 2. SERVICES SECTION: 3D SPATIAL SCROLL & ROTATING LOGO ---
+  // --- 2. SERVICES SECTION: 3D SPATIAL PINNED STAGE & SCROLLFLOAT ---
   const servicesSection = document.getElementById('services');
   const spatialCards = document.querySelectorAll('.service-spatial-card');
+  const set1Cards = document.querySelectorAll('.service-card-set-1');
+  const set2Cards = document.querySelectorAll('.service-card-set-2');
   const canvas3D = document.getElementById('services-3d-canvas');
   const fallback3D = document.getElementById('spatial-fallback');
   const fallbackStatus = document.getElementById('spatial-status');
   const canvasWrapper = document.getElementById('spatial-canvas-wrapper');
 
-  // A. Entrance Animation for Service Cards on Scroll (both left & right)
-  if ('IntersectionObserver' in window) {
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
-    });
+  let targetRotationY = 0;
+  let targetTiltX = 0;
 
-    spatialCards.forEach(card => cardObserver.observe(card));
+  // A. ScrollFloat Kinetic Typography (React Bits)
+  if (typeof ScrollFloat !== 'undefined') {
+    const servicesTitle = document.getElementById('services-title');
+    if (servicesTitle) {
+      new ScrollFloat(servicesTitle, {
+        effect: 'float',
+        splitBy: 'chars',
+        direction: 'up',
+        ease: 'back.inOut(2)',
+        distance: 120,
+        stretch: 2.3,
+        stagger: 0.025
+      });
+    }
+
+    document.querySelectorAll('.service-card-title.scroll-float').forEach(title => {
+      new ScrollFloat(title, {
+        effect: 'float',
+        splitBy: 'words',
+        direction: 'up',
+        distance: 80,
+        stretch: 1.8,
+        stagger: 0.04
+      });
+    });
+  }
+
+  // B. GSAP ScrollTrigger Pinned Stage: Cards & Texts Stay Around 3D Logo and Change on Scroll
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && servicesSection) {
+    ScrollTrigger.matchMedia({
+      // Desktop & Tablet Pinning: Cards stay around 3D logo and swap smoothly on scroll
+      '(min-width: 992px)': function () {
+        const spatialTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: servicesSection,
+            start: 'top top',
+            end: '+=200%',
+            pin: true,
+            scrub: 0.6,
+            anticipatePin: 1,
+            onUpdate: (self) => {
+              targetRotationY = self.progress * Math.PI * 4;
+              targetTiltX = Math.sin(self.progress * Math.PI * 2) * 0.22;
+            }
+          }
+        });
+
+        // Set 1 cards active around the 3D logo
+        gsap.set(set1Cards, { opacity: 1, yPercent: 0, scale: 1 });
+        gsap.set(set2Cards, { opacity: 0, yPercent: 50, scale: 0.92 });
+
+        // ScrollFloat effect for cards: Set 1 floats out, Set 2 floats into view around the 3D logo
+        spatialTl
+          .to(set1Cards, {
+            opacity: 0,
+            yPercent: -50,
+            scaleY: 1.6,
+            scaleX: 0.95,
+            duration: 1,
+            stagger: 0.05,
+            ease: 'power2.inOut',
+            onComplete: () => {
+              set1Cards.forEach(c => c.style.pointerEvents = 'none');
+            },
+            onReverseComplete: () => {
+              set1Cards.forEach(c => c.style.pointerEvents = 'auto');
+            }
+          }, 0.4)
+          .to(set2Cards, {
+            opacity: 1,
+            yPercent: 0,
+            scaleY: 1,
+            scaleX: 1,
+            duration: 1,
+            stagger: 0.05,
+            ease: 'back.out(1.5)',
+            onStart: () => {
+              set2Cards.forEach(c => c.style.pointerEvents = 'auto');
+            },
+            onReverseComplete: () => {
+              set2Cards.forEach(c => c.style.pointerEvents = 'none');
+            }
+          }, 0.6);
+      },
+      // Mobile Layout: Cards flow naturally and animate with ScrollFloat
+      '(max-width: 991px)': function () {
+        ScrollTrigger.create({
+          trigger: servicesSection,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.5,
+          onUpdate: (self) => {
+            targetRotationY = self.progress * Math.PI * 4;
+          }
+        });
+
+        spatialCards.forEach(card => {
+          gsap.fromTo(card, 
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top bottom-=80px',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+      }
+    });
   } else {
+    // Fallback if GSAP is not available
     spatialCards.forEach(card => card.classList.add('is-visible'));
   }
 
-  // B. Three.js 3D Logo Scene & Scroll Rotation
+  // C. Three.js 3D Logo Scene & Continuous Dynamic Rotation
   if (canvas3D && typeof THREE !== 'undefined') {
     let renderer, scene, camera, modelGroup;
     let isServicesVisible = false;
-    let targetRotationY = 0;
-    let targetTiltX = 0;
     let currentRotationY = 0;
     let currentTiltX = 0;
     let mouseTiltX = 0;
@@ -311,17 +417,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Calculate Scroll Progress for Section 3
+    // Calculate Scroll Progress for Section 3 (Fallback when ScrollTrigger not active)
     const update3DOnScroll = () => {
-      if (!servicesSection) return;
+      if (!servicesSection || typeof ScrollTrigger !== 'undefined') return;
       const rect = servicesSection.getBoundingClientRect();
       const windowH = window.innerHeight;
-
-      // Progress from 0 (section enters top) to 1 (section leaves bottom)
       const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (rect.height + windowH)));
-
-      // Rotate logo continuously on scroll
-      targetRotationY = progress * Math.PI * 4; // 2 complete 360-degree rotations
+      targetRotationY = progress * Math.PI * 4;
       targetTiltX = Math.sin(progress * Math.PI * 2) * 0.22;
     };
 

@@ -221,15 +221,15 @@
         let m = probe.measureText(s.text);
         const fit = Math.min(
           1,
-          (width * 0.92) / Math.max(m.actualBoundingBoxLeft + m.actualBoundingBoxRight, 1),
-          (height * 0.72) / Math.max(m.actualBoundingBoxAscent + m.actualBoundingBoxDescent, 1)
+          (width * 0.98) / Math.max(m.actualBoundingBoxLeft + m.actualBoundingBoxRight, 1),
+          (height * 0.88) / Math.max(m.actualBoundingBoxAscent + m.actualBoundingBoxDescent, 1)
         );
         const size = s.fontSize * fit;
         setFont(probe, s, size);
         m = probe.measureText(s.text);
         const inkWidth = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
         const inkHeight = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
-        const margin = width * 0.04;
+        const margin = s.align === 'left' ? 2 : width * 0.04;
         const start =
           s.align === 'left' ? margin : s.align === 'right' ? width - margin - inkWidth : (width - inkWidth) / 2;
         const x = start + m.actualBoundingBoxLeft;

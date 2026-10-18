@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/TechText.css">
+  <link rel="stylesheet" href="css/ScrollFloat.css">
 </head>
 <body>
   <!-- Skip to Content for Accessibility -->
@@ -58,16 +59,12 @@
             <span class="status-text">Available for select projects Q4 2026</span>
           </div>
 
-          <!-- Interactive TechText Wordmark (from React Bits) -->
-          <div class="hero-tech-text-wrapper" aria-label="Design Daily Interactive Wordmark">
-            <span class="tech-text-hint" aria-hidden="true">// KINETIC WORDMARK — HOVER / CLICK / DRAG</span>
-            <div id="hero-tech-text" style="width: 100%; height: 100%;"></div>
+          <!-- Hero Headline with Interactive TechText (Zero Box / Seamless Integration) -->
+          <div class="hero-headline-tech" id="hero-headline-tech" aria-label="Good design. Every day.">
+            <h1 class="visually-hidden">Good design. Every day.</h1>
+            <div class="hero-tech-line" id="hero-tech-line-1" aria-hidden="true"></div>
+            <div class="hero-tech-line" id="hero-tech-line-2" aria-hidden="true"></div>
           </div>
-
-          <h1 class="hero-title" id="hero-title">
-            <span class="title-line">Good design.</span>
-            <span class="title-line text-coral">Every day.</span>
-          </h1>
 
           <p class="hero-subtitle">
             We are an independent studio building category-defining brand identities, modern websites, and packaging systems for ambitious founders and global creators.
@@ -290,21 +287,21 @@
       <div class="container">
         <div class="section-header text-center">
           <div class="section-kicker text-coral">// 3D SPATIAL CAPABILITIES</div>
-          <h2 class="section-title services-main-heading" id="services-title">Disciplines Engineered for Category Leaders</h2>
+          <h2 class="section-title services-main-heading scroll-float" id="services-title" data-scroll-float="true">Disciplines Engineered for Category Leaders</h2>
           <p class="section-desc services-header-desc">
-            Scroll to explore our core craft. Our signature 3D identity rotates at the epicenter while living project snapshots reveal our capabilities from both sides.
+            Scroll to explore our core craft. Our signature 3D identity rotates at the epicenter while living project snapshots reveal our capabilities around it.
           </p>
         </div>
 
-        <div class="services-3d-stage" id="services-3d-stage">
-          <!-- Left Column Cards (Slide in from Left on Scroll) -->
+        <div class="services-3d-stage services-pinned-stage" id="services-3d-stage">
+          <!-- Left Column Cards (Stay around 3D Logo & Change on Scroll) -->
           <div class="services-column services-column-left">
-            <!-- Service Card 01 -->
-            <article class="service-spatial-card card-from-left" data-service-card="1">
+            <!-- Service Card 01 (Set 1) -->
+            <article class="service-spatial-card service-card-set-1 card-from-left" data-service-card="1">
               <div class="card-glass-inner">
                 <div class="service-card-header">
-                  <span class="service-badge">01 / FOUNDATIONS</span>
-                  <h3 class="service-card-title">Brand Identity & Strategy</h3>
+                  <span class="service-badge scroll-float-text">01 / FOUNDATIONS</span>
+                  <h3 class="service-card-title scroll-float">Brand Identity & Strategy</h3>
                 </div>
                 <div class="service-card-snapshot">
                   <img src="assets/tripty-guidelines.png" alt="Tripty brand identity guidelines book snapshot" class="snapshot-img" loading="lazy">
@@ -324,12 +321,12 @@
               </div>
             </article>
 
-            <!-- Service Card 03 -->
-            <article class="service-spatial-card card-from-left" data-service-card="3">
+            <!-- Service Card 03 (Set 2) -->
+            <article class="service-spatial-card service-card-set-2 card-from-left" data-service-card="3">
               <div class="card-glass-inner">
                 <div class="service-card-header">
-                  <span class="service-badge">03 / PHYSICAL CRAFT</span>
-                  <h3 class="service-card-title">Packaging & Unboxing Systems</h3>
+                  <span class="service-badge scroll-float-text">03 / PHYSICAL CRAFT</span>
+                  <h3 class="service-card-title scroll-float">Packaging & Unboxing Systems</h3>
                 </div>
                 <div class="service-card-snapshot">
                   <img src="assets/finn-packaging.png" alt="Finn sustainable packaging dielines and box structure" class="snapshot-img" loading="lazy">
@@ -374,14 +371,14 @@
             </div>
           </div>
 
-          <!-- Right Column Cards (Slide in from Right on Scroll) -->
+          <!-- Right Column Cards (Stay around 3D Logo & Change on Scroll) -->
           <div class="services-column services-column-right">
-            <!-- Service Card 02 -->
-            <article class="service-spatial-card card-from-right" data-service-card="2">
+            <!-- Service Card 02 (Set 1) -->
+            <article class="service-spatial-card service-card-set-1 card-from-right" data-service-card="2">
               <div class="card-glass-inner">
                 <div class="service-card-header">
-                  <span class="service-badge">02 / DIGITAL STOREFRONTS</span>
-                  <h3 class="service-card-title">Websites & Digital Flagships</h3>
+                  <span class="service-badge scroll-float-text">02 / DIGITAL STOREFRONTS</span>
+                  <h3 class="service-card-title scroll-float">Websites & Digital Flagships</h3>
                 </div>
                 <div class="service-card-snapshot">
                   <img src="assets/all-organics-website.png" alt="All Organics digital flagship e-commerce interface" class="snapshot-img" loading="lazy">
@@ -401,12 +398,12 @@
               </div>
             </article>
 
-            <!-- Service Card 04 -->
-            <article class="service-spatial-card card-from-right" data-service-card="4">
+            <!-- Service Card 04 (Set 2) -->
+            <article class="service-spatial-card service-card-set-2 card-from-right" data-service-card="4">
               <div class="card-glass-inner">
                 <div class="service-card-header">
-                  <span class="service-badge">04 / AMPLIFICATION</span>
-                  <h3 class="service-card-title">Campaigns & Social Toolkits</h3>
+                  <span class="service-badge scroll-float-text">04 / AMPLIFICATION</span>
+                  <h3 class="service-card-title scroll-float">Campaigns & Social Toolkits</h3>
                 </div>
                 <div class="service-card-snapshot">
                   <img src="assets/seor-campaign.jpg" alt="Seor commercial campaign product listing design" class="snapshot-img" loading="lazy">
@@ -878,10 +875,12 @@
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- JavaScript Bundle (Three.js 3D Engine, GLTFLoader, Lenis Smooth Scroll, TechText & Core Logic) -->
+  <!-- JavaScript Bundle (Three.js 3D Engine, GLTFLoader, GSAP, ScrollTrigger, ScrollFloat, TechText & Core Logic) -->
   <script src="js/three.min.js"></script>
   <script src="js/GLTFLoader.min.js"></script>
-  <script src="js/lenis.min.js"></script>
+  <script src="js/gsap.min.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <script src="js/ScrollFloat.js"></script>
   <script src="js/TechText.js"></script>
   <script src="js/main.js"></script>
 </body>
