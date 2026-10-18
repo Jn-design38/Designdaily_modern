@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design Daily — Independent Brand & Digital Studio</title>
-  <meta name="description" content="Design Daily is an independent design studio crafting category-defining brand identities, modern websites, packaging, and digital experiences for ambitious founders.">
+  <title>Design Daily — Dependable Design Partner for Online Businesses</title>
+  <meta name="description" content="Design Daily is a dependable design partner for online businesses needing thoughtful, polished creative work without the delay and complexity of a large agency.">
   <link rel="icon" type="image/svg+xml" href="assets/agency-icon.svg">
 
   <!-- Google Fonts: Barlow Condensed & Source Sans 3 -->
@@ -12,35 +12,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
+  <!-- Component Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/TechText.css">
   <link rel="stylesheet" href="css/ScrollFloat.css">
+  <link rel="stylesheet" href="css/SpotlightCard.css">
+  <link rel="stylesheet" href="css/LightRays.css">
+  <link rel="stylesheet" href="css/DesignPipeline.css">
 </head>
 <body>
-  <!-- Skip to Content for Accessibility -->
+  <!-- Accessibility Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Global Header & Navigation -->
+  <!-- Ambient Light Rays Canvas (React Bits Pro) -->
+  <div class="light-rays-container" aria-hidden="true">
+    <canvas id="light-rays-canvas" class="light-rays-canvas"></canvas>
+  </div>
+
+  <!-- Global Header with Liquid Glass Dock -->
   <header class="site-header" id="header">
     <div class="header-inner container">
-      <a href="#opening" class="brand-link" aria-label="Design Daily Homepage">
-        <img src="assets/agency-logo.svg" alt="Design Daily Studio" class="site-logo" width="160" height="40">
+      <a href="index.html" class="brand-link" aria-label="Design Daily Homepage">
+        <img src="assets/agency-logo.svg" alt="Design Daily" class="brand-logo-img" width="160" height="40">
       </a>
 
+      <!-- Minimal Navigation Menu -->
       <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#craft" class="nav-link">Craft</a></li>
-          <li><a href="#studio" class="nav-link">Studio</a></li>
-          <li><a href="#faq" class="nav-link">Questions</a></li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="process.html" class="nav-link">Process</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="contact.html" class="nav-link btn-link text-coral">Order</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="#contact" class="btn btn-primary btn-sm header-cta">Start a project</a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+        <a href="contact.html" class="btn btn-primary btn-sm">Start a Brief</a>
+        <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -50,231 +59,418 @@
   </header>
 
   <main id="main-content">
-    <!-- 01. OPENING (HERO) SECTION -->
-    <section class="section-opening" id="opening" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="status-badge">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span class="status-text">Available for select projects Q4 2026</span>
-          </div>
-
-          <!-- Hero Headline with Interactive TechText (Zero Box / Seamless Integration) -->
-          <div class="hero-headline-tech" id="hero-headline-tech" aria-label="Good design. Every day.">
-            <h1 class="visually-hidden">Good design. Every day.</h1>
-            <div class="hero-tech-line" id="hero-tech-line-1" aria-hidden="true"></div>
-            <div class="hero-tech-line" id="hero-tech-line-2" aria-hidden="true"></div>
-          </div>
-
-          <p class="hero-subtitle">
-            We are an independent studio building category-defining brand identities, modern websites, and packaging systems for ambitious founders and global creators.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#contact" class="btn btn-primary btn-lg">Start a project</a>
-            <a href="#work" class="btn btn-outline btn-lg">View our work <span class="arrow-down" aria-hidden="true">↓</span></a>
-          </div>
-
-          <div class="hero-attributes">
-            <div class="attribute-item">
-              <span class="attribute-number">100%</span>
-              <span class="attribute-label">Deterministic Craft</span>
-            </div>
-            <div class="attribute-divider" aria-hidden="true"></div>
-            <div class="attribute-item">
-              <span class="attribute-number">Direct</span>
-              <span class="attribute-label">Founder Access</span>
-            </div>
-            <div class="attribute-divider" aria-hidden="true"></div>
-            <div class="attribute-item">
-              <span class="attribute-number">0%</span>
-              <span class="attribute-label">Agency Fluff</span>
-            </div>
-          </div>
+    <!-- ===================================================================
+         01. LIGHTWEIGHT HERO SECTION WITH 7-STAGE PIPELINE
+         =================================================================== -->
+    <section class="section-hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container hero-content">
+        <!-- Live Target Availability Pill -->
+        <div class="hero-pill-badge">
+          <span class="hero-status-dot"></span>
+          <span class="pill-text" data-decrypt="true">● Target 1-Hour Response • 2 Revisions Included</span>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="stamp-card" id="hero-stamp">
-            <div class="stamp-card-inner">
-              <div class="stamp-header">
-                <span class="stamp-meta">DESIGN DAILY STUDIO</span>
-                <span class="stamp-date">EST. 2026</span>
-              </div>
-              <div class="stamp-icon-wrapper">
-                <img src="assets/agency-icon.svg" alt="" class="stamp-mark" width="220" height="220">
-              </div>
-              <div class="stamp-footer">
-                <span class="stamp-seal">VERIFIED ARTISANAL STANDARD</span>
-                <span class="stamp-coords">23.8103° N, 90.4125° E</span>
-              </div>
-            </div>
-            <div class="stamp-shadow"></div>
+        <!-- One Clear Statement -->
+        <h1 class="hero-statement" id="hero-heading">
+          Thoughtful, polished design for ambitious online businesses —
+          <span class="text-gradient">without the delay and complexity of a large agency.</span>
+        </h1>
+
+        <!-- Subhead -->
+        <p class="hero-subhead">
+          We combine principal-level creative direction with dependable, systematic execution. Spend less time managing creative chaos and more time scaling your brand.
+        </p>
+
+        <!-- Two Clear Actions -->
+        <div class="hero-actions">
+          <a href="work.html" class="btn btn-primary btn-lg">Explore Selected Work ↓</a>
+          <a href="contact.html" class="btn btn-glass btn-lg">Start Project / Brief →</a>
+        </div>
+
+        <!-- Optional 3D Rotating Mark Viewport (Progressive Enhancement) -->
+        <div class="hero-3d-turntable" title="Interactive 3D Design Daily Mark">
+          <canvas id="hero-3d-canvas" aria-label="Rotating 3D studio identity model"></canvas>
+        </div>
+
+        <!-- Immersive 7-Stage Design Pipeline Component -->
+        <div id="design-pipeline-container" aria-label="Interactive Design Daily 7-Stage Pipeline"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         02. CUSTOMER JOURNEY SECTION (7 CLEAR STEPS)
+         =================================================================== -->
+    <section class="section-journey" id="journey" aria-labelledby="journey-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-kicker text-coral">
+            <span class="pill pill-coral">// FRICTIONLESS ENGAGEMENT</span>
           </div>
+          <h2 class="section-title scroll-float" id="journey-heading">The Customer Journey</h2>
+          <p class="section-desc">
+            A transparent, predictable process designed to eliminate guesswork, endless status meetings, and runaway timelines.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+          <!-- Step 1 -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">01</span>
+            <h3 class="journey-title">Submit a Request</h3>
+            <p class="journey-desc">Share your business goals, target timeline, and design scope through our structured online brief form.</p>
+            <span class="pill journey-tag">Online Form</span>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">02</span>
+            <h3 class="journey-title">1-Hour Response Target</h3>
+            <p class="journey-desc">Our principal team reviews your submission personally, targeting a detailed response within one hour during business windows.</p>
+            <span class="pill pill-coral journey-tag">Target: 1 Hour</span>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">03</span>
+            <h3 class="journey-title">Project Brief Preparation</h3>
+            <p class="journey-desc">We synthesize your goals into an actionable, unambiguous creative brief with clear deliverables and milestones.</p>
+            <span class="pill journey-tag">Clear Roadmap</span>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">04</span>
+            <h3 class="journey-title">Confirmation & Alignment</h3>
+            <p class="journey-desc">You confirm scope, add supplementary brand assets, and approve the direction before any invoice is locked.</p>
+            <span class="pill journey-tag">100% Aligned</span>
+          </article>
+
+          <!-- Step 5 -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">05</span>
+            <h3 class="journey-title">Work Order & Timeline</h3>
+            <p class="journey-desc">A formal work order and locked delivery schedule are issued. Guaranteed sprint milestones with zero moving goalposts.</p>
+            <span class="pill journey-tag">Locked Schedule</span>
+          </article>
+
+          <!-- Step 6 -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">06</span>
+            <h3 class="journey-title">The Project Begins</h3>
+            <p class="journey-desc">Our principal designers execute with deep focus. Daily updates and Loom video walkthroughs keep you continuously informed.</p>
+            <span class="pill journey-tag">Principal Execution</span>
+          </article>
+
+          <!-- Step 7 -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">07</span>
+            <h3 class="journey-title">Two Revisions Included</h3>
+            <p class="journey-desc">Every deliverable includes up to two rounds of meticulous revisions to ensure every vector and finish matches your standard.</p>
+            <span class="pill pill-coral journey-tag">Up to 2 Rounds</span>
+          </article>
+
+          <!-- Step 8: Master Delivery -->
+          <article class="journey-card spotlight-card">
+            <span class="journey-step-num">08</span>
+            <h3 class="journey-title">Master Handoff</h3>
+            <p class="journey-desc">Complete production packages, master vector source files (AI/EPS/SVG), guidelines, and full deployment support.</p>
+            <span class="pill journey-tag">Production Ready</span>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 02. SELECTED WORK (DARK GALLERY) -->
-    <section class="section-work" id="work" aria-labelledby="work-title">
+    <!-- ===================================================================
+         03. SERVICES OVERVIEW (ALL 9 SPECIFIED DISCIPLINES)
+         =================================================================== -->
+    <section class="section-services" id="services" aria-labelledby="services-heading">
       <div class="container">
-        <div class="section-header work-header">
-          <div class="section-kicker text-coral">// SELECTED WORK (01 — 03)</div>
-          <h2 class="section-title text-white" id="work-title">Work that shapes perception and commands market attention.</h2>
-          <p class="section-desc text-muted">
-            A curated selection of authentic identity systems, physical packaging, and digital flagships crafted with mathematical rigor and bold storytelling.
+        <div class="section-header text-center">
+          <div class="section-kicker text-coral">
+            <span class="pill pill-coral">// COMPREHENSIVE CAPABILITIES</span>
+          </div>
+          <h2 class="section-title scroll-float" id="services-heading">Everything Your Brand Needs to Excel</h2>
+          <p class="section-desc">
+            From high-volume commercial marketing collateral to enduring category-defining identity systems. Explore our 9 core disciplines.
           </p>
         </div>
 
-        <!-- Featured Projects List -->
-        <div class="project-showcase">
-          <!-- Project 01: Tripty -->
-          <article class="project-card" id="project-tripty">
-            <div class="project-media">
-              <img src="assets/tripty-cover.png" alt="Tripty brand identity presentation showcase" class="project-img" loading="lazy">
-              <div class="project-badge">Featured Case Study</div>
+        <div class="services-catalog-grid">
+          <!-- 1. Static Creatives & Monthly Packages -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">📊</div>
+            <h3 class="service-card-heading">Static Creatives & Monthly Packages</h3>
+            <p class="service-card-text">
+              High-converting digital ads, e-commerce promotional cards, conversion-focused banner systems, and dedicated monthly design partner subscriptions.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Monthly Retainers</span>
+              <span class="pill">Ad Creatives</span>
+              <span class="pill">Campaign Sets</span>
             </div>
-            <div class="project-details">
-              <div class="project-meta">
-                <span class="project-num">01</span>
-                <span class="project-tag">Brand Identity • Digital Flagship • Guidelines</span>
+          </article>
+
+          <!-- 2. Website Graphics & Content -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">💻</div>
+            <h3 class="service-card-heading">Website Graphics & Content</h3>
+            <p class="service-card-text">
+              Digital flagship hero compositions, custom iconographic systems, bespoke editorial diagrams, and responsive UI asset packages calibrated for fast page loads.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Hero Graphics</span>
+              <span class="pill">UI System</span>
+              <span class="pill">Content Banners</span>
+            </div>
+          </article>
+
+          <!-- 3. Brand Identity -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">✨</div>
+            <h3 class="service-card-heading">Brand Identity</h3>
+            <p class="service-card-text">
+              Enduring visual identities, mathematical logomark geometry, custom typography hierarchies, color systems, and comprehensive brand books.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Logomarks</span>
+              <span class="pill">Color Architecture</span>
+              <span class="pill">Brand Book</span>
+            </div>
+          </article>
+
+          <!-- 4. Packaging -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">📦</div>
+            <h3 class="service-card-heading">Packaging & Unboxing</h3>
+            <p class="service-card-text">
+              Structural carton dielines, bespoke vessel specifications, tactile blind deboss and foil stamping guides tested for zero manufacturer error.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Custom Dielines</span>
+              <span class="pill">Vessel Mockups</span>
+              <span class="pill">Print Specs</span>
+            </div>
+          </article>
+
+          <!-- 5. Stationery -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">✉️</div>
+            <h3 class="service-card-heading">Stationery Suites</h3>
+            <p class="service-card-text">
+              Tactile corporate letterheads, luxury foil business cards, presentation folders, invoice templates, and architectural physical touchpoints.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Business Cards</span>
+              <span class="pill">Letterhead</span>
+              <span class="pill">Folders</span>
+            </div>
+          </article>
+
+          <!-- 6. T-Shirt Designs -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">👕</div>
+            <h3 class="service-card-heading">T-Shirt & Apparel Designs</h3>
+            <p class="service-card-text">
+              Commercial streetwear illustrations, brand merchandise collections, screen-print separation files, and retail-ready apparel graphics.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Apparel Graphics</span>
+              <span class="pill">Screen Separations</span>
+              <span class="pill">Merch Kits</span>
+            </div>
+          </article>
+
+          <!-- 7. Brochures -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">📖</div>
+            <h3 class="service-card-heading">Brochures & Lookbooks</h3>
+            <p class="service-card-text">
+              Multi-page corporate brochures, seasonal lookbooks, investor presentations, and sales collateral designed with sophisticated editorial grids.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Multi-Page Editorial</span>
+              <span class="pill">Sales Decks</span>
+              <span class="pill">Lookbooks</span>
+            </div>
+          </article>
+
+          <!-- 8. Posters -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">🖼️</div>
+            <h3 class="service-card-heading">Posters & Key Visuals</h3>
+            <p class="service-card-text">
+              Large-format event posters, product launch hero key visuals, architectural wall art, and billboard graphics rendered with infinite vector scale.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">Key Visuals</span>
+              <span class="pill">Exhibition Art</span>
+              <span class="pill">Billboards</span>
+            </div>
+          </article>
+
+          <!-- 9. Custom Visual Assets -->
+          <article class="service-offering-card spotlight-card tilted-card">
+            <div class="service-icon-box">🎨</div>
+            <h3 class="service-card-heading">Custom Visual Assets</h3>
+            <p class="service-card-text">
+              Bespoke illustrations, character mascots, 3D product representations, procedural patterns, and proprietary creative assets tailored to your business.
+            </p>
+            <div class="service-deliverables-list">
+              <span class="pill">3D Modeling</span>
+              <span class="pill">Custom Vectors</span>
+              <span class="pill">Pattern Systems</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         04. IMMERSIVE SELECTED WORK GALLERY (REAL SUPPLIED ASSETS)
+         =================================================================== -->
+    <section class="section-work" id="work" aria-labelledby="work-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker text-coral">
+            <span class="pill pill-coral">// REAL STUDIO DELIVERABLES</span>
+          </div>
+          <h2 class="section-title scroll-float" id="work-heading">Selected Studio Repertoire</h2>
+          <p class="section-desc">
+            Authentic, uncompromised case studies constructed for ambitious founders. Every logo, dieline, and typographic asset displayed with original proportions intact.
+          </p>
+        </div>
+
+        <div class="work-showcase-grid">
+          <!-- Project 01: Tripty -->
+          <article class="work-project-card spotlight-card">
+            <div class="work-media-viewport">
+              <img src="assets/tripty-cover.png" alt="Tripty brand identity presentation showcase" class="work-img" loading="lazy">
+              <span class="work-project-badge">Brand Identity & Digital</span>
+            </div>
+            <div class="work-info-body">
+              <div class="work-meta-row">
+                <span class="work-category-tag">Lifestyle & Luxury</span>
+                <span class="pill">Case Study</span>
               </div>
-              <h3 class="project-title text-white">Tripty</h3>
-              <p class="project-summary">
-                A sustainable luxury lifestyle label required an elevated visual language. We built an enduring identity system featuring bespoke geometric letterforms, modular pattern architectures, and an intuitive e-commerce flagship.
+              <h3 class="work-card-title">Tripty</h3>
+              <p class="work-card-desc">
+                Sustainable luxury lifestyle brand identity featuring bespoke geometric letterforms, modular pattern architectures, tactile print manuals, and a modern storefront.
               </p>
-              <div class="project-deliverables">
-                <span class="pill">Visual Identity</span>
+              <div class="work-deliverables-pills">
+                <span class="pill">Logomark</span>
                 <span class="pill">Brand Book</span>
                 <span class="pill">Pattern System</span>
                 <span class="pill">Web Mockup</span>
               </div>
-              <div class="project-supporting-grid">
-                <div class="supporting-thumb">
-                  <img src="assets/tripty-guidelines.png" alt="Tripty brand guidelines publication" loading="lazy">
-                  <span class="thumb-label">Guidelines</span>
-                </div>
-                <div class="supporting-thumb">
-                  <img src="assets/tripty-website.jpg" alt="Tripty digital storefront composition" loading="lazy">
-                  <span class="thumb-label">Digital</span>
-                </div>
-                <div class="supporting-thumb">
-                  <img src="assets/tripty-pattern.png" alt="Tripty pattern system" loading="lazy">
-                  <span class="thumb-label">Pattern</span>
-                </div>
-              </div>
+              <a href="case-study-tripty.html" class="btn btn-outline btn-sm" style="margin-top: 12px; align-self: flex-start;">Explore Case Study →</a>
             </div>
           </article>
 
           <!-- Project 02: All Organics -->
-          <article class="project-card project-card-reverse" id="project-all-organics">
-            <div class="project-media">
-              <img src="assets/all-organics-cover.png" alt="All Organics identity and packaging showcase" class="project-img" loading="lazy">
-              <div class="project-badge">Apothecary & Web</div>
+          <article class="work-project-card spotlight-card">
+            <div class="work-media-viewport">
+              <img src="assets/all-organics-cover.png" alt="All Organics apothecary identity and packaging" class="work-img" loading="lazy">
+              <span class="work-project-badge">Packaging & Flagship</span>
             </div>
-            <div class="project-details">
-              <div class="project-meta">
-                <span class="project-num">02</span>
-                <span class="project-tag">Brand Strategy • Packaging • Digital Experience</span>
+            <div class="work-info-body">
+              <div class="work-meta-row">
+                <span class="work-category-tag">Organic Apothecary</span>
+                <span class="pill">Case Study</span>
               </div>
-              <h3 class="project-title text-white">All Organics</h3>
-              <p class="project-summary">
-                Clean, organic botanicals presented through modern Nordic minimalism. The identity balances clinical efficacy with tactile warmth across custom dropper bottles, recyclable cartons, and an organic e-commerce experience.
+              <h3 class="work-card-title">All Organics</h3>
+              <p class="work-card-desc">
+                Botanical apothecary packaging dielines, tactile dropper bottle specifications, sustainable retail boxes, and responsive digital store architecture.
               </p>
-              <div class="project-deliverables">
-                <span class="pill">Packaging System</span>
-                <span class="pill">Pattern Craft</span>
-                <span class="pill">Storefront Design</span>
-                <span class="pill">Social Campaign</span>
+              <div class="work-deliverables-pills">
+                <span class="pill">Vessel Specs</span>
+                <span class="pill">Label Dielines</span>
+                <span class="pill">Botanical Pattern</span>
+                <span class="pill">Storefront</span>
               </div>
-              <div class="project-supporting-grid">
-                <div class="supporting-thumb">
-                  <img src="assets/all-organics-website.png" alt="All Organics web experience" loading="lazy">
-                  <span class="thumb-label">Storefront</span>
-                </div>
-                <div class="supporting-thumb">
-                  <img src="assets/all-organics-pattern.png" alt="All Organics botanical pattern" loading="lazy">
-                  <span class="thumb-label">Pattern</span>
-                </div>
-                <div class="supporting-thumb">
-                  <img src="assets/all-organics-identity.png" alt="All Organics identity mark" loading="lazy">
-                  <span class="thumb-label">Identity</span>
-                </div>
-              </div>
+              <a href="case-study-all-organics.html" class="btn btn-outline btn-sm" style="margin-top: 12px; align-self: flex-start;">Explore Case Study →</a>
             </div>
           </article>
 
           <!-- Project 03: Sandbox Lounge -->
-          <article class="project-card" id="project-sandbox">
-            <div class="project-media">
-              <img src="assets/sandbox-cover.png" alt="Sandbox Lounge hospitality branding showcase" class="project-img" loading="lazy">
-              <div class="project-badge">Hospitality & Space</div>
+          <article class="work-project-card spotlight-card">
+            <div class="work-media-viewport">
+              <img src="assets/sandbox-cover.png" alt="Sandbox Lounge hospitality branding showcase" class="work-img" loading="lazy">
+              <span class="work-project-badge">Hospitality & Space</span>
             </div>
-            <div class="project-details">
-              <div class="project-meta">
-                <span class="project-num">03</span>
-                <span class="project-tag">Hospitality Branding • Collateral • Guidelines</span>
+            <div class="work-info-body">
+              <div class="work-meta-row">
+                <span class="work-category-tag">Bespoke Hospitality</span>
+                <span class="pill">Brand Suite</span>
               </div>
-              <h3 class="project-title text-white">Sandbox Lounge</h3>
-              <p class="project-summary">
-                An upscale urban cocktail sanctuary blending mid-century architectural elegance with modern speakeasy culture. Complete brand suite featuring embossed stationery, textured menu systems, and comprehensive spatial signage rules.
+              <h3 class="work-card-title">Sandbox Lounge</h3>
+              <p class="work-card-desc">
+                Upscale cocktail sanctuary branding blending mid-century architectural geometry with blind-embossed stationery, textured foil menus, and spatial sign rules.
               </p>
-              <div class="project-deliverables">
-                <span class="pill">Visual System</span>
-                <span class="pill">Stationery Suite</span>
+              <div class="work-deliverables-pills">
+                <span class="pill">Stationery</span>
                 <span class="pill">Foil Menus</span>
                 <span class="pill">Spatial Guidelines</span>
               </div>
-              <div class="project-supporting-grid">
-                <div class="supporting-thumb">
-                  <img src="assets/sandbox-stationery.png" alt="Sandbox Lounge physical stationery and foil menus" loading="lazy">
-                  <span class="thumb-label">Stationery</span>
-                </div>
-                <div class="supporting-thumb">
-                  <img src="assets/sandbox-guidelines.png" alt="Sandbox Lounge brand book cover" loading="lazy">
-                  <span class="thumb-label">Brand Book</span>
-                </div>
-                <div class="supporting-thumb">
-                  <img src="assets/atuendo-stationery.png" alt="Bespoke collateral craft" loading="lazy">
-                  <span class="thumb-label">Finishes</span>
-                </div>
+            </div>
+          </article>
+
+          <!-- Project 04: Packaging Showcase -->
+          <article class="work-project-card spotlight-card">
+            <div class="work-media-viewport">
+              <img src="assets/packaging-showcase.png" alt="Design Daily studio packaging dielines and mockup" class="work-img" loading="lazy">
+              <span class="work-project-badge">Physical Craft</span>
+            </div>
+            <div class="work-info-body">
+              <div class="work-meta-row">
+                <span class="work-category-tag">Structural Packaging</span>
+                <span class="pill">Production Ready</span>
+              </div>
+              <h3 class="work-card-title">Finn & Studio Packaging</h3>
+              <p class="work-card-desc">
+                Tactile unboxing sequences, custom vessel dielines, blind deboss and hot foil stamping specifications calibrated for seamless commercial manufacturing.
+              </p>
+              <div class="work-deliverables-pills">
+                <span class="pill">Box Dielines</span>
+                <span class="pill">Unboxing Sequence</span>
+                <span class="pill">Print Guides</span>
               </div>
             </div>
           </article>
         </div>
 
-        <!-- Additional Portfolio Archive Strip -->
-        <div class="archive-strip">
-          <div class="archive-header">
-            <h4 class="archive-heading text-white">More Studio Repertoire</h4>
-            <span class="archive-note text-muted">Authentic identity & packaging archives</span>
+        <!-- Secondary Archive Repertoire Shelf -->
+        <div class="archive-horizontal-shelf">
+          <div class="archive-shelf-header">
+            <h4 class="archive-thumb-title">Additional Studio Repertoire</h4>
+            <a href="work.html" class="text-coral" style="font-weight: 700; font-size: 0.92rem;">View Full Work Index →</a>
           </div>
-          <div class="archive-grid">
-            <div class="archive-item">
+          <div class="archive-shelf-grid">
+            <div class="archive-thumb-card">
               <img src="assets/atuendo-cover.png" alt="Atuendo bespoke apparel branding" loading="lazy">
-              <div class="archive-info">
-                <strong>Atuendo</strong>
-                <span>Bespoke Sartorial Identity</span>
+              <div class="archive-thumb-body">
+                <div class="archive-thumb-title">Atuendo</div>
+                <span class="archive-thumb-meta">Sartorial Brand & Stationery</span>
               </div>
             </div>
-            <div class="archive-item">
-              <img src="assets/norea-cover.png" alt="Norea Scandinavian identity" loading="lazy">
-              <div class="archive-info">
-                <strong>Norea</strong>
-                <span>Geometric Scandinavian Identity</span>
+            <div class="archive-thumb-card">
+              <img src="assets/goodybro-cover.png" alt="Goody Bro apparel graphic design" loading="lazy">
+              <div class="archive-thumb-body">
+                <div class="archive-thumb-title">Goody Bro</div>
+                <span class="archive-thumb-meta">Streetwear Merchandise</span>
               </div>
             </div>
-            <div class="archive-item">
-              <img src="assets/finn-packaging.png" alt="Finn sustainable packaging" loading="lazy">
-              <div class="archive-info">
-                <strong>Finn Unboxing</strong>
-                <span>Sustainable Structural Packaging</span>
+            <div class="archive-thumb-card">
+              <img src="assets/zaro-bottle.png" alt="Zaro beverage bottle and character design" loading="lazy">
+              <div class="archive-thumb-body">
+                <div class="archive-thumb-title">Zaro Beverage</div>
+                <span class="archive-thumb-meta">Packaging & Character Art</span>
               </div>
             </div>
-            <div class="archive-item">
-              <img src="assets/zaro-bottle.png" alt="Zaro beverage bottle and mascot design" loading="lazy">
-              <div class="archive-info">
-                <strong>Zaro Beverage</strong>
-                <span>Product Packaging & Character</span>
+            <div class="archive-thumb-card">
+              <img src="assets/social-showcase.png" alt="Seor and social media creative campaign launch kit" loading="lazy">
+              <div class="archive-thumb-body">
+                <div class="archive-thumb-title">Social Campaigns</div>
+                <span class="archive-thumb-meta">Multi-Channel Digital Kits</span>
               </div>
             </div>
           </div>
@@ -282,606 +478,266 @@
       </div>
     </section>
 
-    <!-- 03. SERVICES SECTION (3D SCROLL & SPATIAL STAGE) -->
-    <section class="section-services" id="services" aria-labelledby="services-title">
+    <!-- ===================================================================
+         05. “WHY DESIGN DAILY” SECTION (5 STRATEGIC PILLARS)
+         =================================================================== -->
+    <section class="section-why" id="why" aria-labelledby="why-heading">
       <div class="container">
         <div class="section-header text-center">
-          <div class="section-kicker text-coral">// 3D SPATIAL CAPABILITIES</div>
-          <h2 class="section-title services-main-heading scroll-float" id="services-title" data-scroll-float="true">Disciplines Engineered for Category Leaders</h2>
-          <p class="section-desc services-header-desc">
-            Scroll to explore our core craft. Our signature 3D identity rotates at the epicenter while living project snapshots reveal our capabilities around it.
-          </p>
-        </div>
-
-        <div class="services-3d-stage" id="services-3d-stage">
-          <!-- Left Column Cards (Card 1 and Card 3) -->
-          <div class="services-column services-column-left">
-            <!-- Service Card 01 -->
-            <article class="service-spatial-card" id="service-card-1" data-service-card="1" data-popup-side="left">
-              <div class="card-glass-inner">
-                <div class="service-card-header">
-                  <span class="service-badge">01 / FOUNDATIONS</span>
-                  <h3 class="service-card-title scroll-float">Brand Identity & Strategy</h3>
-                </div>
-                <div class="service-card-snapshot">
-                  <img src="assets/tripty-guidelines.png" alt="Tripty brand identity guidelines book snapshot" class="snapshot-img" loading="lazy">
-                  <div class="snapshot-overlay">
-                    <span class="snapshot-tag">Real Artifact: Tripty Manual</span>
-                  </div>
-                </div>
-                <p class="service-card-desc">
-                  Enduring identity systems, mathematical logomark geometry, typography hierarchies, and modular pattern systems tailored for market prestige.
-                </p>
-                <div class="service-card-pills">
-                  <span class="pill">Logomark Geometry</span>
-                  <span class="pill">Type Licensing</span>
-                  <span class="pill">Color System</span>
-                  <span class="pill">Brand Book</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Service Card 03 -->
-            <article class="service-spatial-card" id="service-card-3" data-service-card="3" data-popup-side="left">
-              <div class="card-glass-inner">
-                <div class="service-card-header">
-                  <span class="service-badge">03 / PHYSICAL CRAFT</span>
-                  <h3 class="service-card-title scroll-float">Packaging & Unboxing Systems</h3>
-                </div>
-                <div class="service-card-snapshot">
-                  <img src="assets/packaging-showcase.png" alt="Design Daily authentic packaging dielines and box structure mockup" class="snapshot-img" loading="lazy">
-                  <div class="snapshot-overlay">
-                    <span class="snapshot-tag">Real Artifact: Studio Packaging</span>
-                  </div>
-                </div>
-                <p class="service-card-desc">
-                  Tactile unboxing sequences, custom vessel dielines, blind emboss and foil stamping specifications calibrated for zero manufacturer error.
-                </p>
-                <div class="service-card-pills">
-                  <span class="pill">Box Dielines</span>
-                  <span class="pill">Vessel Specs</span>
-                  <span class="pill">Tactile Foils</span>
-                  <span class="pill">Sustainable Stock</span>
-                </div>
-              </div>
-            </article>
+          <div class="section-kicker text-coral">
+            <span class="pill pill-coral">// STRATEGIC ADVANTAGE</span>
           </div>
-
-          <!-- Center Column: 3D Rotating Studio Mark -->
-          <div class="services-3d-center">
-            <div class="services-3d-sticky" id="services-3d-sticky">
-              <div class="spatial-canvas-wrapper" id="spatial-canvas-wrapper">
-                <!-- Three.js Canvas Container -->
-                <canvas id="services-3d-canvas" aria-label="Interactive 3D Design Daily logo model rotating on scroll"></canvas>
-
-                <!-- Fallback & Loading Visualizer -->
-                <div class="spatial-loading-fallback" id="spatial-fallback">
-                  <div class="fallback-glow-ring"></div>
-                  <img src="assets/agency-icon.svg" alt="Design Daily 3D Mark Loading" class="fallback-logo-spin">
-                  <span class="fallback-status" id="spatial-status">Initializing 3D Studio Mark...</span>
-                </div>
-              </div>
-
-              <!-- Interactive Badge Below 3D Logo -->
-              <div class="spatial-badge">
-                <div class="badge-status-dot"></div>
-                <span class="badge-title">3D STUDIO IDENTITY</span>
-                <span class="badge-meta">Epicenter Stage • Scroll to sequence</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column Cards (Card 2 and Card 4) -->
-          <div class="services-column services-column-right">
-            <!-- Service Card 02 -->
-            <article class="service-spatial-card" id="service-card-2" data-service-card="2" data-popup-side="right">
-              <div class="card-glass-inner">
-                <div class="service-card-header">
-                  <span class="service-badge">02 / DIGITAL STOREFRONTS</span>
-                  <h3 class="service-card-title scroll-float">Websites & Digital Flagships</h3>
-                </div>
-                <div class="service-card-snapshot">
-                  <img src="assets/all-organics-website.png" alt="All Organics digital flagship e-commerce interface" class="snapshot-img" loading="lazy">
-                  <div class="snapshot-overlay">
-                    <span class="snapshot-tag">Real Artifact: All Organics Store</span>
-                  </div>
-                </div>
-                <p class="service-card-desc">
-                  Bespoke digital flagships featuring fluid 60fps micro-animations, deterministic frontend code, 100% PageSpeed, and zero hydration lag.
-                </p>
-                <div class="service-card-pills">
-                  <span class="pill">UX Architecture</span>
-                  <span class="pill">Fluid Motion</span>
-                  <span class="pill">Deterministic Code</span>
-                  <span class="pill">WCAG 2.2 AA</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Service Card 04 -->
-            <article class="service-spatial-card" id="service-card-4" data-service-card="4" data-popup-side="right">
-              <div class="card-glass-inner">
-                <div class="service-card-header">
-                  <span class="service-badge">04 / AMPLIFICATION</span>
-                  <h3 class="service-card-title scroll-float">Campaigns & Social Toolkits</h3>
-                </div>
-                <div class="service-card-snapshot">
-                  <img src="assets/social-showcase.png" alt="Design Daily multi-channel social media launch kit" class="snapshot-img" loading="lazy">
-                  <div class="snapshot-overlay">
-                    <span class="snapshot-tag">Real Artifact: Social System</span>
-                  </div>
-                </div>
-                <p class="service-card-desc">
-                  Multi-channel digital launch kits, social media design frameworks, editorial ad creatives, and merchandise graphics designed to stand out.
-                </p>
-                <div class="service-card-pills">
-                  <span class="pill">Launch Toolkits</span>
-                  <span class="pill">Product Creative</span>
-                  <span class="pill">Apparel Design</span>
-                  <span class="pill">Ad Graphics</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04. PROCESS SECTION -->
-    <section class="section-process" id="process" aria-labelledby="process-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker text-coral">// WORKING METHODOLOGY</div>
-          <h2 class="section-title" id="process-title">Four deliberate steps. Zero guesswork.</h2>
+          <h2 class="section-title scroll-float" id="why-heading">Why Choose Design Daily?</h2>
           <p class="section-desc">
-            We run structured sprints with fixed milestones, transparent Loom check-ins, and direct collaboration. Here is how your project unfolds.
+            We are deliberately built around the realities of fast-moving online businesses: principal-level craft, transparent communication, and zero administrative drag.
           </p>
         </div>
 
-        <div class="process-interactive-wrapper">
-          <!-- Step Nav Tabs -->
-          <div class="process-tabs" role="tablist" aria-label="Project Process Steps">
-            <button class="step-tab active" role="tab" aria-selected="true" aria-controls="step-panel" data-step="0">
-              <span class="tab-index">01</span>
-              <span class="tab-label">Brief & Audit</span>
-            </button>
-            <button class="step-tab" role="tab" aria-selected="false" aria-controls="step-panel" data-step="1">
-              <span class="tab-index">02</span>
-              <span class="tab-label">Design & Explore</span>
-            </button>
-            <button class="step-tab" role="tab" aria-selected="false" aria-controls="step-panel" data-step="2">
-              <span class="tab-index">03</span>
-              <span class="tab-label">Refine & Test</span>
-            </button>
-            <button class="step-tab" role="tab" aria-selected="false" aria-controls="step-panel" data-step="3">
-              <span class="tab-index">04</span>
-              <span class="tab-label">Deliver & Launch</span>
-            </button>
-          </div>
-
-          <!-- Dynamic Active Step Display -->
-          <div class="process-display-panel" id="step-panel">
-            <div class="step-display-text">
-              <div class="step-kicker-row">
-                <span class="step-phase-badge" id="step-badge">PHASE 01 • WEEK 1</span>
-                <span class="step-timing" id="step-timeline">Discovery & Competitive Strategy</span>
-              </div>
-              <h3 class="step-title" id="step-title">Uncompromising discovery before drawing a single vector.</h3>
-              <p class="step-description" id="step-desc">
-                We dissect your brand ambitions, study the competitors you want to leapfrog, and define the emotional positioning of your business. We synthesize our findings into an actionable strategic brief and creative moodboards.
-              </p>
-              <div class="step-artifacts">
-                <span class="artifact-label">Key Deliverables:</span>
-                <div class="artifact-tags" id="step-artifacts">
-                  <span class="pill">Strategic Brief</span>
-                  <span class="pill">Competitive Audit</span>
-                  <span class="pill">Visual Moodboard</span>
-                  <span class="pill">Direction Alignment</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="step-display-visual">
-              <div class="visual-frame">
-                <img src="assets/agency-sketch.png" id="step-image" alt="Process stage visual documentation" class="step-img">
-              </div>
-              <div class="visual-meta">
-                <span id="step-image-caption">Stage 1 Artifact: Initial Ideation & Concept Foundations</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05. CRAFT SECTION (GEOMETRIC REVEAL & PRECISION) -->
-    <section class="section-craft" id="craft" aria-labelledby="craft-title">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker text-coral">// THE CRAFT & GEOMETRY</div>
-          <h2 class="section-title" id="craft-title">Obsessed with geometry, proportion, and optical weight.</h2>
-          <p class="section-desc">
-            Great identity design is never an accident of luck. It is constructed through disciplined geometric grids, mathematical harmony, and hundreds of optical calibrations.
-          </p>
-        </div>
-
-        <div class="craft-interactive-showcase">
-          <!-- Comparison Slider: Norea Construction vs Finished Logo -->
-          <div class="comparison-card" id="comparison-card">
-            <div class="comparison-header">
-              <div class="comparison-title-wrap">
-                <span class="comparison-kicker">INTERACTIVE COMPARISON</span>
-                <h3 class="comparison-heading">Norea Identity: Mathematical Grid to Finished Mark</h3>
-              </div>
-              <div class="comparison-controls">
-                <button type="button" class="btn-toggle-view" id="btn-show-grid">View Construction</button>
-                <button type="button" class="btn-toggle-view" id="btn-show-split">50/50 Split</button>
-                <button type="button" class="btn-toggle-view active" id="btn-show-finished">View Finished</button>
-              </div>
-            </div>
-
-            <div class="comparison-viewport" id="comparison-viewport" tabindex="0" role="slider" aria-label="Before and after construction slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-              <!-- Background Image: Finished Mark -->
-              <div class="comparison-image-layer image-after">
-                <img src="assets/norea-logo.jpg" alt="Norea finished logo mark with pure optical weight" class="comparison-img">
-                <span class="layer-tag tag-after">Finished Mark</span>
-              </div>
-
-              <!-- Foreground Clipped Image: Grid Construction -->
-              <div class="comparison-image-layer image-before" id="comparison-before-layer">
-                <img src="assets/norea-construction.jpg" alt="Norea geometric construction grid and circles" class="comparison-img">
-                <span class="layer-tag tag-before">Construction Geometry</span>
-              </div>
-
-              <!-- Draggable Divider Handle -->
-              <div class="comparison-handle" id="comparison-handle" aria-hidden="true">
-                <div class="handle-line"></div>
-                <div class="handle-circle">
-                  <span class="handle-arrow">◀</span>
-                  <span class="handle-arrow">▶</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="comparison-caption">
-              <span class="caption-icon" aria-hidden="true">ⓘ</span>
-              <p>Drag the slider handle or use the keyboard arrow keys to inspect the concentric arc calculations behind the final mark.</p>
-            </div>
-          </div>
-
-          <!-- Secondary Craft Insight Card -->
-          <div class="craft-sidebar">
-            <div class="craft-note-card">
-              <div class="craft-card-icon">
-                <img src="assets/agency-icon.svg" alt="" width="36" height="36">
-              </div>
-              <h4 class="craft-card-title">Hand-Drawn to Deterministic Code</h4>
-              <p class="craft-card-text">
-                Every project begins on paper with graphite pencil and compass. Once the fundamental gesture works on paper, we translate it into sub-pixel vector geometry and CSS tokens that scale from a 16px favicon to a 10-meter airport billboard.
-              </p>
-              <div class="sketch-preview">
-                <img src="assets/agency-sketch.png" alt="Handmade graphite sketch of the Design Daily mark" loading="lazy">
-                <span class="sketch-caption">Original Studio Sketch: Infinity-P Symbol</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06. STUDIO & PHILOSOPHY SECTION -->
-    <section class="section-studio" id="studio" aria-labelledby="studio-title">
-      <div class="container">
-        <div class="studio-grid">
-          <div class="studio-text-column">
-            <div class="section-kicker text-coral">// THE STUDIO PHILOSOPHY</div>
-            <h2 class="section-title" id="studio-title">A lean studio with the muscle of a premier agency.</h2>
-
-            <div class="studio-manifesto">
-              <p class="manifesto-lead">
-                We founded Design Daily because we were tired of how traditional agencies operate: pitching with their best talent, then handing the real work down to overworked juniors.
-              </p>
-              <p>
-                When you partner with us, you work directly with principal designers. No account managers playing telephone. No billing by the minute for unnecessary status meetings. We take on only 2 to 3 projects at any given time to ensure obsessive focus and unmatched craft.
-              </p>
-            </div>
-
-            <!-- 4 Studio Principles -->
-            <div class="principles-grid">
-              <div class="principle-item">
-                <span class="principle-num">01</span>
-                <h4 class="principle-title">Direct Collaboration</h4>
-                <p class="principle-desc">Zero bureaucratic layers. You speak and brainstorm directly with the designers building your brand.</p>
-              </div>
-              <div class="principle-item">
-                <span class="principle-num">02</span>
-                <h4 class="principle-title">Fixed Milestones</h4>
-                <p class="principle-desc">No runaway invoices or moving goalposts. Clear scopes, guaranteed sprint schedules, and on-time delivery.</p>
-              </div>
-              <div class="principle-item">
-                <span class="principle-num">03</span>
-                <h4 class="principle-title">Enduring Systems</h4>
-                <p class="principle-desc">We reject fleeting design micro-trends in favor of typography and iconography that look contemporary a decade from now.</p>
-              </div>
-              <div class="principle-item">
-                <span class="principle-num">04</span>
-                <h4 class="principle-title">Production Ready</h4>
-                <p class="principle-desc">Every vector, font hierarchy, and token is systematically packaged so your team can deploy immediately without confusion.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="studio-visual-column">
-            <div class="studio-collage">
-              <div class="collage-item collage-primary">
-                <img src="assets/sandbox-stationery.png" alt="Studio stationery and tactile print work" loading="lazy">
-                <span class="collage-tag">Tactile Finishes</span>
-              </div>
-              <div class="collage-item collage-secondary">
-                <img src="assets/tripty-social.png" alt="Digital brand campaign application" loading="lazy">
-                <span class="collage-tag">Digital Campaign</span>
-              </div>
-              <div class="collage-item collage-tertiary">
-                <img src="assets/all-organics-pattern.png" alt="Botanical pattern design" loading="lazy">
-                <span class="collage-tag">Surface Pattern</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 07. QUESTIONS (FAQ) SECTION -->
-    <section class="section-faq" id="faq" aria-labelledby="faq-title">
-      <div class="container faq-container">
-        <div class="section-header text-center">
-          <div class="section-kicker text-coral">// COMMON QUESTIONS</div>
-          <h2 class="section-title" id="faq-title">Clear answers before we shake hands.</h2>
-          <p class="section-desc">
-            Transparency is how we operate. Here are direct answers to the questions founders and directors ask most frequently.
-          </p>
-        </div>
-
-        <div class="accordion" id="faq-accordion">
-          <!-- Question 1 -->
-          <div class="accordion-item active" data-faq="1">
-            <button class="accordion-trigger" aria-expanded="true" aria-controls="faq-answer-1" id="faq-header-1">
-              <span class="accordion-question">How long does a typical brand identity project take?</span>
-              <span class="accordion-icon" aria-hidden="true">−</span>
-            </button>
-            <div class="accordion-panel" id="faq-answer-1" aria-labelledby="faq-header-1">
-              <div class="accordion-content">
-                <p>
-                  A complete, comprehensive brand identity sprint generally runs between <strong>4 to 6 weeks</strong> from kickoff to final master delivery. If your project includes a bespoke digital web flagship or custom packaging dielines, the timeline typically extends to <strong>7 to 9 weeks</strong> to allow for rigorous prototyping and cross-device testing.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Question 2 -->
-          <div class="accordion-item" data-faq="2">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-answer-2" id="faq-header-2">
-              <span class="accordion-question">What exact deliverables do we receive at handoff?</span>
-              <span class="accordion-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="accordion-panel" id="faq-answer-2" aria-labelledby="faq-header-2" hidden>
-              <div class="accordion-content">
-                <p>
-                  You receive an organized master drive containing:
-                </p>
-                <ul>
-                  <li>Vector master files in AI, EPS, SVG, and high-resolution WebP/PNG formats.</li>
-                  <li>Full typography hierarchy guides with open-source/licensed font recommendations.</li>
-                  <li>Color specifications with exact Hex, RGB, CMYK, and Pantone values.</li>
-                  <li>Social media avatar kits, banner systems, and presentation templates.</li>
-                  <li>An interactive, interactive Brand Guidelines Manual (PDF + editable Figma file).</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="accordion-item" data-faq="3">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-answer-3" id="faq-header-3">
-              <span class="accordion-question">Can you develop the website as well as design it?</span>
-              <span class="accordion-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="accordion-panel" id="faq-answer-3" aria-labelledby="faq-header-3" hidden>
-              <div class="accordion-content">
-                <p>
-                  Yes, absolutely. We bridge the gap between creative direction and production engineering. We write clean, semantic HTML5, modern CSS3, and vanilla ES6 JavaScript that delivers 100% PageSpeed performance, zero bundle bloat, and full WCAG 2.2 AA accessibility.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Question 4 -->
-          <div class="accordion-item" data-faq="4">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-answer-4" id="faq-header-4">
-              <span class="accordion-question">How does communication work during the project?</span>
-              <span class="accordion-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="accordion-panel" id="faq-answer-4" aria-labelledby="faq-header-4" hidden>
-              <div class="accordion-content">
-                <p>
-                  We keep communications clear and frictionless. We set up a private Slack or Discord channel for daily rapid feedback, share weekly asynchronous video walkthroughs explaining creative decisions, and host live weekly milestone alignment calls.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Question 5 -->
-          <div class="accordion-item" data-faq="5">
-            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-answer-5" id="faq-header-5">
-              <span class="accordion-question">What are your project payment terms?</span>
-              <span class="accordion-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="accordion-panel" id="faq-answer-5" aria-labelledby="faq-header-5" hidden>
-              <div class="accordion-content">
-                <p>
-                  We typically invoice in structured milestones: a <strong>50% deposit</strong> upon project agreement to secure your dedicated calendar slot, <strong>25% upon mid-point concept approval</strong>, and the final <strong>25% upon release of all production-ready master assets</strong>. We accept standard bank wire, ACH, and Stripe payments.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 08. CONTACT & FOOTER SECTION -->
-    <section class="section-contact" id="contact" aria-labelledby="contact-title">
-      <div class="container contact-container">
-        <div class="contact-header text-center">
-          <div class="contact-stamp-mark" aria-hidden="true">
-            <img src="assets/agency-icon.svg" alt="" width="64" height="64">
-          </div>
-          <h2 class="contact-title text-white" id="contact-title">Start a project with Design Daily.</h2>
-          <p class="contact-subtitle text-white">
-            Tell us about your company, your timeline, and the goals you want to accomplish. We review every brief personally and respond within 24 business hours.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <!-- Live Form -->
-          <form class="contact-form" id="project-form" novalidate>
-            <div class="form-grid">
-              <!-- Name -->
-              <div class="form-group">
-                <label for="contact-name" class="form-label">Your Name <span class="required">*</span></label>
-                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Elena Rostova" required autocomplete="name">
-                <span class="form-error-msg" id="name-error">Please enter your name.</span>
-              </div>
-
-              <!-- Email -->
-              <div class="form-group">
-                <label for="contact-email" class="form-label">Email Address <span class="required">*</span></label>
-                <input type="email" id="contact-email" name="email" class="form-input" placeholder="elena@company.com" required autocomplete="email">
-                <span class="form-error-msg" id="email-error">Please provide a valid email address.</span>
-              </div>
-
-              <!-- Company / URL -->
-              <div class="form-group">
-                <label for="contact-company" class="form-label">Company / Project Name</label>
-                <input type="text" id="contact-company" name="company" class="form-input" placeholder="e.g. Apex Health" autocomplete="organization">
-              </div>
-
-              <!-- Budget Range -->
-              <div class="form-group">
-                <label for="contact-budget" class="form-label">Estimated Budget</label>
-                <select id="contact-budget" name="budget" class="form-select">
-                  <option value="" selected>Select budget range</option>
-                  <option value="5k-10k">$5,000 — $10,000</option>
-                  <option value="10k-25k">$10,000 — $25,000</option>
-                  <option value="25k-50k">$25,000 — $50,000</option>
-                  <option value="50k+">$50,000+</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Service Selection Chips -->
-            <div class="form-group">
-              <label class="form-label">Services of Interest</label>
-              <div class="service-chips-group" role="group" aria-label="Services of Interest">
-                <label class="chip-label">
-                  <input type="checkbox" name="services" value="Brand Identity" class="chip-input">
-                  <span class="chip-custom">Brand Identity</span>
-                </label>
-                <label class="chip-label">
-                  <input type="checkbox" name="services" value="Web Design" class="chip-input">
-                  <span class="chip-custom">Web Design</span>
-                </label>
-                <label class="chip-label">
-                  <input type="checkbox" name="services" value="Packaging" class="chip-input">
-                  <span class="chip-custom">Packaging & Print</span>
-                </label>
-                <label class="chip-label">
-                  <input type="checkbox" name="services" value="Campaigns" class="chip-input">
-                  <span class="chip-custom">Campaign Launch</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Message -->
-            <div class="form-group">
-              <label for="contact-message" class="form-label">Project Overview <span class="required">*</span></label>
-              <textarea id="contact-message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your brand, what challenges you are facing, and your ideal launch date..." required></textarea>
-              <span class="form-error-msg" id="message-error">Please share a brief note about your project.</span>
-            </div>
-
-            <!-- Submit Button & Direct Option -->
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submit-btn">
-                <span class="btn-text">Send Project Brief</span>
-                <span class="btn-spinner" aria-hidden="true"></span>
-              </button>
-              <div class="direct-contact-note">
-                <span>Prefer direct email?</span>
-                <button type="button" class="btn-copy-email" id="btn-copy-email" data-email="julkarnine.arabi@gmail.com">
-                  <span class="email-text">julkarnine.arabi@gmail.com</span>
-                  <span class="copy-badge" id="copy-status">Copy</span>
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <!-- Success Confirmation Message (Hidden initially) -->
-          <div class="form-success-state" id="form-success" hidden>
-            <div class="success-icon" aria-hidden="true">✓</div>
-            <h3 class="success-title">Your brief has landed.</h3>
-            <p class="success-desc">
-              Thank you for reaching out to Design Daily. We have received your project details and our principal designer will review your brief and reply within 24 hours.
+        <div class="why-pillars-grid">
+          <!-- Pillar 1 -->
+          <article class="why-pillar-card spotlight-card">
+            <span class="pillar-number">01</span>
+            <h3 class="pillar-title">Thoughtful Direction</h3>
+            <p class="pillar-desc">
+              Every vector, font hierarchy, and color decision serves your business strategy. We reject fleeting trends in favor of timeless commercial endurance.
             </p>
-            <button type="button" class="btn btn-outline" id="btn-reset-form">Send another message</button>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="why-pillar-card spotlight-card">
+            <span class="pillar-number">02</span>
+            <h3 class="pillar-title">Content Planning</h3>
+            <p class="pillar-desc">
+              We proactively structure your headlines, conversion funnels, and narrative arcs. You don't have to write dry briefs or solve layout puzzles alone.
+            </p>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="why-pillar-card spotlight-card">
+            <span class="pillar-number">03</span>
+            <h3 class="pillar-title">Clear Briefs</h3>
+            <p class="pillar-desc">
+              Unambiguous scope definitions, milestone schedules, and explicit deliverables. No moving goalposts, hidden charges, or unexpected invoices.
+            </p>
+          </article>
+
+          <!-- Pillar 4 -->
+          <article class="why-pillar-card spotlight-card">
+            <span class="pillar-number">04</span>
+            <h3 class="pillar-title">Predictable Delivery</h3>
+            <p class="pillar-desc">
+              Guaranteed calendar sprints, 1-hour response targets on active briefs, and on-time master asset releases you can rely on for high-stakes launches.
+            </p>
+          </article>
+
+          <!-- Pillar 5 -->
+          <article class="why-pillar-card spotlight-card">
+            <span class="pillar-number">05</span>
+            <h3 class="pillar-title">Reduced Customer Effort</h3>
+            <p class="pillar-desc">
+              Less time spent thinking about content, clearer creative planning, and dependable delivery so your internal team stays focused on scaling your core product.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         06. PRICING CATALOGUE PREVIEW
+         =================================================================== -->
+    <section class="section-pricing-preview" id="pricing" aria-labelledby="pricing-preview-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-kicker text-coral">
+            <span class="pill pill-coral">// TRANSPARENT COLLABORATION</span>
           </div>
+          <h2 class="section-title scroll-float" id="pricing-preview-heading">Predictable Investment Packages</h2>
+          <p class="section-desc">
+            Structured engagement models calibrated for growing brands. Transparent deliverables, fixed milestone scopes, and two revision rounds included.
+          </p>
         </div>
 
-        <!-- Studio Quick Links & Signoff -->
-        <div class="contact-footer-info">
-          <div class="footer-brand">
-            <img src="assets/agency-logo.svg" alt="Design Daily" class="footer-logo" width="140" height="35">
-            <p class="footer-tagline">Good design. Every single day.</p>
-          </div>
-          <div class="footer-meta">
-            <div class="footer-direct">
-              <span class="footer-direct-label">Studio Direct</span>
-              <a href="mailto:julkarnine.arabi@gmail.com" class="footer-email-link">julkarnine.arabi@gmail.com</a>
+        <div class="pricing-preview-grid">
+          <!-- Package 1: Sprint -->
+          <article class="pricing-preview-card spotlight-card">
+            <div class="package-top">
+              <h3 class="package-name">Design Sprint</h3>
+              <span class="package-tag">2-Week Focus</span>
             </div>
-            <div class="footer-hours">
-              <span class="footer-direct-label">Working Hours</span>
-              <span class="footer-hours-val">Mon — Fri / 09:00 — 18:00 GMT+6</span>
+            <div class="package-price-wrap">
+              <span class="package-price-placeholder">[Price Upon Scope]</span>
+              <span class="package-cadence">/ sprint</span>
             </div>
+            <p class="package-desc">
+              Intensive two-week sprint dedicated to one critical creative deliverable: identity foundation, flagship landing page, or product packaging dielines.
+            </p>
+            <ul class="package-inclusions">
+              <li>1 Primary Scope Deliverable</li>
+              <li>Target 1-Hour Response</li>
+              <li>Up to Two Revisions Included</li>
+              <li>Dedicated Principal Designer</li>
+              <li>Master Vector Source Files</li>
+            </ul>
+            <div class="pricing-preview-cta">
+              <a href="contact.html?plan=sprint" class="btn btn-outline" style="width: 100%;">Select Sprint Brief</a>
+            </div>
+          </article>
+
+          <!-- Package 2: Monthly Partner (Featured) -->
+          <article class="pricing-preview-card spotlight-card featured">
+            <div class="package-top">
+              <h3 class="package-name">Monthly Partner</h3>
+              <span class="package-tag">Most Popular</span>
+            </div>
+            <div class="package-price-wrap">
+              <span class="package-price-placeholder">[Monthly Retainer]</span>
+              <span class="package-cadence">/ month</span>
+            </div>
+            <p class="package-desc">
+              Dedicated ongoing creative bandwidth for fast-growing online brands needing continuous static creatives, social launch kits, website updates, and collateral.
+            </p>
+            <ul class="package-inclusions">
+              <li>Ongoing Monthly Creative Pipeline</li>
+              <li>Social Kits & Static Ad Creatives</li>
+              <li>Website Graphics & Promo Assets</li>
+              <li>Target 1-Hour Response</li>
+              <li>Up to Two Revisions Per Request</li>
+              <li>Direct Slack/Discord Access</li>
+            </ul>
+            <div class="pricing-preview-cta">
+              <a href="contact.html?plan=monthly" class="btn btn-primary" style="width: 100%;">Request Partnership</a>
+            </div>
+          </article>
+
+          <!-- Package 3: Flagship System -->
+          <article class="pricing-preview-card spotlight-card">
+            <div class="package-top">
+              <h3 class="package-name">Flagship System</h3>
+              <span class="package-tag">Comprehensive</span>
+            </div>
+            <div class="package-price-wrap">
+              <span class="package-price-placeholder">[Custom Project]</span>
+              <span class="package-cadence">/ project</span>
+            </div>
+            <p class="package-desc">
+              End-to-end transformation for ambitious companies: complete visual identity, packaging dielines, stationery suite, digital flagship design, and guidelines.
+            </p>
+            <ul class="package-inclusions">
+              <li>Complete Brand Identity Suite</li>
+              <li>Bespoke Packaging & Dielines</li>
+              <li>Digital Flagship Store Mockup</li>
+              <li>Comprehensive Brand Book</li>
+              <li>Target 1-Hour Response</li>
+              <li>Up to Two Revisions Included</li>
+            </ul>
+            <div class="pricing-preview-cta">
+              <a href="contact.html?plan=flagship" class="btn btn-outline" style="width: 100%;">Submit Custom Brief</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Placeholder Content Compliance Notice -->
+        <div class="pricing-rule-note">
+          <span>* Pricing values are clearly marked placeholders pending confirmed package scope and currency requirements. Visit our full <a href="pricing.html" class="text-coral" style="text-decoration: underline;">Pricing Catalogue</a> for detailed inclusion breakdowns.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         07. ORDER CTA SECTION
+         =================================================================== -->
+    <section class="section-cta" id="cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-glass-card spotlight-card">
+          <div class="section-kicker text-coral">
+            <span class="pill pill-coral">// START YOUR PROJECT</span>
           </div>
+          <h2 class="cta-title" id="cta-heading">Ready for Dependable Creative Execution?</h2>
+          <p class="cta-desc">
+            Submit your project overview today. We target a response within one hour during business windows, complete with an actionable brief and transparent timeline.
+          </p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary btn-lg">Submit Project Brief →</a>
+            <a href="services.html" class="btn btn-glass btn-lg">Review Service Specs</a>
+          </div>
+          <p class="cta-subnote">
+            Target 1-hour response • Up to 2 revisions included • No long-term lock-in required
+          </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Site Footer -->
+  <!-- ===================================================================
+       08. GLOBAL FOOTER
+       =================================================================== -->
   <footer class="site-footer">
-    <div class="container footer-bottom">
-      <p class="copyright-text">
-        &copy; 2026 Design Daily Studio. All rights reserved. Crafted with deterministic precision.
-      </p>
-      <div class="footer-nav">
-        <a href="#opening">Top ↑</a>
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <img src="assets/agency-logo.svg" alt="Design Daily" class="footer-brand-logo" width="160" height="40">
+          <p class="footer-tagline">
+            A dependable design partner for ambitious online businesses. Thoughtful, polished creative work without agency delay or complexity.
+          </p>
+          <span class="pill pill-coral" style="align-self: flex-start;">Target 1h Response</span>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Selected Work</a></li>
+            <li><a href="services.html">Services Overview</a></li>
+            <li><a href="process.html">Process & Journey</a></li>
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="contact.html">Order / Project Brief</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Disciplines</h4>
+          <ul class="footer-link-list">
+            <li><a href="services.html#brand">Brand Identity</a></li>
+            <li><a href="services.html#packaging">Packaging & Print</a></li>
+            <li><a href="services.html#web">Website Graphics</a></li>
+            <li><a href="services.html#apparel">T-Shirt & Apparel</a></li>
+            <li><a href="services.html#retainer">Monthly Packages</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Studio Direct</h4>
+          <ul class="footer-link-list">
+            <li><a href="mailto:julkarnine.arabi@gmail.com">julkarnine.arabi@gmail.com</a></li>
+            <li><span style="color: var(--text-tertiary);">Hours: Mon–Fri / 09:00–18:00 GMT+6</span></li>
+            <li><span style="color: var(--text-tertiary);">Response Target: Within 1 Hour</span></li>
+            <li><span style="color: var(--text-tertiary);">Revisions: Up to 2 Rounds</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Design Daily Studio. All rights reserved. Crafted with dark glass studio precision.</p>
+        <div style="display: flex; gap: 20px;">
+          <a href="#hero">Back to Top ↑</a>
+          <a href="contact.html">Get in Touch</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Toast Notification Container -->
-  <div class="toast-container" id="toast" role="status" aria-live="polite"></div>
-
-  <!-- JavaScript Bundle (Three.js 3D Engine, GLTFLoader, GSAP, ScrollTrigger, ScrollFloat, TechText & Core Logic) -->
+  <!-- Scripts: Three.js, GSAP, React Bits Modules, Pipeline & Main Engine -->
   <script src="js/three.min.js"></script>
   <script src="js/GLTFLoader.min.js"></script>
   <script src="js/gsap.min.js"></script>
   <script src="js/ScrollTrigger.min.js"></script>
+  <script src="js/LightRays.js"></script>
+  <script src="js/SpotlightCard.js"></script>
+  <script src="js/TiltedCard.js"></script>
+  <script src="js/DecryptedText.js"></script>
   <script src="js/ScrollFloat.js"></script>
   <script src="js/TechText.js"></script>
+  <script src="js/DesignPipeline.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

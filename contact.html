@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a Project Brief & Order — Design Daily</title>
+  <meta name="description" content="Submit your design project brief or start a creative order with Design Daily. Target 1-hour response and up to two revisions included.">
+  <link rel="icon" type="image/svg+xml" href="assets/agency-icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/SpotlightCard.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header scrolled" id="header">
+    <div class="header-inner container">
+      <a href="index.html" class="brand-link" aria-label="Design Daily Homepage">
+        <img src="assets/agency-logo.svg" alt="Design Daily" class="brand-logo-img" width="160" height="40">
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="work.html" class="nav-link">Work</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="process.html" class="nav-link">Process</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="contact.html" class="nav-link active text-coral">Order</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="mailto:julkarnine.arabi@gmail.com" class="btn btn-outline btn-sm">Direct Studio Email</a>
+        <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="section-kicker text-coral">
+          <span class="pill pill-coral">// START YOUR ENGAGEMENT</span>
+        </div>
+        <h1 class="section-title">Order & Project Brief Form</h1>
+        <p class="section-desc">
+          Tell us about your brand, your targets, and the creative deliverables you need. We review every brief personally and aim to respond within one hour during business windows.
+        </p>
+      </div>
+    </section>
+
+    <!-- Brief Submission Section -->
+    <section class="section-journey" style="border-top: none;">
+      <div class="container">
+        <div class="contact-form-wrap spotlight-card">
+          <!-- Submission Confirmation Banner -->
+          <div class="form-success-banner" id="form-success" role="status" aria-live="polite">
+            <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: #FFFFFF; margin-bottom: 8px;">✓ Project Brief Received</h3>
+            <p style="color: rgba(255, 255, 255, 0.85); font-size: 0.95rem;">
+              Thank you for initiating your brief with Design Daily. Our principal team has received your submission and will prepare an actionable scope alignment within our target 1-hour window.
+            </p>
+          </div>
+
+          <form id="project-brief-form" novalidate>
+            <div class="form-grid">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="client-name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. Marcus Vance" required autocomplete="name">
+                <span class="form-error-msg">Please enter your full name.</span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="client-email" class="form-label">Work Email <span class="required">*</span></label>
+                <input type="email" id="client-email" name="email" class="form-input" placeholder="marcus@company.com" required autocomplete="email">
+                <span class="form-error-msg">Please enter a valid work email address.</span>
+              </div>
+
+              <!-- Company / Website -->
+              <div class="form-group">
+                <label for="client-company" class="form-label">Company or Project URL</label>
+                <input type="text" id="client-company" name="company" class="form-input" placeholder="e.g. apexbrand.com" autocomplete="organization">
+              </div>
+
+              <!-- Estimated Timeline -->
+              <div class="form-group">
+                <label for="client-timeline" class="form-label">Target Launch Date</label>
+                <select id="client-timeline" name="timeline" class="form-select">
+                  <option value="" selected>Select timeline urgency</option>
+                  <option value="immediate">Immediate Sprint (Within 2 Weeks)</option>
+                  <option value="month">Next Month (3–4 Weeks)</option>
+                  <option value="quarter">This Quarter (6–8 Weeks)</option>
+                  <option value="exploring">Just Exploring Options</option>
+                </select>
+              </div>
+
+              <!-- Service Selection Chips -->
+              <div class="form-group full-width">
+                <label class="form-label">Disciplines of Interest (Select All Applicable)</label>
+                <div class="service-chips-selector" role="group" aria-label="Service disciplines">
+                  <label class="chip-label">
+                    <input type="checkbox" name="services" value="Brand Identity" class="chip-input">
+                    <span class="chip-custom">Brand Identity</span>
+                  </label>
+                  <label class="chip-label">
+                    <input type="checkbox" name="services" value="Packaging" class="chip-input">
+                    <span class="chip-custom">Packaging & Unboxing</span>
+                  </label>
+                  <label class="chip-label">
+                    <input type="checkbox" name="services" value="Website Graphics" class="chip-input">
+                    <span class="chip-custom">Website Graphics</span>
+                  </label>
+                  <label class="chip-label">
+                    <input type="checkbox" name="services" value="Monthly Partner" class="chip-input">
+                    <span class="chip-custom">Monthly Creative Partner</span>
+                  </label>
+                  <label class="chip-label">
+                    <input type="checkbox" name="services" value="Apparel Design" class="chip-input">
+                    <span class="chip-custom">T-Shirt & Apparel</span>
+                  </label>
+                  <label class="chip-label">
+                    <input type="checkbox" name="services" value="Campaigns" class="chip-input">
+                    <span class="chip-custom">Digital Ad Kits</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Project Overview Message -->
+              <div class="form-group full-width">
+                <label for="client-overview" class="form-label">Project Overview & Objectives <span class="required">*</span></label>
+                <textarea id="client-overview" name="message" class="form-textarea" rows="4" placeholder="Briefly describe what your business does, your current creative challenges, and what success looks like..." required></textarea>
+                <span class="form-error-msg">Please share a brief note about your project goals.</span>
+              </div>
+            </div>
+
+            <!-- Submission Actions -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 10px;">
+              <button type="submit" class="btn btn-primary btn-lg" id="submit-brief-btn">
+                Send Project Brief →
+              </button>
+              <div style="font-size: 0.85rem; color: var(--text-tertiary);">
+                Target 1-Hour Response • Up to 2 Revisions Included
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Direct Studio Contact Info -->
+        <div style="max-width: 780px; margin: 40px auto 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding: 24px; background: rgba(255, 255, 255, 0.02); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.2rem; color: #FFFFFF; margin-bottom: 4px;">Prefer Direct Communication?</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary);">Email our principal directly or book an introductory video call.</p>
+          </div>
+          <a href="mailto:julkarnine.arabi@gmail.com" class="text-coral" style="font-weight: 700; font-size: 1.05rem;">julkarnine.arabi@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Design Daily Studio. All rights reserved.</p>
+        <div style="display: flex; gap: 20px;">
+          <a href="index.html">Home</a>
+          <a href="work.html">Work</a>
+          <a href="services.html">Services</a>
+          <a href="process.html">Process</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/SpotlightCard.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

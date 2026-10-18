@@ -1,792 +1,259 @@
 /**
- * DESIGN DAILY STUDIO — MAIN JAVASCRIPT
- * Responsive Navigation, Process Synchronizer, Comparison Slider,
- * Accordion, Interactive Form Validation, and Accessibility
+ * Design Daily — Main JavaScript Engine (Dark Glass Studio Edition)
+ * Integrates React Bits Pro modules, GSAP, Three.js 3D Mark, Pipeline, and Navigation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // --- 0. SMOOTH SCROLLING FOR IN-PAGE ANCHORS (NATIVE) ---
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (!href || href === '#') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-        if (history.pushState) {
-          history.pushState(null, null, href);
-        }
-      }
-    });
-  });
-
-  // --- 0.1. TECHTEXT UNBOXED HERO HEADLINES (REACT BITS) ---
-  const heroLine1El = document.getElementById('hero-tech-line-1');
-  const heroLine2El = document.getElementById('hero-tech-line-2');
-
-  if (typeof TechText !== 'undefined') {
-    if (heroLine1El) {
-      new TechText(heroLine1El, {
-        text: 'GOOD DESIGN.',
-        fontFamily: "'Barlow Condensed', sans-serif",
-        fontWeight: 900,
-        fontSize: 140,
-        letterSpacing: -0.02,
-        color: '#121316',
-        accentColor: '#FF4C42',
-        align: 'left',
-        reach: 220,
-        softness: 0.7,
-        dashLength: 4,
-        dashGap: 2,
-        strokeWidth: 1.5,
-        lineStyle: 'dashed',
-        reveal: 'letter',
-        specks: 15,
-        selection: true,
-        labels: true,
-        draggable: true,
-        bounce: 0.42,
-        clickKick: true,
-        intro: 'none',
-        introDuration: 2,
-        guides: false,
-        sweep: true,
-        speed: 1
-      });
-    }
-
-    if (heroLine2El) {
-      new TechText(heroLine2El, {
-        text: 'EVERY DAY.',
-        fontFamily: "'Barlow Condensed', sans-serif",
-        fontWeight: 900,
-        fontSize: 140,
-        letterSpacing: -0.02,
-        color: '#FF4C42',
-        accentColor: '#121316',
-        align: 'left',
-        reach: 220,
-        softness: 0.7,
-        dashLength: 4,
-        dashGap: 2,
-        strokeWidth: 1.5,
-        lineStyle: 'dashed',
-        reveal: 'letter',
-        specks: 15,
-        selection: true,
-        labels: true,
-        draggable: true,
-        bounce: 0.42,
-        clickKick: true,
-        intro: 'none',
-        introDuration: 2,
-        guides: false,
-        sweep: true,
-        speed: 1
-      });
-    }
-  }
-
-  // --- 1. HEADER SCROLL & MOBILE NAVIGATION ---
-  const header = document.getElementById('header');
+  // --- 1. GLOBAL HEADER & NAVIGATION ---
+  const siteHeader = document.getElementById('header');
   const mobileToggle = document.getElementById('mobile-toggle');
   const siteNav = document.getElementById('site-nav');
-  const navLinks = document.querySelectorAll('.nav-link');
 
-  // Sticky header shadow on scroll
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
-      header.classList.add('header-scrolled');
-    } else {
-      header.classList.remove('header-scrolled');
-    }
-  };
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  if (siteHeader) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
 
-  // Mobile menu toggle
   if (mobileToggle && siteNav) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = siteNav.classList.toggle('open');
       mobileToggle.classList.toggle('active', isOpen);
-      mobileToggle.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Close mobile nav when clicking any nav link
+    // Close mobile nav on click of link
+    const navLinks = siteNav.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if (siteNav.classList.contains('open')) {
-          siteNav.classList.remove('open');
-          mobileToggle.classList.remove('active');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        }
-      });
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (siteNav.classList.contains('open') && !siteNav.contains(e.target) && !mobileToggle.contains(e.target)) {
         siteNav.classList.remove('open');
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+      });
     });
   }
 
-  // Active navigation link tracking via IntersectionObserver
-  const sections = document.querySelectorAll('main > section[id]');
-  if ('IntersectionObserver' in window) {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -70% 0px',
-      threshold: 0
-    };
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            const href = link.getAttribute('href').replace('#', '');
-            if (href === id) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
-            }
-          });
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach(sec => sectionObserver.observe(sec));
+  // --- 2. REACT BITS: AMBIENT LIGHT RAYS ---
+  const lightRaysCanvas = document.getElementById('light-rays-canvas');
+  if (lightRaysCanvas && typeof LightRays !== 'undefined') {
+    new LightRays(lightRaysCanvas, {
+      rayCount: 8,
+      baseColor: 'rgba(255, 76, 66, 0.05)',
+      highlightColor: 'rgba(255, 179, 138, 0.07)'
+    });
   }
 
-  // --- 2. SERVICES SECTION: FLOATING SPATIAL STAGE & SCROLLFLOAT ---
-  const servicesSection = document.getElementById('services');
-  const spatialCards = document.querySelectorAll('.service-spatial-card');
-  const canvas3D = document.getElementById('services-3d-canvas');
-  const fallback3D = document.getElementById('spatial-fallback');
-  const fallbackStatus = document.getElementById('spatial-status');
-  const canvasWrapper = document.getElementById('spatial-canvas-wrapper');
+  // --- 3. REACT BITS: SPOTLIGHT CARDS & TILTED CARDS ---
+  if (typeof SpotlightCard !== 'undefined') {
+    SpotlightCard.initAll('.spotlight-card');
+  }
 
-  let targetRotationY = 0;
-  let targetTiltX = 0;
+  if (typeof TiltedCard !== 'undefined') {
+    TiltedCard.initAll('.tilted-card');
+  }
 
-  // A. ScrollFloat Kinetic Typography (Heading & Card Titles)
+  // --- 4. REACT BITS: DECRYPTED TEXT TELEMETRY ---
+  if (typeof DecryptedText !== 'undefined') {
+    const decryptElements = document.querySelectorAll('[data-decrypt="true"]');
+    decryptElements.forEach(el => new DecryptedText(el, { speed: 35, triggerOnView: true }));
+  }
+
+  // --- 5. REACT BITS: SCROLLFLOAT KINETIC TYPOGRAPHY ---
   if (typeof ScrollFloat !== 'undefined') {
-    const servicesTitle = document.getElementById('services-title');
-    if (servicesTitle) {
-      new ScrollFloat(servicesTitle, {
+    const floatHeadings = document.querySelectorAll('.scroll-float');
+    floatHeadings.forEach(heading => {
+      new ScrollFloat(heading, {
         effect: 'float',
         splitBy: 'chars',
         direction: 'up',
         ease: 'back.inOut(2)',
-        distance: 80,
-        stretch: 1.8,
+        distance: 60,
+        stretch: 1.6,
         stagger: 0.02,
-        scrollStart: 'top 85%',
-        scrollEnd: 'top 45%'
-      });
-    }
-
-    // Kinetic typography on each service card title
-    const cardTitles = document.querySelectorAll('.service-card-title.scroll-float');
-    cardTitles.forEach((cardTitle) => {
-      new ScrollFloat(cardTitle, {
-        effect: 'float',
-        splitBy: 'words',
-        direction: 'up',
-        ease: 'back.out(1.8)',
-        distance: 35,
-        stretch: 1.35,
-        stagger: 0.035,
         scrollStart: 'top 88%',
-        scrollEnd: 'top 60%'
+        scrollEnd: 'top 50%'
       });
     });
-  }
 
-  // B. ScrollFloat Card Popup Animation (Cards popup on both sides one after another)
-  if (typeof ScrollFloat !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    spatialCards.forEach((card) => {
-      const side = card.getAttribute('data-popup-side') || (card.closest('.services-column-left') ? 'left' : 'right');
-      ScrollFloat.animateCard(card, {
-        distance: 90,
-        stretch: 1.15,
-        duration: 1.0,
-        ease: 'back.out(1.8)',
-        scrollStart: 'top 85%',
-        side: side
-      });
-    });
-  } else {
-    // Fallback if GSAP is not available
+    // Animate spatial cards if present
+    const spatialCards = document.querySelectorAll('.service-spatial-card');
     spatialCards.forEach(card => {
-      card.style.opacity = '1';
-      card.style.transform = 'none';
+      ScrollFloat.animateCard(card, {
+        distance: 80,
+        stretch: 1.12,
+        ease: 'back.out(1.8)'
+      });
     });
   }
 
-  // C. Continuous 3D Logo Rotation with Scroll Across Floating Section
-  if (typeof ScrollTrigger !== 'undefined' && servicesSection) {
-    ScrollTrigger.create({
-      trigger: servicesSection,
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: 0.8,
-      onUpdate: (self) => {
-        targetRotationY = self.progress * Math.PI * 6; // 3 complete rotations across the floating section
-        targetTiltX = Math.sin(self.progress * Math.PI * 2) * 0.25;
-      }
-    });
+  // --- 6. INTERACTIVE 7-STAGE DESIGN PIPELINE ---
+  const pipelineContainer = document.getElementById('design-pipeline-container');
+  if (pipelineContainer && typeof DesignPipeline !== 'undefined') {
+    new DesignPipeline(pipelineContainer, { autoPlay: true });
   }
 
-  // C. Three.js 3D Logo Scene & Continuous Dynamic Rotation
-  if (canvas3D && typeof THREE !== 'undefined') {
+  // --- 7. THREE.JS 3D STUDIO MARK (PROGRESSIVE ENHANCEMENT) ---
+  const heroCanvas = document.getElementById('hero-3d-canvas');
+  if (heroCanvas && typeof THREE !== 'undefined') {
     let renderer, scene, camera, modelGroup;
-    let isServicesVisible = false;
+    let isVisible = true;
+    let targetRotationY = 0;
     let currentRotationY = 0;
-    let currentTiltX = 0;
-    let mouseTiltX = 0;
-    let mouseTiltY = 0;
-    let isDragging = false;
-    let dragStartX = 0;
-    let dragStartY = 0;
-    let dragDeltaX = 0;
-    let dragDeltaY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
 
-    const init3DScene = () => {
-      const width = canvasWrapper ? canvasWrapper.clientWidth : 380;
-      const height = canvasWrapper ? canvasWrapper.clientHeight : 380;
+    const initHero3D = () => {
+      const container = heroCanvas.parentElement;
+      const width = container ? container.clientWidth : 280;
+      const height = container ? container.clientHeight : 280;
 
-      // Renderer
       renderer = new THREE.WebGLRenderer({
-        canvas: canvas3D,
+        canvas: heroCanvas,
         alpha: true,
         antialias: true,
         powerPreference: 'high-performance'
       });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setSize(width, height);
-      if ('outputEncoding' in renderer) {
-        renderer.outputEncoding = THREE.sRGBEncoding;
-      }
-      if ('toneMapping' in renderer) {
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.25;
-      }
+      if ('outputEncoding' in renderer) renderer.outputEncoding = THREE.sRGBEncoding;
 
-      // Scene & Camera
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
       camera.position.set(0, 0, 7.5);
 
-      // Model Parent Group
       modelGroup = new THREE.Group();
       scene.add(modelGroup);
 
-      // Studio Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
       scene.add(ambientLight);
 
-      // Key Directional Light
-      const keyLight = new THREE.DirectionalLight(0xffffff, 2.0);
-      keyLight.position.set(6, 8, 8);
+      const keyLight = new THREE.DirectionalLight(0xffffff, 2.5);
+      keyLight.position.set(6, 8, 7);
       scene.add(keyLight);
 
-      // Signature Coral Rim Light (Edge Sheen)
-      const coralRimLight = new THREE.DirectionalLight(0xff4c42, 3.2);
-      coralRimLight.position.set(-8, -4, -6);
-      scene.add(coralRimLight);
+      const coralRim = new THREE.DirectionalLight(0xff4c42, 3.2);
+      coralRim.position.set(-6, -4, -6);
+      scene.add(coralRim);
 
-      // Soft Top Fill Light
-      const softFill = new THREE.PointLight(0xffb38a, 1.8, 25);
-      softFill.position.set(0, 5, 5);
-      scene.add(softFill);
-
-      // Load 3D GLB Model
+      // Load 3D GLB
       if (typeof THREE.GLTFLoader !== 'undefined') {
         const loader = new THREE.GLTFLoader();
         loader.load(
           'assets/agency-logo-3d.glb',
           (gltf) => {
             const model = gltf.scene;
-
-            // Auto-center & Normalize Geometry
             const box = new THREE.Box3().setFromObject(model);
             const center = box.getCenter(new THREE.Vector3());
             const size = box.getSize(new THREE.Vector3());
-            const maxDimension = Math.max(size.x, size.y, size.z);
-            const targetScale = 4.2 / (maxDimension || 1);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const targetScale = 4.2 / (maxDim || 1);
 
             model.position.x = -center.x * targetScale;
             model.position.y = -center.y * targetScale;
             model.position.z = -center.z * targetScale;
             model.scale.set(targetScale, targetScale, targetScale);
 
-            // Enhance Mesh Materials
-            model.traverse((node) => {
-              if (node.isMesh && node.material) {
-                node.material.roughness = 0.25;
-                node.material.metalness = 0.15;
-                if (node.material.color) {
-                  node.material.needsUpdate = true;
-                }
-              }
-            });
-
             modelGroup.add(model);
-
-            // Hide Loading State smoothly
-            if (fallback3D) {
-              fallback3D.classList.add('is-hidden');
-            }
           },
-          (xhr) => {
-            if (xhr.lengthComputable && fallbackStatus) {
-              const pct = Math.round((xhr.loaded / xhr.total) * 100);
-              fallbackStatus.textContent = `Streaming 3D Mark... ${pct}%`;
-            }
-          },
-          (error) => {
-            console.warn('3D Model GLB load note:', error);
-            if (fallbackStatus) {
-              fallbackStatus.textContent = 'Interactive 3D Mark';
-            }
-          }
+          undefined,
+          (err) => console.log('3D GLB fallback to SVG icon')
         );
       }
-    };
 
-    // Calculate Scroll Progress for Section 3 (Fallback when ScrollTrigger not active)
-    const update3DOnScroll = () => {
-      if (!servicesSection || typeof ScrollTrigger !== 'undefined') return;
-      const rect = servicesSection.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (rect.height + windowH)));
-      targetRotationY = progress * Math.PI * 4;
-      targetTiltX = Math.sin(progress * Math.PI * 2) * 0.22;
-    };
-
-    window.addEventListener('scroll', update3DOnScroll, { passive: true });
-
-    // Interactive Drag / Tilt Controls on Canvas
-    if (canvas3D) {
-      canvas3D.addEventListener('pointerdown', (e) => {
-        isDragging = true;
-        dragStartX = e.clientX;
-        dragStartY = e.clientY;
+      window.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 0.5;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 0.4;
       });
 
-      window.addEventListener('pointermove', (e) => {
-        if (isDragging) {
-          dragDeltaX += (e.clientX - dragStartX) * 0.01;
-          dragDeltaY += (e.clientY - dragStartY) * 0.01;
-          dragStartX = e.clientX;
-          dragStartY = e.clientY;
+      const animate = () => {
+        requestAnimationFrame(animate);
+        if (!isVisible || !renderer || !scene || !camera) return;
+
+        targetRotationY += 0.01;
+        currentRotationY += (targetRotationY - currentRotationY) * 0.08;
+
+        if (modelGroup) {
+          modelGroup.rotation.y = currentRotationY + mouseX;
+          modelGroup.rotation.x = mouseY;
         }
 
-        if (canvasWrapper) {
-          const rect = canvasWrapper.getBoundingClientRect();
-          const cx = rect.left + rect.width / 2;
-          const cy = rect.top + rect.height / 2;
-          mouseTiltX = ((e.clientX - cx) / window.innerWidth) * 0.35;
-          mouseTiltY = ((e.clientY - cy) / window.innerHeight) * 0.25;
-        }
-      });
-
-      window.addEventListener('pointerup', () => {
-        isDragging = false;
-      });
-    }
-
-    // Visibility-aware Render Loop
-    if ('IntersectionObserver' in window && servicesSection) {
-      const renderObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          isServicesVisible = entry.isIntersecting;
-        });
-      }, { threshold: 0.01 });
-      renderObserver.observe(servicesSection);
-    } else {
-      isServicesVisible = true;
-    }
-
-    let idleClock = 0;
-    const animate3D = () => {
-      requestAnimationFrame(animate3D);
-
-      if (!isServicesVisible || !renderer || !scene || !camera) return;
-
-      idleClock += 0.01;
-      const idleBobY = Math.sin(idleClock) * 0.005;
-
-      // Smooth interpolation for rotation & tilt
-      const targetY = targetRotationY + dragDeltaX + idleClock * 0.15;
-      const targetX = targetTiltX + dragDeltaY + mouseTiltY;
-      const targetZ = -mouseTiltX;
-
-      currentRotationY += (targetY - currentRotationY) * 0.08;
-      currentTiltX += (targetX - currentTiltX) * 0.08;
-
-      if (modelGroup) {
-        modelGroup.rotation.y = currentRotationY;
-        modelGroup.rotation.x = currentTiltX;
-        modelGroup.rotation.z += (targetZ - modelGroup.rotation.z) * 0.08;
-        modelGroup.position.y = idleBobY;
-      }
-
-      renderer.render(scene, camera);
+        renderer.render(scene, camera);
+      };
+      animate();
     };
 
-    // Responsive Canvas Resize
-    const handle3DResize = () => {
-      if (!canvasWrapper || !renderer || !camera) return;
-      const w = canvasWrapper.clientWidth;
-      const h = canvasWrapper.clientHeight;
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
-    };
-    window.addEventListener('resize', handle3DResize, { passive: true });
-
-    // Initialize
-    init3DScene();
-    update3DOnScroll();
-    animate3D();
+    initHero3D();
   }
 
-  // --- 3. PROCESS 4-STEP SYNCHRONIZER ---
-  const processSteps = [
-    {
-      badge: 'PHASE 01 • WEEK 1',
-      timeline: 'Discovery & Competitive Strategy',
-      title: 'Uncompromising discovery before drawing a single vector.',
-      desc: 'We dissect your brand ambitions, study the competitors you want to leapfrog, and define the emotional positioning of your business. We synthesize our findings into an actionable strategic brief and creative moodboards.',
-      artifacts: ['Strategic Brief', 'Competitive Audit', 'Visual Moodboard', 'Direction Alignment'],
-      image: 'assets/agency-sketch.png',
-      caption: 'Stage 1 Artifact: Initial Ideation & Concept Foundations'
-    },
-    {
-      badge: 'PHASE 02 • WEEKS 2–3',
-      timeline: 'Concept Prototyping & Grid Architecture',
-      title: 'Translating strategic positioning into high-contrast visual systems.',
-      desc: 'We explore multiple distinct creative directions. We construct logomarks using geometric circle grids, develop typography hierarchies, and test early marks on real-world applications before presentation.',
-      artifacts: ['2–3 Design Directions', 'Mathematical Logomarks', 'Typography Scale', 'Prototype Walkthroughs'],
-      image: 'assets/norea-construction.jpg',
-      caption: 'Stage 2 Artifact: Geometric Construction & Grid Testing'
-    },
-    {
-      badge: 'PHASE 03 • WEEKS 3–4',
-      timeline: 'System Calibration & Asset Stress-Testing',
-      title: 'Obsessive refinement of the chosen direction across every surface.',
-      desc: 'Once the winning direction is selected, we obsessively fine-tune kerning, calibrate screen and print color profiles, engineer packaging dielines, and verify responsive web behavior under all viewport constraints.',
-      artifacts: ['Kerning Calibration', 'Surface Patterns', 'Digital & Print Proofs', 'Dieline Engineering'],
-      image: 'assets/tripty-pattern.png',
-      caption: 'Stage 3 Artifact: Modular Pattern System & Collateral'
-    },
-    {
-      badge: 'PHASE 04 • WEEK 5',
-      timeline: 'Master Handoff & Launch Enablement',
-      title: 'Production-grade assets packaged for effortless internal deployment.',
-      desc: 'We compile comprehensive brand guidelines books, export vector packages in every required format (SVG, EPS, AI, PDF), generate ready-to-code design tokens, and remain on standby during your public launch.',
-      artifacts: ['Master Vector Drive', 'Brand Guidelines Book', 'Production Dielines', 'Launch Support'],
-      image: 'assets/sandbox-stationery.png',
-      caption: 'Stage 4 Artifact: Production Handoff & Guidelines'
-    }
-  ];
+  // --- 8. WORK PAGE CATEGORY FILTER TABS ---
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const projectCards = document.querySelectorAll('.work-project-card');
 
-  const stepTabs = document.querySelectorAll('.step-tab');
-  const stepBadge = document.getElementById('step-badge');
-  const stepTimeline = document.getElementById('step-timeline');
-  const stepTitle = document.getElementById('step-title');
-  const stepDesc = document.getElementById('step-desc');
-  const stepArtifacts = document.getElementById('step-artifacts');
-  const stepImage = document.getElementById('step-image');
-  const stepCaption = document.getElementById('step-image-caption');
+  if (filterChips.length > 0 && projectCards.length > 0) {
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
 
-  const updateProcessStep = (index) => {
-    const data = processSteps[index];
-    if (!data) return;
-
-    // Update active tab styles
-    stepTabs.forEach((tab, i) => {
-      const isSelected = i === index;
-      tab.classList.toggle('active', isSelected);
-      tab.setAttribute('aria-selected', String(isSelected));
-    });
-
-    // Animate content change
-    if (stepImage) {
-      stepImage.style.opacity = '0.3';
-      setTimeout(() => {
-        stepImage.src = data.image;
-        stepImage.alt = data.caption;
-        stepImage.style.opacity = '1';
-      }, 150);
-    }
-
-    if (stepBadge) stepBadge.textContent = data.badge;
-    if (stepTimeline) stepTimeline.textContent = data.timeline;
-    if (stepTitle) stepTitle.textContent = data.title;
-    if (stepDesc) stepDesc.textContent = data.desc;
-    if (stepCaption) stepCaption.textContent = data.caption;
-
-    if (stepArtifacts) {
-      stepArtifacts.innerHTML = data.artifacts
-        .map(pill => `<span class="pill">${pill}</span>`)
-        .join('');
-    }
-  };
-
-  stepTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const stepIndex = parseInt(tab.getAttribute('data-step') || '0', 10);
-      updateProcessStep(stepIndex);
-    });
-
-    tab.addEventListener('keydown', (e) => {
-      const stepIndex = parseInt(tab.getAttribute('data-step') || '0', 10);
-      let targetIndex = null;
-      if (e.key === 'ArrowRight') targetIndex = (stepIndex + 1) % stepTabs.length;
-      if (e.key === 'ArrowLeft') targetIndex = (stepIndex - 1 + stepTabs.length) % stepTabs.length;
-
-      if (targetIndex !== null) {
-        e.preventDefault();
-        stepTabs[targetIndex].focus();
-        updateProcessStep(targetIndex);
-      }
-    });
-  });
-
-  // --- 4. CRAFT BEFORE/AFTER COMPARISON SLIDER ---
-  const comparisonViewport = document.getElementById('comparison-viewport');
-  const comparisonBefore = document.getElementById('comparison-before-layer');
-  const comparisonHandle = document.getElementById('comparison-handle');
-  const btnShowGrid = document.getElementById('btn-show-grid');
-  const btnShowSplit = document.getElementById('btn-show-split');
-  const btnShowFinished = document.getElementById('btn-show-finished');
-
-  if (comparisonViewport && comparisonBefore && comparisonHandle) {
-    let isSliding = false;
-
-    const setSliderPosition = (percentage) => {
-      const clamped = Math.max(0, Math.min(100, percentage));
-      comparisonBefore.style.width = `${clamped}%`;
-      comparisonHandle.style.left = `${clamped}%`;
-      comparisonViewport.setAttribute('aria-valuenow', Math.round(clamped));
-
-      // Update control buttons active state
-      if (btnShowGrid) btnShowGrid.classList.toggle('active', clamped >= 95);
-      if (btnShowSplit) btnShowSplit.classList.toggle('active', clamped > 35 && clamped < 65);
-      if (btnShowFinished) btnShowFinished.classList.toggle('active', clamped <= 5);
-    };
-
-    const handlePointerMove = (e) => {
-      if (!isSliding) return;
-      const rect = comparisonViewport.getBoundingClientRect();
-      const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-      if (clientX === undefined) return;
-      const x = clientX - rect.left;
-      const pct = (x / rect.width) * 100;
-      setSliderPosition(pct);
-    };
-
-    const startSliding = (e) => {
-      isSliding = true;
-      handlePointerMove(e);
-    };
-
-    const stopSliding = () => {
-      isSliding = false;
-    };
-
-    comparisonViewport.addEventListener('mousedown', startSliding);
-    window.addEventListener('mousemove', handlePointerMove);
-    window.addEventListener('mouseup', stopSliding);
-
-    comparisonViewport.addEventListener('touchstart', startSliding, { passive: true });
-    window.addEventListener('touchmove', handlePointerMove, { passive: true });
-    window.addEventListener('touchend', stopSliding);
-
-    // Keyboard controls on comparison slider
-    comparisonViewport.addEventListener('keydown', (e) => {
-      const current = parseFloat(comparisonViewport.getAttribute('aria-valuenow') || '50');
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        setSliderPosition(current - 5);
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        setSliderPosition(current + 5);
-      } else if (e.key === 'Home') {
-        e.preventDefault();
-        setSliderPosition(0);
-      } else if (e.key === 'End') {
-        e.preventDefault();
-        setSliderPosition(100);
-      }
-    });
-
-    // Preset view buttons
-    if (btnShowGrid) btnShowGrid.addEventListener('click', () => setSliderPosition(100));
-    if (btnShowSplit) btnShowSplit.addEventListener('click', () => setSliderPosition(50));
-    if (btnShowFinished) btnShowFinished.addEventListener('click', () => setSliderPosition(0));
-
-    // Initialize at 50% split
-    setSliderPosition(50);
-  }
-
-  // --- 5. FAQ ACCORDION ---
-  const accordionItems = document.querySelectorAll('.accordion-item');
-  accordionItems.forEach(item => {
-    const trigger = item.querySelector('.accordion-trigger');
-    const panel = item.querySelector('.accordion-panel');
-    const icon = item.querySelector('.accordion-icon');
-
-    if (trigger && panel) {
-      trigger.addEventListener('click', () => {
-        const isOpen = item.classList.contains('active');
-
-        // Close other items
-        accordionItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-            const otherTrigger = otherItem.querySelector('.accordion-trigger');
-            const otherPanel = otherItem.querySelector('.accordion-panel');
-            const otherIcon = otherItem.querySelector('.accordion-icon');
-            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-            if (otherPanel) otherPanel.hidden = true;
-            if (otherIcon) otherIcon.textContent = '+';
+        const category = chip.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
           }
         });
-
-        if (isOpen) {
-          item.classList.remove('active');
-          trigger.setAttribute('aria-expanded', 'false');
-          panel.hidden = true;
-          if (icon) icon.textContent = '+';
-        } else {
-          item.classList.add('active');
-          trigger.setAttribute('aria-expanded', 'true');
-          panel.hidden = false;
-          if (icon) icon.textContent = '−';
-        }
       });
-    }
-  });
+    });
+  }
 
-  // --- 6. CONTACT FORM VALIDATION & INTERACTIVE SUBMISSION ---
-  const projectForm = document.getElementById('project-form');
-  const formSuccess = document.getElementById('form-success');
-  const submitBtn = document.getElementById('submit-btn');
-  const btnResetForm = document.getElementById('btn-reset-form');
-
-  if (projectForm && formSuccess && submitBtn) {
-    const validateField = (input, isValid) => {
-      input.classList.toggle('is-invalid', !isValid);
-      input.setAttribute('aria-invalid', String(!isValid));
-    };
-
-    projectForm.addEventListener('submit', (e) => {
+  // --- 9. CONTACT / ORDER FORM VALIDATION & CONFIRMATION ---
+  const contactForm = document.getElementById('project-brief-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const nameInput = document.getElementById('contact-name');
-      const emailInput = document.getElementById('contact-email');
-      const messageInput = document.getElementById('contact-message');
+      let isValid = true;
+      const nameInput = document.getElementById('client-name');
+      const emailInput = document.getElementById('client-email');
+      const messageInput = document.getElementById('client-overview');
+      const successBanner = document.getElementById('form-success');
 
-      const isNameValid = nameInput.value.trim().length > 1;
-      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
-      const isMessageValid = messageInput.value.trim().length > 5;
-
-      validateField(nameInput, isNameValid);
-      validateField(emailInput, isEmailValid);
-      validateField(messageInput, isMessageValid);
-
-      if (!isNameValid || !isEmailValid || !isMessageValid) {
-        // Focus first invalid input
-        if (!isNameValid) nameInput.focus();
-        else if (!isEmailValid) emailInput.focus();
-        else messageInput.focus();
-        return;
-      }
-
-      // Show loading spinner
-      submitBtn.classList.add('loading');
-      submitBtn.disabled = true;
-
-      // Realistic brief delivery simulation
-      setTimeout(() => {
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
-        projectForm.hidden = true;
-        formSuccess.hidden = false;
-        showToast('Brief successfully received. We will respond within 24 hours.');
-      }, 750);
-    });
-
-    if (btnResetForm) {
-      btnResetForm.addEventListener('click', () => {
-        projectForm.reset();
-        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-        formSuccess.hidden = true;
-        projectForm.hidden = false;
+      // Simple validation
+      [nameInput, emailInput, messageInput].forEach(input => {
+        if (!input) return;
+        const errorMsg = input.parentElement.querySelector('.form-error-msg');
+        if (!input.value.trim()) {
+          input.classList.add('is-invalid');
+          if (errorMsg) errorMsg.classList.add('visible');
+          isValid = false;
+        } else {
+          input.classList.remove('is-invalid');
+          if (errorMsg) errorMsg.classList.remove('visible');
+        }
       });
-    }
-  }
 
-  // --- 7. CLICK-TO-COPY EMAIL WITH TOAST FEEDBACK ---
-  const btnCopyEmail = document.getElementById('btn-copy-email');
-  const copyStatus = document.getElementById('copy-status');
+      if (emailInput && emailInput.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+        emailInput.classList.add('is-invalid');
+        const errorMsg = emailInput.parentElement.querySelector('.form-error-msg');
+        if (errorMsg) errorMsg.classList.add('visible');
+        isValid = false;
+      }
 
-  if (btnCopyEmail && copyStatus) {
-    btnCopyEmail.addEventListener('click', async () => {
-      const email = btnCopyEmail.getAttribute('data-email') || 'julkarnine.arabi@gmail.com';
-      try {
-        await navigator.clipboard.writeText(email);
-        copyStatus.textContent = 'Copied!';
-        showToast(`Copied to clipboard: ${email}`);
-        setTimeout(() => {
-          copyStatus.textContent = 'Copy';
-        }, 2500);
-      } catch (err) {
-        // Fallback for older browsers
-        const textarea = document.createElement('textarea');
-        textarea.value = email;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        copyStatus.textContent = 'Copied!';
-        showToast(`Copied to clipboard: ${email}`);
-        setTimeout(() => {
-          copyStatus.textContent = 'Copy';
-        }, 2500);
+      if (isValid) {
+        if (successBanner) {
+          successBanner.classList.add('visible');
+          contactForm.reset();
+          successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       }
     });
-  }
-
-  // Toast Notification Helper
-  function showToast(message) {
-    const container = document.getElementById('toast');
-    if (!container) return;
-
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.textContent = message;
-    container.appendChild(toast);
-
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(10px)';
-      toast.style.transition = 'all 0.3s ease';
-      setTimeout(() => toast.remove(), 300);
-    }, 3200);
   }
 });
