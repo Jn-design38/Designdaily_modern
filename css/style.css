@@ -379,6 +379,8 @@ ul, ol {
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
   gap: clamp(40px, 6vw, 80px);
+  position: relative;
+  z-index: 2;
 }
 
 .status-badge {

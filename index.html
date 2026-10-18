@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/TechText.css">
   <link rel="stylesheet" href="css/ScrollFloat.css">
+  <link rel="stylesheet" href="css/GradientASCII.css">
 </head>
 <body>
   <!-- Skip to Content for Accessibility -->
@@ -52,6 +53,11 @@
   <main id="main-content">
     <!-- 01. OPENING (HERO) SECTION -->
     <section class="section-opening" id="opening" aria-labelledby="hero-title">
+      <!-- React Bits: GradientASCII Hero Background (Horizon Glow) -->
+      <div class="gradient-ascii-wrapper" id="hero-gradient-ascii" aria-hidden="true">
+        <canvas id="gradient-ascii-canvas" class="gradient-ascii-canvas"></canvas>
+      </div>
+
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="status-badge">
@@ -882,6 +888,7 @@
   <script src="js/ScrollTrigger.min.js"></script>
   <script src="js/ScrollFloat.js"></script>
   <script src="js/TechText.js"></script>
+  <script src="js/GradientASCII.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -91,6 +91,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // --- 0.2. GRADIENT ASCII HERO BACKGROUND (REACT BITS) ---
+  const asciiCanvas = document.getElementById('gradient-ascii-canvas');
+  if (asciiCanvas && typeof GradientASCII !== 'undefined') {
+    new GradientASCII(asciiCanvas, {
+      colors: ["#ef4444", "#ffbd00", "#eab308", "#f97316"],
+      shape: "horizon",
+      characters: " =+xX0S8#@",
+      cellSize: 18,
+      density: 0.8
+    });
+  }
+
   // --- 1. HEADER SCROLL & MOBILE NAVIGATION ---
   const header = document.getElementById('header');
   const mobileToggle = document.getElementById('mobile-toggle');
