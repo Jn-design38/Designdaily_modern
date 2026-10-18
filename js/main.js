@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let targetRotationY = 0;
   let targetTiltX = 0;
 
-  // A. ScrollFloat Kinetic Typography (React Bits)
+  // A. ScrollFloat Kinetic Typography on Main Heading (React Bits)
   if (typeof ScrollFloat !== 'undefined') {
     const servicesTitle = document.getElementById('services-title');
     if (servicesTitle) {
@@ -190,34 +190,25 @@ document.addEventListener('DOMContentLoaded', () => {
         splitBy: 'chars',
         direction: 'up',
         ease: 'back.inOut(2)',
-        distance: 120,
-        stretch: 2.3,
-        stagger: 0.025
-      });
-    }
-
-    document.querySelectorAll('.service-card-title.scroll-float').forEach(title => {
-      new ScrollFloat(title, {
-        effect: 'float',
-        splitBy: 'words',
-        direction: 'up',
         distance: 80,
         stretch: 1.8,
-        stagger: 0.04
+        stagger: 0.02,
+        scrollStart: 'top 85%',
+        scrollEnd: 'top 45%'
       });
-    });
+    }
   }
 
-  // B. GSAP ScrollTrigger Pinned Stage: Cards & Texts Stay Around 3D Logo and Change on Scroll
+  // B. GSAP ScrollTrigger Pinned Stage: Cards Stay Around 3D Logo and Swap Smoothly on Scroll
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && servicesSection) {
     ScrollTrigger.matchMedia({
-      // Desktop & Tablet Pinning: Cards stay around 3D logo and swap smoothly on scroll
+      // Desktop & Tablet (min-width: 992px): Cards stay around 3D logo and swap on scroll
       '(min-width: 992px)': function () {
         const spatialTl = gsap.timeline({
           scrollTrigger: {
             trigger: servicesSection,
-            start: 'top top',
-            end: '+=200%',
+            start: 'top 70px',
+            end: '+=160%',
             pin: true,
             scrub: 0.6,
             anticipatePin: 1,
@@ -228,19 +219,18 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        // Set 1 cards active around the 3D logo
-        gsap.set(set1Cards, { opacity: 1, yPercent: 0, scale: 1 });
-        gsap.set(set2Cards, { opacity: 0, yPercent: 50, scale: 0.92 });
+        // Set 1 (Cards 1 & 2) active flanking the 3D logo
+        gsap.set(set1Cards, { opacity: 1, y: 0, scale: 1, pointerEvents: 'auto' });
+        // Set 2 (Cards 3 & 4) hidden waiting below
+        gsap.set(set2Cards, { opacity: 0, y: 30, scale: 0.96, pointerEvents: 'none' });
 
-        // ScrollFloat effect for cards: Set 1 floats out, Set 2 floats into view around the 3D logo
+        // ScrollFloat effect for cards: Set 1 floats out, Set 2 floats in around 3D logo
         spatialTl
           .to(set1Cards, {
             opacity: 0,
-            yPercent: -50,
-            scaleY: 1.6,
-            scaleX: 0.95,
-            duration: 1,
-            stagger: 0.05,
+            y: -30,
+            scale: 0.96,
+            duration: 0.8,
             ease: 'power2.inOut',
             onComplete: () => {
               set1Cards.forEach(c => c.style.pointerEvents = 'none');
@@ -248,25 +238,25 @@ document.addEventListener('DOMContentLoaded', () => {
             onReverseComplete: () => {
               set1Cards.forEach(c => c.style.pointerEvents = 'auto');
             }
-          }, 0.4)
+          }, 0.3)
           .to(set2Cards, {
             opacity: 1,
-            yPercent: 0,
-            scaleY: 1,
-            scaleX: 1,
-            duration: 1,
-            stagger: 0.05,
-            ease: 'back.out(1.5)',
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: 'back.out(1.4)',
             onStart: () => {
               set2Cards.forEach(c => c.style.pointerEvents = 'auto');
             },
             onReverseComplete: () => {
               set2Cards.forEach(c => c.style.pointerEvents = 'none');
             }
-          }, 0.6);
+          }, 0.5);
       },
-      // Mobile Layout: Cards flow naturally and animate with ScrollFloat
+      // Mobile Layout (< 992px): 3D logo rotates on scroll, cards flow naturally
       '(max-width: 991px)': function () {
+        gsap.set(spatialCards, { opacity: 1, y: 0, scale: 1, pointerEvents: 'auto' });
+
         ScrollTrigger.create({
           trigger: servicesSection,
           start: 'top bottom',
@@ -276,28 +266,14 @@ document.addEventListener('DOMContentLoaded', () => {
             targetRotationY = self.progress * Math.PI * 4;
           }
         });
-
-        spatialCards.forEach(card => {
-          gsap.fromTo(card, 
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top bottom-=80px',
-                toggleActions: 'play none none reverse'
-              }
-            }
-          );
-        });
       }
     });
   } else {
     // Fallback if GSAP is not available
-    spatialCards.forEach(card => card.classList.add('is-visible'));
+    spatialCards.forEach(card => {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    });
   }
 
   // C. Three.js 3D Logo Scene & Continuous Dynamic Rotation

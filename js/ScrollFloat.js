@@ -263,6 +263,10 @@
         }
       });
 
+      mm.add('(prefers-reduced-motion: reduce)', () => {
+        gsap.set(targets, { opacity: 1, transform: 'none' });
+      });
+
       this._cleanup = () => mm.revert();
     }
 

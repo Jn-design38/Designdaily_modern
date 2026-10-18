@@ -5,8 +5,8 @@
 
 .scroll-float {
   margin: 0;
-  overflow: hidden;
   position: relative;
+  overflow: visible;
 }
 
 .scroll-float--open {
@@ -16,11 +16,6 @@
 
 .scroll-float-text {
   display: inline-block;
-  font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 1.1;
-  text-transform: uppercase;
-  color: var(--color-charcoal);
 }
 
 .scroll-float-word {
@@ -46,65 +41,69 @@
   border: 0;
 }
 
-/* Services Spatial Pinned Stage with ScrollFloat */
+/* Services Spatial Stage with ScrollFloat */
 .services-pinned-container {
   position: relative;
   width: 100%;
 }
 
-.services-3d-stage {
+.services-pinned-stage {
+  display: grid;
+  grid-template-columns: 1fr 380px 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
   position: relative;
-  min-height: 600px;
+  width: 100%;
 }
 
-@media (min-width: 992px) {
-  .services-pinned-stage {
-    display: grid;
-    grid-template-columns: 1fr 420px 1fr;
-    gap: clamp(24px, 3.5vw, 48px);
-    align-items: center;
-    position: relative;
-    min-height: 620px;
-    perspective: 1200px;
-  }
+.services-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
 
-  .services-column {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 560px;
-  }
+.service-spatial-card {
+  grid-area: 1 / 1;
+  width: 100%;
+  margin: 0;
+  will-change: transform, opacity;
+}
 
-  .service-spatial-card {
-    width: 100%;
-    will-change: transform, opacity;
-  }
+/* Set 1 cards active by default flanking 3D logo */
+.service-card-set-1 {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  z-index: 2;
+}
 
-  /* Layering the cards in the spatial slots around the central 3D logo */
-  .service-card-set-1,
-  .service-card-set-2 {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-  }
-
-  .service-card-set-2 {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20%) scale(0.92);
-  }
+/* Set 2 cards waiting below */
+.service-card-set-2 {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px) scale(0.96);
+  z-index: 1;
 }
 
 @media (max-width: 991px) {
-  .service-card-set-1,
-  .service-card-set-2 {
-    position: relative;
+  .services-pinned-stage {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .services-column {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .service-spatial-card {
+    grid-area: auto;
     transform: none !important;
     opacity: 1 !important;
     pointer-events: auto !important;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 }
