@@ -99,7 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
       shape: "horizon",
       characters: " =+xX0S8#@",
       cellSize: 18,
-      density: 0.8
+      density: 0.8,
+      glyphOpacity: 0.85,
+      glow: 0.25,
+      speed: 1.0,
+      gradientOpacity: 0.9,
+      grain: 0.08,
+      mouseInteraction: true,
+      scrambleRadius: 0.1,
+      clickEffect: 'wave',
+      intro: true
     });
   }
 
