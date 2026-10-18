@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/ScrollFloat.css">
   <link rel="stylesheet" href="css/SpotlightCard.css">
   <link rel="stylesheet" href="css/LightRays.css">
+  <link rel="stylesheet" href="css/GradientASCII.css">
   <link rel="stylesheet" href="css/DesignPipeline.css">
 </head>
 <body>
@@ -63,6 +64,11 @@
          01. LIGHTWEIGHT HERO SECTION WITH 7-STAGE PIPELINE
          =================================================================== -->
     <section class="section-hero" id="hero" aria-labelledby="hero-heading">
+      <!-- React Bits: GradientASCII Hero Background (Horizon Glow) -->
+      <div class="gradient-ascii-wrapper" id="hero-gradient-ascii" aria-hidden="true">
+        <canvas id="gradient-ascii-canvas" class="gradient-ascii-canvas"></canvas>
+      </div>
+
       <div class="container hero-content">
         <!-- Live Target Availability Pill -->
         <div class="hero-pill-badge">
@@ -737,6 +743,7 @@
   <script src="js/DecryptedText.js"></script>
   <script src="js/ScrollFloat.js"></script>
   <script src="js/TechText.js"></script>
+  <script src="js/GradientASCII.js"></script>
   <script src="js/DesignPipeline.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -49,6 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 2B. REACT BITS: GRADIENT ASCII HERO BACKGROUND (HORIZON GLOW) ---
+  const asciiCanvas = document.getElementById('gradient-ascii-canvas');
+  if (asciiCanvas && typeof GradientASCII !== 'undefined') {
+    new GradientASCII(asciiCanvas, {
+      colors: ["#ef4444", "#ffbd00", "#eab308", "#f97316"],
+      shape: "horizon",
+      characters: " =+xX0S8#@",
+      cellSize: 18,
+      density: 0.8
+    });
+  }
+
   // --- 3. REACT BITS: SPOTLIGHT CARDS & TILTED CARDS ---
   if (typeof SpotlightCard !== 'undefined') {
     SpotlightCard.initAll('.spotlight-card');
