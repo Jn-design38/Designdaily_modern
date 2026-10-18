@@ -14,7 +14,7 @@ The site follows the 8-section unified homepage brief designed to wow visitors w
    - **All Organics** — Modern apothecary packaging system, botanical patterns, and e-commerce storefront.
    - **Sandbox Lounge** — Upscale cocktail sanctuary identity, tactile gold-foil stationery, and spatial signage.
    - *Studio Repertoire Archive*: Featuring **Atuendo**, **Norea**, **Finn Unboxing**, and **Zaro Beverage**.
-3. **Services**: Interactive capability drawers covering Brand Identity & Strategy, Digital Flagships & Web Design, and Structural Packaging & Unboxing Systems.
+3. **Services (3D Spatial Stage)**: An immersive 3D scroll experience where the official **Design Daily 3D Logo** (`DEsigndaily-3D-Logo.glb`) sits at the center, rotating smoothly on scroll with studio lighting and mouse tilt, while interactive service cards with authentic project snapshots appear dynamically from both sides.
 4. **Process**: Interactive 4-step synchronizer (*01 Brief & Audit*, *02 Design & Explore*, *03 Refine & Test*, *04 Deliver & Launch*) linking strategic timelines with real artifacts.
 5. **Craft (The Detail Layer)**: Interactive Before/After slider demonstrating mathematical geometry and concentric arc construction on the **Norea** logo mark (`norea-construction.jpg` vs. `norea-logo.jpg`).
 6. **Studio & Philosophy**: Human studio voice emphasizing senior-only talent, direct founder access, fixed milestones, and enduring design systems.

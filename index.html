@@ -278,112 +278,146 @@
       </div>
     </section>
 
-    <!-- 03. SERVICES SECTION -->
+    <!-- 03. SERVICES SECTION (3D SCROLL & SPATIAL STAGE) -->
     <section class="section-services" id="services" aria-labelledby="services-title">
       <div class="container">
-        <div class="section-header">
-          <div class="section-kicker text-coral">// STUDIO CAPABILITIES</div>
-          <h2 class="section-title" id="services-title">What we build. Delivered without fluff or middlemen.</h2>
-          <p class="section-desc">
-            We focus strictly on the four areas where world-class design generates exponential commercial leverage for your company.
+        <div class="section-header text-center">
+          <div class="section-kicker text-coral">// 3D SPATIAL CAPABILITIES</div>
+          <h2 class="section-title services-main-heading" id="services-title">Disciplines Engineered for Category Leaders</h2>
+          <p class="section-desc services-header-desc">
+            Scroll to explore our core craft. Our signature 3D identity rotates at the epicenter while living project snapshots reveal our capabilities from both sides.
           </p>
         </div>
 
-        <div class="services-list" role="tablist" aria-label="Studio Services">
-          <!-- Service 01 -->
-          <div class="service-item active" data-service="1">
-            <div class="service-summary" role="button" tabindex="0" aria-expanded="true" aria-controls="service-panel-1">
-              <div class="service-index">01</div>
-              <div class="service-headline">
-                <h3 class="service-name">Brand Identity & Strategy</h3>
-                <p class="service-sub">Logomarks, typography hierarchies, colour architectures, and comprehensive brand manuals.</p>
+        <div class="services-3d-stage" id="services-3d-stage">
+          <!-- Left Column Cards (Slide in from Left on Scroll) -->
+          <div class="services-column services-column-left">
+            <!-- Service Card 01 -->
+            <article class="service-spatial-card card-from-left" data-service-card="1">
+              <div class="card-glass-inner">
+                <div class="service-card-header">
+                  <span class="service-badge">01 / FOUNDATIONS</span>
+                  <h3 class="service-card-title">Brand Identity & Strategy</h3>
+                </div>
+                <div class="service-card-snapshot">
+                  <img src="assets/tripty-guidelines.png" alt="Tripty brand identity guidelines book snapshot" class="snapshot-img" loading="lazy">
+                  <div class="snapshot-overlay">
+                    <span class="snapshot-tag">Real Artifact: Tripty Manual</span>
+                  </div>
+                </div>
+                <p class="service-card-desc">
+                  Enduring identity systems, mathematical logomark geometry, typography hierarchies, and modular pattern systems tailored for market prestige.
+                </p>
+                <div class="service-card-pills">
+                  <span class="pill">Logomark Geometry</span>
+                  <span class="pill">Type Licensing</span>
+                  <span class="pill">Color System</span>
+                  <span class="pill">Brand Book</span>
+                </div>
               </div>
-              <div class="service-toggle" aria-hidden="true">+</div>
-            </div>
-            <div class="service-body" id="service-panel-1">
-              <div class="service-content-grid">
-                <div class="service-text">
-                  <p>
-                    We build foundational visual identities that tell a coherent story across every customer touchpoint. Every curve is mathematically drawn; every color token is calibrated for both high-contrast screens and physical foil stamps.
-                  </p>
-                  <ul class="service-deliverables-list">
-                    <li>Core Logomark, Monograms & Secondary Seals</li>
-                    <li>Display & Body Typography Licensing Strategy</li>
-                    <li>Digital & Print Color Systems (Hex, RGB, CMYK, Pantone)</li>
-                    <li>Modular Pattern Systems & Graphic Collateral</li>
-                    <li>Complete Brand Guidelines Documentation (PDF + Figma)</li>
-                  </ul>
+            </article>
+
+            <!-- Service Card 03 -->
+            <article class="service-spatial-card card-from-left" data-service-card="3">
+              <div class="card-glass-inner">
+                <div class="service-card-header">
+                  <span class="service-badge">03 / PHYSICAL CRAFT</span>
+                  <h3 class="service-card-title">Packaging & Unboxing Systems</h3>
                 </div>
-                <div class="service-visual">
-                  <img src="assets/tripty-guidelines.png" alt="Brand identity manual artifact" loading="lazy">
-                  <span class="visual-caption">Real Output: Tripty Brand Manual</span>
+                <div class="service-card-snapshot">
+                  <img src="assets/finn-packaging.png" alt="Finn sustainable packaging dielines and box structure" class="snapshot-img" loading="lazy">
+                  <div class="snapshot-overlay">
+                    <span class="snapshot-tag">Real Artifact: Finn Packaging</span>
+                  </div>
                 </div>
+                <p class="service-card-desc">
+                  Tactile unboxing sequences, custom vessel dielines, blind emboss and foil stamping specifications calibrated for zero manufacturer error.
+                </p>
+                <div class="service-card-pills">
+                  <span class="pill">Box Dielines</span>
+                  <span class="pill">Vessel Specs</span>
+                  <span class="pill">Tactile Foils</span>
+                  <span class="pill">Sustainable Stock</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Center Column: Sticky 3D Rotating Logo -->
+          <div class="services-3d-center">
+            <div class="services-3d-sticky" id="services-3d-sticky">
+              <div class="spatial-canvas-wrapper" id="spatial-canvas-wrapper">
+                <!-- Three.js Canvas Container -->
+                <canvas id="services-3d-canvas" aria-label="Interactive 3D Design Daily logo model rotating on scroll"></canvas>
+
+                <!-- Fallback & Loading Visualizer -->
+                <div class="spatial-loading-fallback" id="spatial-fallback">
+                  <div class="fallback-glow-ring"></div>
+                  <img src="assets/agency-icon.svg" alt="Design Daily 3D Mark Loading" class="fallback-logo-spin">
+                  <span class="fallback-status" id="spatial-status">Initializing 3D Studio Mark...</span>
+                </div>
+              </div>
+
+              <!-- Interactive Badge Below 3D Logo -->
+              <div class="spatial-badge">
+                <div class="badge-status-dot"></div>
+                <span class="badge-title">DESIGN DAILY 3D LOGO</span>
+                <span class="badge-meta">Rotates on scroll • Drag to tilt</span>
               </div>
             </div>
           </div>
 
-          <!-- Service 02 -->
-          <div class="service-item" data-service="2">
-            <div class="service-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="service-panel-2">
-              <div class="service-index">02</div>
-              <div class="service-headline">
-                <h3 class="service-name">Websites & Digital Flagships</h3>
-                <p class="service-sub">Bespoke interactive web experiences built for high conversion, zero lag, and flawless aesthetic prestige.</p>
-              </div>
-              <div class="service-toggle" aria-hidden="true">+</div>
-            </div>
-            <div class="service-body" id="service-panel-2" hidden>
-              <div class="service-content-grid">
-                <div class="service-text">
-                  <p>
-                    Your website is the single most critical touchpoint for investors, partners, and customers. We design bespoke web experiences with fluid motion, instant response times, and semantic code that scores 100 on performance audits.
-                  </p>
-                  <ul class="service-deliverables-list">
-                    <li>Information Architecture & UX Wireframing</li>
-                    <li>High-Fidelity Interactive Figma Prototypes</li>
-                    <li>Responsive Micro-Interactions & Motion Choreography</li>
-                    <li>Deterministic Frontend Development (HTML/CSS/JS)</li>
-                    <li>100% WCAG 2.2 AA Accessibility Compliance</li>
-                  </ul>
+          <!-- Right Column Cards (Slide in from Right on Scroll) -->
+          <div class="services-column services-column-right">
+            <!-- Service Card 02 -->
+            <article class="service-spatial-card card-from-right" data-service-card="2">
+              <div class="card-glass-inner">
+                <div class="service-card-header">
+                  <span class="service-badge">02 / DIGITAL STOREFRONTS</span>
+                  <h3 class="service-card-title">Websites & Digital Flagships</h3>
                 </div>
-                <div class="service-visual">
-                  <img src="assets/all-organics-website.png" alt="Digital flagship web interface" loading="lazy">
-                  <span class="visual-caption">Real Output: All Organics Digital Storefront</span>
+                <div class="service-card-snapshot">
+                  <img src="assets/all-organics-website.png" alt="All Organics digital flagship e-commerce interface" class="snapshot-img" loading="lazy">
+                  <div class="snapshot-overlay">
+                    <span class="snapshot-tag">Real Artifact: All Organics Store</span>
+                  </div>
+                </div>
+                <p class="service-card-desc">
+                  Bespoke digital flagships featuring fluid 60fps micro-animations, deterministic frontend code, 100% PageSpeed, and zero hydration lag.
+                </p>
+                <div class="service-card-pills">
+                  <span class="pill">UX Architecture</span>
+                  <span class="pill">Fluid Motion</span>
+                  <span class="pill">Deterministic Code</span>
+                  <span class="pill">WCAG 2.2 AA</span>
                 </div>
               </div>
-            </div>
-          </div>
+            </article>
 
-          <!-- Service 03 -->
-          <div class="service-item" data-service="3">
-            <div class="service-summary" role="button" tabindex="0" aria-expanded="false" aria-controls="service-panel-3">
-              <div class="service-index">03</div>
-              <div class="service-headline">
-                <h3 class="service-name">Packaging & Unboxing Systems</h3>
-                <p class="service-sub">Structural packaging, unboxing sequences, tactile foil treatments, and physical retail merchandise.</p>
-              </div>
-              <div class="service-toggle" aria-hidden="true">+</div>
-            </div>
-            <div class="service-body" id="service-panel-3" hidden>
-              <div class="service-content-grid">
-                <div class="service-text">
-                  <p>
-                    Physical design creates emotional resonance. We develop dielines, custom vessel graphics, unboxing card inserts, and print specifications ready for vendor production without costly manufacturer miscommunications.
-                  </p>
-                  <ul class="service-deliverables-list">
-                    <li>Custom Box & Carton Dielines with Bleed Specs</li>
-                    <li>Vessel, Bottle, & Label Engineering</li>
-                    <li>Blind Emboss, Deboss & Foil Stamp Print Files</li>
-                    <li>Sustainable Materials & Paper Stock Consulting</li>
-                    <li>Production-Ready Vendor Print Packages</li>
-                  </ul>
+            <!-- Service Card 04 -->
+            <article class="service-spatial-card card-from-right" data-service-card="4">
+              <div class="card-glass-inner">
+                <div class="service-card-header">
+                  <span class="service-badge">04 / AMPLIFICATION</span>
+                  <h3 class="service-card-title">Campaigns & Social Toolkits</h3>
                 </div>
-                <div class="service-visual">
-                  <img src="assets/finn-packaging.png" alt="Finn unboxing packaging" loading="lazy">
-                  <span class="visual-caption">Real Output: Finn Structural Packaging</span>
+                <div class="service-card-snapshot">
+                  <img src="assets/seor-campaign.jpg" alt="Seor commercial campaign product listing design" class="snapshot-img" loading="lazy">
+                  <div class="snapshot-overlay">
+                    <span class="snapshot-tag">Real Artifact: Seor Campaign</span>
+                  </div>
+                </div>
+                <p class="service-card-desc">
+                  Multi-channel digital launch kits, social media design frameworks, editorial ad creatives, and merchandise graphics designed to stand out.
+                </p>
+                <div class="service-card-pills">
+                  <span class="pill">Launch Toolkits</span>
+                  <span class="pill">Product Creative</span>
+                  <span class="pill">Apparel Design</span>
+                  <span class="pill">Ad Graphics</span>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
@@ -837,7 +871,9 @@
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- JavaScript Bundle (Lenis Smooth Scroll & Core Logic) -->
+  <!-- JavaScript Bundle (Three.js 3D Engine, GLTFLoader, Lenis Smooth Scroll & Core Logic) -->
+  <script src="js/three.min.js"></script>
+  <script src="js/GLTFLoader.min.js"></script>
   <script src="js/lenis.min.js"></script>
   <script src="js/main.js"></script>
 </body>

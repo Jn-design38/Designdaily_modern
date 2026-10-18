@@ -133,47 +133,252 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(sec => sectionObserver.observe(sec));
   }
 
-  // --- 2. SERVICES ACCORDION EXPANSION ---
-  const serviceItems = document.querySelectorAll('.service-item');
-  serviceItems.forEach(item => {
-    const summary = item.querySelector('.service-summary');
-    const body = item.querySelector('.service-body');
+  // --- 2. SERVICES SECTION: 3D SPATIAL SCROLL & ROTATING LOGO ---
+  const servicesSection = document.getElementById('services');
+  const spatialCards = document.querySelectorAll('.service-spatial-card');
+  const canvas3D = document.getElementById('services-3d-canvas');
+  const fallback3D = document.getElementById('spatial-fallback');
+  const fallbackStatus = document.getElementById('spatial-status');
+  const canvasWrapper = document.getElementById('spatial-canvas-wrapper');
 
-    if (summary && body) {
-      const toggle = () => {
-        const isActive = item.classList.contains('active');
-
-        // Close other service drawers for clarity
-        serviceItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-            const otherSummary = otherItem.querySelector('.service-summary');
-            const otherBody = otherItem.querySelector('.service-body');
-            if (otherSummary) otherSummary.setAttribute('aria-expanded', 'false');
-            if (otherBody) otherBody.hidden = true;
-          }
-        });
-
-        if (isActive) {
-          item.classList.remove('active');
-          summary.setAttribute('aria-expanded', 'false');
-          body.hidden = true;
-        } else {
-          item.classList.add('active');
-          summary.setAttribute('aria-expanded', 'true');
-          body.hidden = false;
-        }
-      };
-
-      summary.addEventListener('click', toggle);
-      summary.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle();
+  // A. Entrance Animation for Service Cards on Scroll (both left & right)
+  if ('IntersectionObserver' in window) {
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
         }
       });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    spatialCards.forEach(card => cardObserver.observe(card));
+  } else {
+    spatialCards.forEach(card => card.classList.add('is-visible'));
+  }
+
+  // B. Three.js 3D Logo Scene & Scroll Rotation
+  if (canvas3D && typeof THREE !== 'undefined') {
+    let renderer, scene, camera, modelGroup;
+    let isServicesVisible = false;
+    let targetRotationY = 0;
+    let targetTiltX = 0;
+    let currentRotationY = 0;
+    let currentTiltX = 0;
+    let mouseTiltX = 0;
+    let mouseTiltY = 0;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragDeltaX = 0;
+    let dragDeltaY = 0;
+
+    const init3DScene = () => {
+      const width = canvasWrapper ? canvasWrapper.clientWidth : 380;
+      const height = canvasWrapper ? canvasWrapper.clientHeight : 380;
+
+      // Renderer
+      renderer = new THREE.WebGLRenderer({
+        canvas: canvas3D,
+        alpha: true,
+        antialias: true,
+        powerPreference: 'high-performance'
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(width, height);
+      if ('outputEncoding' in renderer) {
+        renderer.outputEncoding = THREE.sRGBEncoding;
+      }
+      if ('toneMapping' in renderer) {
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.25;
+      }
+
+      // Scene & Camera
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
+      camera.position.set(0, 0, 7.5);
+
+      // Model Parent Group
+      modelGroup = new THREE.Group();
+      scene.add(modelGroup);
+
+      // Studio Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+      scene.add(ambientLight);
+
+      // Key Directional Light
+      const keyLight = new THREE.DirectionalLight(0xffffff, 2.0);
+      keyLight.position.set(6, 8, 8);
+      scene.add(keyLight);
+
+      // Signature Coral Rim Light (Edge Sheen)
+      const coralRimLight = new THREE.DirectionalLight(0xff4c42, 3.2);
+      coralRimLight.position.set(-8, -4, -6);
+      scene.add(coralRimLight);
+
+      // Soft Top Fill Light
+      const softFill = new THREE.PointLight(0xffb38a, 1.8, 25);
+      softFill.position.set(0, 5, 5);
+      scene.add(softFill);
+
+      // Load 3D GLB Model
+      if (typeof THREE.GLTFLoader !== 'undefined') {
+        const loader = new THREE.GLTFLoader();
+        loader.load(
+          'assets/agency-logo-3d.glb',
+          (gltf) => {
+            const model = gltf.scene;
+
+            // Auto-center & Normalize Geometry
+            const box = new THREE.Box3().setFromObject(model);
+            const center = box.getCenter(new THREE.Vector3());
+            const size = box.getSize(new THREE.Vector3());
+            const maxDimension = Math.max(size.x, size.y, size.z);
+            const targetScale = 4.2 / (maxDimension || 1);
+
+            model.position.x = -center.x * targetScale;
+            model.position.y = -center.y * targetScale;
+            model.position.z = -center.z * targetScale;
+            model.scale.set(targetScale, targetScale, targetScale);
+
+            // Enhance Mesh Materials
+            model.traverse((node) => {
+              if (node.isMesh && node.material) {
+                node.material.roughness = 0.25;
+                node.material.metalness = 0.15;
+                if (node.material.color) {
+                  node.material.needsUpdate = true;
+                }
+              }
+            });
+
+            modelGroup.add(model);
+
+            // Hide Loading State smoothly
+            if (fallback3D) {
+              fallback3D.classList.add('is-hidden');
+            }
+          },
+          (xhr) => {
+            if (xhr.lengthComputable && fallbackStatus) {
+              const pct = Math.round((xhr.loaded / xhr.total) * 100);
+              fallbackStatus.textContent = `Streaming 3D Mark... ${pct}%`;
+            }
+          },
+          (error) => {
+            console.warn('3D Model GLB load note:', error);
+            if (fallbackStatus) {
+              fallbackStatus.textContent = 'Interactive 3D Mark';
+            }
+          }
+        );
+      }
+    };
+
+    // Calculate Scroll Progress for Section 3
+    const update3DOnScroll = () => {
+      if (!servicesSection) return;
+      const rect = servicesSection.getBoundingClientRect();
+      const windowH = window.innerHeight;
+
+      // Progress from 0 (section enters top) to 1 (section leaves bottom)
+      const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (rect.height + windowH)));
+
+      // Rotate logo continuously on scroll
+      targetRotationY = progress * Math.PI * 4; // 2 complete 360-degree rotations
+      targetTiltX = Math.sin(progress * Math.PI * 2) * 0.22;
+    };
+
+    window.addEventListener('scroll', update3DOnScroll, { passive: true });
+
+    // Interactive Drag / Tilt Controls on Canvas
+    if (canvas3D) {
+      canvas3D.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (isDragging) {
+          dragDeltaX += (e.clientX - dragStartX) * 0.01;
+          dragDeltaY += (e.clientY - dragStartY) * 0.01;
+          dragStartX = e.clientX;
+          dragStartY = e.clientY;
+        }
+
+        if (canvasWrapper) {
+          const rect = canvasWrapper.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          mouseTiltX = ((e.clientX - cx) / window.innerWidth) * 0.35;
+          mouseTiltY = ((e.clientY - cy) / window.innerHeight) * 0.25;
+        }
+      });
+
+      window.addEventListener('pointerup', () => {
+        isDragging = false;
+      });
     }
-  });
+
+    // Visibility-aware Render Loop
+    if ('IntersectionObserver' in window && servicesSection) {
+      const renderObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isServicesVisible = entry.isIntersecting;
+        });
+      }, { threshold: 0.01 });
+      renderObserver.observe(servicesSection);
+    } else {
+      isServicesVisible = true;
+    }
+
+    let idleClock = 0;
+    const animate3D = () => {
+      requestAnimationFrame(animate3D);
+
+      if (!isServicesVisible || !renderer || !scene || !camera) return;
+
+      idleClock += 0.01;
+      const idleBobY = Math.sin(idleClock) * 0.005;
+
+      // Smooth interpolation for rotation & tilt
+      const targetY = targetRotationY + dragDeltaX + idleClock * 0.15;
+      const targetX = targetTiltX + dragDeltaY + mouseTiltY;
+      const targetZ = -mouseTiltX;
+
+      currentRotationY += (targetY - currentRotationY) * 0.08;
+      currentTiltX += (targetX - currentTiltX) * 0.08;
+
+      if (modelGroup) {
+        modelGroup.rotation.y = currentRotationY;
+        modelGroup.rotation.x = currentTiltX;
+        modelGroup.rotation.z += (targetZ - modelGroup.rotation.z) * 0.08;
+        modelGroup.position.y = idleBobY;
+      }
+
+      renderer.render(scene, camera);
+    };
+
+    // Responsive Canvas Resize
+    const handle3DResize = () => {
+      if (!canvasWrapper || !renderer || !camera) return;
+      const w = canvasWrapper.clientWidth;
+      const h = canvasWrapper.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    };
+    window.addEventListener('resize', handle3DResize, { passive: true });
+
+    // Initialize
+    init3DScene();
+    update3DOnScroll();
+    animate3D();
+  }
 
   // --- 3. PROCESS 4-STEP SYNCHRONIZER ---
   const processSteps = [
