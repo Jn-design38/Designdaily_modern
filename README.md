@@ -38,11 +38,12 @@ The site follows the 8-section unified homepage brief designed to wow visitors w
 
 ---
 
-## ✦ Performance & Accessibility
+## ✦ Performance, Motion & Accessibility
 
-- **Zero Heavy Framework Bloat**: Pure semantic HTML5 + Vanilla CSS3 + Modern ES6 JavaScript (< 70KB total footprint).
+- **Lenis Smooth Scroll Engine**: Integrated lightweight Lenis v1.1.20 smooth scrolling engine for buttery 60fps inertial scrolling and synchronized anchor navigation.
+- **Zero Heavy Framework Bloat**: Pure semantic HTML5 + Vanilla CSS3 + Modern ES6 JavaScript (< 85KB total footprint including Lenis).
 - **Fast First Paint**: Instant static SVG logo rendering with zero 3D loading delays.
-- **100% WCAG 2.2 AA Compliance**: High-contrast ratios, visible keyboard focus indicators, logical tab ordering, ARIA labels, and `prefers-reduced-motion` fallbacks.
+- **100% WCAG 2.2 AA Compliance**: High-contrast ratios, visible keyboard focus indicators, logical tab ordering, ARIA labels, and `prefers-reduced-motion` fallbacks (automatically disables Lenis on reduced motion preferences).
 - **Fluid Responsiveness**: Calibrated for desktop (1440px+), laptop (1024px), tablet (768px), and mobile (390px).
 
 ---

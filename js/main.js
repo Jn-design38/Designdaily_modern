@@ -7,6 +7,49 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
+  // --- 0. LENIS SMOOTH SCROLL INITIALIZATION ---
+  let lenis = null;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (typeof Lenis !== 'undefined' && !prefersReducedMotion) {
+    lenis = new Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+      infinite: false,
+    });
+
+    // Main animation frame loop
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Synchronize anchor scrolling with Lenis
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          lenis.scrollTo(target, {
+            offset: -80,
+            duration: 1.25,
+          });
+          if (history.pushState) {
+            history.pushState(null, null, href);
+          }
+        }
+      });
+    });
+  }
+
   // --- 1. HEADER SCROLL & MOBILE NAVIGATION ---
   const header = document.getElementById('header');
   const mobileToggle = document.getElementById('mobile-toggle');
@@ -31,6 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileToggle.classList.toggle('active', isOpen);
       mobileToggle.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (lenis) {
+        if (isOpen) lenis.stop();
+        else lenis.start();
+      }
     });
 
     // Close mobile nav when clicking any nav link
@@ -41,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
           mobileToggle.classList.remove('active');
           mobileToggle.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
+          if (lenis) lenis.start();
         }
       });
     });
@@ -52,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        if (lenis) lenis.start();
       }
     });
   }
