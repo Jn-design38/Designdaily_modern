@@ -812,38 +812,37 @@ ul, ol {
   margin-bottom: clamp(24px, 3.5vw, 44px);
 }
 
-/* 3-Column Spatial Grid */
+/* 3-Column Floating Spatial Stage */
 .services-3d-stage {
   display: grid;
   grid-template-columns: 1fr 380px 1fr;
-  gap: clamp(20px, 3vw, 40px);
-  align-items: center;
+  gap: clamp(24px, 3.5vw, 48px);
+  align-items: start;
   position: relative;
-  perspective: 1200px;
   width: 100%;
 }
 
-/* Columns for Cards (Stacked via CSS Grid 1 / 1) */
-.services-column {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  align-items: center;
-  position: relative;
-  width: 100%;
+/* Left & Right Alternating Columns */
+.services-column-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(140px, 18vw, 240px);
   z-index: 5;
 }
 
-.services-column-left,
 .services-column-right {
-  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(140px, 18vw, 240px);
+  padding-top: clamp(140px, 18vw, 220px); /* Staggers right column so cards pop up one after another */
+  z-index: 5;
 }
 
-/* Center 3D Viewport */
+/* Sticky Center 3D Logo Viewport — Floats at Eye Level with Scroll */
 .services-3d-center {
-  position: relative;
-  height: 100%;
-  min-height: 440px;
+  position: sticky;
+  top: calc(50vh - 210px);
+  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;

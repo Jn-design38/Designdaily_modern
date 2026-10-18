@@ -277,21 +277,53 @@
     /**
      * Helper to apply ScrollFloat kinetics to interactive cards
      */
-    static animateCards(cards, options = {}) {
+    static animateCard(card, options = {}) {
       if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      if (typeof card === 'string') card = document.querySelector(card);
+      if (!card) return;
 
       const opts = Object.assign(
         {
-          trigger: '#services',
-          scrollStart: 'top top',
-          scrollEnd: '+=200%',
-          pin: true,
-          scrub: 0.8
+          distance: 90,
+          stretch: 1.14,
+          duration: 1.0,
+          ease: 'back.out(1.8)',
+          scrollStart: 'top 85%',
+          side: null
         },
         options
       );
 
-      return opts;
+      const inner = card.querySelector('.card-glass-inner') || card;
+      const side = opts.side || card.getAttribute('data-popup-side') || (card.closest('.services-column-left') ? 'left' : 'right');
+      const xOffset = side === 'left' ? -48 : side === 'right' ? 48 : 0;
+      const originX = side === 'left' ? '25%' : side === 'right' ? '75%' : '50%';
+
+      gsap.fromTo(
+        inner,
+        {
+          opacity: 0,
+          y: opts.distance,
+          x: xOffset,
+          scaleY: opts.stretch,
+          scaleX: 0.94,
+          transformOrigin: `${originX} 100%`
+        },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          scaleY: 1,
+          scaleX: 1,
+          duration: opts.duration,
+          ease: opts.ease,
+          scrollTrigger: {
+            trigger: card,
+            start: opts.scrollStart,
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
     }
   }
 
