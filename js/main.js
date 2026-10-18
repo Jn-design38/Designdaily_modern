@@ -50,6 +50,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 0.1. TECHTEXT INTERACTIVE WORDMARK (REACT BITS) ---
+  const heroTechTextEl = document.getElementById('hero-tech-text');
+  if (heroTechTextEl && typeof TechText !== 'undefined') {
+    new TechText(heroTechTextEl, {
+      text: 'DESIGN DAILY',
+      fontFamily: "'Barlow Condensed', sans-serif",
+      fontWeight: 800,
+      fontSize: 140,
+      letterSpacing: -0.02,
+      color: '#121316',
+      accentColor: '#FF4C42',
+      align: 'center',
+      reach: 220,
+      softness: 0.7,
+      dashLength: 4,
+      dashGap: 2,
+      strokeWidth: 1.5,
+      lineStyle: 'dashed',
+      reveal: 'letter',
+      specks: 15,
+      selection: true,
+      labels: true,
+      draggable: true,
+      bounce: 0.42,
+      clickKick: true,
+      intro: 'none',
+      introDuration: 2,
+      guides: false,
+      sweep: true,
+      speed: 1
+    });
+  }
+
   // --- 1. HEADER SCROLL & MOBILE NAVIGATION ---
   const header = document.getElementById('header');
   const mobileToggle = document.getElementById('mobile-toggle');
