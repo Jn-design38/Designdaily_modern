@@ -1,5 +1,27 @@
-/* --- GradientASCII Component Styles (React Bits) --- */
-.gradient-ascii-wrapper {
+/* ==========================================================================
+   GradientASCII Component Styles — React Bits
+   WebGL2 Reactive ASCII Horizon Glow Backdrop
+   ========================================================================== */
+
+/* Standard React Bits container & canvas layout */
+.gradient-ascii-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gradient-ascii-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Hero Section Responsive Backdrop Stacking --- */
+.gradient-ascii-wrapper,
+.hero-gradient-ascii {
   position: absolute;
   top: 0;
   left: 0;
@@ -7,16 +29,17 @@
   height: 100%;
   min-height: 600px;
   overflow: hidden;
-  pointer-events: none;
+  pointer-events: auto;
   z-index: 0;
-  opacity: 0.75;
+  opacity: 0.95;
   mix-blend-mode: screen;
-  mask-image: radial-gradient(ellipse 95% 85% at 50% 40%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 90%);
-  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 40%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 90%);
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 45%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 95%);
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 45%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 95%);
 }
 
-.gradient-ascii-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
+/* Ensure foreground content in hero remains above backdrop with clickable actions */
+.section-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }
