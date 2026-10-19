@@ -2,17 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PillNav from './PillNav';
 import TechText from './TechText';
 import GradientASCII from './GradientASCII';
-import FlexCarousel from './FlexCarousel';
 import './HeroSection.css';
-
-// Direct 7 asset imports specified by user for FlexCarousel
-import item1 from '../assets/carousel/carousel-1-aves-1.png';
-import item2 from '../assets/carousel/carousel-2-aves-2.png';
-import item3 from '../assets/carousel/carousel-3-tripty.png';
-import item4 from '../assets/carousel/carousel-4-norea.png';
-import item5 from '../assets/carousel/carousel-5-aves-3.png';
-import item6 from '../assets/carousel/carousel-6-aves-4.png';
-import item7 from '../assets/carousel/carousel-7-all-organics.png';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
@@ -20,51 +10,6 @@ const NAV_ITEMS = [
   { label: 'Capabilities', href: '#capabilities' },
   { label: 'Studio', href: '#studio' },
   { label: 'Contact', href: '#contact' }
-];
-
-const CAROUSEL_ITEMS = [
-  {
-    src: item1,
-    alt: 'Aves Streetwear Campaign Artboard 1',
-    title: 'Aves — Urban Movement',
-    subtitle: 'Campaign & Social Direction'
-  },
-  {
-    src: item2,
-    alt: 'Aves Editorial Packaging Artboard 2',
-    title: 'Aves — Editorial Motion',
-    subtitle: 'Brand System'
-  },
-  {
-    src: item3,
-    alt: 'Tripty Heritage Tea Brand Identity',
-    title: 'Tripty — Organic Teas',
-    subtitle: 'Brand Identity & Packaging'
-  },
-  {
-    src: item4,
-    alt: 'Norea Architectural Construction Identity',
-    title: 'Norea — Structural Elegance',
-    subtitle: 'Corporate Identity Program'
-  },
-  {
-    src: item5,
-    alt: 'Aves Lifestyle Artboard 3',
-    title: 'Aves — Monogram Series',
-    subtitle: 'Digital Art Direction'
-  },
-  {
-    src: item6,
-    alt: 'Aves Lookbook Artboard 4',
-    title: 'Aves — Studio Lookbook',
-    subtitle: 'Social Identity'
-  },
-  {
-    src: item7,
-    alt: 'All Organics Sustainable Identity',
-    title: 'All Organics — Pure Botanicals',
-    subtitle: 'Packaging & Art Direction'
-  }
 ];
 
 export default function HeroSection({ onOpenProject }) {
@@ -92,12 +37,6 @@ export default function HeroSection({ onOpenProject }) {
     }
   };
 
-  const handleSelectCard = (index, item) => {
-    if (typeof onOpenProject === 'function') {
-      onOpenProject(index, item);
-    }
-  };
-
   return (
     <section id="home" className="hero-section" aria-label="Design Daily Studio Hero">
       {/* Interactive Gradient ASCII Background */}
@@ -118,7 +57,7 @@ export default function HeroSection({ onOpenProject }) {
         <div className="hero-ascii-vignette" />
       </div>
 
-      {/* Top Header — Glassy Split PillNav (Circular White Logo + Navigation Pill, Boxed ONLY on Selected Item) */}
+      {/* Top Header — Glassy Split PillNav (Circular White Logo + Navigation Pill) */}
       <header className="hero-header">
         <div className="hero-nav-wrapper">
           <PillNav
@@ -143,9 +82,9 @@ export default function HeroSection({ onOpenProject }) {
         </div>
       </header>
 
-      {/* Hero Stage — Re-aligned Title, Magnetic CTA, and React Bits FlexCarousel */}
+      {/* Hero Stage — Centered Vertically & Horizontally (Title + CTA Buttons) */}
       <div className="hero-container hero-container--centered">
-        {/* Title Stack: Precisely Re-aligned Center with Clear Typographic Hierarchy */}
+        {/* Title Stack: Precisely Re-aligned Center with Typographic Hierarchy */}
         <div className="hero-tech-text-group">
           {/* Line 1: Small display size, Poppins regular */}
           <div className="hero-tech-line hero-tech-line--small">
@@ -153,7 +92,7 @@ export default function HeroSection({ onOpenProject }) {
               text="you can relax while"
               fontFamily="'Poppins', sans-serif"
               fontWeight={400}
-              fontSize={isMobile ? 18 : isTablet ? 30 : 40}
+              fontSize={isMobile ? 20 : isTablet ? 32 : 44}
               color="rgba(244, 244, 247, 0.85)"
               accentColor="#f4c64e"
               align="center"
@@ -174,7 +113,7 @@ export default function HeroSection({ onOpenProject }) {
               text="we take care of the design."
               fontFamily="'Poppins', sans-serif"
               fontWeight={800}
-              fontSize={isMobile ? 24 : isTablet ? 60 : 88}
+              fontSize={isMobile ? 26 : isTablet ? 64 : 96}
               color="#ffffff"
               accentColor="#ff4c42"
               align="center"
@@ -214,23 +153,6 @@ export default function HeroSection({ onOpenProject }) {
           <a href="#works" className="hero-cta-btn hero-cta-btn--secondary">
             <span>Explore Works</span>
           </a>
-        </div>
-
-        {/* FlexCarousel: Fluid Lens 3D Perspective Carousel */}
-        <div className="hero-carousel-wrapper">
-          <FlexCarousel
-            items={CAROUSEL_ITEMS}
-            preset="liquid"
-            intro="none"
-            cardHeight={isMobile ? 0.65 : 0.58}
-            gap={isMobile ? 10 : 16}
-            radius={14}
-            squeeze={0.2}
-            focusOnClick={true}
-            captions={true}
-            captureWheel={true}
-            onSelect={handleSelectCard}
-          />
         </div>
       </div>
 
