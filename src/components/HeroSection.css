@@ -3,7 +3,7 @@
    Curated palette: Obsidian Dark (#0B0C11), Solid Slate Pill (#202930),
    Electric Coral Accent (#FF4C42), Sunset Gold (#F4C64E), Pure White (#FFFFFF).
    Font: Poppins exclusively.
-   Centered, uncluttered monumental hero with WarpText and pure artboard cards.
+   Atmospheric interactive GradientASCII backdrop with centered WarpText.
    ========================================================================== */
 
 .hero-section {
@@ -19,69 +19,29 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Atmospheric Ambient Lighting Mesh */
-.hero-bg-atmosphere {
+/* ==========================================================================
+   INTERACTIVE GRADIENT ASCII BACKGROUND
+   ========================================================================== */
+.hero-ascii-bg {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+  overflow: hidden;
 }
 
-.hero-mesh-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(110px);
-  opacity: 0.45;
-  will-change: transform;
-}
-
-.hero-mesh-blob--coral {
-  top: -80px;
-  right: -60px;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(255, 76, 66, 0.32) 0%, rgba(255, 76, 66, 0.04) 70%, transparent 100%);
-  animation: floatCoral 14s ease-in-out infinite alternate;
-}
-
-.hero-mesh-blob--gold {
-  bottom: 80px;
-  left: 20%;
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(circle, rgba(244, 198, 78, 0.18) 0%, rgba(244, 198, 78, 0.02) 70%, transparent 100%);
-  animation: floatGold 18s ease-in-out infinite alternate;
-}
-
-.hero-mesh-blob--slate {
-  top: 35%;
-  left: -120px;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(32, 41, 48, 0.5) 0%, transparent 70%);
-}
-
-@keyframes floatCoral {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-30px, 40px) scale(1.1); }
-}
-
-@keyframes floatGold {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(40px, -30px) scale(1.08); }
-}
-
-/* Architectural Grid Pattern */
-.hero-grid-overlay {
+.hero-ascii-vignette {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, transparent 75%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(11, 12, 17, 0.15) 0%,
+    rgba(11, 12, 17, 0.65) 70%,
+    #0b0c11 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* ==========================================================================
@@ -167,7 +127,7 @@
 }
 
 /* ==========================================================================
-   CENTERED HERO STAGE
+   CENTERED HERO STAGE (NO CARDS, BALANCED DISPLAY)
    ========================================================================== */
 .hero-container--centered {
   position: relative;
@@ -175,7 +135,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem 1.5rem;
+  padding: 2rem 2rem 3rem;
   box-sizing: border-box;
   flex: 1;
   display: flex;
@@ -188,8 +148,8 @@
 /* Monumental WarpText Centerpiece */
 .hero-warp-wrapper {
   width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
+  max-width: 1280px;
+  margin: auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,18 +165,6 @@
 
 .hero-warp-wrapper .warp-text:active {
   cursor: grabbing;
-}
-
-/* Pure Artboard Visual Showcase Cards (Centered directly under WarpText) */
-.hero-cards-section {
-  width: 100%;
-  max-width: 900px;
-  margin: 0.25rem auto 1.5rem;
-  position: relative;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* ==========================================================================
@@ -262,7 +210,7 @@
    ========================================================================== */
 @media (max-width: 1024px) {
   .hero-container--centered {
-    padding: 0 1.5rem 1.5rem;
+    padding: 1.5rem 1.5rem 2rem;
   }
 }
 
@@ -285,16 +233,13 @@
     height: 44px;
   }
   .hero-warp-wrapper .warp-text {
-    height: 200px !important;
-  }
-  .hero-cards-section {
-    margin-top: 0;
+    height: 260px !important;
   }
 }
 
 @media (max-width: 480px) {
   .hero-warp-wrapper .warp-text {
-    height: 160px !important;
+    height: 200px !important;
   }
   .hero-bottom-ticker {
     height: 42px;
