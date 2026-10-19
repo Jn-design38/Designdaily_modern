@@ -243,3 +243,4 @@ const GradualBlur = ({
 };
 
 export default GradualBlur;
+

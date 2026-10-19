@@ -3,6 +3,7 @@ import TelemetryNav from './components/TelemetryNav';
 import HeroTelemetry from './components/HeroTelemetry';
 import CollaborationCards from './components/CollaborationCards';
 import WorksShowcase from './components/WorksShowcase';
+import CampaignsBounceSection from './components/CampaignsBounceSection';
 import CraftProcessEngine from './components/CraftProcessEngine';
 import BrandmarksGrid from './components/BrandmarksGrid';
 import FooterContact from './components/FooterContact';
@@ -46,6 +47,9 @@ export default function App() {
         {/* Curated Works Showcase with FlexCarousel (WebGL Liquid Lens) */}
         <WorksShowcase />
 
+        {/* Commercial & Social Campaigns in Motion with React Bits BounceCards */}
+        <CampaignsBounceSection />
+
         {/* 4-Step Craft Engine (Terracotta Timeline) */}
         <CraftProcessEngine />
 
@@ -58,3 +62,4 @@ export default function App() {
     </>
   );
 }
+

@@ -1,0 +1,434 @@
+﻿[
+    {
+        "Index":  1,
+        "Original":  "AG_small BANNER-2.png",
+        "Preview":  "assets/social-grid/previews/01-ag-small-banner-2-png.jpg",
+        "Master":  "assets/social-grid/masters/01-ag-small-banner-2-png.png",
+        "Width":  3200,
+        "Height":  2100,
+        "Ratio":  "1.52"
+    },
+    {
+        "Index":  2,
+        "Original":  "AG_small BANNER-3.png",
+        "Preview":  "assets/social-grid/previews/02-ag-small-banner-3-png.jpg",
+        "Master":  "assets/social-grid/masters/02-ag-small-banner-3-png.png",
+        "Width":  3200,
+        "Height":  2100,
+        "Ratio":  "1.52"
+    },
+    {
+        "Index":  3,
+        "Original":  "AG_small BANNER-4.png",
+        "Preview":  "assets/social-grid/previews/03-ag-small-banner-4-png.jpg",
+        "Master":  "assets/social-grid/masters/03-ag-small-banner-4-png.png",
+        "Width":  3200,
+        "Height":  2100,
+        "Ratio":  "1.52"
+    },
+    {
+        "Index":  4,
+        "Original":  "AG_YOUTUBE THUMBNAIL.png",
+        "Preview":  "assets/social-grid/previews/04-ag-youtube-thumbnail-png.jpg",
+        "Master":  "assets/social-grid/masters/04-ag-youtube-thumbnail-png.png",
+        "Width":  2048,
+        "Height":  1152,
+        "Ratio":  "1.78"
+    },
+    {
+        "Index":  5,
+        "Original":  "Apple_GearsBD_Julkarnine_Designdaily.com.jpg",
+        "Preview":  "assets/social-grid/previews/05-apple-gearsbd-julkarnine-designdaily-com-jpg.jpg",
+        "Master":  "assets/social-grid/masters/05-apple-gearsbd-julkarnine-designdaily-com-jpg.jpg",
+        "Width":  3600,
+        "Height":  3000,
+        "Ratio":  "1.20"
+    },
+    {
+        "Index":  6,
+        "Original":  "Artboard 1.png",
+        "Preview":  "assets/social-grid/previews/06-artboard-1-png.jpg",
+        "Master":  "assets/social-grid/masters/06-artboard-1-png.png",
+        "Width":  2000,
+        "Height":  2000,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  7,
+        "Original":  "Artboard 1DD.png",
+        "Preview":  "assets/social-grid/previews/07-artboard-1dd-png.jpg",
+        "Master":  "assets/social-grid/masters/07-artboard-1dd-png.png",
+        "Width":  1508,
+        "Height":  1885,
+        "Ratio":  "0.80"
+    },
+    {
+        "Index":  8,
+        "Original":  "Artboard 1JN X DD_AVES.png",
+        "Preview":  "assets/social-grid/previews/08-artboard-1jn-x-dd-aves-png.jpg",
+        "Master":  "assets/social-grid/masters/08-artboard-1jn-x-dd-aves-png.png",
+        "Width":  1508,
+        "Height":  1885,
+        "Ratio":  "0.80"
+    },
+    {
+        "Index":  9,
+        "Original":  "Artboard 2 copy.png",
+        "Preview":  "assets/social-grid/previews/09-artboard-2-copy-png.jpg",
+        "Master":  "assets/social-grid/masters/09-artboard-2-copy-png.png",
+        "Width":  2000,
+        "Height":  2000,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  10,
+        "Original":  "Artboard 2DD.png",
+        "Preview":  "assets/social-grid/previews/10-artboard-2dd-png.jpg",
+        "Master":  "assets/social-grid/masters/10-artboard-2dd-png.png",
+        "Width":  1508,
+        "Height":  1885,
+        "Ratio":  "0.80"
+    },
+    {
+        "Index":  11,
+        "Original":  "Artboard 2JN X DD_AVES.png",
+        "Preview":  "assets/social-grid/previews/11-artboard-2jn-x-dd-aves-png.jpg",
+        "Master":  "assets/social-grid/masters/11-artboard-2jn-x-dd-aves-png.png",
+        "Width":  1508,
+        "Height":  1885,
+        "Ratio":  "0.80"
+    },
+    {
+        "Index":  12,
+        "Original":  "Artboard 2v2.png",
+        "Preview":  "assets/social-grid/previews/12-artboard-2v2-png.jpg",
+        "Master":  "assets/social-grid/masters/12-artboard-2v2-png.png",
+        "Width":  2000,
+        "Height":  2000,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  13,
+        "Original":  "Artboard 3.png",
+        "Preview":  "assets/social-grid/previews/13-artboard-3-png.jpg",
+        "Master":  "assets/social-grid/masters/13-artboard-3-png.png",
+        "Width":  2000,
+        "Height":  2000,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  14,
+        "Original":  "Artboard 3DD.png",
+        "Preview":  "assets/social-grid/previews/14-artboard-3dd-png.jpg",
+        "Master":  "assets/social-grid/masters/14-artboard-3dd-png.png",
+        "Width":  1508,
+        "Height":  1885,
+        "Ratio":  "0.80"
+    },
+    {
+        "Index":  15,
+        "Original":  "Artboard 3JN X DD_AVES.png",
+        "Preview":  "assets/social-grid/previews/15-artboard-3jn-x-dd-aves-png.jpg",
+        "Master":  "assets/social-grid/masters/15-artboard-3jn-x-dd-aves-png.png",
+        "Width":  1508,
+        "Height":  1885,
+        "Ratio":  "0.80"
+    },
+    {
+        "Index":  16,
+        "Original":  "Artboard 4_JN X DD_AVES.png",
+        "Preview":  "assets/social-grid/previews/16-artboard-4-jn-x-dd-aves-png.jpg",
+        "Master":  "assets/social-grid/masters/16-artboard-4-jn-x-dd-aves-png.png",
+        "Width":  1508,
+        "Height":  1885,
+        "Ratio":  "0.80"
+    },
+    {
+        "Index":  17,
+        "Original":  "Artboard 4.png",
+        "Preview":  "assets/social-grid/previews/17-artboard-4-png.jpg",
+        "Master":  "assets/social-grid/masters/17-artboard-4-png.png",
+        "Width":  2000,
+        "Height":  2000,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  18,
+        "Original":  "Banner 4.png",
+        "Preview":  "assets/social-grid/previews/18-banner-4-png.jpg",
+        "Master":  "assets/social-grid/masters/18-banner-4-png.png",
+        "Width":  3200,
+        "Height":  1216,
+        "Ratio":  "2.63"
+    },
+    {
+        "Index":  19,
+        "Original":  "Banner3.png",
+        "Preview":  "assets/social-grid/previews/19-banner3-png.jpg",
+        "Master":  "assets/social-grid/masters/19-banner3-png.png",
+        "Width":  3200,
+        "Height":  1216,
+        "Ratio":  "2.63"
+    },
+    {
+        "Index":  20,
+        "Original":  "card mockup.png",
+        "Preview":  "assets/social-grid/previews/20-card-mockup-png.jpg",
+        "Master":  "assets/social-grid/masters/20-card-mockup-png.png",
+        "Width":  2560,
+        "Height":  1538,
+        "Ratio":  "1.66"
+    },
+    {
+        "Index":  21,
+        "Original":  "Clutch bag_1080.png",
+        "Preview":  "assets/social-grid/previews/21-clutch-bag-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/21-clutch-bag-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  22,
+        "Original":  "Clutch bag2_1080.png",
+        "Preview":  "assets/social-grid/previews/22-clutch-bag2-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/22-clutch-bag2-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  23,
+        "Original":  "Clutch bag3_1080.png",
+        "Preview":  "assets/social-grid/previews/23-clutch-bag3-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/23-clutch-bag3-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  24,
+        "Original":  "Clutch bag4_1080.png",
+        "Preview":  "assets/social-grid/previews/24-clutch-bag4-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/24-clutch-bag4-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  25,
+        "Original":  "Clutch bag5_1080.png",
+        "Preview":  "assets/social-grid/previews/25-clutch-bag5-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/25-clutch-bag5-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  26,
+        "Original":  "Clutch bag6_1080.png",
+        "Preview":  "assets/social-grid/previews/26-clutch-bag6-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/26-clutch-bag6-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  27,
+        "Original":  "Clutch bag7_1080.png",
+        "Preview":  "assets/social-grid/previews/27-clutch-bag7-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/27-clutch-bag7-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  28,
+        "Original":  "saegis.png",
+        "Preview":  "assets/social-grid/previews/28-saegis-png.jpg",
+        "Master":  "assets/social-grid/masters/28-saegis-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  29,
+        "Original":  "Seor baby feeding set listing_1080.png",
+        "Preview":  "assets/social-grid/previews/29-seor-baby-feeding-set-listing-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/29-seor-baby-feeding-set-listing-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  30,
+        "Original":  "Seor baby feeding set listing.jpg",
+        "Preview":  "assets/social-grid/previews/30-seor-baby-feeding-set-listing-jpg.jpg",
+        "Master":  "assets/social-grid/masters/30-seor-baby-feeding-set-listing-jpg.jpg",
+        "Width":  4000,
+        "Height":  3000,
+        "Ratio":  "1.33"
+    },
+    {
+        "Index":  31,
+        "Original":  "Seor baby feeding set listing1_1080.png",
+        "Preview":  "assets/social-grid/previews/31-seor-baby-feeding-set-listing1-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/31-seor-baby-feeding-set-listing1-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  32,
+        "Original":  "Seor baby feeding set listing2_1080.png",
+        "Preview":  "assets/social-grid/previews/32-seor-baby-feeding-set-listing2-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/32-seor-baby-feeding-set-listing2-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  33,
+        "Original":  "Seor baby feeding set listing3_1080.png",
+        "Preview":  "assets/social-grid/previews/33-seor-baby-feeding-set-listing3-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/33-seor-baby-feeding-set-listing3-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  34,
+        "Original":  "Seor baby feeding set listing4_1080.png",
+        "Preview":  "assets/social-grid/previews/34-seor-baby-feeding-set-listing4-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/34-seor-baby-feeding-set-listing4-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  35,
+        "Original":  "Seor baby feeding set listing5_1080.png",
+        "Preview":  "assets/social-grid/previews/35-seor-baby-feeding-set-listing5-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/35-seor-baby-feeding-set-listing5-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  36,
+        "Original":  "Seor baby feeding set listing6_1080.png",
+        "Preview":  "assets/social-grid/previews/36-seor-baby-feeding-set-listing6-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/36-seor-baby-feeding-set-listing6-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  37,
+        "Original":  "seor bag-a+.png",
+        "Preview":  "assets/social-grid/previews/37-seor-bag-a-png.jpg",
+        "Master":  "assets/social-grid/masters/37-seor-bag-a-png.png",
+        "Width":  1920,
+        "Height":  1080,
+        "Ratio":  "1.78"
+    },
+    {
+        "Index":  38,
+        "Original":  "Seor clutch bag.jpg",
+        "Preview":  "assets/social-grid/previews/38-seor-clutch-bag-jpg.jpg",
+        "Master":  "assets/social-grid/masters/38-seor-clutch-bag-jpg.jpg",
+        "Width":  4000,
+        "Height":  3000,
+        "Ratio":  "1.33"
+    },
+    {
+        "Index":  39,
+        "Original":  "sleeping mask amazon listing.jpg",
+        "Preview":  "assets/social-grid/previews/39-sleeping-mask-amazon-listing-jpg.jpg",
+        "Master":  "assets/social-grid/masters/39-sleeping-mask-amazon-listing-jpg.jpg",
+        "Width":  4000,
+        "Height":  3000,
+        "Ratio":  "1.33"
+    },
+    {
+        "Index":  40,
+        "Original":  "Sleepmask1_1080.png",
+        "Preview":  "assets/social-grid/previews/40-sleepmask1-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/40-sleepmask1-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  41,
+        "Original":  "Sleepmask2_1080.png",
+        "Preview":  "assets/social-grid/previews/41-sleepmask2-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/41-sleepmask2-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  42,
+        "Original":  "Sleepmask3_1080.png",
+        "Preview":  "assets/social-grid/previews/42-sleepmask3-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/42-sleepmask3-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  43,
+        "Original":  "Sleepmask4_1080.png",
+        "Preview":  "assets/social-grid/previews/43-sleepmask4-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/43-sleepmask4-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  44,
+        "Original":  "Sleepmask5_1080.png",
+        "Preview":  "assets/social-grid/previews/44-sleepmask5-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/44-sleepmask5-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  45,
+        "Original":  "Sleepmask6_1080.png",
+        "Preview":  "assets/social-grid/previews/45-sleepmask6-1080-png.jpg",
+        "Master":  "assets/social-grid/masters/45-sleepmask6-1080-png.png",
+        "Width":  1080,
+        "Height":  1080,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  46,
+        "Original":  "slpmsk_a+.png",
+        "Preview":  "assets/social-grid/previews/46-slpmsk-a-png.jpg",
+        "Master":  "assets/social-grid/masters/46-slpmsk-a-png.png",
+        "Width":  1920,
+        "Height":  1080,
+        "Ratio":  "1.78"
+    },
+    {
+        "Index":  47,
+        "Original":  "Social media 1.png",
+        "Preview":  "assets/social-grid/previews/47-social-media-1-png.jpg",
+        "Master":  "assets/social-grid/masters/47-social-media-1-png.png",
+        "Width":  2000,
+        "Height":  2000,
+        "Ratio":  "1.00"
+    },
+    {
+        "Index":  48,
+        "Original":  "Social media 2.png",
+        "Preview":  "assets/social-grid/previews/48-social-media-2-png.jpg",
+        "Master":  "assets/social-grid/masters/48-social-media-2-png.png",
+        "Width":  2000,
+        "Height":  2000,
+        "Ratio":  "1.00"
+    }
+]
