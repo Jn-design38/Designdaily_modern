@@ -53,7 +53,7 @@ export default function HeroSection({ onOpenProject }) {
         <div className="hero-ascii-vignette" />
       </div>
 
-      {/* Top Header — Solid Split PillNav (Circular White Logo + Navigation Pill, No Glass) */}
+      {/* Top Header — Glassy Split PillNav (Circular White Logo + Navigation Pill, Boxed ONLY on Selected Item) */}
       <header className="hero-header">
         <div className="hero-nav-wrapper">
           <PillNav
@@ -64,15 +64,12 @@ export default function HeroSection({ onOpenProject }) {
             activeHref={activeNav}
             onItemClick={handleNavClick}
             layout="split"
-            itemStyle="pill"
-            hoverEffect="fill"
-            indicator="dot"
+            itemStyle="text"
+            hoverEffect="none"
+            indicator="none"
             theme="dark"
-            surface="solid"
-            barColor="#202930"
+            surface="glass"
             textColor="#ffffff"
-            highlightColor="#FF4C42"
-            highlightTextColor="#FFFFFF"
             size="lg"
             bounce={0.35}
             stretch={0.45}
@@ -81,7 +78,7 @@ export default function HeroSection({ onOpenProject }) {
         </div>
       </header>
 
-      {/* Centered Hero Stage with Interactive TechText */}
+      {/* Centered Hero Stage with Interactive TechText (Dragging Removed) */}
       <div className="hero-container hero-container--centered">
         <div className="hero-tech-text-group">
           {/* Line 1: Small size, Poppins regular */}
@@ -99,7 +96,7 @@ export default function HeroSection({ onOpenProject }) {
               strokeWidth={1.2}
               specks={10}
               clickKick={true}
-              draggable={true}
+              draggable={false}
               guides={false}
             />
           </div>
@@ -119,7 +116,7 @@ export default function HeroSection({ onOpenProject }) {
               strokeWidth={1.6}
               specks={16}
               clickKick={true}
-              draggable={true}
+              draggable={false}
               guides={false}
             />
           </div>
