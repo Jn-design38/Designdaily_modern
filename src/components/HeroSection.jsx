@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import PillNav from './PillNav';
 import TechText from './TechText';
 import GradientASCII from './GradientASCII';
-import BounceCards from './BounceCards';
+import FlexCarousel from './FlexCarousel';
 import './HeroSection.css';
 
-// Direct asset imports for zero-latency bundled client social posts
-import card1 from '../assets/social-cards/card-1.png';
-import card2 from '../assets/social-cards/card-2.png';
-import card3 from '../assets/social-cards/card-3.png';
-import card4 from '../assets/social-cards/card-4.png';
-import card5 from '../assets/social-cards/card-5.png';
+// Direct 7 asset imports specified by user for FlexCarousel
+import item1 from '../assets/carousel/carousel-1-aves-1.png';
+import item2 from '../assets/carousel/carousel-2-aves-2.png';
+import item3 from '../assets/carousel/carousel-3-tripty.png';
+import item4 from '../assets/carousel/carousel-4-norea.png';
+import item5 from '../assets/carousel/carousel-5-aves-3.png';
+import item6 from '../assets/carousel/carousel-6-aves-4.png';
+import item7 from '../assets/carousel/carousel-7-all-organics.png';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '#home' },
@@ -20,13 +22,49 @@ const NAV_ITEMS = [
   { label: 'Contact', href: '#contact' }
 ];
 
-// 5 selected 1080x1080 uncropped social media post artworks from Designdaily Assets
-const BOUNCE_CARDS_IMAGES = [
-  { src: card1, alt: 'Seor Leathercraft Clutch Bag' },
-  { src: card2, alt: 'Seor Baby Feeding Set Minimalist Packaging' },
-  { src: card3, alt: 'Luxury Silk Sleepmask Product Direction' },
-  { src: card4, alt: 'Saegis Bold Brand Identity' },
-  { src: card5, alt: 'Editorial Leathercraft Detail' }
+const CAROUSEL_ITEMS = [
+  {
+    src: item1,
+    alt: 'Aves Streetwear Campaign Artboard 1',
+    title: 'Aves — Urban Movement',
+    subtitle: 'Campaign & Social Direction'
+  },
+  {
+    src: item2,
+    alt: 'Aves Editorial Packaging Artboard 2',
+    title: 'Aves — Editorial Motion',
+    subtitle: 'Brand System'
+  },
+  {
+    src: item3,
+    alt: 'Tripty Heritage Tea Brand Identity',
+    title: 'Tripty — Organic Teas',
+    subtitle: 'Brand Identity & Packaging'
+  },
+  {
+    src: item4,
+    alt: 'Norea Architectural Construction Identity',
+    title: 'Norea — Structural Elegance',
+    subtitle: 'Corporate Identity Program'
+  },
+  {
+    src: item5,
+    alt: 'Aves Lifestyle Artboard 3',
+    title: 'Aves — Monogram Series',
+    subtitle: 'Digital Art Direction'
+  },
+  {
+    src: item6,
+    alt: 'Aves Lookbook Artboard 4',
+    title: 'Aves — Studio Lookbook',
+    subtitle: 'Social Identity'
+  },
+  {
+    src: item7,
+    alt: 'All Organics Sustainable Identity',
+    title: 'All Organics — Pure Botanicals',
+    subtitle: 'Packaging & Art Direction'
+  }
 ];
 
 export default function HeroSection({ onOpenProject }) {
@@ -54,47 +92,11 @@ export default function HeroSection({ onOpenProject }) {
     }
   };
 
-  const handleCardClick = (index) => {
+  const handleSelectCard = (index, item) => {
     if (typeof onOpenProject === 'function') {
-      onOpenProject(index);
-    } else {
-      const target = document.querySelector('#works');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+      onOpenProject(index, item);
     }
   };
-
-  // Responsive configuration for BounceCards
-  const bounceConfig = isMobile
-    ? {
-        containerWidth: Math.min(290, windowWidth - 32),
-        containerHeight: 140,
-        cardSize: 84,
-        spread: 32,
-        pushDistance: 45,
-        borderWidth: 2,
-        radius: 10
-      }
-    : isTablet
-    ? {
-        containerWidth: 560,
-        containerHeight: 220,
-        cardSize: 150,
-        spread: 76,
-        pushDistance: 115,
-        borderWidth: 3,
-        radius: 16
-      }
-    : {
-        containerWidth: 760,
-        containerHeight: 280,
-        cardSize: 195,
-        spread: 112,
-        pushDistance: 155,
-        borderWidth: 3.5,
-        radius: 20
-      };
 
   return (
     <section id="home" className="hero-section" aria-label="Design Daily Studio Hero">
@@ -141,19 +143,20 @@ export default function HeroSection({ onOpenProject }) {
         </div>
       </header>
 
-      {/* Hero Stage — Elevated Title, Magnetic CTA, and Interactive BounceCards Fan in the Dark Region */}
+      {/* Hero Stage — Re-aligned Title, Magnetic CTA, and React Bits FlexCarousel */}
       <div className="hero-container hero-container--centered">
-        {/* Title Stack: Shifted Upper with Distinct Hierarchy */}
+        {/* Title Stack: Precisely Re-aligned Center with Clear Typographic Hierarchy */}
         <div className="hero-tech-text-group">
-          {/* Line 1: Small size, Poppins regular */}
+          {/* Line 1: Small display size, Poppins regular */}
           <div className="hero-tech-line hero-tech-line--small">
             <TechText
               text="you can relax while"
               fontFamily="'Poppins', sans-serif"
               fontWeight={400}
-              fontSize={isMobile ? 19 : isTablet ? 32 : 42}
+              fontSize={isMobile ? 18 : isTablet ? 30 : 40}
               color="rgba(244, 244, 247, 0.85)"
               accentColor="#f4c64e"
+              align="center"
               reveal="letter"
               dashLength={3}
               dashGap={2}
@@ -171,9 +174,10 @@ export default function HeroSection({ onOpenProject }) {
               text="we take care of the design."
               fontFamily="'Poppins', sans-serif"
               fontWeight={800}
-              fontSize={isMobile ? 21 : isTablet ? 64 : 96}
+              fontSize={isMobile ? 24 : isTablet ? 60 : 88}
               color="#ffffff"
               accentColor="#ff4c42"
+              align="center"
               reveal="letter"
               dashLength={4}
               dashGap={2}
@@ -212,27 +216,20 @@ export default function HeroSection({ onOpenProject }) {
           </a>
         </div>
 
-        {/* Bounce Cards Fan: Uncropped Real Social Media Posts in the Dark Lower Region */}
-        <div className="hero-bounce-cards-wrapper" aria-label="Featured Social Media Design Showcase">
-          <BounceCards
-            images={BOUNCE_CARDS_IMAGES}
-            containerWidth={bounceConfig.containerWidth}
-            containerHeight={bounceConfig.containerHeight}
-            cardSize={bounceConfig.cardSize}
-            spread={bounceConfig.spread}
-            rotation={8}
-            arc={-6}
-            pushDistance={bounceConfig.pushDistance}
-            hoverScale={1.1}
-            bounciness={0.5}
-            animationDelay={0.05}
-            animationStagger={0.04}
-            borderWidth={bounceConfig.borderWidth}
-            borderColor="#ffffff"
-            radius={bounceConfig.radius}
-            shadow={true}
-            enableHover={true}
-            onCardClick={handleCardClick}
+        {/* FlexCarousel: Fluid Lens 3D Perspective Carousel */}
+        <div className="hero-carousel-wrapper">
+          <FlexCarousel
+            items={CAROUSEL_ITEMS}
+            preset="liquid"
+            intro="none"
+            cardHeight={isMobile ? 0.65 : 0.58}
+            gap={isMobile ? 10 : 16}
+            radius={14}
+            squeeze={0.2}
+            focusOnClick={true}
+            captions={true}
+            captureWheel={true}
+            onSelect={handleSelectCard}
           />
         </div>
       </div>
