@@ -4,40 +4,28 @@ import './HeroCards.css';
 const CARDS_DATA = [
   {
     id: 'card-1',
-    title: 'Seor Leathercraft',
-    category: 'Luxury Identity & Campaign',
-    year: '2026',
-    image: '/seor-campaign.jpg',
+    image: '/artboard-1-aves.png',
+    alt: 'Design Daily Social Media Post 1',
     defaultRotate: -18.09,
-    defaultZ: 2,
-    badge: '01 / BRAND IDENTITY',
-    client: 'Seor Leather Goods'
+    defaultZ: 2
   },
   {
     id: 'card-2',
-    title: 'Tripty Foods',
-    category: 'Artisanal Packaging & Digital',
-    year: '2026',
-    image: '/tripty-cover.png',
+    image: '/artboard-1-dd.png',
+    alt: 'Design Daily Social Media Post 2',
     defaultRotate: 0,
-    defaultZ: 5,
-    badge: '02 / PACKAGING & WEB',
-    client: 'Tripty Gourmet Co.'
+    defaultZ: 5
   },
   {
     id: 'card-3',
-    title: 'All Organics',
-    category: 'Botanical System & Print',
-    year: '2026',
-    image: '/all-organics-cover.png',
+    image: '/artboard-2-aves.png',
+    alt: 'Design Daily Social Media Post 3',
     defaultRotate: 30,
-    defaultZ: 3,
-    badge: '03 / VISUAL IDENTITY',
-    client: 'All Organics Living'
+    defaultZ: 3
   }
 ];
 
-export default function HeroCards({ onSelectCard }) {
+export default function HeroCards() {
   const [activeCard, setActiveCard] = useState(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
@@ -61,18 +49,17 @@ export default function HeroCards({ onSelectCard }) {
       className="hero-cards-stage"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      aria-label="Design Daily Featured Visual Work Showcase"
+      aria-label="Design Daily Visual Artboards"
     >
       <div className="hero-cards-glow-backdrop" />
       
       {CARDS_DATA.map((card, index) => {
         const isHovered = activeCard === card.id;
-        // Subtle parallax displacement
-        const parallaxX = mousePos.x * (index === 1 ? 15 : index === 0 ? -12 : 20);
-        const parallaxY = mousePos.y * (index === 1 ? 15 : 20);
+        const parallaxX = mousePos.x * (index === 1 ? 14 : index === 0 ? -12 : 18);
+        const parallaxY = mousePos.y * (index === 1 ? 14 : 18);
         const currentRotation = isHovered 
           ? card.defaultRotate * 0.35 
-          : card.defaultRotate + mousePos.x * 6;
+          : card.defaultRotate + mousePos.x * 5;
 
         return (
           <div
@@ -86,50 +73,17 @@ export default function HeroCards({ onSelectCard }) {
               '--parallax-y': `${parallaxY}px`
             }}
             onMouseEnter={() => setActiveCard(card.id)}
-            onClick={() => onSelectCard?.(card)}
-            role="button"
-            tabIndex={0}
-            aria-label={`${card.title} - ${card.category}`}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onSelectCard?.(card);
-              }
-            }}
+            role="img"
+            aria-label={card.alt}
           >
             <div className="hero-card__inner">
-              <div className="hero-card__media-wrap">
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="hero-card__img"
-                  loading="eager"
-                  decoding="async"
-                />
-                <div className="hero-card__overlay" />
-              </div>
-
-              {/* Glass Tag Badge */}
-              <div className="hero-card__badge-pill">
-                <span className="hero-card__badge-dot" />
-                <span className="hero-card__badge-text">{card.badge}</span>
-              </div>
-
-              {/* Card Bottom Meta */}
-              <div className="hero-card__info">
-                <div className="hero-card__meta-group">
-                  <span className="hero-card__client">{card.client}</span>
-                  <h3 className="hero-card__title">{card.title}</h3>
-                </div>
-                <div className="hero-card__arrow">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* Luminous Specular Border */}
+              <img
+                src={card.image}
+                alt={card.alt}
+                className="hero-card__img"
+                loading="eager"
+                decoding="async"
+              />
               <div className="hero-card__rim" />
             </div>
           </div>
