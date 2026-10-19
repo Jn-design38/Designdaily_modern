@@ -5,6 +5,7 @@
    Font: Poppins exclusively.
    Interactive GradientASCII backdrop with TechText typography.
    Glassy split navigation with selected button boxed exclusively.
+   Elevated title stack, high-converting CTA, and BounceCards showcase.
    ========================================================================== */
 
 .hero-section {
@@ -36,10 +37,10 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse at center,
-    rgba(11, 12, 17, 0.1) 0%,
-    rgba(11, 12, 17, 0.62) 70%,
-    #0b0c11 100%
+    ellipse at 50% 25%,
+    rgba(11, 12, 17, 0.04) 0%,
+    rgba(11, 12, 17, 0.5) 50%,
+    #0b0c11 82%
   );
   pointer-events: none;
   z-index: 1;
@@ -55,16 +56,17 @@
   position: relative;
   z-index: 50;
   width: 100%;
+  padding: 1.5rem 2rem 0.5rem;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  padding: 1.5rem 1.25rem 0.5rem;
-  box-sizing: border-box;
+  align-items: center;
 }
 
 .hero-nav-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -105,8 +107,8 @@
 }
 
 .hero-header .pill-nav__mark {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,9 +175,7 @@
 }
 
 /* ==========================================================================
-   CENTERED HERO STAGE (TECHTEXT INTEGRATION)
-   Line 1: Small size, Poppins regular
-   Line 2: Monumental size, Poppins bold
+   CENTERED HERO STAGE (TECHTEXT ELEVATED + CTA + BOUNCECARDS)
    ========================================================================== */
 .hero-container--centered {
   position: relative;
@@ -183,27 +183,29 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 1.5rem 2rem 2.5rem;
+  padding: 0.5rem 1.5rem 1rem;
   box-sizing: border-box;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  gap: 0.85rem;
 }
 
+/* Title stack moved upper */
 .hero-tech-text-group {
   width: 100%;
   max-width: 1380px;
-  margin: auto 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 10;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
 .hero-tech-line {
@@ -216,12 +218,98 @@
 
 /* Small line with Poppins regular */
 .hero-tech-line--small {
-  height: 56px;
+  height: clamp(38px, 5.5vh, 50px);
 }
 
 /* Large monumental headline line */
 .hero-tech-line--large {
-  height: 150px;
+  height: clamp(80px, 14vh, 125px);
+}
+
+/* ==========================================================================
+   CALL TO ACTION BUTTONS
+   ========================================================================== */
+.hero-cta-group {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+  z-index: 15;
+  margin: 0.15rem 0 0.4rem;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 999px;
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2), box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Primary CTA: Electric Coral Gradient with Specular Inset & Glow */
+.hero-cta-btn--primary {
+  background: linear-gradient(135deg, #ff4c42 0%, #ff6b52 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 6px 20px -2px rgba(255, 76, 66, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.hero-cta-btn--primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 10px 28px -2px rgba(255, 76, 66, 0.65),
+    inset 0 1.2px 0 rgba(255, 255, 255, 0.55);
+}
+
+.hero-cta-arrow {
+  transition: transform 0.25s ease;
+}
+
+.hero-cta-btn--primary:hover .hero-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* Secondary CTA: Translucent Frosted Glass Capsule */
+.hero-cta-btn--secondary {
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(244, 244, 247, 0.88);
+}
+
+.hero-cta-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   BOUNCE CARDS SECTION (DARK REGION SHOWCASE)
+   ========================================================================== */
+.hero-bounce-cards-wrapper {
+  position: relative;
+  z-index: 12;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+  margin-bottom: auto;
 }
 
 /* ==========================================================================
@@ -237,6 +325,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  margin-top: auto;
 }
 
 .hero-ticker-track {
@@ -258,63 +347,60 @@
 }
 
 @keyframes tickerSlide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1024px) {
   .hero-container--centered {
-    padding: 1.5rem 1.5rem 2rem;
+    padding: 0.5rem 1rem 1rem;
+    gap: 0.65rem;
   }
   .hero-tech-line--small {
-    height: 48px;
+    height: 42px;
   }
   .hero-tech-line--large {
-    height: 125px;
+    height: 100px;
   }
 }
 
 @media (max-width: 768px) {
   .hero-header {
-    padding: 1.25rem 1rem 0.5rem;
+    padding: 1rem 1.25rem 0.25rem;
   }
   .hero-header .pill-nav[data-layout='split'] {
-    gap: 12px;
+    width: 100%;
+    justify-content: space-between;
   }
-  .hero-header .pill-nav__logo {
-    width: 44px;
-    height: 44px;
-  }
-  .hero-header .pill-nav__mark {
-    width: 22px;
-    height: 22px;
-  }
-  .hero-header .pill-nav__bar {
-    height: 44px;
+  .hero-container--centered {
+    padding: 0.5rem 0.75rem 0.75rem;
+    gap: 0.5rem;
   }
   .hero-tech-line--small {
-    height: 40px;
-  }
-  .hero-tech-line--large {
-    height: 95px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-tech-line--small {
-    height: 34px;
+    height: 36px;
   }
   .hero-tech-line--large {
     height: 75px;
+  }
+  .hero-cta-group {
+    gap: 10px;
+    margin: 0.1rem 0 0.3rem;
+  }
+  .hero-cta-btn {
+    font-size: 13px;
+    padding: 8px 18px;
   }
   .hero-bottom-ticker {
     height: 42px;
   }
   .hero-ticker-item {
     font-size: 10px;
-    gap: 2rem;
   }
 }
