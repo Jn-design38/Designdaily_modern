@@ -1,0 +1,74 @@
+/* ==========================================================================
+   DESIGN DAILY REFRESHED — GLOBAL DESIGN SYSTEM & TOKENS
+   ========================================================================== */
+
+:root {
+  --color-coral: #ff4c42;
+  --color-coral-hover: #e43e34;
+  --color-gold: #f4c64e;
+  --color-charcoal-dark: #121319;
+  --color-charcoal: #1e2029;
+  --color-bg-dark: #0b0c11;
+  --color-surface-dark: #161822;
+  --color-text-main: #f4f4f7;
+  --color-text-muted: rgba(244, 244, 247, 0.65);
+  
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg-dark);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+::selection {
+  background-color: var(--color-coral);
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 3px;
+}
+
+.app-layout {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

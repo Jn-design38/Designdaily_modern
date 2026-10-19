@@ -1,0 +1,314 @@
+/* ==========================================================================
+   HERO CARDS STAGE — 3D INTERACTIVE SQUIRCLE STACK
+   Faithful to SVG layout preferences: Card 1 (-18deg), Card 2 (0deg), Card 3 (+30deg)
+   ========================================================================== */
+
+.hero-cards-stage {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  user-select: none;
+}
+
+/* Ambient backlight glow behind the cards */
+.hero-cards-glow-backdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 76, 66, 0.28) 0%,
+    rgba(244, 198, 78, 0.18) 45%,
+    transparent 70%
+  );
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Individual card container */
+.hero-card {
+  position: absolute;
+  width: 320px;
+  height: 380px;
+  cursor: pointer;
+  z-index: var(--card-z, 2);
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15),
+    z-index 0.3s ease,
+    box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+/* Exact positional alignment matching SVG layout */
+.hero-card--1 {
+  left: 20px;
+  top: 48px;
+  transform:
+    translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0px)
+    rotate(var(--card-current-rotate, -18.09deg));
+}
+
+.hero-card--2 {
+  left: 50%;
+  top: 15px;
+  transform:
+    translate3d(calc(-50% + var(--parallax-x, 0px)), var(--parallax-y, 0px), 25px)
+    rotate(var(--card-current-rotate, 0deg));
+}
+
+.hero-card--3 {
+  right: 20px;
+  top: 54px;
+  transform:
+    translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 10px)
+    rotate(var(--card-current-rotate, 30deg));
+}
+
+/* Hover elevation state */
+.hero-card--active {
+  z-index: 20 !important;
+  transform:
+    translate3d(
+      calc(
+        var(--parallax-x, 0px) +
+        (var(--card-base-rotate) < 0 ? 15px : var(--card-base-rotate) > 0 ? -15px : 0px)
+      ),
+      -14px,
+      40px
+    )
+    scale(1.05)
+    rotate(calc(var(--card-base-rotate) * 0.28)) !important;
+}
+
+/* Card inner canvas with continuous rounded squircle corners (rx="61.91" from SVG) */
+.hero-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 46px;
+  overflow: hidden;
+  background: #191b22;
+  box-shadow:
+    0 18px 45px -12px rgba(0, 0, 0, 0.65),
+    0 4px 14px -4px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.hero-card--active .hero-card__inner {
+  box-shadow:
+    0 28px 65px -14px rgba(0, 0, 0, 0.85),
+    0 0 35px rgba(255, 76, 66, 0.22),
+    0 4px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* Background image & media frame */
+.hero-card__media-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-card--active .hero-card__img {
+  transform: scale(1.08);
+}
+
+/* Subtle gradient overlay to guarantee text legibility */
+.hero-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 17, 23, 0.45) 0%,
+    rgba(15, 17, 23, 0.1) 40%,
+    rgba(15, 17, 23, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating Glass Tag Badge at Top */
+.hero-card__badge-pill {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(22, 24, 33, 0.72);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-card__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff4c42;
+  box-shadow: 0 0 8px #ff4c42;
+}
+
+.hero-card__badge-text {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f4f4f7;
+}
+
+/* Card bottom info block */
+.hero-card__info {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-card__meta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hero-card__client {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(244, 244, 247, 0.72);
+  letter-spacing: 0.02em;
+}
+
+.hero-card__title {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+/* Circular hover arrow pill */
+.hero-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #121016;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.hero-card--active .hero-card__arrow {
+  transform: scale(1.12) rotate(45deg);
+  background: #ff4c42;
+  color: #ffffff;
+}
+
+/* Luminous specular rim */
+.hero-card__rim {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  transition: box-shadow 0.35s ease;
+}
+
+.hero-card--active .hero-card__rim {
+  box-shadow:
+    inset 0 0 0 1.5px rgba(255, 76, 66, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.85);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hero-cards-stage {
+    max-width: 580px;
+    height: 420px;
+  }
+  .hero-card {
+    width: 270px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-cards-stage {
+    max-width: 440px;
+    height: 360px;
+    margin: 2rem auto 0;
+  }
+  .hero-card {
+    width: 230px;
+    height: 275px;
+  }
+  .hero-card__inner {
+    border-radius: 36px;
+    padding: 1rem;
+  }
+  .hero-card__title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cards-stage {
+    max-width: 320px;
+    height: 310px;
+  }
+  .hero-card {
+    width: 195px;
+    height: 235px;
+  }
+  .hero-card__inner {
+    border-radius: 28px;
+    padding: 0.85rem;
+  }
+  .hero-card__badge-pill {
+    padding: 4px 10px;
+  }
+  .hero-card__badge-text {
+    font-size: 9px;
+  }
+  .hero-card__title {
+    font-size: 14px;
+  }
+}
