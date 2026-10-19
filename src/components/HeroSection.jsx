@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PillNav from './PillNav';
-import WarpText from './WarpText';
+import TechText from './TechText';
 import GradientASCII from './GradientASCII';
 import './HeroSection.css';
 
@@ -81,30 +81,48 @@ export default function HeroSection({ onOpenProject }) {
         </div>
       </header>
 
-      {/* Centered, Uncluttered Hero Stage — Cards Removed, Centered WarpText */}
+      {/* Centered Hero Stage with Interactive TechText */}
       <div className="hero-container hero-container--centered">
-        <div className="hero-warp-wrapper">
-          <WarpText
-            text={"You can relax while\nwe take care of the design."}
-            warpStrength={0.08}
-            warpScale={1.7}
-            speed={0.55}
-            lens="bulge"
-            pointerInfluence={0.42}
-            pointerStrength={0.38}
-            refraction={0.018}
-            chromatic={0.35}
-            idleDrift={0.2}
-            ripple
-            clickRipple
-            intro
-            fontSize="clamp(2.5rem, 5.5vw, 5.8rem)"
-            fontWeight={800}
-            style={{ height: '360px' }}
-            color={null}
-            letterSpacing="-0.04em"
-            lineHeight="1.15"
-          />
+        <div className="hero-tech-text-group">
+          {/* Line 1: Small size, Poppins regular */}
+          <div className="hero-tech-line hero-tech-line--small">
+            <TechText
+              text="you can relax while"
+              fontFamily="'Poppins', sans-serif"
+              fontWeight={400}
+              fontSize={44}
+              color="rgba(244, 244, 247, 0.82)"
+              accentColor="#f4c64e"
+              reveal="letter"
+              dashLength={3}
+              dashGap={2}
+              strokeWidth={1.2}
+              specks={10}
+              clickKick={true}
+              draggable={true}
+              guides={false}
+            />
+          </div>
+
+          {/* Line 2: Monumental display bold */}
+          <div className="hero-tech-line hero-tech-line--large">
+            <TechText
+              text="we take care of the design."
+              fontFamily="'Poppins', sans-serif"
+              fontWeight={800}
+              fontSize={108}
+              color="#ffffff"
+              accentColor="#ff4c42"
+              reveal="letter"
+              dashLength={4}
+              dashGap={2}
+              strokeWidth={1.6}
+              specks={16}
+              clickKick={true}
+              draggable={true}
+              guides={false}
+            />
+          </div>
         </div>
       </div>
 

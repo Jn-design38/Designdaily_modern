@@ -3,7 +3,7 @@
    Curated palette: Obsidian Dark (#0B0C11), Solid Slate Pill (#202930),
    Electric Coral Accent (#FF4C42), Sunset Gold (#F4C64E), Pure White (#FFFFFF).
    Font: Poppins exclusively.
-   Atmospheric interactive GradientASCII backdrop with centered WarpText.
+   Atmospheric interactive GradientASCII backdrop with TechText typography.
    ========================================================================== */
 
 .hero-section {
@@ -36,8 +36,8 @@
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(11, 12, 17, 0.15) 0%,
-    rgba(11, 12, 17, 0.65) 70%,
+    rgba(11, 12, 17, 0.12) 0%,
+    rgba(11, 12, 17, 0.62) 70%,
     #0b0c11 100%
   );
   pointer-events: none;
@@ -127,7 +127,9 @@
 }
 
 /* ==========================================================================
-   CENTERED HERO STAGE (NO CARDS, BALANCED DISPLAY)
+   CENTERED HERO STAGE (TECHTEXT INTEGRATION)
+   Line 1: Small size, Poppins regular
+   Line 2: Monumental size, Poppins bold
    ========================================================================== */
 .hero-container--centered {
   position: relative;
@@ -135,7 +137,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 2rem 3rem;
+  padding: 1.5rem 2rem 2.5rem;
   box-sizing: border-box;
   flex: 1;
   display: flex;
@@ -145,26 +147,35 @@
   text-align: center;
 }
 
-/* Monumental WarpText Centerpiece */
-.hero-warp-wrapper {
+.hero-tech-text-group {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1380px;
   margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  gap: 0.25rem;
+}
+
+.hero-tech-line {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: visible;
-  font-family: 'Poppins', sans-serif;
 }
 
-.hero-warp-wrapper .warp-text {
-  cursor: grab;
-  user-select: none;
+/* Small line with Poppins regular */
+.hero-tech-line--small {
+  height: 56px;
 }
 
-.hero-warp-wrapper .warp-text:active {
-  cursor: grabbing;
+/* Large monumental headline line */
+.hero-tech-line--large {
+  height: 150px;
 }
 
 /* ==========================================================================
@@ -212,6 +223,12 @@
   .hero-container--centered {
     padding: 1.5rem 1.5rem 2rem;
   }
+  .hero-tech-line--small {
+    height: 48px;
+  }
+  .hero-tech-line--large {
+    height: 125px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -232,14 +249,20 @@
   .hero-header .pill-nav__bar {
     height: 44px;
   }
-  .hero-warp-wrapper .warp-text {
-    height: 260px !important;
+  .hero-tech-line--small {
+    height: 40px;
+  }
+  .hero-tech-line--large {
+    height: 95px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-warp-wrapper .warp-text {
-    height: 200px !important;
+  .hero-tech-line--small {
+    height: 34px;
+  }
+  .hero-tech-line--large {
+    height: 75px;
   }
   .hero-bottom-ticker {
     height: 42px;
