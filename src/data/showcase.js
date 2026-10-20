@@ -1,163 +1,136 @@
-// Chapter definitions matching the 17-phase storyboard specifications.
-// Every discipline defines its heading, text nodes, project references, and transition sentences.
-export const chapterDefinitions = [
+// Design Daily — Hand-Sketched Wireframe Project Sequence
+// Each project has a brand name, discipline, teaser sentence, 2-3 line middle-aligned brief,
+// and curated artwork references from projects.json.
+
+export const showcaseItems = [
   {
-    id: 'brand-identity',
-    label: 'Brand identity',
-    title: 'Start with something\nunmistakably yours.',
-    intro: 'A name becomes a mark. A mark becomes a world. This is where recognition begins.',
-    notes: [
-      ['A distinctive mark.', 'The beginning of a visual identity.'],
-      ['Colors, typography, and patterns.', 'One consistent visual language.'],
-      ['One consistent visual language.', 'An identity with room to grow across every touchpoint.']
-    ],
-    transition: 'An identity is only the beginning.',
-    categories: ['brand-identity'],
-    featured: 'tripty',
-    selections: {
-      tripty: [0, 1, 3],
-      norea: [0, 1],
-      'all-organics': [0, 2],
-      atuendo: [0, 1],
-      sandbox: [0, 2]
-    }
+    id: 'tripty',
+    brandName: 'Tripty',
+    discipline: 'Brand identity',
+    teaser: 'Crafted for perfection',
+    brief: 'Artisanal cafe branding, packaging, and interior identity rooted in sensory delight and hand-crafted craft.',
+    projectId: 'tripty',
+    featuredIndices: [0, 1, 3]
   },
   {
-    id: 'packaging',
-    label: 'Packaging',
-    title: 'Give the identity\nsomething to wrap around.',
-    intro: 'A first impression before the first use. A box, a bottle, a small moment of anticipation.',
-    notes: [
-      ['A first impression before the first use.', 'A clear identity, right in your hands.'],
-      ['Considered from every side.', 'The whole pack tells the same cohesive story.']
-    ],
-    transition: 'From the shelf to the screen.',
-    categories: ['packaging'],
-    featured: 'finn',
-    selections: {
-      finn: [0, 1, 2],
-      zaro: [5]
-    }
+    id: 'all-organics',
+    brandName: 'All Organics',
+    discipline: 'Brand identity',
+    teaser: "Let's go organic",
+    brief: 'Pure botanical wellness identity built on natural textures, earth-toned packaging, and clean botanical marks.',
+    projectId: 'all-organics',
+    featuredIndices: [0, 2, 7]
   },
   {
-    id: 'social-creatives',
-    label: 'Social creatives',
-    title: 'Now, bring the brand\ninto the everyday.',
-    intro: 'A recognizable feed with purpose. Static creatives with a consistent point of view.',
-    notes: [
-      ['A recognizable feed.', 'Individual posts. One unmistakable visual language.'],
-      ['Product stories with purpose.', 'Details, benefits, and everyday moments.'],
-      ['Campaigns that belong together.', 'Individual touchpoints that feel like a curated collection.']
-    ],
-    transition: 'Make the message fit the space.',
-    categories: ['social-creatives'],
-    featured: 'aves',
-    selections: {
-      aves: [0, 1, 2],
-      seor: [0, 3, 4],
-      'tripty-social': [0, 1, 2],
-      'apple-gears': [0, 3],
-      'seor-clutch': [0, 2],
-      'seor-baby': [0, 2],
-      'seor-sleep': [0, 2]
-    }
+    id: 'norea',
+    brandName: 'Noréa',
+    discipline: 'Brand identity',
+    teaser: 'Modern architectural poise',
+    brief: 'Architectural and interior atelier identity defined by balanced geometry, editorial layouts, and timeless typography.',
+    projectId: 'norea',
+    featuredIndices: [0, 1, 7]
   },
   {
-    id: 'banners',
-    label: 'Banners',
-    title: 'Make the message\nfit the space.',
-    intro: 'A clear offer, a strong focal point. Compositions made for the wide format they live in.',
-    notes: [
-      ['A clear offer.', 'Give the message room to speak with clear hierarchy.'],
-      ['A strong focal point.', 'The proportions change. The identity stays unmistakable.']
-    ],
-    transition: 'Take the same identity into the world.',
-    categories: ['banners'],
-    featured: 'apple-gears',
-    selections: {
-      'apple-gears': [1, 2, 3, 4, 5]
-    }
+    id: 'atuendo',
+    brandName: 'Atuendo',
+    discipline: 'Brand identity',
+    teaser: 'Linen power & tailored poise',
+    brief: 'Contemporary fashion and bespoke apparel branding with understated typography and monochrome luxury.',
+    projectId: 'atuendo',
+    featuredIndices: [0, 1, 4]
   },
   {
-    id: 'posters',
-    label: 'Posters & billboards',
-    title: 'Take the same identity\ninto the world.',
-    intro: 'Read at a glance. Recognized at a distance. Design that carries the same character at scale.',
-    notes: [
-      ['Read at a glance.', 'A message with an immediate, confident visual hierarchy.'],
-      ['Recognized at a distance.', 'Your visual language, turned up across city walls and outdoor spaces.']
-    ],
-    transition: 'Make something people want to wear.',
-    categories: ['posters', 'billboards'],
-    featured: 'norea',
-    selections: {
-      norea: [7],
-      'all-organics': [7],
-      tripty: [6, 7],
-      'tripty-social': [1, 3]
-    }
+    id: 'sandbox',
+    brandName: 'Sandbox Lounge',
+    discipline: 'Brand identity',
+    teaser: 'Casual luxury & warmth',
+    brief: 'Hospitality and lounge branding merging playful mid-century character with modern urban aesthetics.',
+    projectId: 'sandbox',
+    featuredIndices: [0, 2, 4]
   },
   {
-    id: 'merchandise',
-    label: 'Merchandise',
-    title: 'Make something\npeople want to wear.',
-    intro: 'Character in every graphic. On a favourite tee, a bag, and the objects that become part of the everyday.',
-    notes: [
-      ['Character in every graphic.', 'Illustration, lettering, and distinct personality.'],
-      ['The brand, carried with you.', 'From artwork to wearable object. A brand people want to carry.']
-    ],
-    transition: 'Bring care to the smallest touchpoints.',
-    categories: ['merchandise'],
-    featured: 'goodybro',
-    selections: {
-      goodybro: [0, 2, 4],
-      zaro: [0, 3, 4],
-      tripty: [5],
-      sandbox: [4],
-      'all-organics': [3, 4],
-      norea: [5],
-      atuendo: [0]
-    }
+    id: 'finn',
+    brandName: 'Finn',
+    discipline: 'Packaging',
+    teaser: 'An impression before opening',
+    brief: 'Luxury black-and-silver product packaging with custom dielines, tactile unboxing, and embossed finishes.',
+    projectId: 'finn',
+    featuredIndices: [0, 1, 2]
   },
   {
-    id: 'stationery',
-    label: 'Stationery & brochures',
-    title: 'Bring care to the\nsmallest touchpoints.',
-    intro: 'Introductions that feel considered. Thoughtful print materials that make a business feel established.',
-    notes: [
-      ['Introductions that feel considered.', 'Business cards, letterheads, and tactile presentation envelopes.'],
-      ['Information worth keeping.', 'Brochures and editorial capability ready for your next brand brief.']
-    ],
-    transition: 'Choose how we build your next chapter.',
-    categories: ['stationery'],
-    featured: 'atuendo',
-    selections: {
-      atuendo: [4, 5],
-      norea: [4, 6],
-      sandbox: [3],
-      tripty: [4],
-      'all-organics': [5],
-      finn: [4, 5],
-      'apple-gears': [6],
-      goodybro: [6]
-    }
+    id: 'zaro',
+    brandName: 'Zaro',
+    discipline: 'Packaging',
+    teaser: 'Form meets botanical function',
+    brief: 'Glass bottle packaging and tactile product labels engineered for memorable shelf presence.',
+    projectId: 'zaro',
+    featuredIndices: [0, 3, 5]
+  },
+  {
+    id: 'aves',
+    brandName: 'Aves',
+    discipline: 'Social creatives',
+    teaser: 'A recognizable feed',
+    brief: 'High-end real estate social campaigns featuring architectural layouts and consistent luxury tones.',
+    projectId: 'aves',
+    featuredIndices: [0, 1, 2]
+  },
+  {
+    id: 'seor',
+    brandName: 'Seor',
+    discipline: 'Social creatives',
+    teaser: 'Carry with confidence',
+    brief: 'Curated social media product story with high-converting static carousel compositions and editorial angles.',
+    projectId: 'seor',
+    featuredIndices: [0, 3, 4]
+  },
+  {
+    id: 'seor-sleep',
+    brandName: 'Sleep Mask',
+    discipline: 'Social creatives',
+    teaser: 'Rest, considered',
+    brief: 'Minimalist bedtime product campaign focusing on comfort, nighttime calm, and essential wellness.',
+    projectId: 'seor-sleep',
+    featuredIndices: [0, 1, 2]
+  },
+  {
+    id: 'apple-gears',
+    brandName: 'Apple Gears',
+    discipline: 'Banners',
+    teaser: 'Make the message fit the space',
+    brief: 'Widescreen 16:9 banner campaigns and responsive display ads for premium accessories and phone covers.',
+    projectId: 'apple-gears',
+    featuredIndices: [1, 2, 3]
+  },
+  {
+    id: 'goodybro',
+    brandName: 'Goodybro',
+    discipline: 'Merchandise',
+    teaser: 'Wearable character',
+    brief: 'Organic cotton t-shirt illustrations, graphic prints, and custom apparel badges people want to wear.',
+    projectId: 'goodybro',
+    featuredIndices: [0, 2, 4]
+  },
+  {
+    id: 'atuendo-stationery',
+    brandName: 'Atuendo Collateral',
+    discipline: 'Stationery & brochures',
+    teaser: 'Care in the smallest touchpoint',
+    brief: 'Foil-stamped business cards, envelopes, and tactile correspondence systems that establish authority.',
+    projectId: 'atuendo',
+    featuredIndices: [4, 5]
   }
 ];
 
-export function getChapterProjects(chapter, projects) {
-  const selected = projects.filter(project =>
-    chapter.categories.some(category => project.categoryIds.includes(category))
-  );
-  return [...selected].sort(
-    (a, b) => Number(b.id === chapter.featured) - Number(a.id === chapter.featured)
-  );
+export function getItemImages(item, projects) {
+  const project = projects.find(p => p.id === item.projectId);
+  if (!project) return [];
+  if (item.featuredIndices && item.featuredIndices.length) {
+    return item.featuredIndices.map(idx => project.images[idx]).filter(Boolean);
+  }
+  return project.images.slice(0, 3);
 }
 
-export function getChapterImages(chapter, project) {
-  const explicit = chapter.selections[project.id];
-  if (explicit) return explicit.map(index => project.images[index]).filter(Boolean);
-  const tagged = project.images.filter(image =>
-    image.categoryIds?.some(id => chapter.categories.includes(id))
-  );
-  return (tagged.length ? tagged : project.images).slice(0, 3);
+export function getItemProject(item, projects) {
+  return projects.find(p => p.id === item.projectId);
 }
