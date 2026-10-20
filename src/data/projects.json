@@ -1,0 +1,799 @@
+[
+  {
+    "id": "tripty",
+    "title": "Tripty",
+    "discipline": "Brand identity",
+    "categoryIds": [
+      "brand-identity",
+      "merchandise",
+      "stationery",
+      "posters",
+      "billboards"
+    ],
+    "description": "A restaurant identity in red, yellow and white, with a chef-hat wordmark, illustrated food pattern and flame motif.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/tripty/cover.webp",
+        "alt": "Tripty restaurant interior with red chairs, a chef-hat wordmark and an illustrated food wall",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/work/tripty/02.webp",
+        "alt": "Tripty chef-hat wordmark above a red flame motif",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/tripty/03.webp",
+        "alt": "Red and yellow line illustrations of food in the Tripty pattern",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/tripty/04.webp",
+        "alt": "Open Tripty brand guideline book on a red surface",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/tripty/05.webp",
+        "alt": "Tripty tote bag, stationery and business cards",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/tripty/06.webp",
+        "alt": "White Tripty polo shirt with red lettering and flames",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/tripty/07.webp",
+        "alt": "Framed Tripty logo and burger posters",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/tripty/08.webp",
+        "alt": "Tripty restaurant advertisement displayed on a city lightbox",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/tripty/09.webp",
+        "alt": "White delivery van with the red Tripty identity and food pattern",
+        "width": 1600,
+        "height": 1200
+      }
+    ],
+    "cover": "/work/tripty/cover.webp"
+  },
+  {
+    "id": "norea",
+    "title": "Noréa",
+    "discipline": "Brand identity",
+    "categoryIds": [
+      "brand-identity",
+      "stationery",
+      "merchandise",
+      "billboards"
+    ],
+    "description": "A slender monogram and flowing line system across warm neutral and pale blue stationery, bags and printed applications.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/norea/cover.webp",
+        "alt": "Noréa stationery and a terracotta envelope arranged on soft fabric",
+        "width": 1496,
+        "height": 1051
+      },
+      {
+        "src": "/work/norea/02.webp",
+        "alt": "Noréa wordmark and slender N monogram",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/norea/03.webp",
+        "alt": "Construction drawing for the Noréa monogram",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/norea/04.webp",
+        "alt": "Noréa line patterns derived from the monogram",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/norea/05.webp",
+        "alt": "Noréa letterhead, envelopes and business cards in terracotta and cream",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/norea/06.webp",
+        "alt": "Pale blue Noréa shopping bags with flowing lines",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/norea/07.webp",
+        "alt": "Noréa business cards on a blue grey background",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/norea/08.webp",
+        "alt": "Noréa fashion event billboard on a city wall",
+        "width": 1600,
+        "height": 1200
+      }
+    ],
+    "cover": "/work/norea/cover.webp"
+  },
+  {
+    "id": "all-organics",
+    "title": "All Organics",
+    "discipline": "Brand identity",
+    "categoryIds": [
+      "brand-identity",
+      "stationery",
+      "merchandise",
+      "billboards"
+    ],
+    "description": "A leaf monogram, vivid green and chocolate palette, and organic line patterns carried through stationery, merchandise and outdoor graphics.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/all-organics/cover.webp",
+        "alt": "All Organics identity flatlay with a leaf monogram, green palette, cards and branded materials",
+        "width": 1672,
+        "height": 941
+      },
+      {
+        "src": "/work/all-organics/02.webp",
+        "alt": "All Organics leaf symbol and wordmark",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/all-organics/03.webp",
+        "alt": "All Organics leaves and flowing line patterns in green and brown",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/all-organics/04.webp",
+        "alt": "All Organics tote bag and transparent business cards",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/all-organics/05.webp",
+        "alt": "All Organics bottle, cap and round badge designs",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/all-organics/06.webp",
+        "alt": "All Organics letterhead, envelope and T-shirt",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/all-organics/07.webp",
+        "alt": "All Organics delivery truck with green illustrated graphics",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/all-organics/08.webp",
+        "alt": "All Organics Eat Well Live Well outdoor billboard",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "cover": "/work/all-organics/cover.webp"
+  },
+  {
+    "id": "atuendo",
+    "title": "Atuendo",
+    "discipline": "Brand identity",
+    "categoryIds": [
+      "brand-identity",
+      "stationery",
+      "merchandise"
+    ],
+    "description": "A looping symbol, fine-line patterns and a cream, charcoal and olive palette applied to stationery and fashion brand materials.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/atuendo/cover.webp",
+        "alt": "Atuendo fashion identity still life with a cream bag, black box, folded fabric and olive ribbon",
+        "width": 1672,
+        "height": 941
+      },
+      {
+        "src": "/work/atuendo/02.webp",
+        "alt": "Atuendo looping black brand symbol on white",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/atuendo/03.webp",
+        "alt": "Atuendo organic line patterns in cream, olive and charcoal",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/atuendo/04.webp",
+        "alt": "Atuendo symbol across its primary and secondary color palette",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/atuendo/05.webp",
+        "alt": "Atuendo letterhead, envelope and dark presentation folder",
+        "width": 1600,
+        "height": 1020
+      },
+      {
+        "src": "/work/atuendo/06.webp",
+        "alt": "Close-up of Atuendo patterned paper, embossed dark material and olive cord",
+        "width": 1495,
+        "height": 1052
+      }
+    ],
+    "cover": "/work/atuendo/cover.webp"
+  },
+  {
+    "id": "sandbox",
+    "title": "Sandbox Lounge",
+    "discipline": "Brand identity",
+    "categoryIds": [
+      "brand-identity",
+      "stationery",
+      "merchandise"
+    ],
+    "description": "A gold geometric mark on navy and charcoal, with stationery, apparel and lounge applications built around the same visual system.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/sandbox/cover.webp",
+        "alt": "Sandbox Lounge coffee cup, notebook and gold identity details in a warm lounge scene",
+        "width": 1526,
+        "height": 1031
+      },
+      {
+        "src": "/work/sandbox/02.webp",
+        "alt": "Sandbox Lounge brand guidelines cover",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/sandbox/03.webp",
+        "alt": "Sandbox Lounge navy, charcoal and gold color palette guide",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/sandbox/04.webp",
+        "alt": "Sandbox Lounge stationery set with letterhead, cards, notebook and cup",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/sandbox/05.webp",
+        "alt": "Navy Sandbox Lounge T-shirt shown from the front and back",
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "/work/sandbox/06.webp",
+        "alt": "Sandbox Lounge logo and pattern on a bar counter mat",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/sandbox/07.webp",
+        "alt": "Sandbox Lounge glass entrance with its gold wordmark",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "cover": "/work/sandbox/cover.webp"
+  },
+  {
+    "id": "goodybro",
+    "title": "Goodybro",
+    "discipline": "Merchandise",
+    "categoryIds": [
+      "merchandise",
+      "stationery"
+    ],
+    "description": "Expressive T-shirt graphics combining oversized type, illustrated characters and vivid color, shown alongside the garment applications.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/goodybro/cover.webp",
+        "alt": "Create Goodness T-shirt graphic with a character illustration on a purple and yellow background",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "src": "/work/goodybro/02.webp",
+        "alt": "Black Create Goodness T-shirts shown with the original character artwork",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/goodybro/03.webp",
+        "alt": "White Goodybro T-shirt with Style Fades Goodness Does Not typography and a camel illustration",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/goodybro/04.webp",
+        "alt": "White Goodybro graphic T-shirt shown from the front and back",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/goodybro/05.webp",
+        "alt": "Goodybro Chaotic T-shirts beside the vivid orange and blue print artwork",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/work/goodybro/06.webp",
+        "alt": "Tall orange cloud illustration with oversized Goodybro typography",
+        "width": 914,
+        "height": 1600
+      },
+      {
+        "src": "/work/goodybro/07.webp",
+        "alt": "Goodybro printed thank-you card on a dark background",
+        "width": 1600,
+        "height": 1087
+      }
+    ],
+    "cover": "/work/goodybro/cover.webp"
+  },
+  {
+    "id": "zaro",
+    "title": "Zaro",
+    "discipline": "Merchandise",
+    "categoryIds": [
+      "merchandise",
+      "packaging"
+    ],
+    "description": "Black apparel and accessories with a bright green symbol, geometric linework and an illustrated walking mascot.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/zaro/cover.webp",
+        "alt": "Black Zaro T-shirt shown from the front and back with green geometric back artwork",
+        "width": 1448,
+        "height": 1086
+      },
+      {
+        "src": "/work/zaro/02.webp",
+        "alt": "Zaro walking mascot with bright green shoes",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/zaro/03.webp",
+        "alt": "Zaro black T-shirt technical layout with front and back views",
+        "width": 1448,
+        "height": 1086
+      },
+      {
+        "src": "/work/zaro/04.webp",
+        "alt": "Side view of a black Zaro Axis 7 shoe with a green logo",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/work/zaro/05.webp",
+        "alt": "Top view of black Zaro Axis 7 shoes",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/work/zaro/06.webp",
+        "alt": "Zaro bottle packaging with a green walking mascot and geometric linework",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "cover": "/work/zaro/cover.webp"
+  },
+  {
+    "id": "aves",
+    "title": "Aves",
+    "discipline": "Social creatives",
+    "categoryIds": [
+      "social-creatives"
+    ],
+    "description": "A four-part real estate creative set combining architecture, Bengali headlines and a consistent blue, yellow and white palette.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/aves/cover.webp",
+        "alt": "Aves building campaign creative with a Bengali headline on a blue and yellow layout",
+        "width": 1508,
+        "height": 1885
+      },
+      {
+        "src": "/work/aves/02.webp",
+        "alt": "Aves creative with a model home seen through an arched doorway",
+        "width": 1280,
+        "height": 1600
+      },
+      {
+        "src": "/work/aves/03.webp",
+        "alt": "Aves multi-storey building campaign with blue headline panels",
+        "width": 1280,
+        "height": 1600
+      },
+      {
+        "src": "/work/aves/04.webp",
+        "alt": "Aves building campaign with yellow Bengali type over an architectural image",
+        "width": 1280,
+        "height": 1600
+      }
+    ],
+    "cover": "/work/aves/cover.webp"
+  },
+  {
+    "id": "seor",
+    "title": "Seor — Carry with confidence",
+    "discipline": "Social creatives",
+    "categoryIds": [
+      "social-creatives"
+    ],
+    "description": "A coordinated bag campaign using restrained typography, product still life and fashion photography across square static creatives.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/seor/cover.webp",
+        "alt": "Seor Axis black bag campaign with a model in a light blue shirt",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "src": "/work/seor/02.webp",
+        "alt": "Fashion photograph of a model carrying a black Seor bag",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/work/seor/03.webp",
+        "alt": "Black Seor bag campaign with a model in a dark suit",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/work/seor/04.webp",
+        "alt": "Black bag still life on a dark blue patterned backdrop",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/work/seor/05.webp",
+        "alt": "Seor bag and accessories still life with Wear Confidence and Be Confident headline",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/work/seor/06.webp",
+        "alt": "Seor bag fashion creative with a model in a black and white striped outfit",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "cover": "/work/seor/cover.webp"
+  },
+  {
+    "id": "tripty-social",
+    "title": "Tripty — A taste of the brand",
+    "discipline": "Social creatives",
+    "categoryIds": [
+      "social-creatives",
+      "posters"
+    ],
+    "description": "Food-led static creatives with bold red and yellow color, playful type and compositions built around the Tripty identity.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/tripty-social/cover.webp",
+        "alt": "Tripty Kitchen burger creative in red and yellow",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "src": "/work/tripty-social/02.webp",
+        "alt": "Tripty This Spicy creative with grilled chicken and red flames",
+        "width": 1440,
+        "height": 1440
+      },
+      {
+        "src": "/work/tripty-social/03.webp",
+        "alt": "Tripty food creative with a plate, spoon and Bengali-inspired visual arrangement",
+        "width": 1280,
+        "height": 1600
+      },
+      {
+        "src": "/work/tripty-social/04.webp",
+        "alt": "Tripty food clock creative with dishes arranged around a clock face",
+        "width": 1280,
+        "height": 1600
+      },
+      {
+        "src": "/work/tripty-social/05.webp",
+        "alt": "Tripty before-and-after food creative with a person at a table",
+        "width": 1280,
+        "height": 1600
+      }
+    ],
+    "cover": "/work/tripty-social/cover.webp"
+  },
+  {
+    "id": "apple-gears",
+    "title": "Apple Gears",
+    "discipline": "Banners & social creatives",
+    "categoryIds": [
+      "banners",
+      "social-creatives",
+      "stationery"
+    ],
+    "description": "Accessory collection graphics, product-category banners and printed customer cards using black, white and orange.",
+    "featured": true,
+    "images": [
+      {
+        "src": "/work/apple-gears/cover.webp",
+        "alt": "Apple Gears accessory collection advertisement in black and white",
+        "width": 1920,
+        "height": 1600
+      },
+      {
+        "src": "/work/apple-gears/02.webp",
+        "alt": "Wide Apple Gears accessory collection banner",
+        "width": 1600,
+        "height": 608
+      },
+      {
+        "src": "/work/apple-gears/03.webp",
+        "alt": "Wide Apple Gears phone cover banner",
+        "width": 1600,
+        "height": 608
+      },
+      {
+        "src": "/work/apple-gears/04.webp",
+        "alt": "Apple Gears Charging Essentials orange product banner",
+        "width": 1600,
+        "height": 1050
+      },
+      {
+        "src": "/work/apple-gears/05.webp",
+        "alt": "Apple Gears Gears and Accessories orange product banner",
+        "width": 1600,
+        "height": 1050
+      },
+      {
+        "src": "/work/apple-gears/06.webp",
+        "alt": "Apple Gears Speakers orange product banner",
+        "width": 1600,
+        "height": 1050
+      },
+      {
+        "src": "/work/apple-gears/07.webp",
+        "alt": "Apple Gears printed thank-you card front and back",
+        "width": 1600,
+        "height": 961
+      }
+    ],
+    "cover": "/work/apple-gears/cover.webp"
+  },
+  {
+    "id": "finn",
+    "title": "Finn",
+    "discipline": "Packaging archive",
+    "categoryIds": [
+      "packaging",
+      "stationery"
+    ],
+    "description": "An archive project pairing a fine-line monogram with black packaging, pale yellow printed inserts and a red accent.",
+    "featured": false,
+    "images": [
+      {
+        "src": "/work/finn/cover.webp",
+        "alt": "Two closed black Finn boxes against a red monogram backdrop",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "src": "/work/finn/02.webp",
+        "alt": "Open black Finn box with a pale yellow printed insert",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/finn/03.webp",
+        "alt": "Open Finn box containing a dark wallet with a red accent",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/finn/04.webp",
+        "alt": "Finn wallet and repeated monogram pattern",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/finn/05.webp",
+        "alt": "Finn pale yellow envelope with skyline illustration and contact card",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "/work/finn/06.webp",
+        "alt": "Finn pale yellow welcome letter design",
+        "width": 1600,
+        "height": 1200
+      }
+    ],
+    "cover": "/work/finn/cover.webp"
+  },
+  {
+    "id": "seor-clutch",
+    "title": "Seor — Leather essentials",
+    "discipline": "Social creatives",
+    "categoryIds": [
+      "social-creatives"
+    ],
+    "description": "A warm brown product series that combines leather detail, lifestyle imagery and concise feature-led layouts.",
+    "featured": false,
+    "images": [
+      {
+        "src": "/work/seor-clutch/cover.webp",
+        "alt": "Seor leather clutch lifestyle creative with a model in a cream suit",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-clutch/02.webp",
+        "alt": "Seor clutch quality comparison creative",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-clutch/03.webp",
+        "alt": "Seor leather crafting and material creative",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-clutch/04.webp",
+        "alt": "Seor leather clutch creative with a customer at a cafe table",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-clutch/05.webp",
+        "alt": "Seor leather clutch capacity and interior feature creative",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-clutch/06.webp",
+        "alt": "Seor leather clutch locking feature creative",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "cover": "/work/seor-clutch/cover.webp"
+  },
+  {
+    "id": "seor-baby",
+    "title": "Seor — Little everyday moments",
+    "discipline": "Social creatives",
+    "categoryIds": [
+      "social-creatives"
+    ],
+    "description": "A pink and cream product content series with feeding-set details, dimensions and parent-and-child imagery.",
+    "featured": false,
+    "images": [
+      {
+        "src": "/work/seor-baby/cover.webp",
+        "alt": "Pink Seor baby feeding set creative with a baby in a highchair",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-baby/02.webp",
+        "alt": "Seor feeding set measurements graphic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-baby/03.webp",
+        "alt": "Seor silicone bib feature graphic with pink icons",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-baby/04.webp",
+        "alt": "Seor silicone material creative showing the flexible product",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-baby/05.webp",
+        "alt": "Seor feeding set creative with a parent and child",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-baby/06.webp",
+        "alt": "Seor adjustable bib and easy-clean feature creative",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "cover": "/work/seor-baby/cover.webp"
+  },
+  {
+    "id": "seor-sleep",
+    "title": "Sleep Mask — Rest, considered",
+    "discipline": "Social creatives",
+    "categoryIds": [
+      "social-creatives"
+    ],
+    "description": "A sleep-mask content series using blue panels, feature illustrations and product-led compositions.",
+    "featured": false,
+    "images": [
+      {
+        "src": "/work/seor-sleep/cover.webp",
+        "alt": "Sleep-mask creative with a person resting and a blackout feature headline",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-sleep/02.webp",
+        "alt": "Sleep-mask washable cover feature graphic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-sleep/03.webp",
+        "alt": "Sleep-mask creative with a seated person and illustrated moon and stars",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-sleep/04.webp",
+        "alt": "Sleep-mask soft eye-cover feature graphic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-sleep/05.webp",
+        "alt": "Sleep-mask feature comparison graphic",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "src": "/work/seor-sleep/06.webp",
+        "alt": "Black sleep mask and accessories on a white background",
+        "width": 1080,
+        "height": 1080
+      }
+    ],
+    "cover": "/work/seor-sleep/cover.webp"
+  }
+]

@@ -1,0 +1,1946 @@
+{
+  "sourceCollection": "Designdaily Assets",
+  "notes": "Existing supplied artwork and presentation mockups. No new artwork was generated. Images retain their complete source composition and aspect ratio. Packaging is retained as historical portfolio work.",
+  "assets": [
+    {
+      "asset": "/work/tripty/cover.webp",
+      "source": "Brand Identity/Tripty Branding/15.Custom Tripty branding mockup.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1920,
+        1440
+      ],
+      "bytes": 547318,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/02.webp",
+      "source": "Brand Identity/Tripty Branding/1.Tripty logo.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 83182,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/03.webp",
+      "source": "Brand Identity/Tripty Branding/10.1.Tripty Brand pattern.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 184500,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/04.webp",
+      "source": "Brand Identity/Tripty Branding/11.Tripty Brand guideline.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 115132,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/05.webp",
+      "source": "Brand Identity/Tripty Branding/20.2.TriptyStationer and Business card.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 121500,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/06.webp",
+      "source": "Brand Identity/Tripty Branding/14.Tripty Merchandise design.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 67898,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/07.webp",
+      "source": "Brand Identity/Tripty Branding/18.Tripty branding elements.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 102278,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/08.webp",
+      "source": "Brand Identity/Tripty Branding/21.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 360546,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty/09.webp",
+      "source": "Brand Identity/Tripty Branding/12.Tripty Delivery Vehicle wrap design.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 85494,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/cover.webp",
+      "source": "Brand Identity/Norea Brand Identity/Standalone Covers/Middle image.png",
+      "sourceDimensions": [
+        1496,
+        1051
+      ],
+      "outputDimensions": [
+        1496,
+        1051
+      ],
+      "bytes": 184386,
+      "webpQuality": 85,
+      "provenance": "Supplied portfolio presentation",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/02.webp",
+      "source": "Brand Identity/Norea Brand Identity/1.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 14682,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/03.webp",
+      "source": "Brand Identity/Norea Brand Identity/2.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 39938,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/04.webp",
+      "source": "Brand Identity/Norea Brand Identity/4.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 49962,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/05.webp",
+      "source": "Brand Identity/Norea Brand Identity/13.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 169938,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/06.webp",
+      "source": "Brand Identity/Norea Brand Identity/7.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 46304,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/07.webp",
+      "source": "Brand Identity/Norea Brand Identity/11.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 33110,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/norea/08.webp",
+      "source": "Brand Identity/Norea Brand Identity/16.jpg",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 314328,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/cover.webp",
+      "source": "Brand Identity/All Organics/Standalone Covers/Middle image.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "outputDimensions": [
+        1672,
+        941
+      ],
+      "bytes": 240278,
+      "webpQuality": 85,
+      "provenance": "Supplied portfolio presentation",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/02.webp",
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio4.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 18944,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/03.webp",
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio11.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 47138,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/04.webp",
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio12.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 64790,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/05.webp",
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio14.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 51494,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/06.webp",
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio15.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 81024,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/07.webp",
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio16.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 60780,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/all-organics/08.webp",
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio20.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 147670,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/atuendo/cover.webp",
+      "source": "Brand Identity/Atuendo Brand Identity/Standalone Covers/Main Image.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "outputDimensions": [
+        1672,
+        941
+      ],
+      "bytes": 84240,
+      "webpQuality": 85,
+      "provenance": "Supplied portfolio presentation",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/atuendo/02.webp",
+      "source": "Brand Identity/Atuendo Brand Identity/Atuendo_040924_TYPOGRAPHY & COLOR PALETTE-02.jpg",
+      "sourceDimensions": [
+        8333,
+        6250
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 9816,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/atuendo/03.webp",
+      "source": "Brand Identity/Atuendo Brand Identity/060924_Atuendo-Brand_patterns_JN-01-04-05.jpg",
+      "sourceDimensions": [
+        8333,
+        6250
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 60876,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/atuendo/04.webp",
+      "source": "Brand Identity/Atuendo Brand Identity/070924_Atuendo_(Color-palette)_JN-01.jpg",
+      "sourceDimensions": [
+        8333,
+        6250
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 37894,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/atuendo/05.webp",
+      "source": "Brand Identity/Atuendo Brand Identity/080924_Atuendo stationery design_JN.png",
+      "sourceDimensions": [
+        4000,
+        2550
+      ],
+      "outputDimensions": [
+        1600,
+        1020
+      ],
+      "bytes": 69252,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/atuendo/06.webp",
+      "source": "Brand Identity/Atuendo Brand Identity/Standalone Covers/Right Image 2.png",
+      "sourceDimensions": [
+        1495,
+        1052
+      ],
+      "outputDimensions": [
+        1495,
+        1052
+      ],
+      "bytes": 238466,
+      "webpQuality": 85,
+      "provenance": "Supplied portfolio presentation",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/sandbox/cover.webp",
+      "source": "Brand Identity/Sandbox Lounge Branding/Standalone Covers/Middle Image.png",
+      "sourceDimensions": [
+        1526,
+        1031
+      ],
+      "outputDimensions": [
+        1526,
+        1031
+      ],
+      "bytes": 163832,
+      "webpQuality": 85,
+      "provenance": "Supplied portfolio presentation",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/sandbox/02.webp",
+      "source": "Brand Identity/Sandbox Lounge Branding/SBL_cover-01.png",
+      "sourceDimensions": [
+        8000,
+        4500
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 19966,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/sandbox/03.webp",
+      "source": "Brand Identity/Sandbox Lounge Branding/Colorpallete.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 103306,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/sandbox/04.webp",
+      "source": "Brand Identity/Sandbox Lounge Branding/Sanbox-Stationery.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 61032,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/sandbox/05.webp",
+      "source": "Brand Identity/Sandbox Lounge Branding/ChatGPT Image Aug 3, 2026, 07_00_05 PM (3).png",
+      "sourceDimensions": [
+        1536,
+        1024
+      ],
+      "outputDimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 57410,
+      "webpQuality": 85,
+      "provenance": "Supplied portfolio presentation",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/sandbox/06.webp",
+      "source": "Brand Identity/Sandbox Lounge Branding/Sandbox bar.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 180336,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/sandbox/07.webp",
+      "source": "Brand Identity/Sandbox Lounge Branding/Untitled-1.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 69264,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/goodybro/cover.webp",
+      "source": "GOODY BRO-TshirtDesign/Goodybro_Create goodness cover-2.png",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "outputDimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 105322,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/goodybro/02.webp",
+      "source": "GOODY BRO-TshirtDesign/Goodybro_Create goodness 3.png",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 63746,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/goodybro/03.webp",
+      "source": "GOODY BRO-TshirtDesign/StyleVSGoodness_cover.png",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 123202,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/goodybro/04.webp",
+      "source": "GOODY BRO-TshirtDesign/StyleVSGoodness_2.png",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 63772,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/goodybro/05.webp",
+      "source": "GOODY BRO-TshirtDesign/Goodybro_chaotic-2.png",
+      "sourceDimensions": [
+        1920,
+        1080
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 177126,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/goodybro/06.webp",
+      "source": "GOODY BRO-TshirtDesign/Chaotic-world-design.png",
+      "sourceDimensions": [
+        3328,
+        5824
+      ],
+      "outputDimensions": [
+        914,
+        1600
+      ],
+      "bytes": 219842,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/goodybro/07.webp",
+      "source": "GOODY BRO-TshirtDesign/Goodybro card.png",
+      "sourceDimensions": [
+        2442,
+        1659
+      ],
+      "outputDimensions": [
+        1600,
+        1087
+      ],
+      "bytes": 277252,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/zaro/cover.webp",
+      "source": "Zaro merchandise/zarotee.png",
+      "sourceDimensions": [
+        1448,
+        1086
+      ],
+      "outputDimensions": [
+        1448,
+        1086
+      ],
+      "bytes": 73698,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/zaro/02.webp",
+      "source": "Zaro merchandise/T shirt mascot.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 50014,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/zaro/03.webp",
+      "source": "Zaro merchandise/T shirt measurements.png",
+      "sourceDimensions": [
+        1448,
+        1086
+      ],
+      "outputDimensions": [
+        1448,
+        1086
+      ],
+      "bytes": 80920,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/zaro/04.webp",
+      "source": "Zaro merchandise/Zaro axis 7 _Rightside.png",
+      "sourceDimensions": [
+        1080,
+        1920
+      ],
+      "outputDimensions": [
+        900,
+        1600
+      ],
+      "bytes": 33020,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/zaro/05.webp",
+      "source": "Zaro merchandise/Zaro axis 7 _topdown.png",
+      "sourceDimensions": [
+        1080,
+        1920
+      ],
+      "outputDimensions": [
+        900,
+        1600
+      ],
+      "bytes": 48496,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/zaro/06.webp",
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Packaging mockup 1.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "outputDimensions": [
+        1600,
+        900
+      ],
+      "bytes": 24350,
+      "webpQuality": 85,
+      "provenance": "Supplied portfolio presentation",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/aves/cover.webp",
+      "source": "Social Media Posts/Artboard 3JN X DD_AVES.png",
+      "sourceDimensions": [
+        1508,
+        1885
+      ],
+      "outputDimensions": [
+        1508,
+        1885
+      ],
+      "bytes": 346894,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/aves/02.webp",
+      "source": "Social Media Posts/Artboard 1JN X DD_AVES.png",
+      "sourceDimensions": [
+        1508,
+        1885
+      ],
+      "outputDimensions": [
+        1280,
+        1600
+      ],
+      "bytes": 200894,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/aves/03.webp",
+      "source": "Social Media Posts/Artboard 2JN X DD_AVES.png",
+      "sourceDimensions": [
+        1508,
+        1885
+      ],
+      "outputDimensions": [
+        1280,
+        1600
+      ],
+      "bytes": 295560,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/aves/04.webp",
+      "source": "Social Media Posts/Artboard 4_JN X DD_AVES.png",
+      "sourceDimensions": [
+        1508,
+        1885
+      ],
+      "outputDimensions": [
+        1280,
+        1600
+      ],
+      "bytes": 306960,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor/cover.webp",
+      "source": "Social Media Posts/Artboard 2v2.png",
+      "sourceDimensions": [
+        2000,
+        2000
+      ],
+      "outputDimensions": [
+        1920,
+        1920
+      ],
+      "bytes": 158346,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor/02.webp",
+      "source": "Social Media Posts/Artboard 1.png",
+      "sourceDimensions": [
+        2000,
+        2000
+      ],
+      "outputDimensions": [
+        1600,
+        1600
+      ],
+      "bytes": 78712,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor/03.webp",
+      "source": "Social Media Posts/Artboard 2 copy.png",
+      "sourceDimensions": [
+        2000,
+        2000
+      ],
+      "outputDimensions": [
+        1600,
+        1600
+      ],
+      "bytes": 72728,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor/04.webp",
+      "source": "Social Media Posts/Artboard 3.png",
+      "sourceDimensions": [
+        2000,
+        2000
+      ],
+      "outputDimensions": [
+        1600,
+        1600
+      ],
+      "bytes": 105184,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor/05.webp",
+      "source": "Social Media Posts/Artboard 4.png",
+      "sourceDimensions": [
+        2000,
+        2000
+      ],
+      "outputDimensions": [
+        1600,
+        1600
+      ],
+      "bytes": 80464,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor/06.webp",
+      "source": "Social Media Posts/saegis.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 77792,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty-social/cover.webp",
+      "source": "Social Media Posts/Social media 1.png",
+      "sourceDimensions": [
+        2000,
+        2000
+      ],
+      "outputDimensions": [
+        1920,
+        1920
+      ],
+      "bytes": 333002,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty-social/02.webp",
+      "source": "Social Media Posts/Social media 2.png",
+      "sourceDimensions": [
+        2000,
+        2000
+      ],
+      "outputDimensions": [
+        1440,
+        1440
+      ],
+      "bytes": 392716,
+      "webpQuality": 65,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty-social/03.webp",
+      "source": "Social Media Posts/Artboard 1DD.png",
+      "sourceDimensions": [
+        1508,
+        1885
+      ],
+      "outputDimensions": [
+        1280,
+        1600
+      ],
+      "bytes": 236078,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty-social/04.webp",
+      "source": "Social Media Posts/Artboard 2DD.png",
+      "sourceDimensions": [
+        1508,
+        1885
+      ],
+      "outputDimensions": [
+        1280,
+        1600
+      ],
+      "bytes": 380924,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/tripty-social/05.webp",
+      "source": "Social Media Posts/Artboard 3DD.png",
+      "sourceDimensions": [
+        1508,
+        1885
+      ],
+      "outputDimensions": [
+        1280,
+        1600
+      ],
+      "bytes": 129830,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/apple-gears/cover.webp",
+      "source": "Social Media Posts/Apple_GearsBD_Julkarnine_Designdaily.com.jpg",
+      "sourceDimensions": [
+        3600,
+        3000
+      ],
+      "outputDimensions": [
+        1920,
+        1600
+      ],
+      "bytes": 115402,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/apple-gears/02.webp",
+      "source": "Social Media Posts/Banner3.png",
+      "sourceDimensions": [
+        3200,
+        1216
+      ],
+      "outputDimensions": [
+        1600,
+        608
+      ],
+      "bytes": 101396,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/apple-gears/03.webp",
+      "source": "Social Media Posts/Banner 4.png",
+      "sourceDimensions": [
+        3200,
+        1216
+      ],
+      "outputDimensions": [
+        1600,
+        608
+      ],
+      "bytes": 74074,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/apple-gears/04.webp",
+      "source": "Social Media Posts/AG_small BANNER-2.png",
+      "sourceDimensions": [
+        3200,
+        2100
+      ],
+      "outputDimensions": [
+        1600,
+        1050
+      ],
+      "bytes": 70632,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/apple-gears/05.webp",
+      "source": "Social Media Posts/AG_small BANNER-3.png",
+      "sourceDimensions": [
+        3200,
+        2100
+      ],
+      "outputDimensions": [
+        1600,
+        1050
+      ],
+      "bytes": 67188,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/apple-gears/06.webp",
+      "source": "Social Media Posts/AG_small BANNER-4.png",
+      "sourceDimensions": [
+        3200,
+        2100
+      ],
+      "outputDimensions": [
+        1600,
+        1050
+      ],
+      "bytes": 157314,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/apple-gears/07.webp",
+      "source": "Social Media Posts/card mockup.png",
+      "sourceDimensions": [
+        2560,
+        1538
+      ],
+      "outputDimensions": [
+        1600,
+        961
+      ],
+      "bytes": 71046,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/finn/cover.webp",
+      "source": "FinnPackaging/Package front.png",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1920,
+        1440
+      ],
+      "bytes": 488488,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/finn/02.webp",
+      "source": "FinnPackaging/PACKAGING1_220824.png",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 219672,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/finn/03.webp",
+      "source": "FinnPackaging/PACKAGING2_220824.png",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 43080,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/finn/04.webp",
+      "source": "FinnPackaging/PACKAGING3_220824.png",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 157756,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/finn/05.webp",
+      "source": "FinnPackaging/Envelope4_220824.png",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 79996,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/finn/06.webp",
+      "source": "FinnPackaging/Envelope5_220824.png",
+      "sourceDimensions": [
+        4000,
+        3000
+      ],
+      "outputDimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 107356,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-clutch/cover.webp",
+      "source": "Social Media Posts/Clutch bag4_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 142756,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-clutch/02.webp",
+      "source": "Social Media Posts/Clutch bag2_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 134846,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-clutch/03.webp",
+      "source": "Social Media Posts/Clutch bag3_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 122510,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-clutch/04.webp",
+      "source": "Social Media Posts/Clutch bag5_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 80330,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-clutch/05.webp",
+      "source": "Social Media Posts/Clutch bag6_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 204626,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-clutch/06.webp",
+      "source": "Social Media Posts/Clutch bag7_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 114250,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-baby/cover.webp",
+      "source": "Social Media Posts/Seor baby feeding set listing2_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 85596,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-baby/02.webp",
+      "source": "Social Media Posts/Seor baby feeding set listing1_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 50950,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-baby/03.webp",
+      "source": "Social Media Posts/Seor baby feeding set listing3_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 58578,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-baby/04.webp",
+      "source": "Social Media Posts/Seor baby feeding set listing4_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 48390,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-baby/05.webp",
+      "source": "Social Media Posts/Seor baby feeding set listing5_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 92380,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-baby/06.webp",
+      "source": "Social Media Posts/Seor baby feeding set listing6_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 86252,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-sleep/cover.webp",
+      "source": "Social Media Posts/Sleepmask1_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 64656,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-sleep/02.webp",
+      "source": "Social Media Posts/Sleepmask2_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 79286,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-sleep/03.webp",
+      "source": "Social Media Posts/Sleepmask3_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 93586,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-sleep/04.webp",
+      "source": "Social Media Posts/Sleepmask4_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 116360,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-sleep/05.webp",
+      "source": "Social Media Posts/Sleepmask5_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 83940,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    },
+    {
+      "asset": "/work/seor-sleep/06.webp",
+      "source": "Social Media Posts/Sleepmask6_1080.png",
+      "sourceDimensions": [
+        1080,
+        1080
+      ],
+      "outputDimensions": [
+        1080,
+        1080
+      ],
+      "bytes": 123762,
+      "webpQuality": 85,
+      "provenance": "Supplied artwork export",
+      "transformations": [
+        "EXIF orientation normalization",
+        "Proportional downsampling only",
+        "WebP encoding"
+      ]
+    }
+  ]
+}
