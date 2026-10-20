@@ -12,34 +12,33 @@ import { Artwork } from './Portfolio';
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * Generates an orthogonal SVG path with rounded 90-degree corners.
- * Path routes from (x1, y1) down to yBridge, horizontally across to x2, then down to y2.
+ * Appends an orthogonal bridge segment with rounded corners from current pen position.
+ * Routes vertically from current Y to yBridge, horizontally across to x2, then vertically down to y2.
+ * Zero disconnected subpaths or M jumps: one continuous flowing line.
  */
-function roundedCornerPath(x1, y1, x2, y2, yBridge, radius = 24) {
+function appendOrthogonalBridge(commands, x1, y1, x2, y2, yBridge, radius = 24) {
   if (Math.abs(x1 - x2) < 4) {
-    return `M ${x1} ${y1} V ${y2}`;
+    commands.push(`V ${y2}`);
+    return;
   }
   const dir = x2 > x1 ? 1 : -1;
   const r = Math.min(
     radius,
     Math.abs(x2 - x1) / 2,
-    Math.abs(yBridge - y1) / 2,
-    Math.abs(y2 - yBridge) / 2
+    Math.max(4, Math.abs(yBridge - y1) / 2),
+    Math.max(4, Math.abs(y2 - yBridge) / 2)
   );
 
-  return [
-    `M ${x1} ${y1}`,
-    `V ${yBridge - r}`,
-    `Q ${x1} ${yBridge} ${x1 + dir * r} ${yBridge}`,
-    `H ${x2 - dir * r}`,
-    `Q ${x2} ${yBridge} ${x2} ${yBridge + r}`,
-    `V ${y2}`
-  ].join(' ');
+  commands.push(`V ${yBridge - r}`);
+  commands.push(`Q ${x1} ${yBridge} ${x1 + dir * r} ${yBridge}`);
+  commands.push(`H ${x2 - dir * r}`);
+  commands.push(`Q ${x2} ${yBridge} ${x2} ${yBridge + r}`);
+  commands.push(`V ${y2}`);
 }
 
 /**
  * FlowTrail: Deterministic SVG connector implementing the exact hand-sketched wireframe.
- * - Starts at top-left "what we do?" box
+ * - Single unbroken continuous line starting at top-left "what we do?" box
  * - Flows horizontally to top-right "Brand identity" pill
  * - Routes down and left via "Crafted for perfection" bridge to first brand pill "Tripty"
  * - Follows outer rails alongside thumbnail cards
@@ -83,42 +82,40 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
 
         const pathCommands = [];
 
-        // 1. Wireframe Header: from "what we do?" box horizontally to "Brand identity" pill
+        // 1. Single start point for the entire circuit
         const startBox = root.querySelector('[data-flow-start]');
         const discPill = root.querySelector('[data-discipline-pill]');
+        if (!startBox || !discPill) return;
 
-        if (startBox && discPill) {
-          const sRect = startBox.getBoundingClientRect();
-          const dRect = discPill.getBoundingClientRect();
+        const sRect = startBox.getBoundingClientRect();
+        const dRect = discPill.getBoundingClientRect();
 
-          const xStart = sRect.right - origin.left + 8;
-          const yStart = sRect.top - origin.top + sRect.height / 2;
-          const xDisc = dRect.left - origin.left;
+        const xStart = sRect.right - origin.left + 8;
+        const yStart = sRect.top - origin.top + sRect.height / 2;
+        const xDisc = dRect.left - origin.left;
 
-          pathCommands.push(`M ${xStart} ${yStart} H ${xDisc}`);
+        // Exactly ONE 'M' command at the very start of the continuous circuit!
+        pathCommands.push(`M ${xStart} ${yStart} H ${xDisc}`);
 
-          // From bottom of "Brand identity" pill to First Brand Pill ("Tripty")
-          const firstPill = items[0].querySelector('[data-item-pill]');
-          const firstBridge = root.querySelector('[data-bridge-index="0"]');
+        // From "Brand identity" to First Project ("Tripty")
+        const firstPill = items[0].querySelector('[data-item-pill]');
+        const firstBridge = root.querySelector('[data-bridge-index="0"]');
+        const firstCard = items[0].querySelector('.flow-wireframe-card');
 
-          if (firstPill && firstBridge) {
-            const pRect = firstPill.getBoundingClientRect();
-            const bRect = firstBridge.getBoundingClientRect();
+        if (!firstPill || !firstBridge || !firstCard) return;
 
-            const xDiscExit = dRect.left - origin.left + dRect.width / 2;
-            const yDiscExit = dRect.bottom - origin.top;
+        const pRect0 = firstPill.getBoundingClientRect();
+        const bRect0 = firstBridge.getBoundingClientRect();
+        const cRect0 = firstCard.getBoundingClientRect();
 
-            const xFirstPill = pRect.left - origin.left + pRect.width / 2;
-            const yFirstPill = pRect.top - origin.top;
-            const yBridge0 = bRect.top - origin.top + bRect.height / 2;
+        const xRail0 = pRect0.left - origin.left + pRect0.width / 2;
+        const yFirstBridge = bRect0.top - origin.top + bRect0.height / 2;
+        const yCardFinish0 = cRect0.bottom - origin.top;
 
-            pathCommands.push(
-              roundedCornerPath(xDiscExit, yDiscExit, xFirstPill, yFirstPill, yBridge0, 24)
-            );
-          }
-        }
+        // Bridge from (xDisc, yStart) down to yFirstBridge, across to xRail0, and down along card 0
+        appendOrthogonalBridge(pathCommands, xDisc, yStart, xRail0, yCardFinish0, yFirstBridge, 24);
 
-        // 2. Inter-project flow: Rail along cards -> Bridge -> Next Pill
+        // 2. Inter-project flow: from (xCurrRail, yCurrFinish) across bridge to (xNextRail, yNextFinish)
         for (let i = 0; i < items.length - 1; i++) {
           const currItem = items[i];
           const nextItem = items[i + 1];
@@ -127,74 +124,47 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
           const currCard = currItem.querySelector('.flow-wireframe-card');
           const bridgeEl = root.querySelector(`[data-bridge-index="${i + 1}"]`);
           const nextPill = nextItem.querySelector('[data-item-pill]');
+          const nextCard = nextItem.querySelector('.flow-wireframe-card');
 
-          if (!currPill || !currCard || !bridgeEl || !nextPill) continue;
+          if (!currPill || !currCard || !bridgeEl || !nextPill || !nextCard) continue;
 
           const currPillRect = currPill.getBoundingClientRect();
           const currCardRect = currCard.getBoundingClientRect();
           const bridgeRect = bridgeEl.getBoundingClientRect();
           const nextPillRect = nextPill.getBoundingClientRect();
+          const nextCardRect = nextCard.getBoundingClientRect();
 
-          const currBrief = currItem.querySelector('.flow-item-brief');
-          const currBriefRect = currBrief ? currBrief.getBoundingClientRect() : currPillRect;
+          const xCurrRail = currPillRect.left - origin.left + currPillRect.width / 2;
+          const yCurrFinish = currCardRect.bottom - origin.top;
 
-          // Rail X coordinate follows the current pill/brief column (LEFT for even, RIGHT for odd)
-          const isCurrLeft = i % 2 === 0;
-
-          const xRail = currPillRect.left - origin.left + currPillRect.width / 2;
-
-          // The line flows below the brief alongside the thumbnail card down until the card finishes
-          const yCardStart = currBriefRect.bottom - origin.top + 18;
-          const yCardFinish = currCardRect.bottom - origin.top;
-
-          // Next rail X aligns with the next pill center
           const xNextRail = nextPillRect.left - origin.left + nextPillRect.width / 2;
-          const yNextPill = nextPillRect.top - origin.top;
-
-          // Bridge Y sits in the vertical clearance gap below the thumbnail card
+          const yNextFinish = nextCardRect.bottom - origin.top;
           const yBridge = bridgeRect.top - origin.top + bridgeRect.height / 2;
 
-          // Line runs down the rail alongside the card, then crosses via bridge to the next pill
-          if (yCardFinish > yCardStart) {
-            pathCommands.push(`M ${xRail} ${yCardStart} V ${yCardFinish}`);
-            pathCommands.push(roundedCornerPath(xRail, yCardFinish, xNextRail, yNextPill, yBridge, 24));
-          } else {
-            pathCommands.push(roundedCornerPath(xRail, yCardStart, xNextRail, yNextPill, yBridge, 24));
-          }
+          appendOrthogonalBridge(pathCommands, xCurrRail, yCurrFinish, xNextRail, yNextFinish, yBridge, 24);
         }
 
         // 3. From Last Project down to "Get your Quote" finale
         const lastItem = items[items.length - 1];
-        const quoteSection = root.querySelector('.flow-quote-finale');
         const quoteBtn = root.querySelector('.flow-order-now-btn');
         const quoteBridge = root.querySelector('[data-flow-bridge-quote]');
 
-        if (lastItem && quoteSection && quoteBtn && quoteBridge) {
+        if (lastItem && quoteBtn && quoteBridge) {
           const lastPill = lastItem.querySelector('[data-item-pill]');
-          const lastBrief = lastItem.querySelector('.flow-item-brief');
           const lastCard = lastItem.querySelector('.flow-wireframe-card');
-          const qBridgeRect = quoteBridge.getBoundingClientRect();
-          const qBtnRect = quoteBtn.getBoundingClientRect();
-
           if (lastPill && lastCard) {
             const pRect = lastPill.getBoundingClientRect();
-            const bRect = lastBrief ? lastBrief.getBoundingClientRect() : pRect;
             const cRect = lastCard.getBoundingClientRect();
+            const qBridgeRect = quoteBridge.getBoundingClientRect();
+            const qBtnRect = quoteBtn.getBoundingClientRect();
 
-            const xLast = pRect.left - origin.left + pRect.width / 2;
-            const yCardStart = bRect.bottom - origin.top + 18;
-            const yCardFinish = cRect.bottom - origin.top;
-
+            const xLastRail = pRect.left - origin.left + pRect.width / 2;
+            const yLastFinish = cRect.bottom - origin.top;
             const xMid = rootW / 2;
             const yQuoteTop = qBtnRect.top - origin.top - 12;
             const yQBridge = qBridgeRect.top - origin.top + qBridgeRect.height / 2;
 
-            if (yCardFinish > yCardStart) {
-              pathCommands.push(`M ${xLast} ${yCardStart} V ${yCardFinish}`);
-              pathCommands.push(roundedCornerPath(xLast, yCardFinish, xMid, yQuoteTop, yQBridge, 24));
-            } else {
-              pathCommands.push(roundedCornerPath(xLast, yCardStart, xMid, yQuoteTop, yQBridge, 24));
-            }
+            appendOrthogonalBridge(pathCommands, xLastRail, yLastFinish, xMid, yQuoteTop, yQBridge, 24);
           }
         }
 
@@ -241,62 +211,99 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
       return;
     }
 
+    // Pre-sample points along path for instantaneous, 100% accurate Y-to-distance mapping
+    const samples = [];
+    const numSteps = 240;
+    for (let i = 0; i <= numSteps; i++) {
+      const d = (totalLength * i) / numSteps;
+      const pt = pathEl.getPointAtLength(d);
+      samples.push({ d, x: pt.x, y: pt.y });
+    }
+
+    const getDistanceForY = (targetY) => {
+      if (targetY <= samples[0].y) return 0;
+      if (targetY >= samples[samples.length - 1].y) return totalLength;
+
+      // Binary search for the matching sample segment
+      let low = 0;
+      let high = samples.length - 1;
+      while (low <= high) {
+        const mid = (low + high) >> 1;
+        if (samples[mid].y < targetY) {
+          low = mid + 1;
+        } else {
+          high = mid - 1;
+        }
+      }
+      const idx = Math.max(0, Math.min(samples.length - 2, high));
+      const s0 = samples[idx];
+      const s1 = samples[idx + 1];
+      const dy = s1.y - s0.y;
+      const t = dy > 0.0001 ? gsap.utils.clamp(0, 1, (targetY - s0.y) / dy) : 0.5;
+      return s0.d + t * (s1.d - s0.d);
+    };
+
     const updateTrail = () => {
       if (!root || !activePathRef.current) return;
-      const origin = root.getBoundingClientRect();
+      const rect = root.getBoundingClientRect();
       const viewportH = window.innerHeight;
 
-      // The line tip follows the reading level: 55% from the top of the viewport
-      const currentFocusY = viewportH * 0.55 - origin.top;
+      // Reading focus sits comfortably at 55% of viewport
+      const targetY = window.scrollY - (rect.top + window.scrollY) + viewportH * 0.55;
 
-      // Binary search to find exact path length where y <= currentFocusY
-      let low = 0;
-      let high = totalLength;
-      let bestDist = 0;
+      const drawnLength = gsap.utils.clamp(0, totalLength, getDistanceForY(targetY));
+      const offset = totalLength - drawnLength;
+      pathEl.style.strokeDashoffset = String(offset);
 
-      for (let step = 0; step < 18; step++) {
-        const mid = (low + high) / 2;
-        const pt = pathEl.getPointAtLength(mid);
-        if (pt.y <= currentFocusY) {
-          bestDist = mid;
-          low = mid;
+      const progress = totalLength > 0 ? drawnLength / totalLength : 0;
+
+      // 3. Only these 4 buttons light up. Rest of the buttons will not light up:
+      // Button 1: "what we do"
+      const startBox = root.querySelector('[data-flow-start]');
+      if (startBox) {
+        if (progress > 0.001) {
+          startBox.classList.add('is-lit');
         } else {
-          high = mid;
+          startBox.classList.remove('is-lit');
         }
       }
 
-      // Draw active coral line exactly to currentFocusY
-      const offset = Math.max(0, totalLength - bestDist);
-      pathEl.style.strokeDashoffset = String(offset);
-
-      // 1. "Brand identity" pill at the top: fills with color as line touches it
+      // Button 2: "brand identity"
       const discPill = root.querySelector('[data-discipline-pill]');
       if (discPill) {
         const dRect = discPill.getBoundingClientRect();
-        const dContactY = dRect.top - origin.top;
-        if (currentFocusY >= dContactY) {
-          discPill.classList.add('is-filled');
+        const sRect = startBox ? startBox.getBoundingClientRect() : null;
+        const seg1Len = sRect ? Math.max(10, dRect.left - sRect.right) : 600;
+        if (drawnLength >= (seg1Len - 10) || targetY > (dRect.bottom - rect.top)) {
+          discPill.classList.add('is-lit');
         } else {
-          discPill.classList.remove('is-filled');
+          discPill.classList.remove('is-lit');
         }
       }
 
-      // 2. Each brand pill: fills with color as line touches it
-      const pillEls = root.querySelectorAll('[data-item-pill]');
-      pillEls.forEach(pillEl => {
-        const pRect = pillEl.getBoundingClientRect();
-        const pContactY = pRect.top - origin.top;
-        const rowEl = pillEl.closest('.flow-wireframe-row');
-        if (currentFocusY >= pContactY) {
-          pillEl.classList.add('is-filled');
-          if (rowEl) rowEl.classList.add('is-reached');
-          const itemId = pillEl.getAttribute('data-item-pill');
-          if (itemId) setActiveItem(itemId);
+      // Button 3: "packaging & merch" (The packaging and merch)
+      const packBridge = root.querySelector('[data-bridge-pill*="packag" i]');
+      if (packBridge) {
+        const pRect = packBridge.getBoundingClientRect();
+        const yPack = pRect.top - rect.top;
+        if (targetY >= (yPack - 20)) {
+          packBridge.classList.add('is-lit');
         } else {
-          pillEl.classList.remove('is-filled');
-          if (rowEl) rowEl.classList.remove('is-reached');
+          packBridge.classList.remove('is-lit');
         }
-      });
+      }
+
+      // Button 4: "social media Creatives"
+      const socialBridge = root.querySelector('[data-bridge-pill*="social" i]');
+      if (socialBridge) {
+        const sRect = socialBridge.getBoundingClientRect();
+        const ySocial = sRect.top - rect.top;
+        if (targetY >= (ySocial - 20)) {
+          socialBridge.classList.add('is-lit');
+        } else {
+          socialBridge.classList.remove('is-lit');
+        }
+      }
     };
 
     let ticking = false;
@@ -318,7 +325,7 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', updateTrail);
     };
-  }, [trailPath, rootRef, setActiveItem]);
+  }, [trailPath, rootRef]);
 
   return (
     <svg
@@ -329,29 +336,28 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
       aria-hidden="true"
     >
       {trailPath && (
-        <>
-          <path className="flow-circuit-base" d={trailPath} />
-          <path
-            ref={activePathRef}
-            className="flow-circuit-active"
-            d={trailPath}
-          />
-        </>
+        <path
+          ref={activePathRef}
+          className="flow-circuit-active"
+          d={trailPath}
+        />
       )}
     </svg>
   );
 }
 
 /**
- * Individual Project Row matching the wireframe:
- * Pill Button + Middle-Aligned 2-3 Line Brief on one side,
- * Thumbnail Card on the other side.
+ * Individual Project Row matching user specification:
+ * - Pill Button + Middle-Aligned 2-3 Line Brief on one side (buttons do NOT light up)
+ * - Single image card (NO bounding box, NO topbar, NO thumb strip)
+ * - Name in bottom left over card + 2-line description
+ * - Soft dark faded gradient coming from the bottom of the card
  */
 function ShowcaseRow({ item, index, total }) {
   const isOdd = index % 2 === 1; // 0, 2, 4: Pill on Left, Card on Right. 1, 3, 5: Card on Left, Pill on Right.
   const project = getItemProject(item, projects);
   const images = getItemImages(item, projects);
-  const [lead, ...details] = images;
+  const lead = images[0];
 
   return (
     <div
@@ -359,7 +365,7 @@ function ShowcaseRow({ item, index, total }) {
       data-showcase-item={item.id}
       id={`project-${item.id}`}
     >
-      {/* 1. Pill & Brief Column (1/3 width) */}
+      {/* 1. Pill & Brief Column (1/3 width) - Rest of the buttons do NOT light up */}
       <div className="flow-wireframe-meta-col">
         <div className="flow-wireframe-pill-wrap">
           <div className="flow-item-pill" data-item-pill={item.id}>
@@ -371,35 +377,19 @@ function ShowcaseRow({ item, index, total }) {
         <p className="flow-item-brief">{item.brief}</p>
       </div>
 
-      {/* 2. Thumbnail Card Column (2/3 width) */}
+      {/* 2. Single Image Card (NO bounding box, ONE image, bottom-left name & 2-line desc over soft dark faded gradient) */}
       <div className="flow-wireframe-card-col">
         {project && lead && (
           <article className="flow-wireframe-card">
-            <a href={`/work/${project.id}`} className="flow-wireframe-link">
-              <div className="card-topbar">
-                <div className="card-topbar-info">
-                  <span className="card-disc-tag">{item.discipline}</span>
-                  <h4 className="card-brand-title">{project.title}</h4>
-                </div>
-                <span className="card-action-btn">
-                  <span>View project</span>
-                  <Arrow diagonal />
-                </span>
-              </div>
-
-              <div className="card-art-canvas" style={{ '--art-ratio': `${lead.width} / ${lead.height}` }}>
+            <a href={`/work/${project.id}`} className="flow-card-image-link">
+              <div className="flow-card-image-container">
                 <Artwork image={lead} eager={index === 0} />
               </div>
-
-              {details.length > 0 && (
-                <div className="card-details-strip">
-                  {details.slice(0, 3).map((img, dIdx) => (
-                    <div key={img.src || dIdx} className="card-thumb-item">
-                      <Artwork image={img} />
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="flow-card-bottom-gradient" aria-hidden="true" />
+              <div className="flow-card-bottom-info">
+                <h4 className="flow-card-overlay-title">{project.title || item.brandName}</h4>
+                <p className="flow-card-overlay-desc">{item.brief || project.description}</p>
+              </div>
             </a>
           </article>
         )}
@@ -463,7 +453,7 @@ export default function ShowcaseFlow({ service, setService }) {
             {/* Inter-brand bridge with teaser phrase */}
             {idx < showcaseItems.length - 1 && (
               <div className="flow-sketch-bridge" data-bridge-index={idx + 1}>
-                <div className="bridge-pill-tag">
+                <div className="bridge-pill-tag" data-bridge-pill={showcaseItems[idx + 1].teaser}>
                   <span>{showcaseItems[idx + 1].teaser}</span>
                 </div>
               </div>
