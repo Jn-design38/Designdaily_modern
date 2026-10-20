@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import HeroSection from './components/HeroSection';
 import SiteHeader from './components/SiteHeader';
 import ShowcaseFlow from './components/ShowcaseFlow';
-import { Footer } from './components/StudioSections';
+import { Process, Packages, ScaleBenefit, FAQ, Contact, Footer } from './components/StudioSections';
 import { WorkArchive, ProjectPage, NotFound } from './components/WorkPages';
 import projects from './data/projects.json';
 
@@ -30,10 +30,26 @@ export default function App() {
     }
   }, [home, archive, project]);
   return (
-    <div className="app-layout dark-studio" id="top">
+    <div className="app-layout" id="top">
       <SiteHeader home={home} />
       <main id="main-content">
-        {home ? <><HeroSection /><ShowcaseFlow service={service} setService={setService} /></> : archive ? <WorkArchive /> : project ? <ProjectPage project={project} /> : <NotFound />}
+        {home ? (
+          <>
+            <HeroSection />
+            <ShowcaseFlow />
+            <Process />
+            <Packages onChoose={setService} />
+            <ScaleBenefit onChoose={setService} />
+            <FAQ />
+            <Contact service={service} setService={setService} />
+          </>
+        ) : archive ? (
+          <WorkArchive />
+        ) : project ? (
+          <ProjectPage project={project} />
+        ) : (
+          <NotFound />
+        )}
       </main>
       <Footer />
     </div>
