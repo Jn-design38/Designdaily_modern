@@ -4,7 +4,7 @@ import PillNav from './PillNav';
 const sections = [['Work', 'works'], ['Services', 'capabilities'], ['Packages', 'packages'], ['Studio', 'studio'], ['Contact', 'contact']];
 
 export default function SiteHeader({ home = false }) {
-  const [light, setLight] = useState(!home);
+  const light = false;
   const [active, setActive] = useState(home ? 'home' : 'works');
   const [compact, setCompact] = useState(window.innerWidth < 850);
   useEffect(() => {
@@ -15,7 +15,6 @@ export default function SiteHeader({ home = false }) {
   useEffect(() => {
     if (!home) return;
     const track = () => {
-      setLight(window.scrollY > (document.getElementById('home')?.offsetHeight || 600) - 90);
       let current = 'home';
       for (const id of ['works', 'capabilities', 'studio', 'packages', 'contact']) {
         if (document.getElementById(id)?.getBoundingClientRect().top <= 180) current = id;

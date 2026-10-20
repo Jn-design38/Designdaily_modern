@@ -1,0 +1,3255 @@
+{
+  "sourceCollection": "Designdaily Assets",
+  "scope": "Every physical source file is accounted for. Alternate exports, mockups, source documents, and duplicate collections do not become extra projects.",
+  "fileCount": 383,
+  "classificationCounts": {
+    "non-portfolio": 26,
+    "project-source-or-variant": 233,
+    "selected-gallery-image": 124
+  },
+  "files": [
+    {
+      "source": "3d_svg_logo_studio.html",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Production helper or manifest, not a separate portfolio project"
+    },
+    {
+      "source": "Brand Identity/.tmp/identity-covers-manifest.json",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Production helper or manifest, not a separate portfolio project"
+    },
+    {
+      "source": "Brand Identity/All Organics/Cover Set 2026-10-15/01-logo-sketch.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Cover Set 2026-10-15/02-main-cover.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Cover Set 2026-10-15/03-outdoor-advertising.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Cover Set 2026-10-15/04-brand-stationery.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-01-portrait.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-02-wide.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-03-detail-a.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-04-detail-b.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-cover-01-flat-lay.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-cover-02-brand-world.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-cover-03-guideline-studio-v2.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Generated Covers/all-organics-cover-03-guideline-studio.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio10.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio11.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/03.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio12.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/04.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio13.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio14.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/05.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio15.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/06.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio16.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/07.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio17.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/11.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio18.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio19.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio20.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/08.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio4.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/02.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio5.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio6.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio7.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio8.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Jn.Arabi_GraphicDesign_Portfolio9.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Standalone Covers/Left Image.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Standalone Covers/Middle image.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/cover.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Standalone Covers/Right image 1.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/all-organics/10.webp"
+    },
+    {
+      "source": "Brand Identity/All Organics/Standalone Covers/Right Image 2.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Website Covers/all-organics-website-cover-2x.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics/Website Covers/all-organics-website-cover.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/All Organics-20261006T054420Z-1-001.zip",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/060924_Atuendo-Brand_patterns_JN-01-04-04.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/060924_Atuendo-Brand_patterns_JN-01-04-05.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/atuendo/03.webp"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/070924_Atuendo_(Color-palette)_JN-01.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/atuendo/04.webp"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/070924_Atuendo_(Color-palette)_JN-02.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/070924_Atuendo_(Color-palette)_JN-03.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/080924_Atuendo stationery design_JN.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/atuendo/05.webp"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Atuendo_040924_TYPOGRAPHY & COLOR PALETTE-01.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Atuendo_040924_TYPOGRAPHY & COLOR PALETTE-02.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/atuendo/02.webp"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Atuendo_040924_TYPOGRAPHY & COLOR PALETTE-03.jpg",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Cover Set 2026-10-15/01-logo-sketch.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Cover Set 2026-10-15/02-main-cover.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Cover Set 2026-10-15/03-outdoor-advertising.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Cover Set 2026-10-15/04-brand-stationery.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/outputs/atuendo-cover-concepts/atuendo-cover-01-stationery-flatlay.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/outputs/atuendo-cover-concepts/atuendo-cover-02-fashion-packaging.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Standalone Covers/Left image.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Standalone Covers/Main Image.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/atuendo/cover.webp"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Standalone Covers/Right Image 2.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/atuendo/06.webp"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Standalone Covers/Rigt Image 1.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Website Covers/atuendo-website-cover-2x.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Atuendo Brand Identity/Website Covers/atuendo-website-cover.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/All organics/Left Image.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/All organics/Middle image.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/All organics/Right image 1.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/All organics/Right Image 2.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Atuendo/Left image.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Atuendo/Main Image.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Atuendo/Right Image 2.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Atuendo/Rigt Image 1.png",
+      "projectIds": [
+        "atuendo"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Cover Sets 2026-10-15/preview.jpg",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Composite cover-set preview or production notes"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Cover Sets 2026-10-15/prompts.md",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Production helper or manifest, not a separate portfolio project"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Norea/Left Image.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Norea/Middle image.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Norea/Right Image 1.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Norea/Right Image 2.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Sandbox Lounge/Left Image.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Sandbox Lounge/Middle Image.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Sandbox Lounge/Right Image 1.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Sandbox Lounge/Right Image 2.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Tripty/Left Image.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Tripty/Middle Image.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Tripty/Right Image 1.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Brand covers/Tripty/Right Image 2.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/execution/export_identity_covers.ps1",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Production helper or manifest, not a separate portfolio project"
+    },
+    {
+      "source": "Brand Identity/execution/make_brand_covers.ps1",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Production helper or manifest, not a separate portfolio project"
+    },
+    {
+      "source": "Brand Identity/execution/preview_identity_covers.ps1",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Production helper or manifest, not a separate portfolio project"
+    },
+    {
+      "source": "Brand Identity/Image sizr.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Layout reference, not portfolio work"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/1.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/02.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/10.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/11.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/07.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/12.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/13.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/05.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/14.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/15.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/16.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/08.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/2.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/03.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/3.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/4.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/04.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/5.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/6.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/7.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/06.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/8.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/9.jpg",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Cover Set 2026-10-15/01-logo-sketch.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Cover Set 2026-10-15/02-main-cover.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Cover Set 2026-10-15/03-outdoor-advertising.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Cover Set 2026-10-15/04-brand-stationery.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Employee tshirt.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/10.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/output/imagegen/norea-cover-01-collateral-flatlay.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/output/imagegen/norea-cover-02-sculptural-brand-world.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/output/imagegen/norea-cover-03-material-collage.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Standalone Covers/Left Image.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Standalone Covers/Middle image.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/norea/cover.webp"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Standalone Covers/Right Image 1.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Standalone Covers/Right Image 2.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Website Covers/norea-website-cover-2x.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Norea Brand Identity/Website Covers/norea-website-cover.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Brand manifesto.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Brandname.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/ChatGPT Image Aug 10, 2026, 12_06_49 PM.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/ChatGPT Image Aug 3, 2026, 07_00_03 PM (1).png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/ChatGPT Image Aug 3, 2026, 07_00_04 PM (2).png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/ChatGPT Image Aug 3, 2026, 07_00_05 PM (3).png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/sandbox/05.webp"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/ChatGPT Image Aug 3, 2026, 07_00_06 PM (6).png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Colorpallete.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/sandbox/03.webp"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Cover Set 2026-10-15/01-logo-sketch.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Cover Set 2026-10-15/02-main-cover.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Cover Set 2026-10-15/03-outdoor-advertising.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Cover Set 2026-10-15/04-brand-stationery.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Generated Covers/01-editorial-flatlay-cover.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Generated Covers/02-lounge-atmosphere-cover.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Generated Covers/03-sand-sculpture-cover.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Keywords.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Logo concept.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/lounge cover.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Sanbox-Stationery.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/sandbox/04.webp"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Sandbox bar.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/sandbox/06.webp"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/SBL_cover-01.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/sandbox/02.webp"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Standalone Covers/Left Image.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Standalone Covers/Middle Image.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/sandbox/cover.webp"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Standalone Covers/Right Image 1.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Standalone Covers/Right Image 2.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Untitled-1.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/sandbox/07.webp"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Website Covers/sandbox-lounge-website-cover-2x.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Sandbox Lounge Branding/Website Covers/sandbox-lounge-website-cover.png",
+      "projectIds": [
+        "sandbox"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/1.Tripty logo.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/02.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/10.1.Tripty Brand pattern.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/03.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/10.5.Tripty Brand guideline1.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/11.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/11.Tripty Brand guideline.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/04.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/12.Tripty Delivery Vehicle wrap design.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/09.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/14.Tripty Merchandise design.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/06.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/15.Custom Tripty branding mockup.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/cover.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/16. Tripty Brand Merch.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/12.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/17.Tripty packaging and merch.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/18.Tripty branding elements.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/07.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/19.Tripty Social media posts.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/2.Tripty Brand keywords.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/20.1.Tripty Website BG design.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/20.2.TriptyStationer and Business card.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/05.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/21.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/08.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/3Tripty.LOGO DARK AND LIGHT.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/4.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/5.Tripty Color palette.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/6.Tripty Color Palette.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/7.Tripty Logo Measurements.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/8.Tripty Logo measurements2.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/9.Tripty branding element.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Artboard 2.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Banner r2.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/11.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/CAP back.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/CAP FRONT.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Cover 02.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Cover Set 2026-10-15/01-logo-sketch.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Cover Set 2026-10-15/02-main-cover.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Cover Set 2026-10-15/03-outdoor-advertising.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Cover Set 2026-10-15/04-brand-stationery.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/generated-covers/tripty-04-detail-b.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/generated-covers/tripty-cover-01-packaging-stationery.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/generated-covers/tripty-cover-02-merch-brand-kit.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/logo main-01.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Open 01.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Open 02.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Open 03.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/packaging.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant",
+      "output": "/work/tripty/10.webp"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/PATTERN v4-02.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/PATTERN2-01.jpg",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Standalone Covers/Left Image.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Standalone Covers/Middle Image.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Standalone Covers/Right Image 1.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Standalone Covers/Right Image 2.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/T-Shirt back.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/T-Shirt back2.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/T-Shirt front.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/van mockup.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/WALL FRAME POSTER AND MOCKUP.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Website Covers/tripty-website-cover-2x.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding/Website Covers/tripty-website-cover.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "Brand Identity/Tripty Branding-20261006T054523Z-1-001.zip",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Brand-system source, alternate artwork, or supplied presentation variant"
+    },
+    {
+      "source": "DD-smp1.png",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Studio identity, launch creative, or alternate identity format",
+      "output": "/work/design-daily/04.webp"
+    },
+    {
+      "source": "Design Daily logo/DEsigndaily logo(SVG)-01.svg",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Studio identity, launch creative, or alternate identity format"
+    },
+    {
+      "source": "Design Daily logo/DEsigndaily logo(SVG)-icon-01.svg",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Studio identity, launch creative, or alternate identity format"
+    },
+    {
+      "source": "Design Daily logo/DEsigndaily logo(SVG)-Logotype-01.svg",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Studio identity, launch creative, or alternate identity format"
+    },
+    {
+      "source": "Design Daily logo/DEsigndaily-3D-Logo.glb",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Studio identity, launch creative, or alternate identity format"
+    },
+    {
+      "source": "Design Daily logo/designdaily_webl.png",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Studio identity, launch creative, or alternate identity format"
+    },
+    {
+      "source": "Design Daily logo/Getdesigndaily-03.png",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Studio identity, launch creative, or alternate identity format"
+    },
+    {
+      "source": "Design Daily logo/Getdesigndaily-04.png",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Studio identity, launch creative, or alternate identity format",
+      "output": "/work/design-daily/cover.webp"
+    },
+    {
+      "source": "Design Daily logo/Graphite Sketch Infinity-P Logo.png",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Studio identity, launch creative, or alternate identity format",
+      "output": "/work/design-daily/03.webp"
+    },
+    {
+      "source": "Design Daily logo/LOGO_OPTIMIZED-01-01-01.png",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Studio identity, launch creative, or alternate identity format"
+    },
+    {
+      "source": "Design Daily logo/LOGO_OPTIMIZED-01-01.png",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Studio identity, launch creative, or alternate identity format",
+      "output": "/work/design-daily/02.webp"
+    },
+    {
+      "source": "Design daily web3.jpg",
+      "projectIds": [
+        "design-daily"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Studio identity, launch creative, or alternate identity format",
+      "output": "/work/design-daily/05.webp"
+    },
+    {
+      "source": "FinnPackaging/Envelope4_220824.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document",
+      "output": "/work/finn/05.webp"
+    },
+    {
+      "source": "FinnPackaging/Envelope5_220824.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document",
+      "output": "/work/finn/06.webp"
+    },
+    {
+      "source": "FinnPackaging/FINN PACKAGING DESIGN.pdf",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "FinnPackaging/Package front.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document",
+      "output": "/work/finn/cover.webp"
+    },
+    {
+      "source": "FinnPackaging/PACKAGING1_220824.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document",
+      "output": "/work/finn/02.webp"
+    },
+    {
+      "source": "FinnPackaging/PACKAGING2_220824.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document",
+      "output": "/work/finn/03.webp"
+    },
+    {
+      "source": "FinnPackaging/PACKAGING3_220824.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document",
+      "output": "/work/finn/04.webp"
+    },
+    {
+      "source": "FinnPackaging/Transparent assets/envelop back.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "FinnPackaging/Transparent assets/Envelope opened.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "FinnPackaging/Transparent assets/Envelope4_220824.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "FinnPackaging/Transparent assets/Finn packaging side 1.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "FinnPackaging/Transparent assets/Finn packaging side 2.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "FinnPackaging/Transparent assets/Packaging opened with welcome card.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "FinnPackaging/Transparent assets/Packaging opened without welcome card.png",
+      "projectIds": [
+        "finn"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Packaging or insert artwork; alternate view, transparent export, or source document"
+    },
+    {
+      "source": "Freshpaws logo_REVIEW-12.png",
+      "projectIds": [
+        "freshpaws"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Identity exploration",
+      "output": "/work/freshpaws/cover.webp"
+    },
+    {
+      "source": "GOODFIE LOGO-01.jpg",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Supporting logo artwork",
+      "output": "/work/goodfie/07.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Chaotic world_Back.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Chaotic world_front.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Chaotic-world-design.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document",
+      "output": "/work/goodybro/06.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Create goodness_Blck_Back.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Create goodness_Blck_Front.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro card 1.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro card.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document",
+      "output": "/work/goodybro/07.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro_chaotic-2.5.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro_chaotic-2.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document",
+      "output": "/work/goodybro/05.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro_chaotic-cover.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro_Create goodness 2.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro_Create goodness 3.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document",
+      "output": "/work/goodybro/02.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Goodybro_Create goodness cover-2.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document",
+      "output": "/work/goodybro/cover.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/GoodyBro_Julkarnine_design-test_10-11-25.pdf",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/JNXGOODY.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Style vs goodness_back.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Style vs goodness_Front.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/StyleVSGoodness_2.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document",
+      "output": "/work/goodybro/04.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/StyleVSGoodness_cover.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document",
+      "output": "/work/goodybro/03.webp"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Transparent assets/Chaotic f tp-f.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Transparent assets/Chaotic f-tp.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Transparent assets/Create goodness_Blck_Back-tp.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Transparent assets/Create goodness_Blck_Front-tp.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Transparent assets/tp_gdnessVSStyle bck.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "GOODY BRO-TshirtDesign/Transparent assets/tp_gdnessVSStyle.png",
+      "projectIds": [
+        "goodybro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise collection or supporting stationery; alternate export or source document"
+    },
+    {
+      "source": "packaging/280824_Applegears-PackagingCARD-JN.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Stationery artwork and printed inserts"
+    },
+    {
+      "source": "packaging/280824_Applegears-PackagingCARD_2-JN.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Stationery artwork and printed inserts",
+      "output": "/work/apple-gears/08.webp"
+    },
+    {
+      "source": "packaging/Artboard 1 (2).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/Artboard 3 (2).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/Artboard 4 (1).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/BAG MOCKUP.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Shopping bag or mushroom packaging"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 09_10_34 AM.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 09_16_41 AM (1).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 09_16_41 AM (2).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 09_16_42 AM (3).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 11_09_47 AM (2).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 11_09_48 AM (3).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 11_09_49 AM (4).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/ChatGPT Image Jul 4, 2026, 11_09_50 AM (5).png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Bottle packaging artwork or supplied product presentation"
+    },
+    {
+      "source": "packaging/f3-Current View.png",
+      "projectIds": [
+        "all-organics"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Shopping bag or mushroom packaging",
+      "output": "/work/all-organics/09.webp"
+    },
+    {
+      "source": "packaging/packaging (1).png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Alternate takeaway packaging export"
+    },
+    {
+      "source": "packaging/PACKAGING MOCKUP.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation",
+      "output": "/work/goodfie/06.webp"
+    },
+    {
+      "source": "packaging/packaging NGR.jpg",
+      "projectIds": [
+        "naogaon-rice"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Rice packaging presentation",
+      "output": "/work/naogaon-rice/cover.webp"
+    },
+    {
+      "source": "packaging/PKG-Goodfie.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation",
+      "output": "/work/goodfie/cover.webp"
+    },
+    {
+      "source": "packaging/PKG-Goodfie2.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation",
+      "output": "/work/goodfie/02.webp"
+    },
+    {
+      "source": "packaging/PKG_SIDES-01.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation",
+      "output": "/work/goodfie/03.webp"
+    },
+    {
+      "source": "packaging/PKG_SIDES-02.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation",
+      "output": "/work/goodfie/04.webp"
+    },
+    {
+      "source": "packaging/PKG_SIDES-03.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation"
+    },
+    {
+      "source": "packaging/PKG_SIDES-04.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation",
+      "output": "/work/goodfie/05.webp"
+    },
+    {
+      "source": "packaging/PKG_SIDES-05.png",
+      "projectIds": [
+        "goodfie"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Cutlery packaging panels, mockups, or gift-box presentation"
+    },
+    {
+      "source": "packaging/Playboard.png",
+      "projectIds": [
+        "norea"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Gift-box colorway presentation",
+      "output": "/work/norea/09.webp"
+    },
+    {
+      "source": "Project showcase flow/Phase1.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase10.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase11.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase12.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase13.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase14.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase15.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase16.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase17.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase2.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase3.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase4.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase5.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase6.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase7.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase8.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Project showcase flow/Phase9.png",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Reference screenshot for website flow, not portfolio work"
+    },
+    {
+      "source": "Social Media 2/Artboard 1.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 1DD.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 1JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 2 copy.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 2DD.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 2JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 2v2.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 3.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 3DD.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 3JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 4.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Artboard 4_JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Seor baby feeding set listing.jpg",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Seor clutch bag.jpg",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/sleeping mask amazon listing.jpg",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Social media 1.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media 2/Social media 2.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Exact duplicate of Social Media Posts source"
+    },
+    {
+      "source": "Social Media Posts/AG_small BANNER-2.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/04.webp"
+    },
+    {
+      "source": "Social Media Posts/AG_small BANNER-3.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/05.webp"
+    },
+    {
+      "source": "Social Media Posts/AG_small BANNER-4.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/06.webp"
+    },
+    {
+      "source": "Social Media Posts/AG_YOUTUBE THUMBNAIL.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/09.webp"
+    },
+    {
+      "source": "Social Media Posts/Apple_GearsBD_Julkarnine_Designdaily.com.jpg",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/cover.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 1.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor/02.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 1DD.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/tripty-social/03.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 1JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/aves/02.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 2 copy.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor/03.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 2DD.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/tripty-social/04.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 2JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/aves/03.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 2v2.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor/cover.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 3.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor/04.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 3DD.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/tripty-social/05.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 3JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/aves/cover.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 4.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor/05.webp"
+    },
+    {
+      "source": "Social Media Posts/Artboard 4_JN X DD_AVES.png",
+      "projectIds": [
+        "aves"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/aves/04.webp"
+    },
+    {
+      "source": "Social Media Posts/Banner 4.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/03.webp"
+    },
+    {
+      "source": "Social Media Posts/Banner3.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/02.webp"
+    },
+    {
+      "source": "Social Media Posts/card mockup.png",
+      "projectIds": [
+        "apple-gears"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/apple-gears/07.webp"
+    },
+    {
+      "source": "Social Media Posts/Clutch bag2_1080.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-clutch/02.webp"
+    },
+    {
+      "source": "Social Media Posts/Clutch bag3_1080.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-clutch/03.webp"
+    },
+    {
+      "source": "Social Media Posts/Clutch bag4_1080.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-clutch/cover.webp"
+    },
+    {
+      "source": "Social Media Posts/Clutch bag5_1080.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-clutch/04.webp"
+    },
+    {
+      "source": "Social Media Posts/Clutch bag6_1080.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-clutch/05.webp"
+    },
+    {
+      "source": "Social Media Posts/Clutch bag7_1080.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-clutch/06.webp"
+    },
+    {
+      "source": "Social Media Posts/Clutch bag_1080.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Campaign artwork, alternate export, or assembled presentation"
+    },
+    {
+      "source": "Social Media Posts/execution/extract_seor_posts.ps1",
+      "projectIds": [],
+      "classification": "non-portfolio",
+      "reason": "Production helper or manifest, not a separate portfolio project"
+    },
+    {
+      "source": "Social Media Posts/saegis.png",
+      "projectIds": [
+        "seor"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor/06.webp"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing.jpg",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Campaign artwork, alternate export, or assembled presentation"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing1_1080.png",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-baby/02.webp"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing2_1080.png",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-baby/cover.webp"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing3_1080.png",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-baby/03.webp"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing4_1080.png",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-baby/04.webp"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing5_1080.png",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-baby/05.webp"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing6_1080.png",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-baby/06.webp"
+    },
+    {
+      "source": "Social Media Posts/Seor baby feeding set listing_1080.png",
+      "projectIds": [
+        "seor-baby"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Campaign artwork, alternate export, or assembled presentation"
+    },
+    {
+      "source": "Social Media Posts/seor bag-a+.png",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Campaign artwork, alternate export, or assembled presentation"
+    },
+    {
+      "source": "Social Media Posts/Seor clutch bag.jpg",
+      "projectIds": [
+        "seor-clutch"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Campaign artwork, alternate export, or assembled presentation"
+    },
+    {
+      "source": "Social Media Posts/sleeping mask amazon listing.jpg",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Campaign artwork, alternate export, or assembled presentation"
+    },
+    {
+      "source": "Social Media Posts/Sleepmask1_1080.png",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-sleep/cover.webp"
+    },
+    {
+      "source": "Social Media Posts/Sleepmask2_1080.png",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-sleep/02.webp"
+    },
+    {
+      "source": "Social Media Posts/Sleepmask3_1080.png",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-sleep/03.webp"
+    },
+    {
+      "source": "Social Media Posts/Sleepmask4_1080.png",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-sleep/04.webp"
+    },
+    {
+      "source": "Social Media Posts/Sleepmask5_1080.png",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-sleep/05.webp"
+    },
+    {
+      "source": "Social Media Posts/Sleepmask6_1080.png",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/seor-sleep/06.webp"
+    },
+    {
+      "source": "Social Media Posts/slpmsk_a+.png",
+      "projectIds": [
+        "seor-sleep"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Campaign artwork, alternate export, or assembled presentation"
+    },
+    {
+      "source": "Social Media Posts/Social media 1.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/tripty-social/cover.webp"
+    },
+    {
+      "source": "Social Media Posts/Social media 2.png",
+      "projectIds": [
+        "tripty-social"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Campaign artwork, alternate export, or assembled presentation",
+      "output": "/work/tripty-social/02.webp"
+    },
+    {
+      "source": "Social Media Posts/square_1080_transparent.zip",
+      "projectIds": [
+        "seor-clutch",
+        "seor-baby",
+        "seor-sleep"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Archive of extracted square creative exports"
+    },
+    {
+      "source": "Website Photo Assets 2026-10-18/01-Heroes/tripty-diner.png",
+      "projectIds": [
+        "tripty"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Alternate supplied restaurant scene"
+    },
+    {
+      "source": "Zaro merchandise/T shirt mascot.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/02.webp"
+    },
+    {
+      "source": "Zaro merchandise/T shirt measurements.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/03.webp"
+    },
+    {
+      "source": "Zaro merchandise/Zaro axis 7 _back.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro axis 7 _lefft side.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro axis 7 _Rightside.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/04.webp"
+    },
+    {
+      "source": "Zaro merchandise/Zaro axis 7 _topdown.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/05.webp"
+    },
+    {
+      "source": "Zaro merchandise/Zaro tshirt mascot.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Bottle packaging Side 1.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/09.webp"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Bottle packaging Side 2.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Bottle Packaging Side 3.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Packaging mockup 1.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/06.webp"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Packaging mockup 2.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/07.webp"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Packaging mockup 3.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/08.webp"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Water bottle mascot.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/waterbottle mascot Explained.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/zaro packaging transparent assets/Packaging side 1.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/zaro packaging transparent assets/Packaging side 2.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/zaro packaging transparent assets/Packaging side front.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/zaro packaging transparent assets/Zaro_bottle back.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/zaro packaging transparent assets/Zaro_bottle Front.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/Zaro Water bottle packaging/Zaro_bottle.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "project-source-or-variant",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export"
+    },
+    {
+      "source": "Zaro merchandise/zarotee.png",
+      "projectIds": [
+        "zaro"
+      ],
+      "classification": "selected-gallery-image",
+      "reason": "Merchandise or bottle packaging; alternate view or transparent export",
+      "output": "/work/zaro/cover.webp"
+    }
+  ],
+  "archives": [
+    {
+      "archive": "Brand Identity/All Organics-20261006T054420Z-1-001.zip",
+      "projectIds": [
+        "all-organics"
+      ],
+      "members": [
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio9.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio10.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio11.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio5.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio8.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio4.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio18.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio13.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio14.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio19.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio7.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio17.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio16.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio20.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio12.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio15.png",
+        "All Organics/Jn.Arabi_GraphicDesign_Portfolio6.png"
+      ]
+    },
+    {
+      "archive": "Brand Identity/Tripty Branding-20261006T054523Z-1-001.zip",
+      "projectIds": [
+        "tripty"
+      ],
+      "members": [
+        "Tripty Branding/11.png",
+        "Tripty Branding/20.1.Tripty Website BG design.jpg",
+        "Tripty Branding/6.Tripty Color Palette.jpg",
+        "Tripty Branding/T-Shirt back.png",
+        "Tripty Branding/Open 02.png",
+        "Tripty Branding/packaging.png",
+        "Tripty Branding/4.jpg",
+        "Tripty Branding/2.Tripty Brand keywords.jpg",
+        "Tripty Branding/1.Tripty logo.jpg",
+        "Tripty Branding/16. Tripty Brand Merch.jpg",
+        "Tripty Branding/8.Tripty Logo measurements2.jpg",
+        "Tripty Branding/7.Tripty Logo Measurements.jpg",
+        "Tripty Branding/11.Tripty Brand guideline.jpg",
+        "Tripty Branding/5.Tripty Color palette.jpg",
+        "Tripty Branding/10.5.Tripty Brand guideline1.jpg",
+        "Tripty Branding/logo main-01.png",
+        "Tripty Branding/WALL FRAME POSTER AND MOCKUP.png",
+        "Tripty Branding/9.Tripty branding element.jpg",
+        "Tripty Branding/Artboard 2.jpg",
+        "Tripty Branding/16.jpg",
+        "Tripty Branding/14.Tripty Merchandise design.jpg",
+        "Tripty Branding/20.2.TriptyStationer and Business card.jpg",
+        "Tripty Branding/18.Tripty branding elements.jpg",
+        "Tripty Branding/Banner r2.png",
+        "Tripty Branding/3Tripty.LOGO DARK AND LIGHT.jpg",
+        "Tripty Branding/12.Tripty Delivery Vehicle wrap design.jpg",
+        "Tripty Branding/17.Tripty packaging and merch.jpg",
+        "Tripty Branding/Open 01.png",
+        "Tripty Branding/21.jpg",
+        "Tripty Branding/10.1.Tripty Brand pattern.jpg",
+        "Tripty Branding/Open 03.png",
+        "Tripty Branding/Cover 02.png",
+        "Tripty Branding/15.Custom Tripty branding mockup.jpg",
+        "Tripty Branding/19.Tripty Social media posts.jpg",
+        "Tripty Branding/PATTERN2-01.jpg",
+        "Tripty Branding/CAP FRONT.png",
+        "Tripty Branding/PATTERN v4-02.png",
+        "Tripty Branding/CAP back.png",
+        "Tripty Branding/T-Shirt back2.png",
+        "Tripty Branding/van mockup.png",
+        "Tripty Branding/T-Shirt front.png"
+      ]
+    },
+    {
+      "archive": "Social Media Posts/square_1080_transparent.zip",
+      "projectIds": [
+        "seor-clutch",
+        "seor-baby",
+        "seor-sleep"
+      ],
+      "members": [
+        "Clutch bag2_1080.png",
+        "Clutch bag3_1080.png",
+        "Clutch bag4_1080.png",
+        "Clutch bag5_1080.png",
+        "Clutch bag6_1080.png",
+        "Clutch bag7_1080.png",
+        "Clutch bag_1080.png",
+        "Seor baby feeding set listing1_1080.png",
+        "Seor baby feeding set listing2_1080.png",
+        "Seor baby feeding set listing3_1080.png",
+        "Seor baby feeding set listing4_1080.png",
+        "Seor baby feeding set listing5_1080.png",
+        "Seor baby feeding set listing6_1080.png",
+        "Seor baby feeding set listing_1080.png",
+        "Sleepmask1_1080.png",
+        "Sleepmask2_1080.png",
+        "Sleepmask3_1080.png",
+        "Sleepmask4_1080.png",
+        "Sleepmask5_1080.png"
+      ]
+    }
+  ]
+}
