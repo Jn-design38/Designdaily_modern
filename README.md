@@ -1,76 +1,153 @@
-# Design Daily — Modern Agency Website
+# Design Daily — Continuous Studio Website
 
-> The official digital home of **Design Daily Studio** — category-defining brand identities, modern websites, structural packaging, and digital experiences for high-growth tech founders, D2C creators, and modern enterprises.
-
----
-
-## ✦ Core Design Architecture & Philosophy
-
-The site follows the 8-section unified homepage brief designed to wow visitors with rich aesthetics, oversized typography, tactile studio artifacts, and deterministic frontend precision:
-
-1. **Opening (Hero)**: High-impact condensed statement *"Good design. Every day."* with tactile agency stamp, live studio availability badge, and direct calls to action.
-2. **Selected Work (Dark Gallery)**: Immersive architectural dark chapter (`#121316`) highlighting flagship case studies:
-   - **Tripty** — Ethical luxury lifestyle identity, pattern architecture, and digital flagship.
-   - **All Organics** — Modern apothecary packaging system, botanical patterns, and e-commerce storefront.
-   - **Sandbox Lounge** — Upscale cocktail sanctuary identity, tactile gold-foil stationery, and spatial signage.
-   - *Studio Repertoire Archive*: Featuring **Atuendo**, **Norea**, **Finn Unboxing**, and **Zaro Beverage**.
-3. **Services (3D Spatial Stage)**: An immersive 3D scroll experience where the official **Design Daily 3D Logo** (`DEsigndaily-3D-Logo.glb`) sits at the center, rotating smoothly on scroll with studio lighting and mouse tilt, while interactive service cards with authentic project snapshots appear dynamically from both sides.
-4. **Process**: Interactive 4-step synchronizer (*01 Brief & Audit*, *02 Design & Explore*, *03 Refine & Test*, *04 Deliver & Launch*) linking strategic timelines with real artifacts.
-5. **Craft (The Detail Layer)**: Interactive Before/After slider demonstrating mathematical geometry and concentric arc construction on the **Norea** logo mark (`norea-construction.jpg` vs. `norea-logo.jpg`).
-6. **Studio & Philosophy**: Human studio voice emphasizing senior-only talent, direct founder access, fixed milestones, and enduring design systems.
-7. **Questions (FAQ)**: 5 accessible accordion items detailing project durations, master deliverables, web engineering capabilities, and payment terms.
-8. **Contact & Footer**: Signature coral chapter (`#FF4C42`), elevated white glass inquiry card with client-side validation, service selection chips, and click-to-copy direct email (`julkarnine.arabi@gmail.com`).
+> The official digital home of **Design Daily Studio** — an independent, founder-led graphic design studio in Dhaka run by **Julkarnine Arabi**, delivering visual continuity across brand identities, physical merchandise, stationery, print campaigns, and daily social creatives.
+>
+> **Core Proposition**: *"One recognisable brand. Everywhere you show up."*
 
 ---
 
-## ✦ Design System Tokens
+## ✦ Core Design Architecture & Narrative Flow
 
-| Token | Production Value | Role |
-|---|---|---|
-| **Primary Brand Coral** | `#FF4C42` | Hero accents, primary buttons, status badges, contact chapter |
-| **Deep Brand Charcoal** | `#343545` | Secondary text, borders, dark cards, tactile stamp line |
-| **Dark Gallery Background** | `#121316` | Selected Work chapter background |
-| **Light Canvas** | `#FAF9F6` | Warm ivory background for daytime sections |
-| **Pure White** | `#FFFFFF` | Elevated cards, forms, and crisp surfaces |
-| **Soft Blue Canvas** | `#F0F4FA` | Quiet chapter background for Process |
-| **Display Font** | `Barlow Condensed` (600–900) | Oversized headlines, numbers, kickers, and buttons |
-| **Body Font** | `Source Sans 3` (400–700) | Editorial copy, metadata, form fields, and labels |
+The platform is built as an uninterrupted single-page studio exhibition that flows naturally from a dark tactile opening into an expansive white paper canvas:
 
----
-
-## ✦ Performance, Motion & Accessibility
-
-- **Lenis Smooth Scroll Engine**: Integrated lightweight Lenis v1.1.20 smooth scrolling engine for buttery 60fps inertial scrolling and synchronized anchor navigation.
-- **Zero Heavy Framework Bloat**: Pure semantic HTML5 + Vanilla CSS3 + Modern ES6 JavaScript (< 85KB total footprint including Lenis).
-- **Fast First Paint**: Instant static SVG logo rendering with zero 3D loading delays.
-- **100% WCAG 2.2 AA Compliance**: High-contrast ratios, visible keyboard focus indicators, logical tab ordering, ARIA labels, and `prefers-reduced-motion` fallbacks (automatically disables Lenis on reduced motion preferences).
-- **Fluid Responsiveness**: Calibrated for desktop (1440px+), laptop (1024px), tablet (768px), and mobile (390px).
-
----
-
-## ✦ Asset Provenance
-
-All imagery placed across this website originates from authentic staged assets in `assets/`:
-- **Agency Identity**: `agency-logo.svg`, `agency-icon.svg`, `agency-sketch.png`.
-- **Client Projects**: `tripty-cover.png`, `all-organics-cover.png`, `sandbox-cover.png`, `atuendo-cover.png`, `norea-cover.png`, `finn-packaging.png`, `zaro-bottle.png`.
-- **Craft Verification**: `norea-construction.jpg` & `norea-logo.jpg`.
-
----
-
-## ✦ Local Development & Preview
-
-To preview the website locally with any static file server:
-
-```bash
-# Using Python
-python -m http.server 8000
-
-# Or using Node.js / npx
-npx serve .
+```text
+[#home] Preserved Dark Hero (Poppins + WebGL2 ASCII Horizon + Split PillNav + Static Marquee Ticker)
+   ↓
+[.hero-to-paper] Smooth Gradient Transition from #0B0C11 into White #FFFFFF Canvas
+   ↓
+[#works] "One recognisable brand. Everywhere you show up." (Tripty, Noréa, All Organics)
+   ↓
+[.physical-section] "On the things people see, hold, and wear." (Goodybro & Zaro Merchandise + BounceCards)
+   ↓
+[.social-section] "Show up with something worth seeing." (Aves, Seor, Tripty Social Creatives)
+   ↓
+[#capabilities] "Everything your brand needs to show up." (5 Interactive Service Selectors)
+   ↓
+[#studio] "You bring the business. We bring the design." (4-Step Process: Understand → Design → Refine → Deliver)
+   ↓
+[#packages] "Our Packages" (Faithful Recreation: Starter 3,500 BDT | Growth 8,999 BDT | Scale 14,999 BDT)
+   ↓
+[.scale-benefit] "Good design. A clearer direction." (Free Online Business Assessment + Content Calendar)
+   ↓
+[.faq-section] "A few things you might ask." (Interactive FAQ Accordion)
+   ↓
+[#contact] "Let’s make your next impression count." (Interactive Scope Builder + Mailto to julkarnine.arabi@gmail.com)
+   ↓
+[/work] Complete Archive (React Bits Masonry + 8 Discipline Filters + 15 Dedicated Project Case Pages)
 ```
 
-Open [http://localhost:8000](http://localhost:8000) in your browser.
+---
+
+## ✦ Tech Stack & Component Engineering
+
+- **Framework**: [React 19](https://react.dev/) + [Vite 5](https://vitejs.dev/)
+- **Typography**: Exclusively **Poppins** (Weights: 400, 500, 600, 700, 800), 100% self-hosted locally under `public/fonts/` with zero Google Fonts CDN requests.
+- **Interactive Component Suite**:
+  - `GradientASCII`: WebGL2 interactive ASCII matrix horizon with mouse trail and click ripples.
+  - `SplitText`: Word-by-word headline entrance animation.
+  - `Masonry`: Dynamic masonry layout on the `/work` archive with image aspect ratio calculation and search filtering.
+  - `BounceCards`: Physics-based spring fanning card deck for apparel and merchandise.
+  - `Magnet`: Micro-interaction cursor attractor on primary call-to-action buttons.
+  - `PillNav`: Split glassmorphic navigation pill with scroll spy, dynamic light/dark theming, and responsive mobile drawer.
+  - `Lightbox`: Modal image zoom viewer supporting full resolution viewing, keyboard controls (Escape, Arrow keys), and focus restoration.
 
 ---
 
-© 2026 Design Daily Studio. All rights reserved.
+## ✦ Asset Library & Verified Data Model
+
+The studio showcase features 15 real client projects curated from the founder's authentic design archives:
+
+| Project | Discipline | Assets |
+|---|---|---:|
+| **Tripty** | Brand Identity, Restaurant Interior & Merchandise | 9 WebP |
+| **Noréa** | Brand Identity, Stationery & Packaging | 8 WebP |
+| **All Organics** | Brand Identity & Packaging Flatlay | 8 WebP |
+| **Atuendo** | Brand Identity & Fashion Stationery | 6 WebP |
+| **Sandbox Lounge** | Brand Identity, Hospitality Stationery & Signage | 7 WebP |
+| **Goodybro** | Apparel Graphics & Merchandise | 7 WebP |
+| **Zaro** | Graphic T-Shirts & Streetwear | 6 WebP |
+| **AVES Real Estate** | Bilingual Social Campaign Creatives | 4 WebP |
+| **Seor Leathercraft** | Axis Bag Campaign | 6 WebP |
+| **Tripty Kitchen** | Social Campaign & Promotional Graphics | 5 WebP |
+| **Apple Gears** | Advertising & Product Banners | 7 WebP |
+| **Finn** | Packaging Archive & Monogram System | 6 WebP |
+| **Seor Clutch** | Editorial Leather Goods Campaign | 6 WebP |
+| **Seor Baby** | Product Campaign & Feeding Set Graphics | 6 WebP |
+| **Sleep Mask** | Minimalist Brand Identity & Social Creatives | 6 WebP |
+
+*Total Image Footprint: 97 WebP images totaling 11.88 MiB. No cover image exceeds 600 KB.*
+
+---
+
+## ✦ Service Packages Specification
+
+Pricing is structured into 3 transparent, static-only packages matching the reference specification:
+
+1. **Starter Package ("Lets, Launch")**:
+   - `01 Custom Logo Design`
+   - `10–15 Pages Brand Guideline PDF`
+   - `04 Social Media Creatives`
+   - `01 Social Media Cover Design`
+   - Price: **3,500 BDT** *(Standard 7,000 BDT)*
+2. **Growth Package ("PRO")**:
+   - `24 Social Media Creatives`
+   - `04 Carousel Posts (20 designs total)`
+   - `Ad Creative Optimization`
+   - `Competitor Content Analysis`
+   - `Unlimited Revisions`
+   - Price: **8,999 BDT** *(Standard 18,000 BDT)*
+3. **Scale Package ("Premium")**:
+   - `36 Social Media Creatives`
+   - `06 Carousel Posts (30 designs total)`
+   - `Campaign Creative Concepts`
+   - `Advanced Competitor Content Analysis`
+   - `Unlimited Revisions`
+   - `Dedicated Account Manager`
+   - Price: **14,999 BDT** *(Standard 30,000 BDT)*
+   - **Exclusive Benefit**: Includes a free online business assessment and a tailored 30-day content calendar.
+
+---
+
+## ✦ Getting Started & Local Development
+
+### Prerequisites
+- Node.js >= 18.x
+
+### Installation
+```bash
+# Install dependencies
+npm install
+```
+
+### Development Server
+```bash
+# Starts Vite HMR dev server
+npm run dev
+```
+
+### Production Build & Preview
+```bash
+# Compile optimized bundle to dist/
+npm run build
+
+# Preview production build locally on port 4195
+npm run preview
+```
+
+### Automated Verification Tests
+```bash
+# Runs site integrity tests (route uniqueness, asset existence, package validation)
+npm test
+```
+
+---
+
+## ✦ Accessibility & Performance Standard
+
+- **100% Keyboard Navigable**: Full Tab, Shift+Tab, and Escape key handling for modal dialogs and dropdown menus.
+- **Motion Accessibility**: Honors `prefers-reduced-motion: reduce` by disabling canvas flickers, ticker loops, spring card fanning, and transition durations.
+- **Zero CLS (Cumulative Layout Shift)**: Reserved image aspect ratios and dimensions prevent layout jumps during image loading.
+
+---
+
+© 2026 Design Daily Studio • Julkarnine Arabi. All rights reserved.
