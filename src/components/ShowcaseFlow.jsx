@@ -92,10 +92,10 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
 
         const xStart = sRect.right - origin.left + 8;
         const yStart = sRect.top - origin.top + sRect.height / 2;
-        const xDisc = dRect.left - origin.left;
+        const xDiscCenter = dRect.left - origin.left + dRect.width / 2;
 
-        // Exactly ONE 'M' command at the very start of the continuous circuit!
-        pathCommands.push(`M ${xStart} ${yStart} H ${xDisc}`);
+        // Exactly ONE 'M' command at the very start: flows into Brand identity center axis
+        pathCommands.push(`M ${xStart} ${yStart} H ${xDiscCenter}`);
 
         // From "Brand identity" to First Project ("Tripty")
         const firstPill = items[0].querySelector('[data-item-pill]');
@@ -112,8 +112,8 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
         const yFirstBridge = bRect0.top - origin.top + bRect0.height / 2;
         const yCardFinish0 = cRect0.bottom - origin.top;
 
-        // Bridge from (xDisc, yStart) down to yFirstBridge, across to xRail0, and down along card 0
-        appendOrthogonalBridge(pathCommands, xDisc, yStart, xRail0, yCardFinish0, yFirstBridge, 24);
+        // Bridge from Brand identity center down to yFirstBridge, across through Crafted for perfection to xRail0, and down along card 0
+        appendOrthogonalBridge(pathCommands, xDiscCenter, yStart, xRail0, yCardFinish0, yFirstBridge, 24);
 
         // 2. Inter-project flow: from (xCurrRail, yCurrFinish) across bridge to (xNextRail, yNextFinish)
         for (let i = 0; i < items.length - 1; i++) {
