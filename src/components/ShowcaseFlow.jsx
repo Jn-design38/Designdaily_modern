@@ -63,7 +63,7 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
         const origin = root.getBoundingClientRect();
         const rootW = root.clientWidth;
         const rootH = root.scrollHeight;
-        const isMobile = window.innerWidth < 850;
+        const isMobile = window.innerWidth < 640;
 
         setSize({ width: rootW, height: rootH });
 
@@ -217,66 +217,108 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
     };
   }, [rootRef]);
 
-  // ScrollTrigger to animate active coral line
+  // Scroll tracking: Real-time path flow + Button color fill on contact
   useEffect(() => {
     if (!trailPath || !activePathRef.current) return;
     const root = rootRef.current;
     if (!root) return;
 
     const pathEl = activePathRef.current;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let totalLength = 0;
+    try {
+      totalLength = pathEl.getTotalLength();
+    } catch {
+      return;
+    }
+    if (totalLength <= 0) return;
 
+    pathEl.style.strokeDasharray = `${totalLength}`;
+    pathEl.style.strokeDashoffset = `${totalLength}`;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
       pathEl.style.strokeDashoffset = '0';
       return;
     }
 
     const updateTrail = () => {
-      const rect = root.getBoundingClientRect();
+      if (!root || !activePathRef.current) return;
+      const origin = root.getBoundingClientRect();
       const viewportH = window.innerHeight;
-      const progress = gsap.utils.clamp(
-        0,
-        1,
-        (-rect.top + viewportH * 0.45) / Math.max(1, rect.height - viewportH * 0.5)
-      );
-      pathEl.style.strokeDashoffset = String(1 - progress);
+
+      // The line tip follows the reading level: 55% from the top of the viewport
+      const currentFocusY = viewportH * 0.55 - origin.top;
+
+      // Binary search to find exact path length where y <= currentFocusY
+      let low = 0;
+      let high = totalLength;
+      let bestDist = 0;
+
+      for (let step = 0; step < 18; step++) {
+        const mid = (low + high) / 2;
+        const pt = pathEl.getPointAtLength(mid);
+        if (pt.y <= currentFocusY) {
+          bestDist = mid;
+          low = mid;
+        } else {
+          high = mid;
+        }
+      }
+
+      // Draw active coral line exactly to currentFocusY
+      const offset = Math.max(0, totalLength - bestDist);
+      pathEl.style.strokeDashoffset = String(offset);
+
+      // 1. "Brand identity" pill at the top: fills with color as line touches it
+      const discPill = root.querySelector('[data-discipline-pill]');
+      if (discPill) {
+        const dRect = discPill.getBoundingClientRect();
+        const dContactY = dRect.top - origin.top;
+        if (currentFocusY >= dContactY) {
+          discPill.classList.add('is-filled');
+        } else {
+          discPill.classList.remove('is-filled');
+        }
+      }
+
+      // 2. Each brand pill: fills with color as line touches it
+      const pillEls = root.querySelectorAll('[data-item-pill]');
+      pillEls.forEach(pillEl => {
+        const pRect = pillEl.getBoundingClientRect();
+        const pContactY = pRect.top - origin.top;
+        const rowEl = pillEl.closest('.flow-wireframe-row');
+        if (currentFocusY >= pContactY) {
+          pillEl.classList.add('is-filled');
+          if (rowEl) rowEl.classList.add('is-reached');
+          const itemId = pillEl.getAttribute('data-item-pill');
+          if (itemId) setActiveItem(itemId);
+        } else {
+          pillEl.classList.remove('is-filled');
+          if (rowEl) rowEl.classList.remove('is-reached');
+        }
+      });
     };
 
-    const trigger = ScrollTrigger.create({
-      trigger: root,
-      start: 'top 80%',
-      end: 'bottom 40%',
-      onUpdate: updateTrail,
-      onRefresh: updateTrail,
-    });
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateTrail();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
 
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', updateTrail, { passive: true });
     updateTrail();
 
-    return () => trigger.kill();
-  }, [trailPath, rootRef]);
-
-  // IntersectionObserver to illuminate pills as reached
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    const items = root.querySelectorAll('[data-showcase-item]');
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const itemId = entry.target.getAttribute('data-showcase-item');
-            entry.target.classList.add('is-reached');
-            setActiveItem(itemId);
-          }
-        });
-      },
-      { rootMargin: '-20% 0px -50% 0px' }
-    );
-
-    items.forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, [rootRef, setActiveItem]);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', updateTrail);
+    };
+  }, [trailPath, rootRef, setActiveItem]);
 
   return (
     <svg
@@ -293,9 +335,6 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
             ref={activePathRef}
             className="flow-circuit-active"
             d={trailPath}
-            pathLength="1"
-            strokeDasharray="1"
-            strokeDashoffset="1"
           />
         </>
       )}

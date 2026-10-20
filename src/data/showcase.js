@@ -3,6 +3,7 @@
 // and curated artwork references from projects.json.
 
 export const showcaseItems = [
+  // 1. BRAND IDENTITY
   {
     id: 'tripty',
     brandName: 'Tripty',
@@ -48,11 +49,14 @@ export const showcaseItems = [
     projectId: 'sandbox',
     featuredIndices: [0, 2, 4]
   },
+
+  // 2. PACKAGING & MERCHANDISE
+  // After Sandbox Lounge: bridge is called "packaging & merch", with Goodybro included before social media creatives
   {
     id: 'finn',
     brandName: 'Finn',
     discipline: 'Packaging',
-    teaser: 'An impression before opening',
+    teaser: 'packaging & merch',
     brief: 'Luxury black-and-silver product packaging with custom dielines, tactile unboxing, and embossed finishes.',
     projectId: 'finn',
     featuredIndices: [0, 1, 2]
@@ -67,10 +71,22 @@ export const showcaseItems = [
     featuredIndices: [0, 3, 5]
   },
   {
+    id: 'goodybro',
+    brandName: 'Goodybro',
+    discipline: 'Merchandise',
+    teaser: 'Wearable character',
+    brief: 'Organic cotton t-shirt illustrations, graphic prints, and custom apparel badges people want to wear.',
+    projectId: 'goodybro',
+    featuredIndices: [0, 2, 4]
+  },
+
+  // 3. SOCIAL MEDIA CREATIVES
+  // Bridge before starting social media creatives is called "social media Creatives"
+  {
     id: 'aves',
     brandName: 'Aves',
     discipline: 'Social creatives',
-    teaser: 'A recognizable feed',
+    teaser: 'social media Creatives',
     brief: 'High-end real estate social campaigns featuring architectural layouts and consistent luxury tones.',
     projectId: 'aves',
     featuredIndices: [0, 1, 2]
@@ -93,6 +109,8 @@ export const showcaseItems = [
     projectId: 'seor-sleep',
     featuredIndices: [0, 1, 2]
   },
+
+  // 4. BANNERS
   {
     id: 'apple-gears',
     brandName: 'Apple Gears',
@@ -101,24 +119,6 @@ export const showcaseItems = [
     brief: 'Widescreen 16:9 banner campaigns and responsive display ads for premium accessories and phone covers.',
     projectId: 'apple-gears',
     featuredIndices: [1, 2, 3]
-  },
-  {
-    id: 'goodybro',
-    brandName: 'Goodybro',
-    discipline: 'Merchandise',
-    teaser: 'Wearable character',
-    brief: 'Organic cotton t-shirt illustrations, graphic prints, and custom apparel badges people want to wear.',
-    projectId: 'goodybro',
-    featuredIndices: [0, 2, 4]
-  },
-  {
-    id: 'atuendo-stationery',
-    brandName: 'Atuendo Collateral',
-    discipline: 'Stationery & brochures',
-    teaser: 'Care in the smallest touchpoint',
-    brief: 'Foil-stamped business cards, envelopes, and tactile correspondence systems that establish authority.',
-    projectId: 'atuendo',
-    featuredIndices: [4, 5]
   }
 ];
 

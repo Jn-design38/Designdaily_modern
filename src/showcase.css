@@ -56,11 +56,11 @@
 .flow-circuit-active {
   fill: none;
   stroke: #ff4c42;
-  stroke-width: 2.5px;
+  stroke-width: 3px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 8px rgba(255, 76, 66, 0.55));
-  transition: stroke-dashoffset 0.15s ease-out;
+  filter: drop-shadow(0 0 10px rgba(255, 76, 66, 0.75));
+  transition: stroke-dashoffset 0.08s linear;
 }
 
 /* --------------------------------------------------------------------------
@@ -116,22 +116,36 @@
   gap: 8px;
   padding: 10px 24px;
   border-radius: 999px;
-  background: rgba(255, 76, 66, 0.12);
-  border: 1.5px solid #ff4c42;
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  color: #e4e4e9;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  box-shadow: 0 0 24px rgba(255, 76, 66, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);
   position: relative;
   z-index: 3;
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .flow-wireframe-discipline-pill .pill-dot {
   color: #ff4c42;
   font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+/* Fills with solid coral when touched by the line */
+.flow-wireframe-discipline-pill.is-filled {
+  background: #ff4c42 !important;
+  border-color: #ff4c42 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 32px rgba(255, 76, 66, 0.75), 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  transform: scale(1.05);
+}
+
+.flow-wireframe-discipline-pill.is-filled .pill-dot {
+  color: #ffffff !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -230,31 +244,41 @@
   padding: 10px 24px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
   color: #e4e4e9;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.02em;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .flow-item-pill .pill-star {
   color: #ff4c42;
   font-size: 12px;
+  transition: color 0.3s ease;
 }
 
 .flow-item-pill .pill-brand-name {
   color: #ffffff;
 }
 
-/* Active / reached brand pill illumination */
-.flow-wireframe-row.is-reached .flow-item-pill {
-  background: rgba(255, 76, 66, 0.14);
-  border-color: #ff4c42;
-  color: #ffffff;
-  box-shadow: 0 0 24px rgba(255, 76, 66, 0.45);
+/* Active / reached brand pill - FILLS WITH SOLID COLOR WHEN LINE TOUCHES! */
+.flow-item-pill.is-filled {
+  background: #ff4c42 !important;
+  border-color: #ff4c42 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 32px rgba(255, 76, 66, 0.75), 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  transform: scale(1.05);
+}
+
+.flow-item-pill.is-filled .pill-star {
+  color: #ffffff !important;
+}
+
+.flow-item-pill.is-filled .pill-brand-name {
+  color: #ffffff !important;
 }
 
 /* 2-3 Line Brief (Middle aligned under pill) */
