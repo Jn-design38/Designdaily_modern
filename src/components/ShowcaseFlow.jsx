@@ -175,15 +175,25 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
     const observer = new ResizeObserver(calculatePath);
     observer.observe(root);
     root.querySelectorAll('[data-showcase-item]').forEach(el => observer.observe(el));
+    root.querySelectorAll('[data-item-pill]').forEach(el => observer.observe(el));
+    root.querySelectorAll('.flow-item-brief-card').forEach(el => observer.observe(el));
+    root.querySelectorAll('.flow-wireframe-meta-col').forEach(el => observer.observe(el));
 
     window.addEventListener('resize', calculatePath);
+    window.addEventListener('load', calculatePath);
     document.fonts.ready.then(calculatePath);
     calculatePath();
 
+    const t1 = setTimeout(calculatePath, 100);
+    const t2 = setTimeout(calculatePath, 350);
+
     return () => {
       cancelAnimationFrame(frame);
+      clearTimeout(t1);
+      clearTimeout(t2);
       observer.disconnect();
       window.removeEventListener('resize', calculatePath);
+      window.removeEventListener('load', calculatePath);
     };
   }, [rootRef]);
 
@@ -374,7 +384,9 @@ function ShowcaseRow({ item, index, total }) {
           </div>
         </div>
 
-        <p className="flow-item-brief">{item.brief}</p>
+        <div className="flow-item-brief-card">
+          <p className="flow-item-brief">{item.brief}</p>
+        </div>
       </div>
 
       {/* 2. Single Image Card (NO bounding box, ONE image, bottom-left name & 2-line desc over soft dark faded gradient) */}

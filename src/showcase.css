@@ -260,12 +260,17 @@
   align-items: center;
   text-align: center;
   padding: 1.5rem 0.5rem;
-  z-index: 3;
+  z-index: 4;
 }
 
 .flow-wireframe-pill-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-bottom: 1.25rem;
   position: relative;
+  z-index: 4;
 }
 
 .flow-item-pill {
@@ -274,14 +279,17 @@
   gap: 8px;
   padding: 10px 24px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  background: rgba(18, 19, 27, 0.96);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
   color: #e4e4e9;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  z-index: 4;
 }
 
 .flow-item-pill .pill-star {
@@ -293,14 +301,29 @@
   color: #ffffff;
 }
 
-/* 2-3 Line Brief (Middle aligned under pill) */
+/* Background Card for Sub-Texts (Protects readability as line flows behind) */
+.flow-item-brief-card {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 290px;
+  margin: 0 auto;
+  padding: 1.15rem 1.4rem;
+  border-radius: 18px;
+  background: rgba(18, 19, 27, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* 2-3 Line Brief (Middle aligned inside background card) */
 .flow-item-brief {
   font-size: 13.5px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.88);
   text-align: center;
-  max-width: 270px;
-  margin: 0 auto;
+  margin: 0;
   font-weight: 400;
 }
 
