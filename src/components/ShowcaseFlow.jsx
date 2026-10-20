@@ -8,8 +8,92 @@ import SplitText from './SplitText';
 import Magnet from './Magnet';
 import { Arrow, Star } from './Icons';
 import { Artwork } from './Portfolio';
+import SpecularButton from './SpecularButton';
+import MagicBento from './MagicBento';
+import BounceCards from './BounceCards';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const SCALE_BENEFIT_IMAGES = [
+  {
+    src: '/all-organics-outdoor-advertising.png',
+    alt: 'All Organics - Outdoor Billboard Advertising',
+    width: 320,
+    height: 240,
+    aspectRatio: '1448 / 1086'
+  },
+  {
+    src: '/artboard-1-dd-social.png',
+    alt: 'Design Daily - Brand Identity Social Creative',
+    width: 236,
+    height: 295,
+    aspectRatio: '1508 / 1885'
+  },
+  {
+    src: '/tripty-logo-sketch.png',
+    alt: 'Tripty Branding - Hand-Drawn Logo Sketch & Construction Grid',
+    width: 220,
+    height: 321,
+    aspectRatio: '1038 / 1515'
+  },
+  {
+    src: '/artboard-1-aves-social.png',
+    alt: 'AVES Real Estate - Social Creative Campaign',
+    width: 236,
+    height: 295,
+    aspectRatio: '1508 / 1885'
+  },
+  {
+    src: '/tripty-detail-b.png',
+    alt: 'Tripty Branding - Packaging & Brand Identity Detail',
+    width: 330,
+    height: 232,
+    aspectRatio: '1496 / 1051'
+  }
+];
+
+const AGENCY_BENEFITS_ITEMS = [
+  {
+    title: 'One Recognisable Brand',
+    description: 'Complete visual continuity. We unify your logo, retail packaging, social feeds, and billboards so your brand looks cohesive everywhere.',
+    label: 'Brand Identity System',
+    visual: 'analytics'
+  },
+  {
+    title: 'Fixed Retainers in BDT',
+    description: 'Zero hidden fees, surprise hourly invoices, or agency bloat. Transparent monthly subscriptions with pause or cancel flexibility.',
+    label: 'Predictable Retainers',
+    visual: 'dashboard'
+  },
+  {
+    title: 'Direct With Julkarnine Arabi',
+    description: 'Work directly with the studio founder and lead designer. No account manager telephone games, no junior delegates, and rapid iteration via WhatsApp and Figma.',
+    label: 'Founder-Led Craft',
+    visual: 'collaboration',
+    colSpan: 2,
+    rowSpan: 2
+  },
+  {
+    title: '48–72h Production Turnaround',
+    description: 'Send briefs via WhatsApp or Trello. Receive custom vector logos, packaging layouts, and ad creatives in 48–72 hours with unlimited revisions.',
+    label: 'Rapid Creative Velocity',
+    visual: 'automation',
+    colSpan: 2,
+    rowSpan: 2
+  },
+  {
+    title: '24–36 Monthly Social Creatives',
+    description: 'Keep your feed active and ads converting with high-impact static creatives, multi-slide carousels, and 30–40s motion graphics videos.',
+    label: 'Social & Motion Engine',
+    visual: 'integration'
+  },
+  {
+    title: 'Print-Ready Dielines & Full IP',
+    description: 'Factory-accurate packaging dielines with bleed for printers, organized Google Drive folders, full vector source files (.AI, .EPS, .PDF), and 100% IP ownership.',
+    label: 'Production Deliverables',
+    visual: 'security'
+  }
+];
 
 /**
  * Appends an orthogonal bridge segment with rounded corners from current pen position.
@@ -267,52 +351,46 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
 
       const progress = totalLength > 0 ? drawnLength / totalLength : 0;
 
-      // 3. Only these 4 buttons light up. Rest of the buttons will not light up:
-      // Button 1: "what we do"
+      // Button 1: "what we do?"
       const startBox = root.querySelector('[data-flow-start]');
       if (startBox) {
-        if (progress > 0.001) {
-          startBox.classList.add('is-lit');
-        } else {
-          startBox.classList.remove('is-lit');
-        }
+        startBox.classList.toggle('is-lit', progress > 0.001 || drawnLength > 5);
       }
 
-      // Button 2: "brand identity"
+      // Button 2: "Brand identity"
       const discPill = root.querySelector('[data-discipline-pill]');
       if (discPill) {
         const dRect = discPill.getBoundingClientRect();
         const sRect = startBox ? startBox.getBoundingClientRect() : null;
         const seg1Len = sRect ? Math.max(10, dRect.left - sRect.right) : 600;
-        if (drawnLength >= (seg1Len - 10) || targetY > (dRect.bottom - rect.top)) {
-          discPill.classList.add('is-lit');
-        } else {
-          discPill.classList.remove('is-lit');
-        }
+        const isDiscLit = drawnLength >= (seg1Len - 15) || targetY >= (dRect.top - rect.top - 10);
+        discPill.classList.toggle('is-lit', isDiscLit);
       }
 
-      // Button 3: "packaging & merch" (The packaging and merch)
-      const packBridge = root.querySelector('[data-bridge-pill*="packag" i]');
-      if (packBridge) {
-        const pRect = packBridge.getBoundingClientRect();
-        const yPack = pRect.top - rect.top;
-        if (targetY >= (yPack - 20)) {
-          packBridge.classList.add('is-lit');
-        } else {
-          packBridge.classList.remove('is-lit');
-        }
-      }
+      // Button 3+: All bridge pills ("Crafted for perfection", "The packaging and merch", "social media creatives", teaser phrases, finale bridge)
+      const bridgePills = root.querySelectorAll('.bridge-pill-tag');
+      bridgePills.forEach(pill => {
+        const pRect = pill.getBoundingClientRect();
+        const yPillCenter = pRect.top - rect.top + pRect.height / 2;
+        const isLit = targetY >= (yPillCenter - 25);
+        pill.classList.toggle('is-lit', isLit);
+      });
 
-      // Button 4: "social media Creatives"
-      const socialBridge = root.querySelector('[data-bridge-pill*="social" i]');
-      if (socialBridge) {
-        const sRect = socialBridge.getBoundingClientRect();
-        const ySocial = sRect.top - rect.top;
-        if (targetY >= (ySocial - 20)) {
-          socialBridge.classList.add('is-lit');
-        } else {
-          socialBridge.classList.remove('is-lit');
-        }
+      // Button 4+: All project brand pills ("Tripty", "SandBox Lounge", "Goody Bro", "Vastra", "Kalyan", etc.)
+      const itemPills = root.querySelectorAll('[data-item-pill]');
+      itemPills.forEach(pill => {
+        const pRect = pill.getBoundingClientRect();
+        const yPillCenter = pRect.top - rect.top + pRect.height / 2;
+        const isLit = targetY >= (yPillCenter - 30);
+        pill.classList.toggle('is-lit', isLit);
+      });
+
+      // Button 5: "Order now" finale CTA
+      const orderBtn = root.querySelector('.flow-order-now-btn');
+      if (orderBtn) {
+        const oRect = orderBtn.getBoundingClientRect();
+        const isLit = targetY >= (oRect.top - rect.top - 30);
+        orderBtn.classList.toggle('is-lit', isLit);
       }
     };
 
@@ -329,11 +407,30 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', updateTrail, { passive: true });
+
+    // Instantaneous synchronization with Lenis momentum scroll
+    const onLenisScroll = () => {
+      updateTrail();
+    };
+    if (window.__lenis) {
+      window.__lenis.on('scroll', onLenisScroll);
+    }
+    const onLenisReady = (e) => {
+      if (e.detail) {
+        e.detail.on('scroll', onLenisScroll);
+      }
+    };
+    window.addEventListener('lenis-ready', onLenisReady);
+
     updateTrail();
 
     return () => {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', updateTrail);
+      window.removeEventListener('lenis-ready', onLenisReady);
+      if (window.__lenis) {
+        window.__lenis.off('scroll', onLenisScroll);
+      }
     };
   }, [trailPath, rootRef]);
 
@@ -378,10 +475,25 @@ function ShowcaseRow({ item, index, total }) {
       {/* 1. Pill & Brief Column (1/3 width) - Rest of the buttons do NOT light up */}
       <div className="flow-wireframe-meta-col">
         <div className="flow-wireframe-pill-wrap">
-          <div className="flow-item-pill" data-item-pill={item.id}>
-            <span className="pill-star">✦</span>
+          <SpecularButton
+            className="flow-item-pill"
+            data-item-pill={item.id}
+            size="sm"
+            radius={999}
+            tint="#12131b"
+            tintOpacity={0.92}
+            blur={14}
+            textColor="#ffffff"
+            lineColor="#ff4c42"
+            baseColor="rgba(255, 76, 66, 0.25)"
+            intensity={1.1}
+            idleIntensity={0.35}
+            glow={0.8}
+            thickness={1.0}
+            followMouse
+          >
             <span className="pill-brand-name">{item.brandName}</span>
-          </div>
+          </SpecularButton>
         </div>
 
         <div className="flow-item-brief-card">
@@ -437,22 +549,67 @@ export default function ShowcaseFlow({ service, setService }) {
       {/* 1. Top Section Header (from sketch: "what we do?" on left, "Brand identity" pill on right) */}
       <header className="flow-wireframe-header-section">
         <div className="flow-wireframe-topbar">
-          <div className="flow-wireframe-start-box" data-flow-start>
-            <span className="box-prefix">✦</span>
+          <SpecularButton
+            data-flow-start
+            className="flow-wireframe-start-box"
+            size="md"
+            radius={20}
+            tint="#12131b"
+            tintOpacity={0.92}
+            blur={14}
+            textColor="#ffffff"
+            lineColor="#ff4c42"
+            baseColor="rgba(255, 76, 66, 0.25)"
+            intensity={1.1}
+            idleIntensity={0.4}
+            glow={0.8}
+            thickness={1.0}
+            followMouse
+          >
             <span className="box-text">what we do?</span>
-          </div>
+          </SpecularButton>
 
-          <div className="flow-wireframe-discipline-pill" data-discipline-pill>
-            <span className="pill-dot">✦</span>
+          <SpecularButton
+            data-discipline-pill
+            className="flow-wireframe-discipline-pill"
+            size="sm"
+            radius={999}
+            tint="#12131b"
+            tintOpacity={0.92}
+            blur={14}
+            textColor="#ffffff"
+            lineColor="#ff4c42"
+            baseColor="rgba(255, 76, 66, 0.25)"
+            intensity={1.1}
+            idleIntensity={0.4}
+            glow={0.8}
+            thickness={1.0}
+            followMouse
+          >
             <span className="pill-label">Brand identity</span>
-          </div>
+          </SpecularButton>
         </div>
 
         {/* First Bridge: "Crafted for perfection" */}
         <div className="flow-sketch-bridge" data-bridge-index="0">
-          <div className="bridge-pill-tag">
+          <SpecularButton
+            className="bridge-pill-tag"
+            size="sm"
+            radius={999}
+            tint="#0b0c11"
+            tintOpacity={0.92}
+            blur={12}
+            textColor="#ff9e99"
+            lineColor="#ff4c42"
+            baseColor="rgba(255, 76, 66, 0.2)"
+            intensity={1.1}
+            idleIntensity={0.35}
+            glow={0.8}
+            thickness={1.0}
+            followMouse
+          >
             <span>Crafted for perfection</span>
-          </div>
+          </SpecularButton>
         </div>
       </header>
 
@@ -465,9 +622,25 @@ export default function ShowcaseFlow({ service, setService }) {
             {/* Inter-brand bridge with teaser phrase */}
             {idx < showcaseItems.length - 1 && (
               <div className="flow-sketch-bridge" data-bridge-index={idx + 1}>
-                <div className="bridge-pill-tag" data-bridge-pill={showcaseItems[idx + 1].teaser}>
+                <SpecularButton
+                  className="bridge-pill-tag"
+                  data-bridge-pill={showcaseItems[idx + 1].teaser}
+                  size="sm"
+                  radius={999}
+                  tint="#0b0c11"
+                  tintOpacity={0.92}
+                  blur={12}
+                  textColor="#ff9e99"
+                  lineColor="#ff4c42"
+                  baseColor="rgba(255, 76, 66, 0.2)"
+                  intensity={1.1}
+                  idleIntensity={0.35}
+                  glow={0.8}
+                  thickness={1.0}
+                  followMouse
+                >
                   <span>{showcaseItems[idx + 1].teaser}</span>
-                </div>
+                </SpecularButton>
               </div>
             )}
           </div>
@@ -476,9 +649,24 @@ export default function ShowcaseFlow({ service, setService }) {
 
       {/* 3. Transition Bridge to Quote Finale */}
       <div className="flow-sketch-bridge" data-flow-bridge-quote>
-        <div className="bridge-pill-tag">
+        <SpecularButton
+          className="bridge-pill-tag"
+          size="sm"
+          radius={999}
+          tint="#0b0c11"
+          tintOpacity={0.92}
+          blur={12}
+          textColor="#ff9e99"
+          lineColor="#ff4c42"
+          baseColor="rgba(255, 76, 66, 0.2)"
+          intensity={1.1}
+          idleIntensity={0.35}
+          glow={0.8}
+          thickness={1.0}
+          followMouse
+        >
           <span>Ready for your next chapter</span>
-        </div>
+        </SpecularButton>
       </div>
 
       {/* 4. "Get your Quote" & "Order now" Button (directly from sketch) */}
@@ -490,75 +678,67 @@ export default function ShowcaseFlow({ service, setService }) {
             Choose a dedicated monthly package or request a custom brief tailored to your brand.
           </p>
           <div className="flow-quote-action">
-            <a href="#packages" className="flow-order-now-btn">
+            <SpecularButton
+              className="flow-order-now-btn"
+              size="lg"
+              radius={999}
+              tint="#ff4c42"
+              tintOpacity={1}
+              textColor="#ffffff"
+              lineColor="#ffffff"
+              baseColor="#ff4c42"
+              intensity={1.2}
+              idleIntensity={0.4}
+              shineSize={12}
+              thickness={1.0}
+              glow={0.9}
+              followMouse
+              onClick={() => {
+                const target = document.getElementById('packages');
+                target?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               <span>Order now</span>
               <Arrow diagonal />
-            </a>
+            </SpecularButton>
           </div>
         </div>
       </section>
 
-      {/* 5. Packages Section (White Reference Cards on Dark Canvas) */}
-      <section id="packages" className="flow-packages-section" aria-labelledby="packages-title">
-        <div className="flow-packages-header">
-          <span className="section-note">Fixed Transparent Pricing</span>
-          <h2 id="packages-title" className="flow-packages-title">Choose how we build your next chapter.</h2>
-          <p className="flow-packages-subtitle">Dedicated monthly design capacity for founders, brands, and growing businesses.</p>
+      {/* 4.5. The Design Daily Advantage - How We Benefit Customers & Solve Agency Problems (React Bits MagicBento) */}
+      <section id="benefits" className="flow-benefits-section" aria-labelledby="benefits-title">
+        <div className="benefits-head">
+          <h2 className="benefits-title" id="benefits-title">
+            Built to solve what traditional agencies break.
+          </h2>
+          <p className="benefits-sub">
+            Ambitious brands waste weeks on slow agency bureaucracy or struggle with amateur files that fail at print. Design Daily delivers founder-led brand craft, production-ready packaging, and high-velocity social creatives on fixed monthly retainers.
+          </p>
         </div>
 
-        <div className="package-grid">
-          {packages.map(pack => (
-            <article className={`package-card package-${pack.id}`} key={pack.id}>
-              {pack.id === 'growth' && <span className="package-badge-popular">★ Studio Recommended</span>}
-              {pack.id === 'scale' && <span className="package-badge-scale">✦ Complete System</span>}
-              <header className="package-heading">
-                <h3><span>{pack.name}</span></h3>
-                <p>{pack.subtitle}</p>
-              </header>
-              <div className="package-body">
-                <p className="package-includes">Includes everything you need:</p>
-                <ul>
-                  {pack.features.map(feature => (
-                    <li key={feature}>
-                      <span className="check-bullet" aria-hidden="true">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="package-prices">
-                  <div className="price-strike-row">
-                    <span className="price-strike-label">Original Price</span>
-                    <span className="price-strike-val">{pack.original} BDT</span>
-                  </div>
-                  <div className="price-final-box">
-                    <div className="discount-pill">Launch Discount 50% OFF</div>
-                    <div className="final-price-text">
-                      <span className="price-label">Final Price</span>
-                      <strong className="price-number">{pack.price} BDT / Month</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="package-actions">
-          {packages.map(pack => (
-            <a
-              href="#contact"
-              className={`package-choose choose-${pack.id}`}
-              key={pack.id}
-              onClick={() => setService && setService(pack.name)}
-            >
-              <span>Choose {pack.name.replace(' Package', '')}</span>
-              <Arrow diagonal />
-            </a>
-          ))}
+        <div className="benefits-bento-wrap">
+          <MagicBento
+            items={AGENCY_BENEFITS_ITEMS}
+            columns={4}
+            rowHeight={210}
+            gap={16}
+            radius={24}
+            theme="dark"
+            glowColor="#ff4c42"
+            enableBorderGlow={true}
+            enableSpotlight={true}
+            spotlightRadius={320}
+            enableStars={true}
+            particleCount={28}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            textAutoHide={false}
+          />
         </div>
       </section>
 
-      {/* 6. Scale Benefit Section */}
+      {/* 4.8. Scale Benefit Section (Good design. A clearer direction.) with BounceCards */}
       <section className="scale-benefit wrap" aria-labelledby="scale-title">
         <div className="scale-copy">
           <span className="benefit-label"><Star /> Included with Scale</span>
@@ -574,50 +754,97 @@ export default function ShowcaseFlow({ service, setService }) {
           </a>
         </div>
 
-        <div className="planning-preview" aria-label="Illustrative assessment and content calendar">
-          <div className="assessment-sheet">
-            <div className="sheet-top-bar">
-              <span className="sheet-kicker">Design Daily / Brand assessment</span>
-              <span className="sheet-badge">Audit Score: 94%</span>
-            </div>
-            <h3>A fresh perspective.</h3>
-            {[
-              { label: 'Visual consistency', pct: 88 },
-              { label: 'Clarity of your offer', pct: 71 },
-              { label: 'Content opportunities', pct: 54 }
-            ].map(item => (
-              <div className="assessment-line" key={item.label}>
-                <div className="assessment-line-header">
-                  <span>{item.label}</span>
-                  <span className="assessment-pct">{item.pct}%</span>
-                </div>
-                <div className="assessment-progress-track">
-                  <i style={{ width: `${item.pct}%` }} />
-                </div>
-              </div>
-            ))}
-            <p>Your business. Seen with fresh eyes.</p>
-          </div>
+        <div className="scale-bounce-wrap" aria-label="Design Daily featured works showcase">
+          <BounceCards
+            images={SCALE_BENEFIT_IMAGES}
+            containerWidth={580}
+            containerHeight={440}
+            cardSize={240}
+            spread={88}
+            rotation={10}
+            arc={0}
+            pushDistance={160}
+            hoverScale={1.1}
+            bounciness={0.6}
+            animationDelay={0.4}
+            animationStagger={0.07}
+            borderWidth={4}
+            borderColor="#ffffff"
+            radius={22}
+            shadow={true}
+            enableHover={true}
+          />
+        </div>
+      </section>
 
-          <div className="calendar-sheet">
-            <div className="calendar-sheet-header">
-              <div>
-                <span className="calendar-title">Content calendar</span>
-                <span className="calendar-sub">Month 01 • Social Rhythm</span>
-              </div>
-              <span className="calendar-pill">Plan ahead</span>
-            </div>
-            <div className="calendar-grid">
-              {['Meet the brand', 'A product story', 'Helpful advice', 'Behind the scenes', 'A reason to choose you', 'Community spotlight'].map((theme, index) => (
-                <div key={theme} className="calendar-tile">
-                  <span className="calendar-tile-num">0{index + 1}</span>
-                  <strong>{theme}</strong>
-                  <i className={`calendar-bar bar-${index % 3}`} />
-                </div>
-              ))}
-            </div>
-            <small>Illustrative planning example</small>
+      {/* 5. Our Packages Section (Liquid Glass Cards on Dark Canvas from Reference) */}
+      <section id="packages" className="flow-packages-section packages-section" aria-labelledby="packages-pill-title">
+        <div className="packages-head">
+          <div className="packages-pill-badge" id="packages-pill-title">
+            <span>Our Packages</span>
           </div>
+          <p className="packages-sub">
+            Predictable, high-impact design partnerships with fixed monthly retainers. 50% launch discount active. Pause or cancel anytime.
+          </p>
+        </div>
+
+        <div className="packages-grid">
+          {packages.map(pack => (
+            <article className={`package-card ${pack.tierClass}`} key={pack.id}>
+              {/* Floating Capsule Header Pill */}
+              <div className="package-header-pill">
+                <h3 className="package-card-title">{pack.name}</h3>
+                <div className={`package-underline ${pack.underlineClass}`} aria-hidden="true" />
+                <span className={`package-tag ${pack.tagClass}`}>{pack.subtitle}</span>
+              </div>
+
+              {/* Card Body / Features List */}
+              <div className="package-body">
+                <h4 className="package-features-heading">Includes everything you need:</h4>
+                <ul className="package-features-list">
+                  {pack.features.map((feat, fIdx) => (
+                    <li key={fIdx}>
+                      <span className="p-bullet" aria-hidden="true" />
+                      {feat.sub ? (
+                        <div className="p-feat-text">
+                          <span>{feat.text}</span>
+                          <small className="p-feat-sub">{feat.sub}</small>
+                        </div>
+                      ) : (
+                        <span>{feat.text}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Pricing Box */}
+              <div className="package-price-box">
+                <div className="price-orig-row">
+                  <span className="p-price-label">Original Price</span>
+                  <span className="p-orig-val">{pack.original} BDT</span>
+                </div>
+                <div className={`p-discount-pill pill-${pack.id}`}>
+                  <span>Launch Discount 50% OFF</span>
+                </div>
+                <div className="price-final-row">
+                  <span className="p-price-label">Final Price</span>
+                  <div className="p-final-val-wrap">
+                    <span className="p-final-val">{pack.price} BDT</span>
+                    <span className="p-period">/ Month</span>
+                  </div>
+                </div>
+                <a
+                  href="#contact"
+                  className={`package-cta-btn ${pack.btnClass}`}
+                  onClick={() => setService && setService(pack.name)}
+                >
+                  <span>{pack.btnText}</span>
+                  <Arrow diagonal />
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -108,61 +108,72 @@ export function Process() {
 
 export function Packages({ onChoose }) {
   return (
-    <section id="packages" className="packages-section" aria-labelledby="packages-title">
-      <div className="packages-header">
-        <span className="section-note">Fixed Transparent Pricing</span>
-        <h2 id="packages-title" className="package-main-title">Our Packages</h2>
-        <p className="packages-subtitle">Dedicated monthly design capacity for founders, brands, and growing businesses.</p>
+    <section id="packages" className="flow-packages-section packages-section" aria-labelledby="packages-pill-title">
+      <div className="packages-head">
+        <div className="packages-pill-badge" id="packages-pill-title">
+          <span>Our Packages</span>
+        </div>
+        <p className="packages-sub">
+          Predictable, high-impact design partnerships with fixed monthly retainers. 50% launch discount active. Pause or cancel anytime.
+        </p>
       </div>
 
-      <div className="package-grid">
+      <div className="packages-grid">
         {packages.map(pack => (
-          <article className={`package-card package-${pack.id}`} key={pack.id}>
-            {pack.id === 'growth' && <span className="package-badge-popular">★ Studio Recommended</span>}
-            {pack.id === 'scale' && <span className="package-badge-scale">✦ Complete System</span>}
-            <header className="package-heading">
-              <h3><span>{pack.name}</span></h3>
-              <p>{pack.subtitle}</p>
-            </header>
+          <article className={`package-card ${pack.tierClass}`} key={pack.id}>
+            {/* Floating Capsule Header Pill */}
+            <div className="package-header-pill">
+              <h3 className="package-card-title">{pack.name}</h3>
+              <div className={`package-underline ${pack.underlineClass}`} aria-hidden="true" />
+              <span className={`package-tag ${pack.tagClass}`}>{pack.subtitle}</span>
+            </div>
+
+            {/* Card Body / Features List */}
             <div className="package-body">
-              <p className="package-includes">Includes everything you need:</p>
-              <ul>
-                {pack.features.map(feature => (
-                  <li key={feature}>
-                    <span className="check-bullet" aria-hidden="true">✓</span>
-                    <span>{feature}</span>
+              <h4 className="package-features-heading">Includes everything you need:</h4>
+              <ul className="package-features-list">
+                {pack.features.map((feat, fIdx) => (
+                  <li key={fIdx}>
+                    <span className="p-bullet" aria-hidden="true" />
+                    {feat.sub ? (
+                      <div className="p-feat-text">
+                        <span>{feat.text}</span>
+                        <small className="p-feat-sub">{feat.sub}</small>
+                      </div>
+                    ) : (
+                      <span>{feat.text}</span>
+                    )}
                   </li>
                 ))}
               </ul>
-              <div className="package-prices">
-                <div className="price-strike-row">
-                  <span className="price-strike-label">Original Price</span>
-                  <span className="price-strike-val">{pack.original} BDT</span>
-                </div>
-                <div className="price-final-box">
-                  <div className="discount-pill">Launch Discount 50% OFF</div>
-                  <div className="final-price-text">
-                    <span className="price-label">Final Price</span>
-                    <strong className="price-number">{pack.price} BDT / Month</strong>
-                  </div>
+            </div>
+
+            {/* Pricing Box */}
+            <div className="package-price-box">
+              <div className="price-orig-row">
+                <span className="p-price-label">Original Price</span>
+                <span className="p-orig-val">{pack.original} BDT</span>
+              </div>
+              <div className={`p-discount-pill pill-${pack.id}`}>
+                <span>Launch Discount 50% OFF</span>
+              </div>
+              <div className="price-final-row">
+                <span className="p-price-label">Final Price</span>
+                <div className="p-final-val-wrap">
+                  <span className="p-final-val">{pack.price} BDT</span>
+                  <span className="p-period">/ Month</span>
                 </div>
               </div>
+              <a
+                href="#contact"
+                className={`package-cta-btn ${pack.btnClass}`}
+                onClick={() => onChoose && onChoose(pack.name)}
+              >
+                <span>{pack.btnText}</span>
+                <Arrow diagonal />
+              </a>
             </div>
           </article>
-        ))}
-      </div>
-
-      <div className="package-actions">
-        {packages.map(pack => (
-          <a
-            href="#contact"
-            className={`package-choose choose-${pack.id}`}
-            key={pack.id}
-            onClick={() => onChoose(pack.name)}
-          >
-            <span>Choose {pack.name.replace(' Package', '')}</span>
-            <Arrow diagonal />
-          </a>
         ))}
       </div>
     </section>

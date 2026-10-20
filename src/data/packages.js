@@ -1,9 +1,71 @@
-// Static-only offer approved in the website plan. Original prices and non-motion quantities retained.
 export const packages = [
-  { id: 'starter', name: 'Starter Package', subtitle: 'Lets, Launch', original: '7,000', price: '3,500', features: ['01 Custom Logo Design', '10–15 Pages Brand Guideline PDF', '04 Social Media Creatives', '01 Social Media Cover Design', '(FB, Instagram, LinkedIn, YouTube)', 'Max 02 Cover Design Variations', 'Unlimited Revisions', 'Basic Competitor Analysis', 'Priority Support'] },
-  { id: 'growth', name: 'Growth Package', subtitle: 'PRO', original: '18,000', price: '8,999', features: ['24 Social Media Creatives', '04 Carousel Posts (20 designs total)', 'Ad Creative Optimization', 'Competitor Content Analysis', 'Unlimited Revisions', 'Priority Support'] },
-  { id: 'scale', name: 'Scale Package', subtitle: 'Premium', original: '30,000', price: '14,999', features: ['36 Social Media Creatives', '06 Carousel Posts (30 designs total)', 'Campaign Creative Concepts', 'Advanced Competitor Content analysis', 'Unlimited Revisions', 'Priority Support'] }
+  {
+    id: 'starter',
+    tierClass: 'tier-starter',
+    name: 'Starter Package',
+    underlineClass: 'underline-starter',
+    tagClass: 'tag-starter',
+    subtitle: 'Lets, Launch',
+    original: '7,000',
+    price: '3,500',
+    btnClass: 'btn-starter',
+    btnText: 'Choose Starter',
+    features: [
+      { text: '01 Custom Logo Design' },
+      { text: '10–15 Pages Brand Guideline PDF' },
+      { text: '01 Logo Animation' },
+      { text: '04 Social Media Creatives' },
+      { text: '01 Social Media Cover Design', sub: '(FB, Instagram, LinkedIn, YouTube)' },
+      { text: 'Max 02 Cover Design Variations' },
+      { text: 'Unlimited Revisions' },
+      { text: 'Basic Competitor Analysis' },
+      { text: 'Priority Support' }
+    ]
+  },
+  {
+    id: 'growth',
+    tierClass: 'tier-growth is-featured',
+    name: 'Growth Package',
+    underlineClass: 'underline-growth',
+    tagClass: 'tag-growth',
+    subtitle: 'PRO',
+    original: '18,000',
+    price: '8,999',
+    btnClass: 'btn-growth',
+    btnText: 'Choose Growth PRO',
+    features: [
+      { text: '24 Social Media Creatives' },
+      { text: '04 Carousel Posts (20 designs total)' },
+      { text: '05 Motion Graphics Videos (30s max)' },
+      { text: 'Ad Creative Optimization' },
+      { text: 'Competitor Content Analysis' },
+      { text: 'Unlimited Revisions' },
+      { text: 'Priority Support' }
+    ]
+  },
+  {
+    id: 'scale',
+    tierClass: 'tier-scale',
+    name: 'Scale Package',
+    underlineClass: 'underline-scale',
+    tagClass: 'tag-scale',
+    subtitle: 'Premium',
+    original: '30,000',
+    price: '14,999',
+    btnClass: 'btn-scale',
+    btnText: 'Choose Scale Premium',
+    features: [
+      { text: '36 Social Media Creatives' },
+      { text: '06 Carousel Posts (30 designs total)' },
+      { text: '08 Motion Graphics Videos (40s max)' },
+      { text: 'Campaign Creative Concepts' },
+      { text: 'Advanced Competitor Content Analysis' },
+      { text: 'Unlimited Revisions' },
+      { text: 'Priority Support' }
+    ]
+  }
 ];
+
 export const studioEmail = 'julkarnine.arabi@gmail.com';
 export function makeInquiry({ name, contact, business, service, brief }) {
   const subject = `Design Daily enquiry — ${service || 'A new project'}`;

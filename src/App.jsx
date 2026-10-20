@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import gsap from 'gsap';
 import HeroSection from './components/HeroSection';
 import SiteHeader from './components/SiteHeader';
 import ShowcaseFlow from './components/ShowcaseFlow';
@@ -12,6 +13,67 @@ export default function App() {
   const archive = pathname === '/work';
   const project = projects.find(item => pathname === `/work/${item.id}`);
   const [service, setService] = useState(new URLSearchParams(window.location.search).get('service') || '');
+
+  // Initialize Lenis momentum smooth scrolling for buttery fluid flow
+  useEffect(() => {
+    let lenisInstance = null;
+    let tickerHandler = null;
+
+    const initLenis = () => {
+      if (typeof window === 'undefined' || !window.Lenis || lenisInstance) return;
+
+      const lenis = new window.Lenis({
+        duration: 1.25,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 2.0,
+        infinite: false,
+      });
+
+      lenisInstance = lenis;
+      window.__lenis = lenis;
+
+      tickerHandler = (time) => {
+        lenis.raf(time * 1000);
+      };
+      gsap.ticker.add(tickerHandler);
+      gsap.ticker.lagSmoothing(0);
+
+      window.dispatchEvent(new CustomEvent('lenis-ready', { detail: lenis }));
+    };
+
+    if (typeof window !== 'undefined' && window.Lenis) {
+      initLenis();
+    } else if (typeof window !== 'undefined') {
+      const checkInterval = setInterval(() => {
+        if (window.Lenis) {
+          clearInterval(checkInterval);
+          initLenis();
+        }
+      }, 50);
+      const timer = setTimeout(() => clearInterval(checkInterval), 3000);
+      return () => {
+        clearInterval(checkInterval);
+        clearTimeout(timer);
+        if (lenisInstance) {
+          if (tickerHandler) gsap.ticker.remove(tickerHandler);
+          lenisInstance.destroy();
+          delete window.__lenis;
+        }
+      };
+    }
+
+    return () => {
+      if (lenisInstance) {
+        if (tickerHandler) gsap.ticker.remove(tickerHandler);
+        lenisInstance.destroy();
+        delete window.__lenis;
+      }
+    };
+  }, []);
 
   useEffect(() => {
     document.title = home

@@ -3,27 +3,28 @@
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  margin: 0 auto;
 }
 
 .bounce-cards__card {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: var(--bounce-cards-size);
+  width: var(--bounce-cards-size, 200px);
   aspect-ratio: 1;
   overflow: hidden;
-  border: var(--bounce-cards-border) solid var(--bounce-cards-border-color);
-  border-radius: var(--bounce-cards-radius);
-  background: #141720;
+  border: var(--bounce-cards-border, 4px) solid var(--bounce-cards-border-color, #ffffff);
+  border-radius: var(--bounce-cards-radius, 20px);
+  background: #0f1018;
   box-shadow: var(--bounce-cards-shadow);
   transform: translate(-50%, -50%) scale(0);
-  transition: box-shadow 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2), border-color 0.25s ease;
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   will-change: transform;
 }
 
 .bounce-cards__card[data-active] {
   box-shadow: var(--bounce-cards-shadow-active);
-  border-color: rgba(255, 255, 255, 0.95);
+  border-color: #ffffff;
 }
 
 .bounce-cards__card--clickable {
@@ -31,11 +32,10 @@
 }
 
 .bounce-cards__card--clickable:focus-visible {
-  outline: 2px solid var(--bounce-cards-border-color);
+  outline: 2px solid var(--bounce-cards-border-color, #ffffff);
   outline-offset: 3px;
 }
 
-/* User requirement: without cropping them, no overlays */
 .bounce-cards__card img {
   display: block;
   width: 100%;
@@ -43,4 +43,5 @@
   object-fit: contain;
   pointer-events: none;
   user-select: none;
+  background: #0c0d14;
 }

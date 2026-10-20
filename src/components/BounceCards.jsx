@@ -18,7 +18,16 @@ const parseTransform = value => {
   };
 };
 
-const toCard = item => (typeof item === 'string' ? { src: item, alt: '' } : { src: item?.src, alt: item?.alt ?? '' });
+const toCard = item => {
+  if (typeof item === 'string') return { src: item, alt: '' };
+  return {
+    src: item?.src,
+    alt: item?.alt ?? '',
+    width: item?.width,
+    height: item?.height,
+    aspectRatio: item?.aspectRatio
+  };
+};
 
 export default function BounceCards({
   images = [],
@@ -205,8 +214,10 @@ export default function BounceCards({
       });
       if (best < 0) return -1;
       const slot = s.slots[best];
-      const half = s.cardSize / 2;
-      if (Math.abs(py - slot.y) > half + 12 || distance > half + 12) return -1;
+      const card = cards[best];
+      const halfW = (card?.width || s.cardSize) / 2;
+      const halfH = (card?.height || s.cardSize) / 2;
+      if (Math.abs(py - slot.y) > halfH + 16 || distance > halfW + 16) return -1;
       if (state.hovered >= 0 && state.hovered !== best) {
         const current = s.slots[state.hovered];
         if (current && Math.abs(px - current.x) - distance < 6) return state.hovered;
@@ -284,34 +295,55 @@ export default function BounceCards({
       ref={rootRef}
       className={`bounce-cards${className ? ` ${className}` : ''}`}
       style={{
-        width: containerWidth,
-        height: containerHeight,
+        width: typeof containerWidth === 'number' ? `${containerWidth}px` : containerWidth,
+        maxWidth: '100%',
+        height: typeof containerHeight === 'number' ? `${containerHeight}px` : containerHeight,
         '--bounce-cards-size': `${settings.cardSize}px`,
         '--bounce-cards-border': `${Math.max(0, borderWidth)}px`,
         '--bounce-cards-border-color': borderColor,
         '--bounce-cards-radius': `${Math.max(0, radius)}px`,
         '--bounce-cards-shadow': shadow
-          ? '0 1px 2px rgba(0, 0, 0, 0.12), 0 10px 28px -6px rgba(0, 0, 0, 0.32)'
+          ? '0 12px 32px -4px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.3)'
           : 'none',
         '--bounce-cards-shadow-active': shadow
-          ? '0 2px 4px rgba(0, 0, 0, 0.14), 0 22px 44px -10px rgba(0, 0, 0, 0.42)'
+          ? '0 24px 50px -6px rgba(0, 0, 0, 0.65), 0 8px 24px rgba(0, 0, 0, 0.4)'
           : 'none',
         ...style
       }}
     >
-      {cards.map((card, i) => (
-        <div
-          key={i}
-          ref={el => {
-            cardRefs.current[i] = el;
-          }}
-          className={`bounce-cards__card${settings.clickable ? ' bounce-cards__card--clickable' : ''}`}
-          style={{ zIndex: i + 1 }}
-          {...(settings.clickable ? { role: 'button', tabIndex: 0, 'aria-label': card.alt || `Card ${i + 1}` } : null)}
-        >
-          {card.src && <img src={card.src} alt={card.alt} draggable={false} />}
-        </div>
-      ))}
+      {cards.map((card, i) => {
+        const cardStyle = {
+          zIndex: i + 1,
+          ...(card.width ? { width: `${card.width}px` } : {}),
+          ...(card.height ? { height: `${card.height}px` } : {}),
+          ...(card.aspectRatio ? { aspectRatio: card.aspectRatio } : {})
+        };
+        return (
+          <div
+            key={i}
+            ref={el => {
+              cardRefs.current[i] = el;
+            }}
+            className={`bounce-cards__card${settings.clickable ? ' bounce-cards__card--clickable' : ''}`}
+            style={cardStyle}
+            {...(settings.clickable ? { role: 'button', tabIndex: 0, 'aria-label': card.alt || `Card ${i + 1}` } : null)}
+          >
+            {card.src && (
+              <img
+                src={card.src}
+                alt={card.alt}
+                draggable={false}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  display: 'block'
+                }}
+              />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
