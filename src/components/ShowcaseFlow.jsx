@@ -353,17 +353,18 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
 
       // Button 1: "what we do?"
       const startBox = root.querySelector('[data-flow-start]');
+      const sRect = startBox ? startBox.getBoundingClientRect() : null;
+      const isStartLit = sRect ? targetY >= (sRect.top - rect.top - 40) : (progress > 0.001 || drawnLength > 5);
       if (startBox) {
-        startBox.classList.toggle('is-lit', progress > 0.001 || drawnLength > 5);
+        startBox.classList.toggle('is-lit', isStartLit);
       }
 
       // Button 2: "Brand identity"
       const discPill = root.querySelector('[data-discipline-pill]');
       if (discPill) {
         const dRect = discPill.getBoundingClientRect();
-        const sRect = startBox ? startBox.getBoundingClientRect() : null;
         const seg1Len = sRect ? Math.max(10, dRect.left - sRect.right) : 600;
-        const isDiscLit = drawnLength >= (seg1Len - 15) || targetY >= (dRect.top - rect.top - 10);
+        const isDiscLit = isStartLit && drawnLength >= (seg1Len - 15);
         discPill.classList.toggle('is-lit', isDiscLit);
       }
 
