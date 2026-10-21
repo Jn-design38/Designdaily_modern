@@ -174,9 +174,8 @@ const SpecularButton = ({
 
       // Check if button is marked as lit via .is-lit class
       const isLitClass = button.classList.contains('is-lit');
-      const boost = isLitClass ? 1.4 : 1.0;
-      const effectiveLevel = isLitClass ? Math.max(state.level, 0.95) : state.level;
-      const currentIntensity = s.intensity * boost * (effectiveLevel + state.press * 0.8);
+      const boost = isLitClass ? 1.15 : 1.0;
+      const currentIntensity = s.intensity * boost * (state.level + state.press * 0.8);
 
       // 1. Path of the button border
       ctx.beginPath();
@@ -188,9 +187,9 @@ const SpecularButton = ({
 
       // 2. Base hairline border (crisp 1px subtle edge)
       ctx.save();
-      ctx.strokeStyle = isLitClass ? s.lineColor : s.baseColor;
+      ctx.strokeStyle = s.baseColor;
       ctx.lineWidth = 1;
-      ctx.globalAlpha = isLitClass ? 0.85 : 0.35;
+      ctx.globalAlpha = isLitClass ? 0.6 : 0.35;
       ctx.stroke();
       ctx.restore();
 

@@ -133,15 +133,6 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
   const [trailPath, setTrailPath] = useState('');
   const [size, setSize] = useState({ width: 1, height: 1 });
   const activePathRef = useRef(null);
-  const headerMetricsRef = useRef({
-    touchDistance: 400,
-    headerSegLength: 460
-  });
-  const autoFlowRef = useRef({
-    progress: 0,
-    triggered: false,
-    tween: null
-  });
 
   useEffect(() => {
     const root = rootRef.current;
@@ -183,14 +174,9 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
         const sRect = startBox.getBoundingClientRect();
         const dRect = discPill.getBoundingClientRect();
 
-        const xStart = sRect.right - origin.left;
+        const xStart = sRect.right - origin.left + 8;
         const yStart = sRect.top - origin.top + sRect.height / 2;
-        const xDiscLeft = dRect.left - origin.left;
         const xDiscCenter = dRect.left - origin.left + dRect.width / 2;
-
-        const touchDist = Math.max(1, xDiscLeft - xStart);
-        const headerLen = Math.max(touchDist, xDiscCenter - xStart);
-        headerMetricsRef.current = { touchDistance: touchDist, headerSegLength: headerLen };
 
         // Exactly ONE 'M' command at the very start: flows into Brand identity center axis
         pathCommands.push(`M ${xStart} ${yStart} H ${xDiscCenter}`);
@@ -295,7 +281,7 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
     };
   }, [rootRef]);
 
-  // Scroll tracking: Real-time path flow + Sequential lighting on contact
+  // Scroll tracking: Real-time path flow + Button color fill on contact
   useEffect(() => {
     if (!trailPath || !activePathRef.current) return;
     const root = rootRef.current;
@@ -356,92 +342,54 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
       const rect = root.getBoundingClientRect();
       const viewportH = window.innerHeight;
 
-      const startBox = root.querySelector('[data-flow-start]');
-      const discPill = root.querySelector('[data-discipline-pill]');
-      if (!startBox || !discPill) return;
-
-      const sRect = startBox.getBoundingClientRect();
-      const { touchDistance, headerSegLength } = headerMetricsRef.current;
-
-      // 1. "what we do?" button:
-      // Lights up FIRST as soon as it enters comfortable view (top 78% of viewport)
-      const isStartInView = sRect.top <= viewportH * 0.78 && sRect.bottom >= 0;
-      startBox.classList.toggle('is-lit', isStartInView);
-
-      // Trigger smooth sequential auto-flow when what we do? lights up
-      if (isStartInView) {
-        if (!autoFlowRef.current.triggered) {
-          autoFlowRef.current.triggered = true;
-          if (autoFlowRef.current.tween) autoFlowRef.current.tween.kill();
-          autoFlowRef.current.tween = gsap.to(autoFlowRef.current, {
-            progress: 1,
-            duration: 0.65,
-            ease: 'power2.out',
-            onUpdate: () => {
-              updateTrail();
-            }
-          });
-        }
-      } else if (sRect.top > viewportH * 0.85) {
-        // User scrolled back up into hero: reset flow
-        if (autoFlowRef.current.tween) autoFlowRef.current.tween.kill();
-        autoFlowRef.current.triggered = false;
-        autoFlowRef.current.progress = 0;
-      }
-
-      // Scroll-driven progress across header: maps across scroll distance as startBox moves from 75% down to 55%
-      const scrollHeaderT = gsap.utils.clamp(0, 1, (viewportH * 0.75 - sRect.top) / (viewportH * 0.20));
-      const headerT = isStartInView ? Math.max(scrollHeaderT, autoFlowRef.current.progress) : 0;
-
-      // Reading focus for vertical cascade
+      // Reading focus sits comfortably at 55% of viewport
       const targetY = window.scrollY - (rect.top + window.scrollY) + viewportH * 0.55;
-      const verticalDrawn = getDistanceForY(targetY);
 
-      // Total drawn length of the SVG line:
-      // While in header, drawnLength grows smoothly from 0 across to headerSegLength
-      // Once header is completed, vertical progress carries the line downwards
-      let drawnLength = 0;
-      if (isStartInView) {
-        if (headerT < 1) {
-          drawnLength = headerT * headerSegLength;
-        } else {
-          drawnLength = Math.max(headerSegLength, verticalDrawn);
-        }
-      } else {
-        drawnLength = 0;
-      }
-
-      drawnLength = gsap.utils.clamp(0, totalLength, drawnLength);
+      const drawnLength = gsap.utils.clamp(0, totalLength, getDistanceForY(targetY));
       const offset = totalLength - drawnLength;
       pathEl.style.strokeDashoffset = String(offset);
 
-      // 2. "Brand identity" button:
-      // STRICT REQUIREMENT: Lights up ONLY when the glowing line reaches and touches it!
-      const isDiscLit = drawnLength >= (touchDistance - 3);
-      discPill.classList.toggle('is-lit', isDiscLit);
+      const progress = totalLength > 0 ? drawnLength / totalLength : 0;
 
-      // 3. Bridge pills & Project pills:
-      // Only light up if line has passed Brand identity and reached each respective item
+      // Button 1: "what we do?"
+      const startBox = root.querySelector('[data-flow-start]');
+      if (startBox) {
+        startBox.classList.toggle('is-lit', progress > 0.001 || drawnLength > 5);
+      }
+
+      // Button 2: "Brand identity"
+      const discPill = root.querySelector('[data-discipline-pill]');
+      if (discPill) {
+        const dRect = discPill.getBoundingClientRect();
+        const sRect = startBox ? startBox.getBoundingClientRect() : null;
+        const seg1Len = sRect ? Math.max(10, dRect.left - sRect.right) : 600;
+        const isDiscLit = drawnLength >= (seg1Len - 15) || targetY >= (dRect.top - rect.top - 10);
+        discPill.classList.toggle('is-lit', isDiscLit);
+      }
+
+      // Button 3+: All bridge pills ("Crafted for perfection", "The packaging and merch", "social media creatives", teaser phrases, finale bridge)
       const bridgePills = root.querySelectorAll('.bridge-pill-tag');
       bridgePills.forEach(pill => {
         const pRect = pill.getBoundingClientRect();
         const yPillCenter = pRect.top - rect.top + pRect.height / 2;
-        const isLit = isDiscLit && targetY >= (yPillCenter - 25);
+        const isLit = targetY >= (yPillCenter - 25);
         pill.classList.toggle('is-lit', isLit);
       });
 
+      // Button 4+: All project brand pills ("Tripty", "SandBox Lounge", "Goody Bro", "Vastra", "Kalyan", etc.)
       const itemPills = root.querySelectorAll('[data-item-pill]');
       itemPills.forEach(pill => {
         const pRect = pill.getBoundingClientRect();
         const yPillCenter = pRect.top - rect.top + pRect.height / 2;
-        const isLit = isDiscLit && targetY >= (yPillCenter - 30);
+        const isLit = targetY >= (yPillCenter - 30);
         pill.classList.toggle('is-lit', isLit);
       });
 
+      // Button 5: "Order now" finale CTA
       const orderBtn = root.querySelector('.flow-order-now-btn');
       if (orderBtn) {
         const oRect = orderBtn.getBoundingClientRect();
-        const isLit = isDiscLit && targetY >= (oRect.top - rect.top - 30);
+        const isLit = targetY >= (oRect.top - rect.top - 30);
         orderBtn.classList.toggle('is-lit', isLit);
       }
     };
@@ -477,9 +425,6 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
     updateTrail();
 
     return () => {
-      if (autoFlowRef.current.tween) {
-        autoFlowRef.current.tween.kill();
-      }
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', updateTrail);
       window.removeEventListener('lenis-ready', onLenisReady);
