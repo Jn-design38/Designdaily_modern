@@ -33,7 +33,7 @@ export default function HeroSection() {
           <a href="#contact" className="hero-cta-btn hero-cta-btn--primary">Start a Project <span aria-hidden="true">↗</span></a>
           <a href="#works" className="hero-cta-btn hero-cta-btn--secondary">Explore Works</a>
         </div>
-        <a className="hero-scroll-hint" href="#works"><span aria-hidden="true">↓</span> A little further, a lot to see.</a>
+        <a className="hero-scroll-hint" href="#approach"><span aria-hidden="true">↓</span> A little further, a lot to see.</a>
       </div>
       <div className="hero-bottom-ticker" aria-label="Our design disciplines">
         <div className="hero-ticker-track">{[0, 1].map(copy => <div className="ticker-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>{disciplines.map(item => <span className="hero-ticker-item" key={item}><span aria-hidden="true">✳</span> {item}</span>)}</div>)}</div>

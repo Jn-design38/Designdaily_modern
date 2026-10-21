@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import HeroSection from './components/HeroSection';
+import AgencyBenefitsSection from './components/AgencyBenefitsSection';
 import SiteHeader from './components/SiteHeader';
 import ShowcaseFlow from './components/ShowcaseFlow';
 import { Footer } from './components/StudioSections';
@@ -112,6 +113,7 @@ export default function App() {
         {home ? (
           <>
             <HeroSection />
+            <AgencyBenefitsSection />
             <ShowcaseFlow service={service} setService={setService} />
           </>
         ) : archive ? (
