@@ -593,4 +593,3 @@ const ModelViewer = ({
 };
 
 export default ModelViewer;
-
