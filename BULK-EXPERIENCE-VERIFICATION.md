@@ -51,3 +51,12 @@ The source is the user's `DEsigndaily-3D-Logo.glb`, matching the existing `publi
 - No merge into main or production deployment was performed. The original worktree and port 4195 remain separate.
 
 Browser captures and temporary test orchestration live in ignored `.tmp/` and `.playwright-cli/` folders and are regenerable. Component provenance and license are retained in [REACT-BITS-COMPONENTS.md](REACT-BITS-COMPONENTS.md) and [REACT-BITS-LICENSE.md](REACT-BITS-LICENSE.md).
+
+## Immersive Approach revision — 25 October 2026
+
+- Replaced the boxed desk mockup with four original photorealistic cutouts: Brief, Direction, Create, and Deliver. Each committed WebP is 1536 × 1536 with an alpha channel; the source PNGs remain outside Git in `.tmp/approach-source`.
+- Added a reproducible `execution/prepare-approach-assets.mjs` pipeline that verifies transparency and source resolution before producing the optimized assets.
+- The Approach section now pins for a 3.4-viewport scroll journey on desktop and mobile. Normal scrolling advances all four stages before releasing the next section; stage buttons and previous/next controls navigate to the matching scroll segment.
+- React Bits Animated Content handles the changing copy, while image transitions use transform and opacity only. Reduced-motion visitors receive the unpinned, manually controlled layout.
+- Browser verification passed at 1440 × 1000, 1024 × 640, and 390 × 844. All four stages activated in order, reverse scrolling restored Brief, the following campaign section became reachable only after the sequence, and the mobile document-width audit returned exactly zero horizontal overflow.
+- All images loaded at 1536px intrinsic width. Browser checks reported no page exceptions or failed HTTP responses. The existing font-preload warnings remain non-blocking.

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedContent from './reactbits/AnimatedContent';
@@ -7,7 +7,6 @@ import SpecularButton from './SpecularButton';
 import { Arrow, Chevron, Plus } from './Icons';
 import './BulkStudio.css';
 
-const Folder = lazy(() => import('./reactbits/Folder'));
 gsap.registerPlugin(ScrollTrigger);
 
 const scopes = [
@@ -44,10 +43,10 @@ export function ScopeSection({ setService }) {
 }
 
 const stages = [
-  { title: 'Plan the batch', short: 'Brief', text: 'Your business, your audience, your next big date. We agree on what needs designing before we begin.', output: 'A clear scope. A shared priority.' },
-  { title: 'Find your direction', short: 'Direction', text: 'We shape a representative design together. The right colours, character, and tone become the starting point for the whole set.', output: 'One direction, approved by you.' },
-  { title: 'Build it out', short: 'Create', text: 'The direction becomes a coordinated collection. Review each batch and bring your feedback together in one place.', output: 'Connected designs. Clear checkpoints.' },
-  { title: 'Ready for the world', short: 'Deliver', text: 'Approved designs, organised and exported for their intended use. We agree on final formats and any editable files in your scope.', output: 'A considered handover.' }
+  { title: 'Plan the batch', short: 'Brief', text: 'Your business, your audience, your next big date. We agree on what needs designing before we begin.', output: 'A clear scope. A shared priority.', image: '/approach/approach-brief.webp', alt: 'A photorealistic creative brief kit with clipboard, notes, colour swatches, and phone, isolated on a transparent background.' },
+  { title: 'Find your direction', short: 'Direction', text: 'We shape a representative design together. The right colours, character, and tone become the starting point for the whole set.', output: 'One direction, approved by you.', image: '/approach/approach-direction.webp', alt: 'A photorealistic tactile moodboard with paper, fabric, colour samples, and brass clips, isolated on a transparent background.' },
+  { title: 'Build it out', short: 'Create', text: 'The direction becomes a coordinated collection. Review each batch and bring your feedback together in one place.', output: 'Connected designs. Clear checkpoints.', image: '/approach/approach-create.webp', alt: 'A photorealistic designer workstation with display, tablet, stylus, packaging, and campaign proofs, isolated on a transparent background.' },
+  { title: 'Ready for the world', short: 'Deliver', text: 'Approved designs, organised and exported for their intended use. We agree on final formats and any editable files in your scope.', output: 'A considered handover.', image: '/approach/approach-deliver.webp', alt: 'A photorealistic coral portfolio box with organised artwork, phone approval, rolled proofs, and drive, isolated on a transparent background.' }
 ];
 
 function useDepth(ref, selector, mode = 'desk') {
@@ -63,30 +62,79 @@ function useDepth(ref, selector, mode = 'desk') {
   }, [ref, selector, mode]);
 }
 
-function ApproachVisual({ stage }) {
-  return <div className={`approach-desk stage-${stage}`}>
-    <div className="desk-grid" aria-hidden="true" />
-    <div className="desk-topline"><span><i /> Design Daily / Studio desk</span><span>0{stage + 1} — 04</span></div>
-    {stage === 0 && <div className="brief-scene scene-enter">
-      <div className="brief-sheet"><span className="brief-logo">Your next chapter.</span><span className="brief-rule" /><div><small>The business</small><strong>A brand with something to say.</strong></div><div><small>The task</small><strong>A connected campaign.</strong></div><div><small>The starting point</small><strong>Your ideas. Our design desk.</strong></div><span className="brief-stamp">Let's make it happen ↗</span></div>
-      <img className="brief-swatch" src="/work/tripty/03.webp" alt="Tripty's red and yellow food illustration system" loading="lazy" />
-      <span className="floating-note note-brief">A little clarity.<br />A lot of possibility.</span>
-    </div>}
-    {stage === 1 && <div className="direction-scene scene-enter"><img className="direction-hero" src="/work/tripty/04.webp" alt="Tripty brand direction and guideline book" loading="lazy" /><div className="direction-colors"><span style={{ background: '#ca0039' }} /><span style={{ background: '#ffcb44' }} /><span style={{ background: '#fff7ea' }} /><small>The visual thread</small></div><span className="floating-note note-direction">This is where<br />it comes together.</span></div>}
-    {stage === 2 && <div className="create-scene scene-enter">{['02','05','07'].map((n, i) => <figure className={`create-art art-${i}`} key={n}><img src={`/work/tripty/${n}.webp`} alt={['Tripty logo design','Tripty stationery and tote bag','Tripty campaign posters'][i]} loading="lazy" /><figcaption>{['The identity','The details','The campaign'][i]}</figcaption></figure>)}</div>}
-    {stage === 3 && <div className="handover-scene scene-enter"><Suspense fallback={<div className="folder-placeholder">Your final artwork</div>}><Folder label="Your final artwork" color="#ff5b4d" size={1.25} intro={false} draggable={false} zoomOnClick={true} layout="spread" items={[{ title: 'Brand files', image: '/work/tripty/02.webp' },{ title: 'Campaign artwork', image: '/work/tripty/07.webp' },{ title: 'Brand guidelines', image: '/work/tripty/04.webp' }]} /></Suspense><p>Open the folder. Explore the handover.</p></div>}
-    <span className="desk-bottomline">Illustrative workflow · Tripty portfolio artwork</span>
+function ApproachVisual({ active }) {
+  return <div className="approach-visual-stage">
+    <span className="approach-visual-orbit orbit-a" aria-hidden="true" />
+    <span className="approach-visual-orbit orbit-b" aria-hidden="true" />
+    <span className="approach-visual-glow" aria-hidden="true" />
+    {stages.map((stage, index) => <figure key={stage.short} className={`approach-cutout stage-${index} ${active === index ? 'is-active' : ''}`} aria-hidden={active !== index}>
+      <img src={stage.image} alt={active === index ? stage.alt : ''} width="1536" height="1536" loading={index === 0 ? 'eager' : 'lazy'} />
+    </figure>)}
+    <div className="approach-visual-meta" aria-hidden="true"><span>Design Daily / Process</span><span>0{active + 1} — 04</span></div>
   </div>;
 }
 
 export function ApproachSection({ setService }) {
   const [active, setActive] = useState(0);
   const root = useRef(null);
-  useDepth(root, '.approach-desk');
+  const pin = useRef(null);
+  const scrollTrigger = useRef(null);
+
+  useEffect(() => {
+    const media = gsap.matchMedia();
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      const trigger = ScrollTrigger.create({
+        trigger: root.current,
+        pin: pin.current,
+        start: 'top top',
+        end: () => `+=${window.innerHeight * 3.4}`,
+        scrub: 0.45,
+        pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: self => {
+          const next = Math.min(stages.length - 1, Math.floor(self.progress * stages.length));
+          setActive(current => current === next ? current : next);
+        }
+      });
+      scrollTrigger.current = trigger;
+      return () => {
+        scrollTrigger.current = null;
+        trigger.kill();
+      };
+    });
+    return () => media.revert();
+  }, []);
+
+  const selectStage = index => {
+    const next = Math.max(0, Math.min(stages.length - 1, index));
+    setActive(next);
+    const trigger = scrollTrigger.current;
+    if (!trigger) return;
+    const target = trigger.start + ((next + 0.5) / stages.length) * (trigger.end - trigger.start);
+    if (window.__lenis?.scrollTo) window.__lenis.scrollTo(target, { duration: 0.9 });
+    else window.scrollTo({ top: target, behavior: 'smooth' });
+  };
+
   return <section id="approach" className="bulk-section bulk-approach" ref={root} aria-labelledby="approach-title">
-    <div className="bulk-heading heading-split"><div><span className="bulk-kicker">Our approach</span><h2 id="approach-title">One clear direction.<br />A whole lot of possibility.</h2></div><p>Good design starts with a conversation.<br />Great batches start with a shared direction.</p></div>
-    <div className="approach-steps" role="group" aria-label="Explore our design process">{stages.map((stage, i) => <button type="button" key={stage.short} aria-pressed={active === i} aria-controls="approach-detail" className={active === i ? 'is-active' : ''} onClick={() => setActive(i)}><span className="step-orbit">0{i + 1}</span><span>{stage.short}</span><span className="step-line" aria-hidden="true" /></button>)}</div>
-    <div className="approach-layout"><div className="approach-copy" id="approach-detail" aria-live="polite"><span className="step-count">0{active + 1} <span>/ 04</span></span><h3>{stages[active].title}</h3><p>{stages[active].text}</p><div className="approach-output"><span className="approach-output-rule" aria-hidden="true" />{stages[active].output}</div><div className="approach-navigation"><button type="button" aria-label="Previous process stage" disabled={active === 0} onClick={() => setActive(active - 1)}><Chevron direction="left" /></button><button type="button" aria-label="Next process stage" disabled={active === 3} onClick={() => setActive(active + 1)}><Chevron direction="right" /></button></div></div><div className="desk-perspective"><ApproachVisual stage={active} /></div></div>
+    <div className="approach-pin" ref={pin}>
+      <div className="approach-pin__inner">
+        <div className="bulk-heading heading-split approach-heading"><div><span className="bulk-kicker">Our approach</span><h2 id="approach-title">One clear direction.<br />A whole lot of possibility.</h2></div><p><span className="approach-instruction-desktop">Scroll through the process.<br />Every step keeps the batch connected.</span><span className="approach-instruction-mobile">Scroll or tap through every step.</span></p></div>
+        <div className="approach-steps" role="group" aria-label="Explore our design process">{stages.map((stage, i) => <button type="button" key={stage.short} aria-pressed={active === i} aria-controls="approach-detail" className={active === i ? 'is-active' : ''} onClick={() => selectStage(i)}><span className="step-orbit">0{i + 1}</span><span>{stage.short}</span><span className="step-line" aria-hidden="true" /></button>)}</div>
+        <div className="approach-layout">
+          <div className="approach-copy" id="approach-detail" aria-live="polite" aria-atomic="true">
+            <span className="step-count">0{active + 1} <span>/ 04</span></span>
+            <AnimatedContent key={active} trigger="mount" distance={20} duration={0.55} tilt={3} className="approach-copy-motion">
+              <h3>{stages[active].title}</h3>
+              <p>{stages[active].text}</p>
+              <div className="approach-output"><span className="approach-output-rule" aria-hidden="true" />{stages[active].output}</div>
+            </AnimatedContent>
+            <div className="approach-navigation"><button type="button" aria-label="Previous process stage" disabled={active === 0} onClick={() => selectStage(active - 1)}><Chevron direction="left" /></button><button type="button" aria-label="Next process stage" disabled={active === stages.length - 1} onClick={() => selectStage(active + 1)}><Chevron direction="right" /></button></div>
+          </div>
+          <ApproachVisual active={active} />
+        </div>
+      </div>
+    </div>
     <div className="approach-bottom"><p>Your launch date matters. Let's plan around it.</p><SpecularButton radius={999} size="md" lineColor="#ff4c42" onClick={() => jumpToInquiry('Custom batch', setService)}>Discuss your batch <Arrow diagonal /></SpecularButton></div>
   </section>;
 }
