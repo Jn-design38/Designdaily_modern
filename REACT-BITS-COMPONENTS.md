@@ -10,5 +10,6 @@ Free component sources retrieved 24 October 2026 from the official [React Bits r
 | Tilted Card | Existing React Bits component in source branch | Scope preview, campaign artwork, inquiry envelope |
 | Specular Button | Existing React Bits component in source branch | Approach, package guide, FAQ category controls, inquiry actions |
 | Bounce Cards | Existing React Bits component in source branch | Preserved Scale benefit |
+| Drift Wall | https://reactbits.dev/r/DriftWall-JS-CSS.json | New archive wall between the visual prelude and the work showcase; uses local Design Daily project artwork, keyboard focus lift, reduced-motion support, and responsive no-overflow layout |
 
 New sections use distinct interaction patterns: scope selection, step switching and folder handover, perspective campaign layout, expandable buying details, direct 3D manipulation, categorized FAQs, and a draft-building inquiry form. Essential information and actions remain available on mobile and with reduced motion.

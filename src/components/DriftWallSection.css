@@ -1,0 +1,16 @@
+.drift-wall-section{position:relative;z-index:2;width:100%;max-width:none;margin:0;padding:92px 56px 108px;color:#f4f4f7;background:#0b0c11;scroll-margin-top:110px;box-sizing:border-box}
+.drift-wall-section__intro,.drift-wall-section__stage,.drift-wall-section__footer{width:min(1280px,100%);margin-inline:auto}
+.drift-wall-section__intro{display:flex;align-items:flex-end;justify-content:space-between;gap:44px;margin-bottom:34px}
+.drift-wall-section__intro h2{font-size:clamp(38px,4.25vw,64px);line-height:1.08;letter-spacing:-.055em;font-weight:700}
+.drift-wall-section__intro p{max-width:320px;padding-bottom:5px;color:#b8bac4;font-size:15px;line-height:1.75}
+.drift-wall-section__stage{position:relative;height:560px;overflow:hidden;border-top:1px solid #ffffff18;border-bottom:1px solid #ffffff18;background:radial-gradient(ellipse at 50% 48%,#24202a 0,#111218 58%,#0b0c11 100%)}
+.drift-wall-section__stage::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0b0c11 0,transparent 16%,transparent 84%,#0b0c11 100%);pointer-events:none;z-index:2}
+.drift-wall-section__wall{position:absolute;inset:0}
+.drift-wall-section__note{position:absolute;right:22px;bottom:18px;color:#868995;font-size:9px;letter-spacing:.12em;text-transform:uppercase;z-index:3;pointer-events:none}
+.drift-wall-section__footer{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:18px;color:#858792;font-size:10px;letter-spacing:.04em}
+.drift-wall-section__footer a{color:#e8e8ed;text-decoration:none;border-bottom:1px solid #ffffff48;padding-bottom:5px;transition:color .25s ease,border-color .25s ease}
+.drift-wall-section__footer a:hover{color:#ff827a;border-color:#ff827a}
+.drift-wall-section__footer a span{padding-left:14px;color:#ff827a}
+@media(max-width:1050px){.drift-wall-section{padding-inline:32px}.drift-wall-section__stage{height:500px}.drift-wall-section__intro h2{font-size:44px}}
+@media(max-width:760px){.drift-wall-section{padding:64px 20px 72px}.drift-wall-section__intro{display:block;margin-bottom:22px}.drift-wall-section__intro p{max-width:290px;margin-top:18px;font-size:12px}.drift-wall-section__intro h2{font-size:38px}.drift-wall-section__stage{height:480px;margin-inline:0}.drift-wall-section__note{right:16px;bottom:12px;font-size:8px}.drift-wall-section__footer{align-items:flex-start;flex-direction:column;gap:14px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.drift-wall-section__footer a{transition:none}}
