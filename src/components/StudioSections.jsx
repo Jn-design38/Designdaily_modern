@@ -437,6 +437,10 @@ export function Footer() {
         </nav>
         <span>Good design. Every day.</span>
       </div>
+      <div className="footer-asset-credits" aria-label="Icon credits">
+        <a href="https://thenounproject.com/icon/ai-6480915/" target="_blank" rel="noreferrer">“AI” icon by Palash Jain, from Noun Project</a>
+        <a href="https://www.flaticon.com/free-icon/layers_5857869" target="_blank" rel="noreferrer">Layers icon designed by Hazicon from Flaticon</a>
+      </div>
     </footer>
   );
 }

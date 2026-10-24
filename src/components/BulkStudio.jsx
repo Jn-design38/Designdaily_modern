@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedContent from './reactbits/AnimatedContent';
 import TiltedCard from './TiltedCard';
 import SpecularButton from './SpecularButton';
+import { Arrow, Chevron, Plus } from './Icons';
 import './BulkStudio.css';
 
 const Folder = lazy(() => import('./reactbits/Folder'));
@@ -28,9 +29,9 @@ export function ScopeSection({ setService }) {
       <div className="bulk-heading"><span className="bulk-kicker">Designed around your business</span><h2 id="scope-title">More to say.<br />One unmistakable brand.</h2></div>
       <div className="scope-layout">
         <div className="scope-menu">
-          {scopes.map((scope, i) => <button key={scope.name} type="button" aria-pressed={active === i} onClick={() => setActive(i)} className={`scope-option ${active === i ? 'is-active' : ''}`}><span>{scope.name}</span><span aria-hidden="true">↗</span></button>)}
+          {scopes.map((scope, i) => <button key={scope.name} type="button" aria-pressed={active === i} onClick={() => setActive(i)} className={`scope-option ${active === i ? 'is-active' : ''}`}><span>{scope.name}</span><Arrow diagonal /></button>)}
           <div className="scope-details" aria-live="polite"><h3>{item.title}</h3><p>{item.text}</p><div className="bulk-tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
-          <SpecularButton size="md" radius={999} lineColor="#ff4c42" onClick={() => jumpToInquiry(item.service, setService)}>Let's talk about it <span aria-hidden="true">↗</span></SpecularButton>
+          <SpecularButton size="md" radius={999} lineColor="#ff4c42" onClick={() => jumpToInquiry(item.service, setService)}>Let's talk about it <Arrow diagonal /></SpecularButton>
         </div>
         <AnimatedContent className="scope-art-shell" tilt={10} distance={35} duration={0.9}>
           <TiltedCard key={item.image} imageSrc={item.image} altText={`${item.name}: selected Design Daily portfolio artwork`} containerWidth="100%" containerHeight="100%" imageWidth="100%" imageHeight="100%" showTooltip={false} rotateAmplitude={5} scaleOnHover={1.015} radius={24} intro={false} gyroscope={false} className="scope-art" />
@@ -85,8 +86,8 @@ export function ApproachSection({ setService }) {
   return <section id="approach" className="bulk-section bulk-approach" ref={root} aria-labelledby="approach-title">
     <div className="bulk-heading heading-split"><div><span className="bulk-kicker">Our approach</span><h2 id="approach-title">One clear direction.<br />A whole lot of possibility.</h2></div><p>Good design starts with a conversation.<br />Great batches start with a shared direction.</p></div>
     <div className="approach-steps" role="group" aria-label="Explore our design process">{stages.map((stage, i) => <button type="button" key={stage.short} aria-pressed={active === i} aria-controls="approach-detail" className={active === i ? 'is-active' : ''} onClick={() => setActive(i)}><span className="step-orbit">0{i + 1}</span><span>{stage.short}</span><span className="step-line" aria-hidden="true" /></button>)}</div>
-    <div className="approach-layout"><div className="approach-copy" id="approach-detail" aria-live="polite"><span className="step-count">0{active + 1} <span>/ 04</span></span><h3>{stages[active].title}</h3><p>{stages[active].text}</p><div className="approach-output"><span aria-hidden="true">✳</span>{stages[active].output}</div><div className="approach-navigation"><button type="button" aria-label="Previous process stage" disabled={active === 0} onClick={() => setActive(active - 1)}>←</button><button type="button" aria-label="Next process stage" disabled={active === 3} onClick={() => setActive(active + 1)}>→</button></div></div><div className="desk-perspective"><ApproachVisual stage={active} /></div></div>
-    <div className="approach-bottom"><p>Your launch date matters. Let's plan around it.</p><SpecularButton radius={999} size="md" lineColor="#ff4c42" onClick={() => jumpToInquiry('Custom batch', setService)}>Discuss your batch <span aria-hidden="true">↗</span></SpecularButton></div>
+    <div className="approach-layout"><div className="approach-copy" id="approach-detail" aria-live="polite"><span className="step-count">0{active + 1} <span>/ 04</span></span><h3>{stages[active].title}</h3><p>{stages[active].text}</p><div className="approach-output"><span className="approach-output-rule" aria-hidden="true" />{stages[active].output}</div><div className="approach-navigation"><button type="button" aria-label="Previous process stage" disabled={active === 0} onClick={() => setActive(active - 1)}><Chevron direction="left" /></button><button type="button" aria-label="Next process stage" disabled={active === 3} onClick={() => setActive(active + 1)}><Chevron direction="right" /></button></div></div><div className="desk-perspective"><ApproachVisual stage={active} /></div></div>
+    <div className="approach-bottom"><p>Your launch date matters. Let's plan around it.</p><SpecularButton radius={999} size="md" lineColor="#ff4c42" onClick={() => jumpToInquiry('Custom batch', setService)}>Discuss your batch <Arrow diagonal /></SpecularButton></div>
   </section>;
 }
 
@@ -140,7 +141,7 @@ export function BatchSection({ setService }) {
       <div className="batch-art batch-right"><img src={selectedFormat.artwork[2].src} alt={selectedFormat.artwork[2].alt} loading="lazy" /><span>{selectedFormat.artwork[2].caption}</span></div>
       <span className="batch-marker">Same brand.<br />More possibilities.</span>
     </div>
-    <div className="batch-caption" aria-live="polite"><div><h3>{selectedFormat.count}</h3><p>{selectedFormat.detail}</p></div><a href="/work/seor">Explore Seor <span aria-hidden="true">↗</span></a></div>
+    <div className="batch-caption" aria-live="polite"><div><h3>{selectedFormat.count}</h3><p>{selectedFormat.detail}</p></div><a href="/work/seor">Explore Seor <Arrow diagonal /></a></div>
     <p className="bulk-fineprint">Format demonstration using portfolio artwork. Adaptations and carousel slides are scoped separately; this is not a package quantity.</p>
   </section>;
 }
@@ -154,8 +155,8 @@ const guideItems = [
 export function PackageGuide({ setService }) {
   const [open, setOpen] = useState(-1);
   return <section className="bulk-section package-guide" aria-label="Package details and custom orders">
-    <div className="package-clarity">{guideItems.map((item, i) => <div key={item.title}><button type="button" aria-expanded={open === i} aria-controls={`guide-${i}`} onClick={() => setOpen(open === i ? -1 : i)}>{item.title}<span aria-hidden="true">{open === i ? '−' : '+'}</span></button><p id={`guide-${i}`} hidden={open !== i}>{item.text}</p></div>)}</div>
-    <AnimatedContent distance={25} tilt={5} duration={0.7}><div className="custom-batch-strip"><div className="custom-batch-symbol" aria-hidden="true"><span /><span /><span /></div><div><h3>A different mix in mind?</h3><p>Your formats. Your quantity. A quote built around them.</p></div><SpecularButton radius={999} size="md" lineColor="#ff4c42" onClick={() => jumpToInquiry('Custom batch', setService)}>Build a custom batch <span aria-hidden="true">↗</span></SpecularButton></div></AnimatedContent>
+    <div className="package-clarity">{guideItems.map((item, i) => <div key={item.title}><button type="button" aria-expanded={open === i} aria-controls={`guide-${i}`} onClick={() => setOpen(open === i ? -1 : i)}>{item.title}<Plus minus={open === i} /></button><p id={`guide-${i}`} hidden={open !== i}>{item.text}</p></div>)}</div>
+    <AnimatedContent distance={25} tilt={5} duration={0.7}><div className="custom-batch-strip"><img className="custom-batch-icon" src="/credits/flaticon-layers-5857869.png" alt="" aria-hidden="true" /><div><h3>A different mix in mind?</h3><p>Your formats. Your quantity. A quote built around them.</p></div><SpecularButton radius={999} size="md" lineColor="#ff4c42" onClick={() => jumpToInquiry('Custom batch', setService)}>Build a custom batch <Arrow diagonal /></SpecularButton></div></AnimatedContent>
   </section>;
 }
 
@@ -181,7 +182,7 @@ export function StudioFAQ() {
   const [group, setGroup] = useState('Getting started');
   const [open, setOpen] = useState(0);
   return <section id="questions" className="bulk-section studio-faq" aria-labelledby="studio-faq-title">
-    <div className="faq-studio-intro"><span className="bulk-kicker">Before we begin</span><h2 id="studio-faq-title">Good questions.<br />Clear answers.</h2><div className="faq-selector" role="group" aria-label="Question categories">{Object.keys(faqGroups).map(name => <SpecularButton key={name} size="sm" radius={999} aria-pressed={name === group} className={name === group ? 'is-active' : ''} lineColor={name === group ? '#ff4c42' : '#555762'} onClick={() => { setGroup(name); setOpen(0); }}>{name}</SpecularButton>)}</div><span className="faq-question-object" aria-hidden="true">?</span></div>
-    <div className="faq-studio-list">{faqGroups[group].map(([question, answer], i) => <div key={question} className={`faq-studio-item ${open === i ? 'is-open' : ''}`}><h3><button type="button" aria-expanded={open === i} aria-controls={`studio-answer-${i}`} onClick={() => setOpen(open === i ? -1 : i)}>{question}<span aria-hidden="true">{open === i ? '−' : '+'}</span></button></h3><div id={`studio-answer-${i}`} hidden={open !== i}><p>{answer}</p></div></div>)}</div>
+    <div className="faq-studio-intro"><span className="bulk-kicker">Before we begin</span><h2 id="studio-faq-title">Good questions.<br />Clear answers.</h2><div className="faq-selector" role="group" aria-label="Question categories">{Object.keys(faqGroups).map(name => <SpecularButton key={name} size="sm" radius={999} aria-pressed={name === group} className={name === group ? 'is-active' : ''} lineColor={name === group ? '#ff4c42' : '#555762'} onClick={() => { setGroup(name); setOpen(0); }}>{name}</SpecularButton>)}</div></div>
+    <div className="faq-studio-list">{faqGroups[group].map(([question, answer], i) => <div key={question} className={`faq-studio-item ${open === i ? 'is-open' : ''}`}><h3><button type="button" aria-expanded={open === i} aria-controls={`studio-answer-${i}`} onClick={() => setOpen(open === i ? -1 : i)}>{question}<Plus minus={open === i} /></button></h3><div id={`studio-answer-${i}`} hidden={open !== i}><p>{answer}</p></div></div>)}</div>
   </section>;
 }

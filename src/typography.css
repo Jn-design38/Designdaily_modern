@@ -1,0 +1,97 @@
+:root {
+  --type-display-size: clamp(52px, 7vw, 96px);
+  --type-h2-size: clamp(40px, 4.5vw, 64px);
+  --type-h3-size: clamp(24px, 2.1vw, 32px);
+  --type-lead-size: 20px;
+  --type-body-size: 16px;
+  --type-ui-size: 14px;
+  --type-label-size: 12px;
+  --type-micro-size: 10px;
+}
+
+body { font-family: var(--font-primary); font-size: var(--type-body-size); line-height: 1.65; }
+h1 { font-weight: 700; line-height: 1.02; letter-spacing: -.05em; }
+h2 { font-weight: 600; line-height: 1.1; letter-spacing: -.045em; }
+h3, h4 { font-weight: 600; line-height: 1.2; letter-spacing: -.03em; }
+.button, .text-link, .hero-cta-btn { font-size: var(--type-ui-size); font-weight: 600; letter-spacing: -.01em; }
+.hero-cta-btn svg { width: 18px; height: 18px; flex: none; }
+.hero-scroll-hint svg { width: 20px; height: 20px; flex: none; color: #f4c64e; }
+.hero-ticker-item > i { width: 5px; height: 5px; flex: none; border-radius: 50%; background: #f4c64e; box-shadow: 0 0 10px #f4c64e66; }
+.section-note, .bulk-kicker, .benefit-label, .studio-signature__eyebrow, .inquiry-studio__location { font-size: var(--type-label-size); font-weight: 600; line-height: 1.4; letter-spacing: .04em; }
+
+.bulk-section h2,
+.studio-signature h2,
+.inquiry-studio h2 {
+  font-size: var(--type-h2-size);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+}
+
+.heading-split > p,
+.scope-details p,
+.approach-copy > p,
+.studio-signature__description {
+  font-size: var(--type-body-size);
+  line-height: 1.7;
+}
+
+.scope-option { font-size: 20px; font-weight: 500; }
+.scope-details h3, .batch-caption h3 { font-size: 20px; font-weight: 600; }
+.approach-copy h3, .custom-batch-strip h3 { font-size: var(--type-h3-size); font-weight: 600; }
+.batch-switcher button, .package-clarity button, .faq-selector .specular-button { font-size: var(--type-label-size); }
+.approach-output, .bulk-fineprint, .approach-bottom > p, .batch-caption p, .custom-batch-strip p { font-size: var(--type-label-size); }
+.scope-option > svg { width: 20px; height: 20px; flex: none; }
+.scope-menu .specular-button svg, .approach-bottom .specular-button svg, .custom-batch-strip .specular-button svg { width: 17px; height: 17px; flex: none; }
+.approach-output-rule { width: 18px; height: 2px; flex: none; background: #ff766a; }
+.approach-navigation svg { width: 18px; height: 18px; }
+.batch-caption > a { display: inline-flex; align-items: center; gap: 15px; }
+.batch-caption > a svg { width: 17px; height: 17px; }
+.package-clarity button > svg, .faq-studio-item h3 button > svg { width: 20px; height: 20px; flex: none; color: #ff8a7d; }
+.custom-batch-icon { width: 70px; height: 70px; flex: none; object-fit: contain; filter: invert(1); opacity: .86; }
+.flow-quote-star { width: 24px; height: 24px; }
+.benefit-check { padding: 3px; }
+.faq-studio-item h3 { font-size: var(--type-body-size); }
+.faq-studio-item p { font-size: var(--type-ui-size); }
+
+.studio-signature__description { max-width: 470px; }
+.studio-signature__link, .studio-signature__byline strong, .studio-signature__finish-name { font-size: var(--type-label-size); }
+.studio-signature__controls button { font: 500 var(--type-label-size)/1.2 var(--font-primary); }
+.studio-signature__monogram { letter-spacing: -.04em; }
+
+.inquiry-studio__packages legend { font-size: 20px; font-weight: 600; letter-spacing: -.03em; }
+.inquiry-studio__package span,
+.inquiry-studio__field label,
+.inquiry-studio__error,
+.inquiry-studio__status,
+.inquiry-studio__edit,
+.inquiry-studio__hint { font-size: var(--type-label-size); }
+.inquiry-studio__field input,
+.inquiry-studio__field textarea,
+.inquiry-studio__draft-text { font-size: var(--type-ui-size); }
+.inquiry-studio__submit,
+.inquiry-studio__open,
+.inquiry-studio__copy { font-size: var(--type-ui-size); }
+.inquiry-studio__preview h3 { font-size: var(--type-h3-size); letter-spacing: -.03em; }
+
+.footer-asset-credits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 16px 0 0;
+  color: #73747c;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.footer-asset-credits a { text-decoration: underline; text-decoration-color: #c7c7cc; text-underline-offset: 3px; }
+.footer-asset-credits a:hover { color: var(--ink); }
+
+@media (max-width: 760px) {
+  :root { --type-h2-size: clamp(38px, 10.5vw, 54px); --type-h3-size: clamp(23px, 6.5vw, 30px); }
+  .bulk-kicker, .studio-signature__eyebrow { font-size: var(--type-label-size); }
+  .heading-split > p, .scope-details p, .approach-copy > p, .studio-signature__description { font-size: 15px; }
+  .batch-switcher button { font-size: 11px; }
+  .faq-studio-item h3 { font-size: var(--type-body-size); }
+  .faq-studio-item p { font-size: var(--type-ui-size); }
+  .inquiry-studio__field input, .inquiry-studio__field textarea, .inquiry-studio__draft-text { font-size: 16px; }
+}

@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import projects from '../data/projects.json';
 import { showcaseItems, getItemImages, getItemProject } from '../data/showcase';
 import { packages } from '../data/packages';
-import { Arrow, Star } from './Icons';
+import { Arrow, Check, Star } from './Icons';
 import { Artwork } from './Portfolio';
 import SpecularButton from './SpecularButton';
 import BounceCards from './BounceCards';
@@ -631,7 +631,7 @@ export default function ShowcaseFlow({ service, setService }) {
       {/* 4. "Get your Quote" & "Order now" Button (directly from sketch) */}
       <section className="flow-quote-finale" id="quote" aria-labelledby="quote-title">
         <div className="flow-quote-card">
-          <span className="flow-quote-star" aria-hidden="true">✦</span>
+          <Star className="flow-quote-star" />
           <h3 id="quote-title" className="flow-quote-title">Get your Quote</h3>
           <p className="flow-quote-desc">
             Choose a dedicated monthly package or request a custom brief tailored to your brand.
@@ -675,9 +675,9 @@ export default function ShowcaseFlow({ service, setService }) {
           <h2 id="scale-title">Good design.<br />A clearer direction.</h2>
           <p>Our highest social creative pack comes with a free assessment of your online business and a content calendar.</p>
           <ul className="benefit-list">
-            <li><span className="benefit-check">✓</span> <span>A fresh look at your online presence</span></li>
-            <li><span className="benefit-check">✓</span> <span>A content calendar to guide what comes next</span></li>
-            <li><span className="benefit-check">✓</span> <span>Creatives that connect the plan to your brand</span></li>
+            <li><Check className="benefit-check" /> <span>A fresh look at your online presence</span></li>
+            <li><Check className="benefit-check" /> <span>A content calendar to guide what comes next</span></li>
+            <li><Check className="benefit-check" /> <span>Creatives that connect the plan to your brand</span></li>
           </ul>
           <a href="#contact" className="text-link" onClick={() => setService && setService('Scale Package')}>
             Let’s plan your next chapter <Arrow />

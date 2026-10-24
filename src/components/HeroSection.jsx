@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import TechText from './TechText';
 import GradientASCII from './GradientASCII';
+import { Arrow, Chevron } from './Icons';
 import './HeroSection.css';
 
 const disciplines = ['Brand identity', 'Merchandise', 'Stationery', 'Posters & billboards', 'Static social creatives'];
@@ -30,13 +31,13 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="hero-cta-group">
-          <a href="#contact" className="hero-cta-btn hero-cta-btn--primary">Start a Project <span aria-hidden="true">↗</span></a>
+          <a href="#contact" className="hero-cta-btn hero-cta-btn--primary">Start a Project <Arrow diagonal /></a>
           <a href="#works" className="hero-cta-btn hero-cta-btn--secondary">Explore Works</a>
         </div>
-        <a className="hero-scroll-hint" href="#works"><span aria-hidden="true">↓</span> A little further, a lot to see.</a>
+        <a className="hero-scroll-hint" href="#studio-range"><Chevron /> A little further, a lot to see.</a>
       </div>
       <div className="hero-bottom-ticker" aria-label="Our design disciplines">
-        <div className="hero-ticker-track">{[0, 1].map(copy => <div className="ticker-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>{disciplines.map(item => <span className="hero-ticker-item" key={item}><span aria-hidden="true">✳</span> {item}</span>)}</div>)}</div>
+        <div className="hero-ticker-track">{[0, 1].map(copy => <div className="ticker-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>{disciplines.map(item => <span className="hero-ticker-item" key={item}><i aria-hidden="true" /> {item}</span>)}</div>)}</div>
       </div>
     </section>
   );
