@@ -8,7 +8,6 @@ import { WorkArchive, ProjectPage, NotFound } from './components/WorkPages';
 import projects from './data/projects.json';
 import StudioInfo from './components/StudioInfo';
 import StudioPrelude from './components/StudioPrelude';
-import DriftWallSection from './components/DriftWallSection';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
@@ -120,7 +119,6 @@ export default function App() {
           <>
             <HeroSection />
             <StudioPrelude />
-            <DriftWallSection />
             <ShowcaseFlow service={service} setService={setService} />
           </>
         ) : archive ? (

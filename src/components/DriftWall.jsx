@@ -42,6 +42,8 @@ const DriftWall = ({
   dim = 0.55,
   grayscale = false,
   overlayColor = '#060010',
+  decorative = false,
+  ariaLabel = 'Drifting wall of tiles',
   className = '',
   style
 }) => {
@@ -240,6 +242,13 @@ const DriftWall = ({
       onFocus: () => activate(id, colIndex),
       onBlur: release
     };
+    if (decorative) {
+      return (
+        <div key={id} {...commonProps} aria-hidden="true">
+          {inner}
+        </div>
+      );
+    }
     if (item.href) {
       return (
         <a key={id} href={item.href} target="_blank" rel="noreferrer noopener" {...commonProps}>
@@ -254,7 +263,12 @@ const DriftWall = ({
     );
   };
 
-  const rootClass = ['drift-wall', reduced ? 'drift-wall--reduced' : '', className].filter(Boolean).join(' ');
+  const rootClass = [
+    'drift-wall',
+    reduced ? 'drift-wall--reduced' : '',
+    decorative ? 'drift-wall--decorative' : '',
+    className
+  ].filter(Boolean).join(' ');
 
   return (
     <div
@@ -266,8 +280,9 @@ const DriftWall = ({
         wallHoveredRef.current = true;
       }}
       onPointerLeave={handlePointerLeaveWall}
-      role="group"
-      aria-label="Drifting wall of tiles"
+      role={decorative ? undefined : 'group'}
+      aria-label={decorative ? undefined : ariaLabel}
+      aria-hidden={decorative ? 'true' : undefined}
     >
       <div ref={planeRef} className="drift-wall__plane">
         {columnItems.map((col, c) => {
