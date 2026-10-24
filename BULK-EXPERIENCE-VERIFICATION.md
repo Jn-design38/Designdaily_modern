@@ -17,6 +17,7 @@ Chromium desktop at 1440 × 1000 and responsive viewports of 390 × 844 and 320 
 | Approach | Four stages, next/previous controls, content replacement, and keyboard-operated delivery folder |
 | Scope | Category changes update artwork and copy; inquiry receives the selected service |
 | Campaign batch | Format selection changes the arrangement and explanation |
+| Campaign artwork | Every format now loads a dedicated three-image set, with no duplicate image inside any active state |
 | Packages | Starter, Growth, and Scale each select the correct inquiry option |
 | Inquiry | Required-field validation, draft preview, encoded recipient/subject/body, copy feedback or clipboard fallback, and editing without lost text |
 | FAQs | Category switching and answer expansion |

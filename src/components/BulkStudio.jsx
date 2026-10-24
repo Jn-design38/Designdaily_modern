@@ -91,27 +91,56 @@ export function ApproachSection({ setService }) {
 }
 
 const batchFormats = [
-  { label: 'The whole set', count: 'One connected campaign', detail: 'Different messages. A familiar visual language.' },
-  { label: 'Feed designs', count: 'Original designs', detail: 'A distinct message and composition for each creative.' },
-  { label: 'Adaptations', count: 'Same idea. A different format.', detail: 'Approved designs adapted to the placements in your brief.' },
-  { label: 'Carousels', count: 'One story, across several slides.', detail: 'Slide count and content are agreed as part of your scope.' }
+  {
+    label: 'The whole set', count: 'One connected campaign', detail: 'Different messages. A familiar visual language.',
+    artwork: [
+      { src: '/work/seor/02.webp', alt: 'Seor campaign portrait featuring a structured work bag', caption: 'Product story' },
+      { src: '/work/seor/cover.webp', alt: 'Seor campaign layout pairing the product with its audience', caption: 'Campaign creative' },
+      { src: '/work/seor/03.webp', alt: 'Seor city campaign portrait with a black work bag', caption: 'Brand mood' }
+    ]
+  },
+  {
+    label: 'Feed designs', count: 'Original designs', detail: 'A distinct message and composition for each creative.',
+    artwork: [
+      { src: '/work/seor/04.webp', alt: 'Close-up Seor product detail against illustrated graphics', caption: 'Detail post' },
+      { src: '/work/seor/05.webp', alt: 'Seor desk scene with campaign headline and product', caption: 'Lifestyle post' },
+      { src: '/work/seor/06.webp', alt: 'Seor monochrome fashion portrait with a compact bag', caption: 'Editorial post' }
+    ]
+  },
+  {
+    label: 'Adaptations', count: 'Same idea. A different format.', detail: 'Approved designs adapted to the placements in your brief.',
+    artwork: [
+      { src: '/work/seor/05.webp', alt: 'Wide Seor desk campaign composition', caption: 'Wide placement' },
+      { src: '/work/seor/04.webp', alt: 'Tall crop of Seor product detail artwork', caption: 'Tall placement' },
+      { src: '/work/seor/02.webp', alt: 'Square crop of Seor fashion campaign artwork', caption: 'Square placement' }
+    ]
+  },
+  {
+    label: 'Carousels', count: 'One story, across several slides.', detail: 'Slide count and content are agreed as part of your scope.',
+    artwork: [
+      { src: '/work/seor/03.webp', alt: 'Opening Seor carousel slide with an editorial portrait', caption: '01 / Hook' },
+      { src: '/work/seor/04.webp', alt: 'Second Seor carousel slide showing product detail', caption: '02 / Detail' },
+      { src: '/work/seor/06.webp', alt: 'Closing Seor carousel slide with lifestyle imagery', caption: '03 / Close' }
+    ]
+  }
 ];
 
 export function BatchSection({ setService }) {
   const [format, setFormat] = useState(0);
   const root = useRef(null);
+  const selectedFormat = batchFormats[format];
   useDepth(root, '.batch-stage', 'batch');
   return <section className="bulk-section bulk-batch" id="design-batches" ref={root} aria-labelledby="batch-title">
     <div className="bulk-heading heading-split"><div><span className="bulk-kicker">Built to work together</span><h2 id="batch-title">One campaign.<br />Every angle covered.</h2></div><p>Explore the pieces of a batch.<br />We agree on the count before we create.</p></div>
     <div className="batch-switcher" role="group" aria-label="Explore design formats">{batchFormats.map((item, i) => <button key={item.label} type="button" aria-pressed={format === i} onClick={() => setFormat(i)}>{item.label}</button>)}</div>
-    <div className={`batch-stage format-${format}`}>
+    <div className={`batch-stage format-${format}`} key={selectedFormat.label}>
       <span className="batch-orbit orbit-one" aria-hidden="true" /><span className="batch-orbit orbit-two" aria-hidden="true" />
-      <div className="batch-art batch-left"><img src="/work/seor/02.webp" alt="Seor product campaign design" loading="lazy" /><span>Product story</span></div>
-      <div className="batch-art batch-center"><TiltedCard imageSrc="/work/seor/cover.webp" altText="Seor campaign artwork" containerWidth="100%" containerHeight="100%" imageWidth="100%" imageHeight="100%" showTooltip={false} intro={false} radius={12} rotateAmplitude={6} scaleOnHover={1.02} gyroscope={false} /><span>Campaign creative</span></div>
-      <div className="batch-art batch-right"><img src="/work/seor/03.webp" alt="Another design in the Seor campaign" loading="lazy" /><span>Another perspective</span></div>
+      <div className="batch-art batch-left"><img src={selectedFormat.artwork[0].src} alt={selectedFormat.artwork[0].alt} loading="lazy" /><span>{selectedFormat.artwork[0].caption}</span></div>
+      <div className="batch-art batch-center"><TiltedCard imageSrc={selectedFormat.artwork[1].src} altText={selectedFormat.artwork[1].alt} containerWidth="100%" containerHeight="100%" imageWidth="100%" imageHeight="100%" showTooltip={false} intro={false} radius={12} rotateAmplitude={6} scaleOnHover={1.02} gyroscope={false} /><span>{selectedFormat.artwork[1].caption}</span></div>
+      <div className="batch-art batch-right"><img src={selectedFormat.artwork[2].src} alt={selectedFormat.artwork[2].alt} loading="lazy" /><span>{selectedFormat.artwork[2].caption}</span></div>
       <span className="batch-marker">Same brand.<br />More possibilities.</span>
     </div>
-    <div className="batch-caption" aria-live="polite"><div><h3>{batchFormats[format].count}</h3><p>{batchFormats[format].detail}</p></div><a href="/work/seor">Explore Seor <span aria-hidden="true">↗</span></a></div>
+    <div className="batch-caption" aria-live="polite"><div><h3>{selectedFormat.count}</h3><p>{selectedFormat.detail}</p></div><a href="/work/seor">Explore Seor <span aria-hidden="true">↗</span></a></div>
     <p className="bulk-fineprint">Format demonstration using portfolio artwork. Adaptations and carousel slides are scoped separately; this is not a package quantity.</p>
   </section>;
 }
