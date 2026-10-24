@@ -17,7 +17,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="hero-section" aria-label="Design Daily Studio">
       <div className="hero-ascii-bg" aria-hidden="true">
-        <GradientASCII colors={['#ff4c42', '#f4c64e', '#ff8a50', '#eab308']} shape="horizon" characters=" =+xX0S8#@" cellSize={18} density={0.82} glyphOpacity={0.85} gradientOpacity={0.75} glow={0.3} mouseInteraction clickEffect="wave" speed={0.8} />
+        <GradientASCII colors={['#ff4c42', '#f4c64e', '#ff8a50', '#eab308']} shape="horizon" characters=" " cellSize={18} density={0} glyphOpacity={0} gradientOpacity={0.75} glow={0} mouseInteraction clickEffect="wave" speed={0.8} />
         <div className="hero-ascii-vignette" />
       </div>
       <div className="hero-container hero-container--centered">
@@ -34,7 +34,7 @@ export default function HeroSection() {
           <a href="#contact" className="hero-cta-btn hero-cta-btn--primary">Start a Project <Arrow diagonal /></a>
           <a href="#works" className="hero-cta-btn hero-cta-btn--secondary">Explore Works</a>
         </div>
-        <a className="hero-scroll-hint" href="#studio-range"><Chevron /> A little further, a lot to see.</a>
+        <a className="hero-scroll-hint" href="#studio-system"><Chevron /> A little further, a lot to see.</a>
       </div>
       <div className="hero-bottom-ticker" aria-label="Our design disciplines">
         <div className="hero-ticker-track">{[0, 1].map(copy => <div className="ticker-group" key={copy} aria-hidden={copy === 1 ? true : undefined}>{disciplines.map(item => <span className="hero-ticker-item" key={item}><i aria-hidden="true" /> {item}</span>)}</div>)}</div>

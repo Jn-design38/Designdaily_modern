@@ -1,34 +1,5 @@
-import { useState } from 'react';
-import OptionWheel from './OptionWheel';
 import DriftWall from './DriftWall';
 import './StudioPrelude.css';
-
-const disciplines = [
-  {
-    id: 'packaging',
-    label: 'Packaging',
-    image: '/prelude/packaging-ngr-rice.webp',
-    alt: 'NGR rice packaging arranged in a warm agricultural setting'
-  },
-  {
-    id: 'campaigns',
-    label: 'Campaigns',
-    image: '/prelude/campaigns-summer-launch-v2.webp',
-    alt: 'A mango beverage campaign expressed across posters, packaging and a social post'
-  },
-  {
-    id: 'extensions',
-    label: 'Brand extensions',
-    image: '/prelude/brand-extensions-system-v2.webp',
-    alt: 'A coordinated identity system across boxes, bags, stationery, tape and tissue paper'
-  },
-  {
-    id: 'merchandise',
-    label: 'Merchandise',
-    image: '/prelude/merchandise-dhaka-editorial-v2.webp',
-    alt: 'Two young adults wearing a coordinated merchandise collection on a Dhaka rooftop'
-  }
-];
 
 const volumeItems = [
   { image: '/prelude/campaigns-summer-launch-v2.webp', title: 'Campaign system' },
@@ -49,54 +20,8 @@ const volumeItems = [
 ];
 
 export default function StudioPrelude() {
-  const [activeDiscipline, setActiveDiscipline] = useState(0);
-  const selected = disciplines[activeDiscipline];
-
   return (
     <div className="studio-prelude">
-      <section className="studio-prelude__range" id="studio-range" aria-labelledby="studio-range-title">
-        <h2 className="sr-only" id="studio-range-title">Choose a design discipline</h2>
-        <div className="studio-prelude__range-grid">
-          <div className="studio-prelude__discipline-wheel-shell">
-            <OptionWheel
-              items={disciplines.map(item => item.label)}
-              defaultSelected={0}
-              onChange={index => setActiveDiscipline(index)}
-              textColor="#747680"
-              activeColor="#ffffff"
-              side="left"
-              fontSize={1.7}
-              spacing={2.15}
-              curve={1.08}
-              tilt={6}
-              blur={0.55}
-              fade={0.22}
-              minOpacity={0.22}
-              smoothing={170}
-              inset={64}
-              ariaLabel="Choose a design discipline"
-              className="studio-prelude__discipline-wheel"
-            />
-          </div>
-
-          <div
-            className="studio-prelude__range-stage"
-            id="studio-range-panel"
-            role="tabpanel"
-            aria-label={`${selected.label} example`}
-            key={selected.id}
-          >
-            <img
-              className="studio-prelude__range-image"
-              src={selected.image}
-              alt={selected.alt}
-              loading={activeDiscipline === 0 ? 'eager' : 'lazy'}
-              decoding="async"
-            />
-          </div>
-        </div>
-      </section>
-
       <section className="studio-prelude__system" id="studio-system" aria-labelledby="studio-system-title">
         <div className="studio-prelude__system-wall" aria-hidden="true">
           <DriftWall
