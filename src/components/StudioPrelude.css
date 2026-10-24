@@ -88,50 +88,72 @@
   gap: clamp(30px, 5vw, 72px);
 }
 
-.studio-prelude__discipline-list {
-  display: grid;
-  align-content: center;
+.studio-prelude__discipline-wheel-shell {
+  position: relative;
+  height: 330px;
+  min-width: 0;
+  border-block: 1px solid #ffffff12;
 }
 
-.studio-prelude__discipline-list button {
-  display: grid;
-  grid-template-columns: 26px auto 1fr;
+.studio-prelude__discipline-wheel-shell::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff4c42;
+  box-shadow: 0 0 0 7px #ff4c4218, 0 0 26px #ff4c426b;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.studio-prelude__discipline-wheel {
+  height: 100%;
+  font-family: var(--font-primary, Poppins, sans-serif);
+}
+
+.studio-prelude__discipline-wheel:focus-visible {
+  outline: 2px solid #ff766d;
+  outline-offset: 8px;
+}
+
+.studio-prelude__discipline-wheel .option-wheel__item {
+  font-weight: 400;
+  letter-spacing: -.025em;
+}
+
+.studio-prelude__discipline-wheel .option-wheel__item--selected {
+  text-shadow: 0 0 28px #ff4c423d;
+}
+
+.studio-prelude__wheel-index {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  bottom: 18px;
+  display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 62px;
-  padding: 0;
-  border: 0;
-  color: #777985;
-  background: none;
-  text-align: left;
-  transition: color .25s ease;
-}
-
-.studio-prelude__discipline-list button > span:first-child {
-  font-size: 11px;
-  font-weight: 500;
+  gap: 9px;
+  color: #858791;
+  font-size: 10px;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
+  pointer-events: none;
 }
 
-.studio-prelude__discipline-list button strong {
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.studio-prelude__tab-line {
+.studio-prelude__wheel-index i {
+  width: 18px;
   height: 1px;
-  background: #ffffff14;
-  transform-origin: left;
-  transition: background .25s, transform .35s cubic-bezier(.16, 1, .3, 1);
+  background: #ff4c42;
 }
-
-.studio-prelude__discipline-list button:is(:hover, .is-active) { color: #fff; }
-.studio-prelude__discipline-list button.is-active .studio-prelude__tab-line { background: #ff4c42; transform: scaleX(1.08); }
 
 .studio-prelude__range-stage {
   position: relative;
-  height: clamp(380px, 42vw, 590px);
+  aspect-ratio: 4 / 3;
+  height: auto;
   min-width: 0;
   perspective: 1200px;
   transform-style: preserve-3d;
@@ -339,6 +361,7 @@
 @media (max-width: 1060px) {
   .studio-prelude__wrap { width: calc(100% - 64px); }
   .studio-prelude__range-grid { grid-template-columns: 170px minmax(0, 1fr); }
+  .studio-prelude__discipline-wheel-shell { height: 300px; }
   .studio-prelude__range-copy { grid-column: 2; }
   .studio-prelude__system-grid { grid-template-columns: minmax(0, .85fr) minmax(430px, 1.15fr); gap: 38px; }
 }
@@ -351,11 +374,9 @@
   .studio-prelude__heading > p:last-child { max-width: 520px; }
   .studio-prelude__range-grid { display: flex; flex-direction: column; align-items: stretch; gap: 30px; }
   #studio-range { scroll-margin-top: 84px; }
-  .studio-prelude__discipline-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
-  .studio-prelude__discipline-list button { display: flex; justify-content: center; min-width: 0; min-height: 44px; padding: 8px 11px; border: 1px solid #ffffff16; border-radius: 999px; text-align: center; }
-  .studio-prelude__discipline-list button > span:first-child, .studio-prelude__tab-line { display: none; }
-  .studio-prelude__discipline-list button.is-active { border-color: #ff4c426b; background: #ff4c4213; }
-  .studio-prelude__range-stage { height: min(115vw, 500px); }
+  .studio-prelude__discipline-wheel-shell { height: 220px; }
+  .studio-prelude__discipline-wheel { max-width: 330px; }
+  .studio-prelude__range-stage { width: 100%; }
   .studio-prelude__range-copy p { max-width: 500px; }
   .studio-prelude__system { padding-block: 90px; }
   .studio-prelude__system-grid { grid-template-columns: 1fr; gap: 55px; }
@@ -364,7 +385,7 @@
 
 @media (max-width: 420px) {
   .studio-prelude__wrap { width: calc(100% - 32px); }
-  .studio-prelude__range-stage { height: 108vw; }
+  .studio-prelude__discipline-wheel-shell { height: 210px; }
   .studio-prelude__object-stage { height: 118vw; }
   .studio-prelude__principles article { grid-template-columns: 42px 1fr; gap: 14px; }
   .studio-prelude__principles img { width: 30px; height: 30px; }

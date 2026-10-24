@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedContent from './reactbits/AnimatedContent';
 import TiltedCard from './TiltedCard';
+import OptionWheel from './OptionWheel';
 import { Arrow } from './Icons';
 import './StudioPrelude.css';
 
@@ -24,8 +25,8 @@ const disciplines = [
     label: 'Campaigns',
     title: 'Turn one offer into a complete visual run.',
     copy: 'Connected posts, ads and launch graphics built to feel like one campaign—not isolated artwork.',
-    image: '/prelude/social-seor-feeding-set.webp',
-    alt: 'A coordinated pink social campaign for a baby feeding set'
+    image: '/prelude/campaigns-summer-launch-v2.webp',
+    alt: 'A mango beverage campaign expressed across posters, packaging and a social post'
   },
   {
     id: 'extensions',
@@ -33,8 +34,8 @@ const disciplines = [
     label: 'Brand extensions',
     title: 'Carry the identity into the details.',
     copy: 'Stationery, inserts and everyday brand touchpoints designed with the same visual logic.',
-    image: '/prelude/packaging-applegears-card-envelope.webp',
-    alt: 'AppleGears cards, box and branded envelope presented together'
+    image: '/prelude/brand-extensions-system-v2.webp',
+    alt: 'A coordinated identity system across boxes, bags, stationery, tape and tissue paper'
   },
   {
     id: 'merchandise',
@@ -42,8 +43,8 @@ const disciplines = [
     label: 'Merchandise',
     title: 'Create graphics people want to keep.',
     copy: 'Wearable ideas with enough personality to work as both a product and a brand signal.',
-    image: '/prelude/tshirt-goodybro-chaotic-world.webp',
-    alt: 'Goodybro black T-shirt shown from the front and back'
+    image: '/prelude/merchandise-dhaka-editorial-v2.webp',
+    alt: 'Two young adults wearing a coordinated merchandise collection on a Dhaka rooftop'
   }
 ];
 
@@ -119,30 +120,36 @@ export default function StudioPrelude() {
           </AnimatedContent>
 
           <div className="studio-prelude__range-grid">
-            <div className="studio-prelude__discipline-list" role="tablist" aria-label="Design disciplines">
-              {disciplines.map((item, index) => (
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={activeDiscipline === index}
-                  aria-controls="studio-range-panel"
-                  id={`studio-discipline-${item.id}`}
-                  className={activeDiscipline === index ? 'is-active' : ''}
-                  onClick={() => setActiveDiscipline(index)}
-                  key={item.id}
-                >
-                  <span>{item.number}</span>
-                  <strong>{item.label}</strong>
-                  <span className="studio-prelude__tab-line" aria-hidden="true" />
-                </button>
-              ))}
+            <div className="studio-prelude__discipline-wheel-shell">
+              <span className="studio-prelude__wheel-index" aria-hidden="true">
+                {selected.number} <i /> 04
+              </span>
+              <OptionWheel
+                items={disciplines.map(item => item.label)}
+                defaultSelected={0}
+                onChange={index => setActiveDiscipline(index)}
+                textColor="#737580"
+                activeColor="#ffffff"
+                side="left"
+                fontSize={1.05}
+                spacing={2.75}
+                curve={0.9}
+                tilt={7}
+                blur={0.65}
+                fade={0.28}
+                minOpacity={0.18}
+                smoothing={170}
+                inset={22}
+                ariaLabel="Choose a design discipline"
+                className="studio-prelude__discipline-wheel"
+              />
             </div>
 
             <div
               className="studio-prelude__range-stage"
               id="studio-range-panel"
               role="tabpanel"
-              aria-labelledby={`studio-discipline-${selected.id}`}
+              aria-label={`${selected.label} example`}
               key={selected.id}
             >
               <TiltedCard
