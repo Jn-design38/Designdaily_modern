@@ -3,14 +3,15 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import projects from '../data/projects.json';
 import { showcaseItems, getItemImages, getItemProject } from '../data/showcase';
-import { packages, makeInquiry, studioEmail } from '../data/packages';
-import SplitText from './SplitText';
-import Magnet from './Magnet';
+import { packages } from '../data/packages';
 import { Arrow, Star } from './Icons';
 import { Artwork } from './Portfolio';
 import SpecularButton from './SpecularButton';
-import MagicBento from './MagicBento';
 import BounceCards from './BounceCards';
+import { ScopeSection, ApproachSection, BatchSection, PackageGuide, StudioFAQ } from './BulkStudio';
+import StudioSignature from './StudioSignature';
+import InquiryStudio from './InquiryStudio';
+import AnimatedContent from './reactbits/AnimatedContent';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,49 +50,6 @@ const SCALE_BENEFIT_IMAGES = [
     width: 330,
     height: 232,
     aspectRatio: '1496 / 1051'
-  }
-];
-
-const AGENCY_BENEFITS_ITEMS = [
-  {
-    title: 'One Recognisable Brand',
-    description: 'Complete visual continuity. We unify your logo, retail packaging, social feeds, and billboards so your brand looks cohesive everywhere.',
-    label: 'Brand Identity System',
-    visual: 'analytics'
-  },
-  {
-    title: 'Fixed Retainers in BDT',
-    description: 'Zero hidden fees, surprise hourly invoices, or agency bloat. Transparent monthly subscriptions with pause or cancel flexibility.',
-    label: 'Predictable Retainers',
-    visual: 'dashboard'
-  },
-  {
-    title: 'Direct With Julkarnine Arabi',
-    description: 'Work directly with the studio founder and lead designer. No account manager telephone games, no junior delegates, and rapid iteration via WhatsApp and Figma.',
-    label: 'Founder-Led Craft',
-    visual: 'collaboration',
-    colSpan: 2,
-    rowSpan: 2
-  },
-  {
-    title: '48–72h Production Turnaround',
-    description: 'Send briefs via WhatsApp or Trello. Receive custom vector logos, packaging layouts, and ad creatives in 48–72 hours with unlimited revisions.',
-    label: 'Rapid Creative Velocity',
-    visual: 'automation',
-    colSpan: 2,
-    rowSpan: 2
-  },
-  {
-    title: '24–36 Monthly Social Creatives',
-    description: 'Keep your feed active and ads converting with high-impact static creatives, multi-slide carousels, and 30–40s motion graphics videos.',
-    label: 'Social & Motion Engine',
-    visual: 'integration'
-  },
-  {
-    title: 'Print-Ready Dielines & Full IP',
-    description: 'Factory-accurate packaging dielines with bleed for printers, organized Google Drive folders, full vector source files (.AI, .EPS, .PDF), and 100% IP ownership.',
-    label: 'Production Deliverables',
-    visual: 'security'
   }
 ];
 
@@ -706,38 +664,9 @@ export default function ShowcaseFlow({ service, setService }) {
         </div>
       </section>
 
-      {/* 4.5. The Design Daily Advantage - How We Benefit Customers & Solve Agency Problems (React Bits MagicBento) */}
-      <section id="benefits" className="flow-benefits-section" aria-labelledby="benefits-title">
-        <div className="benefits-head">
-          <h2 className="benefits-title" id="benefits-title">
-            Built to solve what traditional agencies break.
-          </h2>
-          <p className="benefits-sub">
-            Ambitious brands waste weeks on slow agency bureaucracy or struggle with amateur files that fail at print. Design Daily delivers founder-led brand craft, production-ready packaging, and high-velocity social creatives on fixed monthly retainers.
-          </p>
-        </div>
-
-        <div className="benefits-bento-wrap">
-          <MagicBento
-            items={AGENCY_BENEFITS_ITEMS}
-            columns={4}
-            rowHeight={210}
-            gap={16}
-            radius={24}
-            theme="dark"
-            glowColor="#ff4c42"
-            enableBorderGlow={true}
-            enableSpotlight={true}
-            spotlightRadius={320}
-            enableStars={true}
-            particleCount={28}
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            textAutoHide={false}
-          />
-        </div>
-      </section>
+      <ScopeSection setService={setService} />
+      <ApproachSection setService={setService} />
+      <BatchSection setService={setService} />
 
       {/* 4.8. Scale Benefit Section (Good design. A clearer direction.) with BounceCards */}
       <section className="scale-benefit wrap" aria-labelledby="scale-title">
@@ -785,10 +714,11 @@ export default function ShowcaseFlow({ service, setService }) {
             <span>Our Packages</span>
           </div>
           <p className="packages-sub">
-            Predictable, high-impact design partnerships with fixed monthly retainers. 50% launch discount active. Pause or cancel anytime.
+            A considered package. A predictable design budget. Choose your starting point.
           </p>
         </div>
 
+        <AnimatedContent distance={35} tilt={6} duration={0.9}>
         <div className="packages-grid">
           {packages.map(pack => (
             <article className={`package-card ${pack.tierClass}`} key={pack.id}>
@@ -801,7 +731,8 @@ export default function ShowcaseFlow({ service, setService }) {
 
               {/* Card Body / Features List */}
               <div className="package-body">
-                <h4 className="package-features-heading">Includes everything you need:</h4>
+                <p className="package-fit">{pack.id === 'starter' ? 'For your first brand chapter.' : pack.id === 'growth' ? 'For a steady creative rhythm.' : 'For a bigger content schedule.'}</p>
+                <h4 className="package-features-heading">Your package includes:</h4>
                 <ul className="package-features-list">
                   {pack.features.map((feat, fIdx) => (
                     <li key={fIdx}>
@@ -826,7 +757,7 @@ export default function ShowcaseFlow({ service, setService }) {
                   <span className="p-orig-val">{pack.original} BDT</span>
                 </div>
                 <div className={`p-discount-pill pill-${pack.id}`}>
-                  <span>Launch Discount 50% OFF</span>
+                  <span>Launch offer</span>
                 </div>
                 <div className="price-final-row">
                   <span className="p-price-label">Final Price</span>
@@ -847,135 +778,13 @@ export default function ShowcaseFlow({ service, setService }) {
             </article>
           ))}
         </div>
+        </AnimatedContent>
       </section>
 
-      {/* 7. Compact Studio FAQ */}
-      <section className="faq-section wrap" aria-labelledby="faq-title">
-        <div className="faq-heading-block">
-          <span className="section-note">Before we begin</span>
-          <h2 id="faq-title">A few things<br />you might ask.</h2>
-          <p className="faq-subtitle">Clear answers on our static design scope, turnaround, revisions, and onboarding process.</p>
-        </div>
-        <div className="faq-list">
-          {[
-            ['What kind of design do you create?', 'We create static design: brand identities, merchandise graphics, stationery, banners, posters, billboards, and 2D social media creatives.'],
-            ['Can I order a single design or a custom project?', 'Yes. Tell us what you need through the project form. We can discuss a brief for an individual design, a connected set of materials, or one of the listed packages.'],
-            ['What does the Scale package include beyond the creatives?', 'Scale includes a free assessment of your online business and a content calendar. We agree on the assessment scope and calendar period with you when discussing the order.'],
-            ['How do revisions work?', 'The listed packages include unlimited revisions. We agree on the brief and deliverable scope first, then refine the designs with your feedback.'],
-            ['Do you also post content or run advertisements?', 'Our listed services focus on designing your creative assets. Posting, account management, printing, and media buying are not included in these package descriptions.'],
-            ['How do I get started?', 'Choose a package or describe your project below. The form prepares an email with your brief so you can review and send it directly to Design Daily. We will discuss the scope and next steps with you.']
-          ].map(([question, answer]) => (
-            <details key={question} className="faq-card">
-              <summary>
-                <span className="faq-question-text">{question}</span>
-                <span className="faq-icon" aria-hidden="true">+</span>
-              </summary>
-              <div className="faq-content">
-                <p>{answer}</p>
-              </div>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* 8. Studio Direct Contact Form */}
-      <section id="contact" className="contact-section wrap">
-        <div className="contact-copy">
-          <span className="section-note">Your next chapter starts here</span>
-          <SplitText
-            text="Let’s make your next impression count."
-            tag="h2"
-            className="contact-heading"
-            textAlign="left"
-            splitType="words"
-            duration={0.5}
-            delay={50}
-            rootMargin="0px"
-          />
-          <p>A new brand, a fresh campaign, or something you’ve been thinking about. We’d like to hear it.</p>
-
-          <div className="studio-card">
-            <div className="studio-card-row">
-              <span className="card-kicker">Studio Direct</span>
-              <span className="card-online-badge"><i /> Available for projects</span>
-            </div>
-            <div className="email-contact">
-              <a href={`mailto:${studioEmail}`} className="email-address">{studioEmail}</a>
-            </div>
-            <div className="studio-meta-grid">
-              <div>
-                <span className="meta-label">Location</span>
-                <span className="meta-val">Dhaka, Bangladesh</span>
-              </div>
-              <div>
-                <span className="meta-label">Turnaround</span>
-                <span className="meta-val">24h Response</span>
-              </div>
-              <div>
-                <span className="meta-label">Discipline</span>
-                <span className="meta-val">100% Static Focus</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <form
-          className="contact-form"
-          onSubmit={e => {
-            e.preventDefault();
-            const vals = Object.fromEntries(new FormData(e.currentTarget));
-            const mailto = makeInquiry(vals);
-            window.location.href = mailto;
-          }}
-        >
-          <div className="form-row">
-            <label>
-              Your name
-              <input name="name" autoComplete="name" placeholder="How should we call you?" maxLength={100} required />
-            </label>
-            <label>
-              Email address
-              <input name="contact" type="email" autoComplete="email" placeholder="you@yourbusiness.com" required />
-            </label>
-          </div>
-
-          <label>
-            Your business link <span>(optional)</span>
-            <input name="business" placeholder="Website or social profile (https://...)" maxLength={300} />
-          </label>
-
-          <label>
-            What can we help with?
-            <select name="service" value={service} onChange={e => setService(e.target.value)} required>
-              <option value="">Select a service or package</option>
-              <optgroup label="Packages">
-                {packages.map(pack => <option key={pack.id}>{pack.name}</option>)}
-              </optgroup>
-              <optgroup label="Custom projects">
-                {['Brand identity', 'Packaging', 'Social creatives', 'Banners', 'Posters & billboards', 'Merchandise', 'Stationery & brochures'].map(item => (
-                  <option key={item}>{item}</option>
-                ))}
-                <option>Something else</option>
-              </optgroup>
-            </select>
-          </label>
-
-          <label>
-            A little about your project
-            <textarea name="brief" rows={4} placeholder="Your business, your idea, and what you need designed…" maxLength={4000} required />
-          </label>
-
-          <div className="form-finish">
-            <p>We’ll prepare your message.<br />You review and send it by email.</p>
-            <Magnet padding={24} maxOffset={4} magnetStrength={8}>
-              <button className="button button-dark contact-submit-btn" type="submit">
-                <span>Create email draft</span>
-                <Arrow diagonal />
-              </button>
-            </Magnet>
-          </div>
-        </form>
-      </section>
+      <PackageGuide setService={setService} />
+      <StudioSignature />
+      <StudioFAQ />
+      <InquiryStudio service={service} setService={setService} />
     </div>
   );
 }

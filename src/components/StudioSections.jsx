@@ -430,6 +430,8 @@ export function Footer() {
         <nav aria-label="Footer">
           <a href="/work">All work</a>
           <a href="/#packages">Packages</a>
+          <a href="/scope">Working together</a>
+          <a href="/privacy">Inquiry privacy</a>
           <a href={`mailto:${studioEmail}`}>Email us</a>
           <a href="#top">Back to top ↑</a>
         </nav>

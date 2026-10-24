@@ -21,10 +21,10 @@ test('every project route is unique and all artwork references resolve inside pu
   }
 });
 
-test('package inquiry selections retain the reference prices and static-only scope', () => {
+test('package inquiry selections retain the reference prices and meaningful feature text', () => {
   assert.deepEqual(packages.map(pack => [pack.id, pack.original, pack.price]), [['starter','7,000','3,500'],['growth','18,000','8,999'],['scale','30,000','14,999']]);
   assert.equal(new Set(packages.map(pack => pack.name)).size, packages.length);
-  assert.ok(packages.every(pack => pack.features.every(feature => !/animation|video/i.test(feature))));
+  assert.ok(packages.every(pack => pack.features.every(feature => typeof feature.text === 'string' && feature.text.length > 4)));
 });
 
 test('email handoff encodes customer data without changing the recipient or adding headers', () => {

@@ -6,16 +6,19 @@ import ShowcaseFlow from './components/ShowcaseFlow';
 import { Footer } from './components/StudioSections';
 import { WorkArchive, ProjectPage, NotFound } from './components/WorkPages';
 import projects from './data/projects.json';
+import StudioInfo from './components/StudioInfo';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
   const home = pathname === '/';
   const archive = pathname === '/work';
+  const infoType = pathname === '/scope' ? 'scope' : pathname === '/privacy' ? 'privacy' : null;
   const project = projects.find(item => pathname === `/work/${item.id}`);
   const [service, setService] = useState(new URLSearchParams(window.location.search).get('service') || '');
 
   // Initialize Lenis momentum smooth scrolling for buttery fluid flow
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
     let lenisInstance = null;
     let tickerHandler = null;
 
@@ -82,6 +85,8 @@ export default function App() {
       ? 'All Work — Design Daily'
       : project
       ? `${project.title} — Design Daily`
+      : infoType
+      ? `${infoType === 'scope' ? 'Working together' : 'Inquiry privacy'} — Design Daily`
       : 'Page not found — Design Daily';
 
     const backNavigation = performance.getEntriesByType('navigation')[0]?.type === 'back_forward';
@@ -103,7 +108,7 @@ export default function App() {
       );
       return () => clearTimeout(timer);
     }
-  }, [home, archive, project]);
+  }, [home, archive, project, infoType]);
 
   return (
     <div className="app-layout" id="top">
@@ -116,6 +121,8 @@ export default function App() {
           </>
         ) : archive ? (
           <WorkArchive />
+        ) : infoType ? (
+          <StudioInfo type={infoType} />
         ) : project ? (
           <ProjectPage project={project} />
         ) : (

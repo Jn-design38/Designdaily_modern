@@ -1,5 +1,22 @@
 # Design Daily — Continuous Studio Website
 
+## Bulk-design experience branch
+
+`codex/bulk-design-experience` extends the existing hero and portfolio with an interactive scope selector, four-stage Approach, dimensional campaign preview, package guide, supplied 3D studio logo, categorized FAQs, and a reviewable email-inquiry desk. New supporting routes: `/scope` and `/privacy`. Content remains in English and existing package amounts remain unchanged.
+
+```sh
+npm ci
+npm run build
+npm test
+npm run preview:bulk
+```
+
+The isolated production preview uses **http://localhost:4197/**, so the original port 4195 can remain running. Start at `/#approach` to see the new process section. The inquiry prepares an email draft, not a server submission. No message is sent until the visitor sends it from their email app.
+
+See [design direction](DESIGN-DIRECTION.md), [React Bits components and sources](REACT-BITS-COMPONENTS.md), and [verification notes](BULK-EXPERIENCE-VERIFICATION.md). The logo derivative is lazy-loaded, approximately 3 MB, and regenerable with `npm run optimize:logo`; its original source stays intact.
+
+The earlier architecture notes below describe the base site's evolution. The branch notes above and the current source are authoritative for the new sections.
+
 > The official digital home of **Design Daily Studio** — an independent, founder-led graphic design studio in Dhaka run by **Julkarnine Arabi**, delivering visual continuity across brand identities, physical merchandise, stationery, print campaigns, and daily social creatives.
 >
 > **Core Proposition**: *"One recognisable brand. Everywhere you show up."*
