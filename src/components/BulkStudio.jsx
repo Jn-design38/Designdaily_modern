@@ -53,11 +53,9 @@ const stages = [
 ];
 
 const buildCards = [
-  { src: '/work/seor/02.webp', alt: 'Seor campaign portrait artwork' },
-  { src: '/work/seor/04.webp', alt: 'Seor product-detail campaign artwork' },
-  { src: '/work/seor/cover.webp', alt: 'Seor campaign key visual' },
-  { src: '/work/seor/05.webp', alt: 'Seor campaign desk composition' },
-  { src: '/work/seor/06.webp', alt: 'Seor monochrome campaign artwork' }
+  { src: '/approach/portfolio/build-all-organics.webp', alt: 'All Organics finished identity system' },
+  { src: '/approach/portfolio/build-atuendo.webp', alt: 'Atuendo finished embossed brand application' },
+  { src: '/approach/portfolio/build-norea.webp', alt: 'Norea finished packaging system' }
 ];
 
 function useDepth(ref, selector, mode = 'desk') {
@@ -75,24 +73,33 @@ function useDepth(ref, selector, mode = 'desk') {
 
 function BriefVisual() {
   return <div className="approach-object approach-object--brief" aria-hidden="true">
-    <div className="approach-brief-sheet">
-      <div className="approach-brief-sheet__top"><span>Design Daily</span><i /></div>
-      <strong>Campaign batch</strong>
-      <div className="approach-brief-lines"><span /><span /><span /></div>
-      <div className="approach-brief-tags"><span>Social</span><span>Launch</span><span>12 pieces</span></div>
+    <div className="approach-browser approach-browser--references">
+      <div className="approach-window-bar"><span className="approach-window-dots"><i /><i /><i /></span><strong>Image search</strong><span>+</span></div>
+      <div className="approach-browser-address"><span>←</span><span>→</span><div>visuals.design / brand references</div></div>
+      <div className="approach-reference-grid"><span className="approach-reference-tile tile-a" /><span className="approach-reference-tile tile-b" /><span className="approach-reference-tile tile-c" /><span className="approach-reference-tile tile-d" /></div>
     </div>
-    <div className="approach-brief-ticket approach-brief-ticket--goal"><span>Goal</span><strong>Be remembered</strong></div>
-    <div className="approach-brief-ticket approach-brief-ticket--date"><span>Live</span><strong>18 Nov</strong></div>
-    <div className="approach-brief-signal"><span /><span /><span /></div>
+    <div className="approach-browser approach-browser--brief">
+      <div className="approach-window-bar"><span className="approach-window-dots"><i /><i /><i /></span><strong>Project brief</strong><span>+</span></div>
+      <div className="approach-brief-browser-body"><span>Launch system</span><strong>One campaign.<br />Every format.</strong><dl><div><dt>Audience</dt><dd>Dhaka / 20–40</dd></div><div><dt>Outputs</dt><dd>12 pieces</dd></div><div><dt>Live</dt><dd>18 Nov</dd></div></dl></div>
+    </div>
+    <div className="approach-explorer">
+      <div className="approach-explorer__titlebar"><span className="approach-explorer__app"><i /> Creative research</span><span className="approach-explorer__controls"><i /><i /><i /></span></div>
+      <div className="approach-explorer__toolbar"><span>‹</span><span>›</span><span>↑</span><div><i /> This PC <b>›</b> Studio <b>›</b> Client research</div><span>⌕</span></div>
+      <div className="approach-explorer__body">
+        <aside><span>Quick access</span><span>Desktop</span><span>Downloads</span><strong>Client research</strong></aside>
+        <div className="approach-explorer__files"><div className="approach-file approach-file--folder"><i /><span>Market refs</span><small>File folder</small></div><div className="approach-file approach-file--folder"><i /><span>Competitor scan</span><small>File folder</small></div><div className="approach-file approach-file--image"><i /><span>materials-07.jpg</span><small>4.8 MB</small></div><div className="approach-file approach-file--document"><i>PDF</i><span>brief-v3.pdf</span><small>1.2 MB</small></div></div>
+      </div>
+      <div className="approach-explorer__status"><span>4 items</span><span>38.4 MB</span></div>
+      <div className="approach-explorer-save"><span className="approach-explorer-save__thumb" /><div><span>Saving from Web</span><strong>reference-board-12.jpg</strong><i><b /></i></div><em>76%</em></div>
+    </div>
   </div>;
 }
 
 function DirectionVisual() {
   return <div className="approach-object approach-object--direction">
-    <figure className="approach-direction-panel approach-direction-panel--left"><img src="/work/atuendo/02.webp" alt="Atuendo identity direction" loading="lazy" /></figure>
-    <figure className="approach-direction-panel approach-direction-panel--focus"><img src="/work/norea/02.webp" alt="Selected Noréa identity direction" loading="lazy" /><figcaption>Selected</figcaption></figure>
-    <figure className="approach-direction-panel approach-direction-panel--right"><img src="/work/all-organics/02.webp" alt="All Organics identity direction" loading="lazy" /></figure>
-    <div className="approach-direction-swatches" aria-hidden="true"><span /><span /><span /><span /></div>
+    <figure className="approach-direction-panel approach-direction-panel--left"><img src="/approach/portfolio/sketch-all-organics.webp" alt="All Organics pencil logo study" loading="lazy" /></figure>
+    <figure className="approach-direction-panel approach-direction-panel--focus"><img src="/approach/portfolio/sketch-norea.webp" alt="Selected Norea pencil logo study" loading="lazy" /><figcaption>Selected study</figcaption></figure>
+    <figure className="approach-direction-panel approach-direction-panel--right"><img src="/approach/portfolio/sketch-atuendo.webp" alt="Atuendo pencil logo study" loading="lazy" /></figure>
   </div>;
 }
 
@@ -109,22 +116,22 @@ function BuildVisual() {
     <BounceCards
       images={buildCards}
       className="approach-bounce-cards"
-      containerWidth={compact ? 358 : narrow ? 680 : 820}
-      containerHeight={compact ? 290 : narrow ? 370 : 420}
-      cardSize={compact ? 132 : narrow ? 190 : 224}
-      spread={compact ? 54 : narrow ? 90 : 118}
+      containerWidth={compact ? 358 : narrow ? 680 : 860}
+      containerHeight={compact ? 290 : narrow ? 370 : 430}
+      cardSize={compact ? 148 : narrow ? 220 : 270}
+      spread={compact ? 78 : narrow ? 138 : 176}
       rotation={7}
       arc={24}
       animationDelay={0.06}
       animationStagger={0.05}
       bounciness={0.52}
-      pushDistance={compact ? 36 : 82}
+      pushDistance={compact ? 44 : 94}
       hoverScale={1.035}
       borderWidth={5}
       borderColor="#f7f6f2"
       radius={8}
     />
-    <span className="approach-build-count" aria-hidden="true">01 idea / 05 outputs</span>
+    <span className="approach-build-count" aria-hidden="true">03 studies / 03 brand worlds</span>
   </div>;
 }
 

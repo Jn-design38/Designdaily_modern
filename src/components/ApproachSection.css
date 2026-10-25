@@ -115,131 +115,207 @@
   place-items: center;
 }
 
-.approach-object--brief { perspective: 1200px; }
-
-.approach-brief-sheet {
-  position: relative;
-  width: min(560px, 61vw);
-  aspect-ratio: 1.65 / 1;
-  padding: clamp(26px, 3vw, 44px);
-  color: #15161b;
-  background: #f7f6f2;
-  border-radius: 4px;
-  box-shadow: 0 36px 80px rgba(0, 0, 0, .52);
-  transform: rotateX(5deg) rotateZ(-2.5deg);
+.approach-object--brief {
+  width: min(1100px, 90vw);
+  perspective: 1400px;
+  isolation: isolate;
 }
 
-.approach-brief-sheet__top {
-  display: flex;
+.approach-browser,
+.approach-explorer {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .14);
+  color: #1c1d22;
+  background: #f3f4f7;
+  box-shadow: 0 34px 80px rgba(0, 0, 0, .52);
+}
+
+.approach-browser {
+  z-index: 1;
+  top: 14%;
+  width: 360px;
+  height: 265px;
+  border-radius: 11px;
+  opacity: .76;
+  filter: saturate(.78) brightness(.88);
+  transition: transform .65s cubic-bezier(.16, 1, .3, 1), opacity .4s ease, filter .4s ease;
+}
+
+.approach-browser--references { left: 0; transform: rotateY(14deg) rotateZ(-5deg) translateX(4%); }
+.approach-browser--brief { right: 0; transform: rotateY(-14deg) rotateZ(5deg) translateX(-4%); }
+.approach-object--brief:hover .approach-browser--references { opacity: .95; filter: none; transform: rotateY(9deg) rotateZ(-6deg) translateX(-6%); }
+.approach-object--brief:hover .approach-browser--brief { opacity: .95; filter: none; transform: rotateY(-9deg) rotateZ(6deg) translateX(6%); }
+
+.approach-window-bar {
+  height: 33px;
+  padding: 0 11px;
+  display: grid;
+  grid-template-columns: 66px 1fr 18px;
   align-items: center;
-  justify-content: space-between;
-  color: #7d7c78;
+  gap: 8px;
+  border-bottom: 1px solid #d9dbe1;
+  background: #e9ebef;
+  font-size: 8px;
+}
+
+.approach-window-bar strong { font-size: 9px; font-weight: 600; }
+.approach-window-dots { display: flex; gap: 5px; }
+.approach-window-dots i { width: 7px; height: 7px; border-radius: 50%; background: #ff675e; }
+.approach-window-dots i:nth-child(2) { background: #f4c64e; }
+.approach-window-dots i:nth-child(3) { background: #64c884; }
+
+.approach-browser-address {
+  display: grid;
+  grid-template-columns: 18px 18px 1fr;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  padding: 0 10px;
+  color: #747782;
   font-size: 10px;
 }
 
-.approach-brief-sheet__top i {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #ff5148;
-}
+.approach-browser-address div { padding: 7px 10px; border: 1px solid #dfe1e6; border-radius: 6px; background: #fff; font-size: 8px; }
 
-.approach-brief-sheet > strong {
-  display: block;
-  margin-top: clamp(30px, 4vh, 48px);
-  font-size: clamp(30px, 4vw, 54px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -.055em;
-}
-
-.approach-brief-lines {
+.approach-reference-grid {
+  height: calc(100% - 69px);
+  padding: 10px;
   display: grid;
-  gap: 10px;
-  width: 72%;
-  margin-top: 26px;
-}
-
-.approach-brief-lines span {
-  height: 4px;
-  border-radius: 9px;
-  background: #deddd8;
-}
-
-.approach-brief-lines span:nth-child(2) { width: 84%; }
-.approach-brief-lines span:nth-child(3) { width: 58%; }
-
-.approach-brief-tags {
-  position: absolute;
-  left: clamp(26px, 3vw, 44px);
-  bottom: clamp(24px, 3vw, 38px);
-  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 7px;
 }
 
-.approach-brief-tags span {
-  padding: 7px 11px;
-  border: 1px solid #d7d5cf;
-  border-radius: 999px;
+.approach-reference-tile { border-radius: 5px; background-position: center; background-size: cover; }
+.approach-reference-tile.tile-a { background-image: url('/approach/portfolio/build-all-organics.webp'); }
+.approach-reference-tile.tile-b { background-image: url('/approach/portfolio/sketch-norea.webp'); }
+.approach-reference-tile.tile-c { background-image: url('/approach/portfolio/build-atuendo.webp'); }
+.approach-reference-tile.tile-d { background-image: url('/approach/portfolio/sketch-atuendo.webp'); }
+
+.approach-brief-browser-body { padding: 24px 26px; }
+.approach-brief-browser-body > span { color: #ff5148; font-size: 8px; font-weight: 600; }
+.approach-brief-browser-body > strong { display: block; margin-top: 13px; font-size: 29px; line-height: .97; letter-spacing: -.055em; }
+.approach-brief-browser-body dl { margin: 26px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.approach-brief-browser-body dl div { padding-top: 9px; border-top: 1px solid #d4d6dc; }
+.approach-brief-browser-body dt { color: #92949c; font-size: 7px; }
+.approach-brief-browser-body dd { margin: 5px 0 0; font-size: 8px; font-weight: 600; }
+
+.approach-explorer {
+  z-index: 3;
+  width: min(700px, 68vw);
+  height: min(390px, 45vh);
+  min-height: 350px;
+  border-color: rgba(255, 255, 255, .28);
+  border-radius: 12px;
+  background: rgba(246, 247, 249, .98);
+  transform: translateZ(45px) rotateX(1.5deg);
+}
+
+.approach-explorer__titlebar {
+  height: 38px;
+  padding-left: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9dce2;
+  background: #e9ebf0;
   font-size: 9px;
 }
 
-.approach-brief-ticket {
-  position: absolute;
+.approach-explorer__app { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.approach-explorer__app i,
+.approach-explorer__toolbar div i { width: 15px; height: 11px; border-radius: 2px; background: #f4c64e; box-shadow: inset 0 2px rgba(255,255,255,.38); }
+.approach-explorer__controls { align-self: stretch; display: grid; grid-template-columns: repeat(3, 42px); }
+.approach-explorer__controls i { position: relative; }
+.approach-explorer__controls i::after { content: ''; position: absolute; inset: 50% auto auto 50%; width: 8px; height: 1px; background: #777a82; transform: translate(-50%, -50%); }
+.approach-explorer__controls i:nth-child(2)::after { height: 7px; border: 1px solid #777a82; background: transparent; }
+.approach-explorer__controls i:nth-child(3)::after { width: 9px; height: 9px; background: linear-gradient(45deg, transparent 45%, #777a82 46% 54%, transparent 55%), linear-gradient(-45deg, transparent 45%, #777a82 46% 54%, transparent 55%); }
+
+.approach-explorer__toolbar {
+  height: 44px;
+  padding: 0 13px;
   display: grid;
-  gap: 5px;
-  min-width: 160px;
-  padding: 18px 20px;
-  color: #15161b;
-  background: #f4c64e;
-  box-shadow: 0 20px 44px rgba(0, 0, 0, .38);
-}
-
-.approach-brief-ticket span { font-size: 9px; opacity: .62; }
-.approach-brief-ticket strong { font-size: 16px; font-weight: 600; letter-spacing: -.04em; }
-.approach-brief-ticket--goal { top: 8%; right: 5%; transform: rotate(7deg); }
-.approach-brief-ticket--date { left: 4%; bottom: 5%; color: #fff; background: #ff5148; transform: rotate(-8deg); }
-
-.approach-brief-signal {
-  position: absolute;
-  right: 2%;
-  bottom: 7%;
-  display: flex;
+  grid-template-columns: 18px 18px 18px 1fr 22px;
+  align-items: center;
   gap: 6px;
+  border-bottom: 1px solid #e0e2e7;
+  color: #737680;
+  font-size: 13px;
 }
 
-.approach-brief-signal span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff5148;
-  animation: approach-signal 1.6s ease-in-out infinite;
+.approach-explorer__toolbar div { min-width: 0; padding: 8px 10px; display: flex; align-items: center; gap: 7px; overflow: hidden; border: 1px solid #dcdfe5; border-radius: 5px; background: #fff; font-size: 8px; white-space: nowrap; }
+.approach-explorer__toolbar div b { color: #a2a4ab; font-size: 10px; }
+
+.approach-explorer__body { height: calc(100% - 106px); display: grid; grid-template-columns: 132px 1fr; }
+.approach-explorer__body aside { padding: 15px 10px; display: grid; align-content: start; gap: 4px; border-right: 1px solid #e0e2e7; color: #737680; font-size: 8px; }
+.approach-explorer__body aside span,
+.approach-explorer__body aside strong { padding: 7px 10px; border-radius: 4px; font-weight: 500; }
+.approach-explorer__body aside strong { color: #26282e; background: #dfe9f8; }
+
+.approach-explorer__files { padding: 22px 20px 58px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; align-content: start; }
+.approach-file { min-width: 0; display: grid; justify-items: center; gap: 5px; color: #373941; text-align: center; font-size: 8px; }
+.approach-file > i { width: 58px; height: 48px; display: grid; place-items: center; border-radius: 4px; font-style: normal; font-size: 11px; font-weight: 700; }
+.approach-file > span { width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.approach-file small { color: #9b9da5; font-size: 7px; }
+.approach-file--folder > i { position: relative; width: 62px; height: 45px; margin-top: 3px; border-radius: 4px 5px 5px 5px; background: #f1bd45; box-shadow: inset 0 4px rgba(255,255,255,.2); }
+.approach-file--folder > i::before { content: ''; position: absolute; top: -6px; left: 3px; width: 27px; height: 10px; border-radius: 3px 4px 0 0; background: #dba52d; }
+.approach-file--image > i { background: url('/approach/portfolio/build-atuendo.webp') center / cover; }
+.approach-file--document > i { color: #fff; background: #e45d55; }
+
+.approach-explorer__status { position: absolute; left: 0; right: 0; bottom: 0; height: 24px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e1e3e8; color: #8f9199; background: #f8f8fa; font-size: 7px; }
+
+.approach-explorer-save {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 20px;
+  width: min(360px, calc(100% - 36px));
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: 38px 1fr 30px;
+  align-items: center;
+  gap: 10px;
+  color: #f7f6f2;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  background: rgba(24, 25, 31, .94);
+  box-shadow: 0 18px 40px rgba(0,0,0,.34);
+  backdrop-filter: blur(14px);
+  transform: translateX(-50%);
+  animation: approach-save-in .75s cubic-bezier(.16, 1, .3, 1) both;
 }
 
-.approach-brief-signal span:nth-child(2) { animation-delay: .16s; }
-.approach-brief-signal span:nth-child(3) { animation-delay: .32s; }
+.approach-explorer-save__thumb { width: 38px; height: 32px; border-radius: 4px; background: url('/approach/portfolio/sketch-all-organics.webp') center 38% / cover; }
+.approach-explorer-save > div { min-width: 0; display: grid; gap: 3px; }
+.approach-explorer-save > div > span { color: #a5a7af; font-size: 7px; }
+.approach-explorer-save strong { overflow: hidden; font-size: 8px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.approach-explorer-save > div > i { height: 2px; overflow: hidden; border-radius: 4px; background: rgba(255,255,255,.13); }
+.approach-explorer-save > div > i b { display: block; width: 76%; height: 100%; background: #ff5148; transform-origin: left; animation: approach-save-progress 1.5s cubic-bezier(.16, 1, .3, 1) both; }
+.approach-explorer-save em { color: #f4c64e; font-size: 8px; font-style: normal; text-align: right; }
 
-@keyframes approach-signal { 50% { opacity: .28; transform: scale(.72); } }
+@keyframes approach-save-in { from { opacity: 0; transform: translate(-50%, 15px) scale(.96); } }
+@keyframes approach-save-progress { from { transform: scaleX(.16); } to { transform: scaleX(1); } }
 
 .approach-object--direction { perspective: 1300px; }
 
 .approach-direction-panel {
   position: absolute;
-  width: min(440px, 40vw);
-  aspect-ratio: 4 / 3;
+  width: min(300px, 27vw);
+  height: min(44vh, 440px);
   margin: 0;
   overflow: hidden;
   border: 5px solid #f7f6f2;
   border-radius: 5px;
-  background: #fff;
+  background: #e9e3d8;
   box-shadow: 0 30px 70px rgba(0, 0, 0, .5);
   transition: transform .55s cubic-bezier(.16, 1, .3, 1), filter .4s ease;
 }
 
 .approach-direction-panel img { width: 100%; height: 100%; object-fit: cover; }
-.approach-direction-panel--left { transform: translateX(-54%) rotateY(18deg) rotateZ(-7deg) scale(.76); filter: saturate(.55) brightness(.7); }
-.approach-direction-panel--right { transform: translateX(54%) rotateY(-18deg) rotateZ(7deg) scale(.76); filter: saturate(.55) brightness(.7); }
-.approach-direction-panel--focus { z-index: 2; transform: translateZ(55px); }
+.approach-direction-panel--left { transform: translateX(-72%) rotateY(18deg) rotateZ(-6deg) scale(.82); filter: brightness(.72); }
+.approach-direction-panel--right { transform: translateX(72%) rotateY(-18deg) rotateZ(6deg) scale(.82); filter: brightness(.72); }
+.approach-direction-panel--focus { z-index: 2; transform: translateZ(55px) scale(1.03); }
 .approach-direction-panel--focus figcaption {
   position: absolute;
   right: 12px;
@@ -252,27 +328,8 @@
   font-weight: 600;
 }
 
-.approach-object--direction:hover .approach-direction-panel--left { transform: translateX(-60%) rotateY(14deg) rotateZ(-8deg) scale(.78); }
-.approach-object--direction:hover .approach-direction-panel--right { transform: translateX(60%) rotateY(-14deg) rotateZ(8deg) scale(.78); }
-
-.approach-direction-swatches {
-  position: absolute;
-  z-index: 4;
-  bottom: 3%;
-  left: 50%;
-  display: flex;
-  gap: 6px;
-  padding: 7px;
-  border-radius: 999px;
-  background: rgba(18, 19, 25, .82);
-  backdrop-filter: blur(12px);
-  transform: translateX(-50%);
-}
-
-.approach-direction-swatches span { width: 18px; height: 18px; border-radius: 50%; background: #a89b94; }
-.approach-direction-swatches span:nth-child(2) { background: #d7b5a4; }
-.approach-direction-swatches span:nth-child(3) { background: #e7e3dc; }
-.approach-direction-swatches span:nth-child(4) { background: #323238; }
+.approach-object--direction:hover .approach-direction-panel--left { transform: translateX(-79%) rotateY(12deg) rotateZ(-7deg) scale(.84); filter: brightness(.9); }
+.approach-object--direction:hover .approach-direction-panel--right { transform: translateX(79%) rotateY(-12deg) rotateZ(7deg) scale(.84); filter: brightness(.9); }
 
 .approach-object--build { width: min(1000px, 86vw); }
 .approach-bounce-cards { transform: translateZ(0); }
@@ -390,9 +447,9 @@
 @media (max-width: 900px) {
   .approach-runway__frame { width: calc(100% - 48px); padding-top: 82px; }
   .approach-object { width: 92vw; }
-  .approach-brief-ticket--goal { right: 1%; }
-  .approach-brief-ticket--date { left: 1%; }
-  .approach-direction-panel { width: min(430px, 54vw); }
+  .approach-browser { width: 300px; height: 230px; }
+  .approach-explorer { width: min(700px, 78vw); }
+  .approach-direction-panel { width: min(300px, 35vw); }
   .approach-object--build { width: 100%; }
 }
 
@@ -406,22 +463,37 @@
   }
   .approach-runway__topline h2 { font-size: 11px; }
   .approach-object { width: 100%; height: min(48vh, 410px); min-height: 320px; }
-  .approach-brief-sheet { width: 82vw; padding: 24px; transform: rotateZ(-2deg); }
-  .approach-brief-sheet > strong { margin-top: 26px; font-size: 32px; }
-  .approach-brief-lines { margin-top: 18px; gap: 7px; }
-  .approach-brief-tags { left: 24px; bottom: 20px; }
-  .approach-brief-tags span { padding: 6px 8px; font-size: 8px; }
-  .approach-brief-ticket { min-width: 116px; padding: 12px 14px; }
-  .approach-brief-ticket strong { font-size: 12px; }
-  .approach-brief-ticket--goal { top: 4%; right: -2%; }
-  .approach-brief-ticket--date { left: -1%; bottom: 5%; }
-  .approach-brief-signal { display: none; }
-  .approach-direction-panel { width: 72vw; }
-  .approach-direction-panel--left { transform: translateX(-38%) rotateY(15deg) rotateZ(-6deg) scale(.66); }
-  .approach-direction-panel--right { transform: translateX(38%) rotateY(-15deg) rotateZ(6deg) scale(.66); }
+  .approach-object--brief { width: 100vw; }
+  .approach-browser { top: 2%; width: 225px; height: 160px; opacity: .38; }
+  .approach-browser--references { left: -24px; transform: rotateZ(-7deg); }
+  .approach-browser--brief { right: -24px; transform: rotateZ(7deg); }
+  .approach-object--brief:hover .approach-browser--references { opacity: .5; transform: rotateZ(-7deg); }
+  .approach-object--brief:hover .approach-browser--brief { opacity: .5; transform: rotateZ(7deg); }
+  .approach-window-bar { height: 27px; grid-template-columns: 50px 1fr 12px; }
+  .approach-browser-address { height: 30px; }
+  .approach-reference-grid { height: calc(100% - 57px); padding: 6px; gap: 4px; }
+  .approach-brief-browser-body { padding: 13px 16px; }
+  .approach-brief-browser-body > strong { margin-top: 7px; font-size: 19px; }
+  .approach-brief-browser-body dl { margin-top: 12px; }
+  .approach-explorer { width: calc(100vw - 36px); height: 315px; min-height: 315px; border-radius: 9px; transform: none; }
+  .approach-explorer__titlebar { height: 33px; }
+  .approach-explorer__controls { grid-template-columns: repeat(3, 28px); }
+  .approach-explorer__toolbar { height: 39px; grid-template-columns: 15px 15px 15px 1fr 18px; padding: 0 9px; gap: 4px; }
+  .approach-explorer__toolbar div { padding: 7px; }
+  .approach-explorer__body { height: calc(100% - 96px); grid-template-columns: 1fr; }
+  .approach-explorer__body aside { display: none; }
+  .approach-explorer__files { padding: 18px 12px 62px; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .approach-file > i { width: 46px; height: 38px; }
+  .approach-file--folder > i { width: 48px; height: 35px; }
+  .approach-file > span { font-size: 7px; }
+  .approach-explorer-save { bottom: 18px; width: calc(100% - 28px); grid-template-columns: 32px 1fr 28px; padding: 8px 9px; }
+  .approach-explorer-save__thumb { width: 32px; height: 28px; }
+  .approach-direction-panel { width: 54vw; height: 330px; }
+  .approach-direction-panel--left { transform: translateX(-46%) rotateY(15deg) rotateZ(-6deg) scale(.7); }
+  .approach-direction-panel--right { transform: translateX(46%) rotateY(-15deg) rotateZ(6deg) scale(.7); }
   .approach-direction-panel--focus { transform: translateZ(35px) scale(.9); }
-  .approach-object--direction:hover .approach-direction-panel--left { transform: translateX(-40%) rotateY(15deg) rotateZ(-6deg) scale(.66); }
-  .approach-object--direction:hover .approach-direction-panel--right { transform: translateX(40%) rotateY(-15deg) rotateZ(6deg) scale(.66); }
+  .approach-object--direction:hover .approach-direction-panel--left { transform: translateX(-48%) rotateY(15deg) rotateZ(-6deg) scale(.7); }
+  .approach-object--direction:hover .approach-direction-panel--right { transform: translateX(48%) rotateY(-15deg) rotateZ(6deg) scale(.7); }
   .approach-object--build { width: 100%; max-width: 100%; transform: none; }
   .approach-build-count { display: none; }
   .approach-delivery-folder { transform: scale(.86); }
@@ -445,7 +517,8 @@
   .approach-runway__frame { min-height: 720px; }
   .approach-runway__visual,
   .approach-runway__caption,
-  .approach-brief-signal span { animation: none; }
+  .approach-explorer-save,
+  .approach-explorer-save > div > i b { animation: none; }
   .approach-direction-panel,
   .approach-runway__progress i { transition: none; }
 }
