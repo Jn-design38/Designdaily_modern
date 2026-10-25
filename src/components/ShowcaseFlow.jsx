@@ -8,10 +8,11 @@ import { Arrow, Check, Star } from './Icons';
 import { Artwork } from './Portfolio';
 import SpecularButton from './SpecularButton';
 import BounceCards from './BounceCards';
-import { ScopeSection, ApproachSection, BatchSection, PackageGuide, StudioFAQ } from './BulkStudio';
+import { ScopeSection, ApproachSection, PackageGuide, StudioFAQ } from './BulkStudio';
 import StudioSignature from './StudioSignature';
 import InquiryStudio from './InquiryStudio';
 import AnimatedContent from './reactbits/AnimatedContent';
+import { MOBILE_SHOWCASE_QUERY, mobileShowcasePath, animateMobileShowcase } from './mobileShowcaseFlow';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,18 +105,12 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
         const origin = root.getBoundingClientRect();
         const rootW = root.clientWidth;
         const rootH = root.scrollHeight;
-        const isMobile = window.innerWidth < 640;
+        const isMobile = window.matchMedia(MOBILE_SHOWCASE_QUERY).matches;
 
         setSize({ width: rootW, height: rootH });
 
         if (isMobile) {
-          // Single left rail on mobile
-          const startEl = root.querySelector('[data-flow-start]');
-          const endBtn = root.querySelector('.flow-order-now-btn');
-          if (!startEl || !endBtn) return;
-          const startY = startEl.getBoundingClientRect().bottom - origin.top + 8;
-          const endY = endBtn.getBoundingClientRect().top - origin.top + 16;
-          setTrailPath(`M 24 ${startY} V ${endY}`);
+          setTrailPath(mobileShowcasePath(root));
           return;
         }
 
@@ -256,6 +251,10 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
 
     pathEl.style.strokeDasharray = `${totalLength}`;
     pathEl.style.strokeDashoffset = `${totalLength}`;
+
+    if (window.matchMedia(MOBILE_SHOWCASE_QUERY).matches) {
+      return animateMobileShowcase(root, pathEl, totalLength);
+    }
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
@@ -423,7 +422,7 @@ function ShowcaseRow({ item, index, total }) {
   const isOdd = index % 2 === 1; // 0, 2, 4: Pill on Left, Card on Right. 1, 3, 5: Card on Left, Pill on Right.
   const project = getItemProject(item, projects);
   const images = getItemImages(item, projects);
-  const lead = images[0];
+  const lead = item.thumbnail || images[0];
 
   return (
     <div
@@ -666,7 +665,6 @@ export default function ShowcaseFlow({ service, setService }) {
 
       <ScopeSection setService={setService} />
       <ApproachSection />
-      <BatchSection setService={setService} />
 
       {/* 4.8. Scale Benefit Section (Good design. A clearer direction.) with BounceCards */}
       <section className="scale-benefit wrap" aria-labelledby="scale-title">

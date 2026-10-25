@@ -11,6 +11,12 @@ export const showcaseItems = [
     teaser: 'Crafted for perfection',
     brief: 'Artisanal cafe branding, packaging, and interior identity rooted in sensory delight and hand-crafted craft.',
     projectId: 'tripty',
+    thumbnail: {
+      src: '/covers/social-tripty-campaign.jpg',
+      alt: 'Tripty Social Campaign Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 1, 3]
   },
   {
@@ -29,6 +35,12 @@ export const showcaseItems = [
     teaser: 'Modern architectural poise',
     brief: 'Architectural and interior atelier identity defined by balanced geometry, editorial layouts, and timeless typography.',
     projectId: 'norea',
+    thumbnail: {
+      src: '/covers/brand-identity-norea.jpg',
+      alt: 'Noréa Brand Identity Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 1, 7]
   },
   {
@@ -38,6 +50,12 @@ export const showcaseItems = [
     teaser: 'Linen power & tailored poise',
     brief: 'Contemporary fashion and bespoke apparel branding with understated typography and monochrome luxury.',
     projectId: 'atuendo',
+    thumbnail: {
+      src: '/covers/brand-identity-atuendo.jpg',
+      alt: 'Atuendo Brand Identity Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 1, 4]
   },
   {
@@ -47,6 +65,12 @@ export const showcaseItems = [
     teaser: 'Casual luxury & warmth',
     brief: 'Hospitality and lounge branding merging playful mid-century character with modern urban aesthetics.',
     projectId: 'sandbox',
+    thumbnail: {
+      src: '/covers/brand-identity-sandbox-lounge.jpg',
+      alt: 'Sandbox Lounge Brand Identity Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 2, 4]
   },
 
@@ -59,6 +83,12 @@ export const showcaseItems = [
     teaser: 'packaging & merch',
     brief: 'Luxury black-and-silver product packaging with custom dielines, tactile unboxing, and embossed finishes.',
     projectId: 'finn',
+    thumbnail: {
+      src: '/covers/packaging-finn-gift-box.jpg',
+      alt: 'Finn Gift Box Packaging Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 1, 2]
   },
   {
@@ -68,6 +98,12 @@ export const showcaseItems = [
     teaser: 'Form meets botanical function',
     brief: 'Glass bottle packaging and tactile product labels engineered for memorable shelf presence.',
     projectId: 'zaro',
+    thumbnail: {
+      src: '/covers/tshirt-zaro-activewear.jpg',
+      alt: 'Zaro Activewear T-Shirt Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 3, 5]
   },
   {
@@ -77,6 +113,12 @@ export const showcaseItems = [
     teaser: 'Wearable character',
     brief: 'Organic cotton t-shirt illustrations, graphic prints, and custom apparel badges people want to wear.',
     projectId: 'goodybro',
+    thumbnail: {
+      src: '/covers/tshirt-goodybro-create-goodness.jpg',
+      alt: 'Goodybro Create Goodness T-Shirt Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 2, 4]
   },
 
@@ -89,6 +131,12 @@ export const showcaseItems = [
     teaser: 'social media Creatives',
     brief: 'High-end real estate social campaigns featuring architectural layouts and consistent luxury tones.',
     projectId: 'aves',
+    thumbnail: {
+      src: '/covers/social-aves-real-estate.jpg',
+      alt: 'AVES Real Estate Social Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 1, 2]
   },
   {
@@ -98,16 +146,13 @@ export const showcaseItems = [
     teaser: 'Carry with confidence',
     brief: 'Curated social media product story with high-converting static carousel compositions and editorial angles.',
     projectId: 'seor',
+    thumbnail: {
+      src: '/covers/SEOR.png',
+      alt: 'Seor Campaign Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [0, 3, 4]
-  },
-  {
-    id: 'seor-sleep',
-    brandName: 'Sleep Mask',
-    discipline: 'Social creatives',
-    teaser: 'Rest, considered',
-    brief: 'Minimalist bedtime product campaign focusing on comfort, nighttime calm, and essential wellness.',
-    projectId: 'seor-sleep',
-    featuredIndices: [0, 1, 2]
   },
 
   // 4. BANNERS
@@ -118,11 +163,22 @@ export const showcaseItems = [
     teaser: 'Make the message fit the space',
     brief: 'Widescreen 16:9 banner campaigns and responsive display ads for premium accessories and phone covers.',
     projectId: 'apple-gears',
+    thumbnail: {
+      src: '/covers/social-applegears-campaign.png',
+      alt: 'Apple Gears Social Campaign Cover',
+      width: 1920,
+      height: 1080
+    },
     featuredIndices: [1, 2, 3]
   }
 ];
 
 export function getItemImages(item, projects) {
+  if (item.thumbnail) {
+    const project = projects.find(p => p.id === item.projectId);
+    const rest = project && item.featuredIndices ? item.featuredIndices.map(idx => project.images[idx]).filter(Boolean) : [];
+    return [item.thumbnail, ...rest];
+  }
   const project = projects.find(p => p.id === item.projectId);
   if (!project) return [];
   if (item.featuredIndices && item.featuredIndices.length) {

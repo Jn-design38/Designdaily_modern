@@ -8,9 +8,9 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
-const source = join(projectRoot, '.tmp', 'scroll-expand-brand-thread-source.png');
+const source = process.argv[2] || join(projectRoot, '.tmp', 'scroll-expand-brand-thread-source.png');
 const outputRoot = join(projectRoot, 'public', 'scroll-expand');
-const output = join(outputRoot, 'brand-thread-v1.webp');
+const output = join(outputRoot, process.argv[3] || 'brand-thread-v1.webp');
 
 await mkdir(outputRoot, { recursive: true });
 

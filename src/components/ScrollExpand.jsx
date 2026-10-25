@@ -74,14 +74,22 @@ const ScrollExpand = ({
     const r = c.startRadius + (c.endRadius - c.startRadius) * e;
     frame.style.clipPath = `inset(${iy}% ${ix}% ${iy}% ${ix}% round ${r}px)`;
 
+    if (stageRef.current) {
+      stageRef.current.style.setProperty('--se-card-left', `${ix}%`);
+      stageRef.current.style.setProperty('--se-card-top', `${iy}%`);
+      stageRef.current.style.setProperty('--se-card-width', `${w}%`);
+      stageRef.current.style.setProperty('--se-card-height', `${h}%`);
+      stageRef.current.style.setProperty('--se-card-radius', `${r}px`);
+    }
+
     media.style.transform = `scale(${c.mediaZoom + (1 - c.mediaZoom) * e})`;
 
     if (scrimRef.current) scrimRef.current.style.opacity = `${c.overlayScrim * e}`;
 
     if (titleRef.current) {
-      const out = smoothstep(0.4, 0.88, p);
+      const out = smoothstep(0.28, 0.58, p);
       titleRef.current.style.opacity = `${1 - out}`;
-      titleRef.current.style.transform = `translate3d(0, ${-28 * out}px, 0) scale(${1 + 0.06 * out})`;
+      titleRef.current.style.transform = `translate3d(0, ${-16 * out}px, 0)`;
     }
 
     if (hintRef.current) {
@@ -91,7 +99,7 @@ const ScrollExpand = ({
     }
 
     if (overlayRef.current) {
-      const inn = smoothstep(0.68, 1, p);
+      const inn = smoothstep(0.62, 0.92, p);
       overlayRef.current.style.opacity = `${inn}`;
       overlayRef.current.style.transform = `translate3d(0, ${18 * (1 - inn)}px, 0)`;
     }
@@ -120,6 +128,16 @@ const ScrollExpand = ({
 
       const w = root.clientWidth || stageH;
       stage.style.setProperty('--se-title-size', `${clamp(w * 0.075, 20, 84)}px`);
+
+      const initW = c.startWidth;
+      const initH = c.startHeight;
+      const initIx = Math.max(0, (100 - initW) / 2);
+      const initIy = Math.max(0, (100 - initH) / 2);
+      stage.style.setProperty('--se-card-left', `${initIx}%`);
+      stage.style.setProperty('--se-card-top', `${initIy}%`);
+      stage.style.setProperty('--se-card-width', `${initW}%`);
+      stage.style.setProperty('--se-card-height', `${initH}%`);
+      stage.style.setProperty('--se-card-radius', `${c.startRadius}px`);
     };
 
     const readProgress = () => {

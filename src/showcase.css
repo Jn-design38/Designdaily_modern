@@ -1783,3 +1783,74 @@
     justify-content: center;
   }
 }
+
+/* Mobile circuit: centered content and clear lanes for the hand-drawn S turns. */
+@media (max-width: 900px) {
+  .showcase-flow-container .flow-wireframe-header-section,
+  .showcase-flow-container .flow-wireframe-items-wrapper {
+    width: calc(100% - 40px);
+    max-width: 640px;
+    padding: 0;
+    margin-inline: auto;
+  }
+  .showcase-flow-container .flow-wireframe-header-section { margin-bottom: 0; }
+  .showcase-flow-container .flow-wireframe-topbar {
+    align-items: center;
+    gap: 52px;
+    margin-bottom: 0;
+  }
+  .showcase-flow-container .flow-sketch-bridge {
+    height: 176px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .showcase-flow-container .bridge-pill-tag {
+    max-width: calc(100% - 64px);
+    padding: 10px 16px;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .showcase-flow-container .bridge-pill-tag span,
+  .showcase-flow-container .bridge-pill-tag .specular-button__label {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .showcase-flow-container .flow-wireframe-row,
+  .showcase-flow-container .flow-wireframe-row.flow-reverse {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .showcase-flow-container .flow-wireframe-meta-col {
+    padding: 0;
+    min-width: 0;
+  }
+  .showcase-flow-container .flow-wireframe-pill-wrap { margin-bottom: 24px; }
+  .showcase-flow-container .flow-item-brief-card {
+    width: min(290px, calc(100% - 40px));
+    padding: 18px 20px;
+    background: #12131b;
+  }
+  .showcase-flow-container .flow-item-brief { font-size: 12px; line-height: 1.65; }
+  .showcase-flow-container .flow-wireframe-card,
+  .showcase-flow-container .flow-card-image-link { border-radius: 18px; }
+  .showcase-flow-container .flow-card-image-link { aspect-ratio: 16 / 10; max-height: none; }
+  .showcase-flow-container .flow-wireframe-card:hover { transform: none; }
+  .showcase-flow-container .flow-card-bottom-info { padding: 16px 18px; }
+  .showcase-flow-container .flow-card-overlay-title { font-size: 19px; margin-bottom: 4px; }
+  .showcase-flow-container .flow-card-overlay-desc { font-size: 11px; line-height: 1.45; }
+  .showcase-flow-container > [data-flow-bridge-quote] {
+    width: calc(100% - 40px);
+    max-width: 640px;
+    margin-inline: auto;
+  }
+  .showcase-flow-container .flow-quote-finale {
+    width: calc(100% - 64px);
+    max-width: 480px;
+    padding: 0;
+    margin: 0 auto 64px;
+  }
+  .showcase-flow-container .flow-quote-card { padding: 28px 22px; }
+  .showcase-flow-container .flow-quote-title { font-size: clamp(28px, 7vw, 36px); }
+  .showcase-flow-container .flow-quote-desc { font-size: 13px; }
+}

@@ -5,8 +5,8 @@ export default function StudioQuoteExpand() {
   return (
     <section id="studio-quote" className="studio-quote" aria-label="Design Daily principle">
       <ScrollExpand
-        src="/scroll-expand/brand-thread-v1.webp"
-        alt="A coral ribbon connecting packaging, paper, a card, fabric and a digital display in a dark studio"
+        src="/scroll-expand/studio-brand-world-v2.webp"
+        alt="Design Daily artwork brought together: Atuendo packaging, Noréa identity, Tripty food packaging, Sandbox stationery and GoodyBro illustrated apparel in a dark studio"
         title={<span>One idea.<br />Every appearance.</span>}
         scrollHint="Scroll to expand"
         startWidth={56}

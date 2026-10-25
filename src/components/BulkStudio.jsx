@@ -13,9 +13,9 @@ import './ApproachSection.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const scopes = [
-  { title: 'Show up every day.', name: 'Monthly content', text: 'A recognisable feed. A steady flow of fresh design.', tags: ['Social posts', 'Carousels', 'Campaign graphics'], image: '/work/seor/cover.webp', accent: '#bfad8b', service: 'Growth Package' },
-  { title: 'Make your next launch count.', name: 'Campaign batches', text: 'One idea, considered across every place it appears.', tags: ['Product launches', 'Seasonal offers', 'Ad variations'], image: '/work/aves/cover.webp', accent: '#b5bcff', service: 'Custom batch' },
-  { title: 'Build something recognisable.', name: 'Brand & print', text: 'From the first mark to the details people take home.', tags: ['Identity', 'Packaging', 'Merchandise'], image: '/work/tripty/05.webp', accent: '#ffb6af', service: 'Brand identity' }
+  { title: 'Build something recognisable.', name: 'Brand & print', text: 'From the first mark to the details people take home.', image: '/scope/tripty-packaging.webp' },
+  { title: 'Show up every day.', name: 'Monthly content', text: 'A recognisable feed. A steady flow of fresh design.', tags: ['Social posts', 'Carousels', 'Campaign graphics'], image: '/scope/monthly-content-calendar-transparent.webp', accent: '#bfad8b', service: 'Growth Package' },
+  { title: 'Make your next launch count.', name: 'Campaign batches', text: 'One idea, considered across every place it appears.', tags: ['Product launches', 'Seasonal offers', 'Ad variations'], image: '/scope/applegears-social-campaign.webp', accent: '#b5bcff', service: 'Custom batch' },
 ];
 
 export function jumpToInquiry(service, setService) {
@@ -23,7 +23,7 @@ export function jumpToInquiry(service, setService) {
   document.getElementById('contact')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 }
 
-export function ScopeSection({ setService }) {
+export function ScopeSection() {
   const [active, setActive] = useState(0);
   const item = scopes[active];
   return (
@@ -32,15 +32,12 @@ export function ScopeSection({ setService }) {
       <div className="scope-layout">
         <div className="scope-menu">
           {scopes.map((scope, i) => <button key={scope.name} type="button" aria-pressed={active === i} onClick={() => setActive(i)} className={`scope-option ${active === i ? 'is-active' : ''}`}><span>{scope.name}</span><Arrow diagonal /></button>)}
-          <div className="scope-details" aria-live="polite"><h3>{item.title}</h3><p>{item.text}</p><div className="bulk-tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
-          <SpecularButton size="md" radius={999} lineColor="#ff4c42" onClick={() => jumpToInquiry(item.service, setService)}>Let's talk about it <Arrow diagonal /></SpecularButton>
+          <div className="scope-details" aria-live="polite"><h3>{item.title}</h3><p>{item.text}</p></div>
         </div>
         <AnimatedContent className="scope-art-shell" tilt={10} distance={35} duration={0.9}>
-          <TiltedCard key={item.image} imageSrc={item.image} altText={`${item.name}: selected Design Daily portfolio artwork`} containerWidth="100%" containerHeight="100%" imageWidth="100%" imageHeight="100%" showTooltip={false} rotateAmplitude={5} scaleOnHover={1.015} radius={24} intro={false} gyroscope={false} className="scope-art" />
-          <span className="scope-art-caption">Selected work / {item.name}</span>
+          <TiltedCard key={item.image} imageSrc={item.image} altText={`${item.name}: selected Design Daily portfolio artwork`} containerWidth="100%" containerHeight="100%" imageWidth="100%" imageHeight="100%" showTooltip={false} rotateAmplitude={5} scaleOnHover={1.015} radius={0} shadow={0} intro={false} gyroscope={false} className="scope-art scope-art--cutout" />
         </AnimatedContent>
       </div>
-      <div className="scope-assurances"><span><i /> Direct designer access</span><span><i /> Priced in BDT</span><span><i /> Scope agreed upfront</span></div>
     </section>
   );
 }

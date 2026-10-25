@@ -21,7 +21,7 @@ const marks = [
   { name: 'finn', input: '../designdaily-repo/assets/work/logos/finn.png', crop: { left: 0, top: 0, width: 170, height: 122 } },
   { name: 'fresh-paws', input: '../designdaily-repo/assets/work/logos/fresh-paws.png', crop: { left: 0, top: 0, width: 92, height: 149 } },
   { name: 'monarch', input: '../designdaily-repo/assets/work/logos/monarch.png', crop: { left: 0, top: 0, width: 212, height: 149 } },
-  { name: 'seor', input: '../designdaily-repo/assets/work/logos/seor.png', crop: { left: 32, top: 0, width: 252, height: 218 } },
+  // Seor is extracted from the complete folio seal by prepare-folio-loop-icons.mjs.
   { name: 'steller', input: '../designdaily-repo/assets/work/logos/steller.png', crop: { left: 30, top: 0, width: 160, height: 165 } },
 ];
 

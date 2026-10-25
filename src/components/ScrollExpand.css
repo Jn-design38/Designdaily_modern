@@ -27,6 +27,11 @@
   width: 100%;
   overflow: hidden;
   --se-title-size: 4rem;
+  --se-card-left: 22%;
+  --se-card-top: 21%;
+  --se-card-width: 56%;
+  --se-card-height: 58%;
+  --se-card-radius: 18px;
 }
 
 .scroll-expand__frame {

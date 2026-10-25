@@ -1,6 +1,6 @@
 const originalMarks = [
   {
-    src: '/logo-loop/norea.png',
+    src: '/logo-loop/norea-original.png',
     alt: 'Noréa fashion identity logo',
     title: 'Noréa',
     width: 512,
@@ -56,7 +56,7 @@ const originalMarks = [
     height: 512,
   },
   {
-    src: '/logo-loop/fresh-paws.png',
+    src: '/logo-loop/fresh-paws-original.png',
     alt: 'Fresh Paws identity symbol',
     title: 'Fresh Paws',
     width: 512,
@@ -85,4 +85,47 @@ const originalMarks = [
   },
 ];
 
-export default originalMarks;
+// Additional identities verified against the owner's LOGO FOLIO sheets.
+const folioMarks = [
+  ['tripty', 'Tripty'],
+  ['slaz', 'Slaz'],
+  ['oxymoron', 'Oxymoron'],
+  ['roasted', 'Roasted'],
+  ['shaad', 'Shaad'],
+  ['daily-bites', 'DailyBites'],
+  ['naogaon-rice', 'Naogaon Rice'],
+  ['aves', 'Aves'],
+  ['gear-nexus', 'Gear Nexus'],
+  ['car-gears', 'Car Gears'],
+  ['triduate', 'Triduate'],
+  ['noor', 'Noor Lifestyles'],
+  ['tunes-360', 'Tunes 360'],
+  ['todays-deals', "Today's Deals"],
+  ['chara-holiday', 'Chara Holiday'],
+  ['mave', 'Mave'],
+  ['batg', 'BATG'],
+  ['big-panda', 'Big Panda Studios'],
+  ['my-limitless-idea', 'My Limitless Idea'],
+  ['floral-commerce', 'Floral commerce identity'],
+  ['zelo', 'Zelo'],
+  ['progista', 'Progista'],
+];
+
+originalMarks.push(...folioMarks.map(([slug, name]) => ({
+  src: `/logo-loop/${slug}.png`,
+  alt: `${name} logo`,
+  title: name,
+  width: 512,
+  height: 512,
+})));
+
+// Keep the small hero strip focused on substantial, readable silhouettes.
+// The complete inventory and original artwork remain available above.
+const heroMarkSlugs = new Set([
+  'norea-original', 'all-organics', 'atuendo', 'sandbox', 'aura',
+  'apple-gears', 'fresh-paws-original', 'monarch', 'steller', 'slaz',
+  'daily-bites', 'car-gears', 'triduate', 'batg',
+  'seor', 'roasted', 'tripty', 'noor', 'tunes-360', 'aves',
+]);
+
+export default originalMarks.filter(mark => heroMarkSlugs.has(mark.src.split('/').pop().replace('.png', '')));

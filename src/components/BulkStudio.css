@@ -160,3 +160,6 @@
   .approach-output{font-size:10px;margin-top:15px}
   .approach-visual-stage{height:min(106vw,520px);min-height:370px;margin:4px -3vw -4px}
 }
+.scope-art.scope-art--cutout .tilted-card__img{background:transparent;object-fit:contain}
+.scope-art--cutout .tilted-card__face{overflow:visible;border-radius:0}
+.scope-art--cutout .tilted-card__rim,.scope-art--cutout .tilted-card__edge,.scope-art--cutout .tilted-card__glare,.scope-art--cutout .tilted-card__shadow{display:none}
