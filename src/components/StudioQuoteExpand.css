@@ -1,0 +1,149 @@
+.studio-quote {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  color: #f7f6f2;
+  background: #090a0e;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  scroll-margin-top: 68px;
+}
+
+.studio-quote__expand {
+  height: auto;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(255, 81, 72, .08), transparent 34%),
+    #090a0e;
+}
+
+.studio-quote__expand .scroll-expand__stage {
+  min-height: 680px;
+}
+
+.studio-quote__expand .scroll-expand__frame {
+  box-shadow: 0 40px 100px rgba(0, 0, 0, .5);
+}
+
+.studio-quote__expand .scroll-expand__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5, 6, 9, .34), transparent 36%, transparent 70%, rgba(5, 6, 9, .2)),
+    linear-gradient(180deg, rgba(5, 6, 9, .28), transparent 32%, rgba(5, 6, 9, .14));
+}
+
+.studio-quote__expand .scroll-expand__scrim { z-index: 2; }
+.studio-quote__expand .scroll-expand__overlay { z-index: 3; }
+
+.studio-quote__expand .scroll-expand__title {
+  z-index: 4;
+  justify-content: flex-start;
+  padding-inline: clamp(28px, 7vw, 112px);
+  color: #f7f6f2;
+  font-family: var(--font-primary, Poppins, sans-serif);
+  font-size: clamp(42px, 6.4vw, 86px) !important;
+  font-weight: 600;
+  line-height: .98;
+  letter-spacing: -.06em;
+  text-align: left;
+  text-shadow: 0 8px 36px rgba(0, 0, 0, .5);
+}
+
+.studio-quote__expand .scroll-expand__title > span {
+  width: min(760px, 58vw);
+  text-wrap: balance;
+}
+
+.studio-quote__expand .scroll-expand__hint {
+  z-index: 4;
+  bottom: clamp(24px, 4vh, 44px);
+  color: rgba(247, 246, 242, .68);
+  font-family: var(--font-primary, Poppins, sans-serif);
+  font-size: 11px;
+}
+
+.studio-quote__expand .scroll-expand__hint::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  margin: 0 10px 3px 0;
+  background: #f4c64e;
+  transform-origin: right;
+  animation: studio-quote-hint 1.8s ease-in-out infinite;
+}
+
+.studio-quote__expand .scroll-expand__overlay {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: clamp(38px, 7vw, 108px);
+  text-align: left;
+}
+
+.studio-quote__copy {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.studio-quote__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(247, 246, 242, .72);
+  font-family: var(--font-primary, Poppins, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.studio-quote__label i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5148;
+  box-shadow: 0 0 0 6px rgba(255, 81, 72, .14), 0 0 24px rgba(255, 81, 72, .5);
+}
+
+.studio-quote__copy blockquote {
+  max-width: 1100px;
+  margin: 24px 0 0;
+  color: #f7f6f2;
+  font-family: var(--font-primary, Poppins, sans-serif);
+  font-size: clamp(38px, 5.15vw, 76px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+  text-shadow: 0 10px 42px rgba(0, 0, 0, .54);
+}
+
+@keyframes studio-quote-hint {
+  50% { transform: scaleX(.42); opacity: .45; }
+}
+
+@media (max-width: 700px) {
+  .studio-quote__expand .scroll-expand__stage { min-height: 620px; }
+  .studio-quote__expand .scroll-expand__title {
+    align-items: flex-end;
+    padding: 0 22px 20vh;
+    font-size: clamp(36px, 11vw, 52px) !important;
+  }
+  .studio-quote__expand .scroll-expand__title > span { width: 100%; }
+  .studio-quote__expand .scroll-expand__overlay { padding: 30px 22px 76px; }
+  .studio-quote__label { font-size: 10px; }
+  .studio-quote__copy blockquote { margin-top: 18px; font-size: clamp(31px, 8.4vw, 44px); line-height: 1.05; }
+  .studio-quote__expand .scroll-expand__media { object-position: 52% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-quote__expand .scroll-expand__track { height: 100svh !important; }
+  .studio-quote__expand .scroll-expand__stage { position: relative; height: 100svh !important; }
+  .studio-quote__expand .scroll-expand__frame { clip-path: none !important; }
+  .studio-quote__expand .scroll-expand__media { transform: none !important; }
+  .studio-quote__expand .scroll-expand__overlay { opacity: 1 !important; transform: none !important; }
+  .studio-quote__expand .scroll-expand__title,
+  .studio-quote__expand .scroll-expand__hint { display: none; }
+  .studio-quote__expand .scroll-expand__hint::before { animation: none; }
+}

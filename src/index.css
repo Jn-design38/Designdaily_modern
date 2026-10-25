@@ -25,14 +25,14 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:110px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:110px;-webkit-font-smoothing:antialiased;overflow-x:clip}
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
-body{min-width:320px;font-size:16px;line-height:1.7;background:#fff;color:var(--ink);overflow-x:hidden}
-.app-layout{position:relative;width:100%;overflow-x:hidden}
+body{min-width:320px;font-size:16px;line-height:1.7;background:#fff;color:var(--ink);overflow-x:clip}
+.app-layout{position:relative;width:100%;overflow-x:clip}
 #main-content{
   position:relative;
   background-image:radial-gradient(circle at 1px 1px, rgba(22,23,27,0.035) 1px, transparent 0);

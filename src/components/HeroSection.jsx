@@ -52,7 +52,7 @@ export default function HeroSection() {
           <a href="#contact" className="hero-cta-btn hero-cta-btn--primary">Start a Project <Arrow diagonal /></a>
           <a href="#works" className="hero-cta-btn hero-cta-btn--secondary">Explore Works</a>
         </div>
-        <a className="hero-scroll-hint" href="#studio-system"><Chevron /> A little further, a lot to see.</a>
+        <a className="hero-scroll-hint" href="#studio-quote"><Chevron /> A little further, a lot to see.</a>
       </div>
       <div id="original-marks" className="hero-bottom-ticker hero-bottom-ticker--logos">
         <LogoLoop

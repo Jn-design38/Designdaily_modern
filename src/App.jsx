@@ -8,6 +8,7 @@ import { WorkArchive, ProjectPage, NotFound } from './components/WorkPages';
 import projects from './data/projects.json';
 import StudioInfo from './components/StudioInfo';
 import StudioPrelude from './components/StudioPrelude';
+import StudioQuoteExpand from './components/StudioQuoteExpand';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
@@ -118,6 +119,7 @@ export default function App() {
         {home ? (
           <>
             <HeroSection />
+            <StudioQuoteExpand />
             <StudioPrelude />
             <ShowcaseFlow service={service} setService={setService} />
           </>
