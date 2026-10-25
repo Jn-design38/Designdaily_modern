@@ -149,7 +149,9 @@ export default function InquiryStudio({ service, setService }) {
                 </div>
                 <div className="inquiry-studio__envelope-front" />
                 <div className="inquiry-studio__envelope-fold" />
-                <span className="inquiry-studio__seal">dd<span>↗</span></span>
+                <span className="inquiry-studio__seal" aria-hidden="true">
+                  <img src="/design-daily-icon-white.svg" alt="" />
+                </span>
                 <span className="inquiry-studio__envelope-note">Your next batch.</span>
               </div>
             </TiltedCard>

@@ -48,7 +48,7 @@
 .inquiry-studio__envelope-front { position: absolute; inset: 0; border-radius: 5px; clip-path: polygon(0 0, 50% 53%, 100% 0, 100% 100%, 0 100%); background: linear-gradient(115deg, #ff7967, #ff4c42 53%, #e33934); transform: translateZ(4px); }
 .inquiry-studio__envelope-fold { position: absolute; inset: 0; clip-path: polygon(0 100%, 48% 43%, 52% 43%, 100% 100%); background: linear-gradient(175deg, #ff8a75, #ff4c42 60%, #ed3c35); transform: translateZ(5px); border-radius: 5px; }
 .inquiry-studio__seal { position: absolute; display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; left: calc(50% - 25px); top: 43%; border: 1px solid #ff9e8d; border-radius: 50%; color: #ffd4c7; background: #dc3832; box-shadow: inset 0 1px 3px #ffb9a450, 0 5px 8px #8b19194a; font-size: 23px; font-weight: 700; letter-spacing: -.12em; transform: translateZ(9px) rotate(-8deg); }
-.inquiry-studio__seal > span { margin: -12px 0 0 3px; font-size: 12px; letter-spacing: 0; }
+.inquiry-studio__seal > img { width: 27px; height: 27px; object-fit: contain; }
 .inquiry-studio__envelope-note { position: absolute; bottom: 10%; left: 9%; color: #591610; font-size: 10px; font-weight: 500; transform: translateZ(6px); }
 .inquiry-studio[data-envelope='writing'] .inquiry-studio__letter { transform: translate3d(0, -34%, 2px); }
 .inquiry-studio[data-envelope='draft'] .inquiry-studio__letter { transform: translate3d(0, -48%, 2px); }
