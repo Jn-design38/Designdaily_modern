@@ -346,25 +346,6 @@
 .approach-object--deliver { height: min(50vh, 480px); }
 .approach-delivery-folder { transform: scale(1.12); }
 
-.approach-delivery-formats {
-  position: absolute;
-  left: 50%;
-  bottom: 2%;
-  display: flex;
-  gap: 7px;
-  transform: translateX(-50%);
-}
-
-.approach-delivery-formats span {
-  min-width: 52px;
-  padding: 8px 10px;
-  border: 1px solid rgba(255, 255, 255, .13);
-  border-radius: 999px;
-  color: #a8a9b1;
-  font-size: 9px;
-  text-align: center;
-}
-
 .approach-runway__caption {
   position: relative;
   z-index: 4;
@@ -497,7 +478,6 @@
   .approach-object--build { width: 100%; max-width: 100%; transform: none; }
   .approach-build-count { display: none; }
   .approach-delivery-folder { transform: scale(.86); }
-  .approach-delivery-formats { bottom: 4%; }
   .approach-runway__caption { display: block; min-height: 58px; }
   .approach-runway__caption h3 { font-size: 25px; }
   .approach-runway__caption p { margin-top: 7px; font-size: 11px; }

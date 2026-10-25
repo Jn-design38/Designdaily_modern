@@ -164,7 +164,6 @@ function DeliverVisual() {
       theme="dark"
       className="approach-delivery-folder"
     />
-    <div className="approach-delivery-formats" aria-hidden="true"><span>RGB</span><span>CMYK</span><span>PDF</span></div>
   </div>;
 }
 
