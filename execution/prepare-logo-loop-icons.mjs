@@ -15,6 +15,14 @@ const marks = [
   { name: 'all-organics', input: 'public/work/all-organics/02.webp', crop: { left: 390, top: 350, width: 260, height: 360 } },
   { name: 'atuendo', input: 'public/work/atuendo/02.webp', crop: { left: 430, top: 335, width: 740, height: 530 } },
   { name: 'sandbox', input: '../Designdaily Assets/Brand Identity/Sandbox Lounge Branding/Logo concept.png', crop: { left: 685, top: 610, width: 220, height: 205 }, threshold: 62, gain: 2.6 },
+  { name: 'alloy', input: '../designdaily-repo/assets/work/logos/alloy.png', crop: { left: 0, top: 0, width: 236, height: 150 } },
+  { name: 'aura', input: '../designdaily-repo/assets/work/logos/aura.png', crop: { left: 0, top: 0, width: 165, height: 200 } },
+  { name: 'apple-gears', input: '../designdaily-repo/assets/work/logos/apple-gears.png', crop: { left: 0, top: 0, width: 140, height: 158 } },
+  { name: 'finn', input: '../designdaily-repo/assets/work/logos/finn.png', crop: { left: 0, top: 0, width: 170, height: 122 } },
+  { name: 'fresh-paws', input: '../designdaily-repo/assets/work/logos/fresh-paws.png', crop: { left: 0, top: 0, width: 92, height: 149 } },
+  { name: 'monarch', input: '../designdaily-repo/assets/work/logos/monarch.png', crop: { left: 0, top: 0, width: 212, height: 149 } },
+  { name: 'seor', input: '../designdaily-repo/assets/work/logos/seor.png', crop: { left: 32, top: 0, width: 252, height: 218 } },
+  { name: 'steller', input: '../designdaily-repo/assets/work/logos/steller.png', crop: { left: 30, top: 0, width: 160, height: 165 } },
 ];
 
 const clamp = value => Math.max(0, Math.min(255, value));
@@ -26,6 +34,7 @@ for (const mark of marks) {
   const source = join(projectRoot, mark.input);
   const { data, info } = await sharp(source)
     .extract(mark.crop)
+    .flatten({ background: { r: 255, g: 255, b: 255 } })
     .removeAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });

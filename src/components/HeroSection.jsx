@@ -59,8 +59,8 @@ export default function HeroSection() {
           logos={originalMarks}
           speed={38}
           direction="left"
-          logoHeight={68}
-          gap={72}
+          logoHeight={42}
+          gap={60}
           pauseOnHover
           fadeOut
           fadeOutWidth={0.035}

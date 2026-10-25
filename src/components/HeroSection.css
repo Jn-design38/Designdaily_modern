@@ -334,12 +334,12 @@
 
 /* The original identity loop replaces the former discipline ticker. */
 .hero-section .hero-container--centered {
-  min-height: calc(100svh - 96px);
+  min-height: calc(100svh - 64px);
 }
 
 .hero-section .hero-bottom-ticker--logos {
-  height: 96px;
-  padding: 9px 0;
+  height: 64px;
+  padding: 6px 0;
   background: rgba(17, 18, 24, .96);
   border-top: 1px solid rgba(255, 255, 255, .1);
   box-shadow: 0 -18px 42px rgba(0, 0, 0, .16);
@@ -428,15 +428,15 @@
     height: 42px;
   }
   .hero-section .hero-container--centered {
-    min-height: calc(100svh - 78px);
+    min-height: calc(100svh - 54px);
   }
   .hero-section .hero-bottom-ticker--logos {
-    height: 78px;
-    padding-block: 7px;
+    height: 54px;
+    padding-block: 5px;
   }
   .hero-logo-loop {
-    --logoloop-logoHeight: 56px !important;
-    --logoloop-gap: 48px !important;
+    --logoloop-logoHeight: 34px !important;
+    --logoloop-gap: 42px !important;
     padding-inline: 10px;
   }
   .hero-logo-loop .logoloop__item img {
