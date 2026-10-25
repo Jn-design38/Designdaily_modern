@@ -1,0 +1,451 @@
+.approach-runway {
+  position: relative;
+  width: 100%;
+  color: #f7f6f2;
+  background: #090a0e;
+  border-block: 1px solid rgba(255, 255, 255, .08);
+  overflow: clip;
+  scroll-margin-top: 72px;
+}
+
+.approach-runway__pin {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px),
+    #090a0e;
+  background-size: 42px 42px;
+}
+
+.approach-runway__frame {
+  position: relative;
+  width: min(1380px, calc(100% - 88px));
+  height: 100%;
+  margin-inline: auto;
+  padding: clamp(84px, 9vh, 108px) 0 24px;
+  display: grid;
+  grid-template-rows: 28px minmax(0, 1fr) auto 70px;
+  gap: 12px;
+}
+
+.approach-runway__topline {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #8f919b;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .08em;
+}
+
+.approach-runway__topline h2 {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0;
+  color: #d9d9dd;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+}
+
+.approach-runway__topline h2 > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff5148;
+  box-shadow: 0 0 0 5px rgba(255, 81, 72, .11), 0 0 20px rgba(255, 81, 72, .42);
+}
+
+.approach-runway__visual {
+  --approach-accent: #ff5148;
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  animation: approach-scene-in .72s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.approach-runway__wash {
+  position: absolute;
+  z-index: -2;
+  width: min(72vw, 980px);
+  aspect-ratio: 2 / 1;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--approach-accent) 16%, transparent);
+  filter: blur(100px);
+  opacity: .55;
+  transform: translateY(5%);
+}
+
+.approach-runway__visual::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: 4%;
+  width: min(70vw, 860px);
+  height: 22%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .5);
+  filter: blur(36px);
+  transform: translateX(-50%);
+}
+
+@keyframes approach-scene-in {
+  from { opacity: 0; transform: translateY(18px) scale(.975); }
+  to { opacity: 1; transform: none; }
+}
+
+.approach-object {
+  position: relative;
+  width: min(940px, 78vw);
+  height: min(48vh, 470px);
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+}
+
+.approach-object--brief { perspective: 1200px; }
+
+.approach-brief-sheet {
+  position: relative;
+  width: min(560px, 61vw);
+  aspect-ratio: 1.65 / 1;
+  padding: clamp(26px, 3vw, 44px);
+  color: #15161b;
+  background: #f7f6f2;
+  border-radius: 4px;
+  box-shadow: 0 36px 80px rgba(0, 0, 0, .52);
+  transform: rotateX(5deg) rotateZ(-2.5deg);
+}
+
+.approach-brief-sheet__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #7d7c78;
+  font-size: 10px;
+}
+
+.approach-brief-sheet__top i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5148;
+}
+
+.approach-brief-sheet > strong {
+  display: block;
+  margin-top: clamp(30px, 4vh, 48px);
+  font-size: clamp(30px, 4vw, 54px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.055em;
+}
+
+.approach-brief-lines {
+  display: grid;
+  gap: 10px;
+  width: 72%;
+  margin-top: 26px;
+}
+
+.approach-brief-lines span {
+  height: 4px;
+  border-radius: 9px;
+  background: #deddd8;
+}
+
+.approach-brief-lines span:nth-child(2) { width: 84%; }
+.approach-brief-lines span:nth-child(3) { width: 58%; }
+
+.approach-brief-tags {
+  position: absolute;
+  left: clamp(26px, 3vw, 44px);
+  bottom: clamp(24px, 3vw, 38px);
+  display: flex;
+  gap: 7px;
+}
+
+.approach-brief-tags span {
+  padding: 7px 11px;
+  border: 1px solid #d7d5cf;
+  border-radius: 999px;
+  font-size: 9px;
+}
+
+.approach-brief-ticket {
+  position: absolute;
+  display: grid;
+  gap: 5px;
+  min-width: 160px;
+  padding: 18px 20px;
+  color: #15161b;
+  background: #f4c64e;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, .38);
+}
+
+.approach-brief-ticket span { font-size: 9px; opacity: .62; }
+.approach-brief-ticket strong { font-size: 16px; font-weight: 600; letter-spacing: -.04em; }
+.approach-brief-ticket--goal { top: 8%; right: 5%; transform: rotate(7deg); }
+.approach-brief-ticket--date { left: 4%; bottom: 5%; color: #fff; background: #ff5148; transform: rotate(-8deg); }
+
+.approach-brief-signal {
+  position: absolute;
+  right: 2%;
+  bottom: 7%;
+  display: flex;
+  gap: 6px;
+}
+
+.approach-brief-signal span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5148;
+  animation: approach-signal 1.6s ease-in-out infinite;
+}
+
+.approach-brief-signal span:nth-child(2) { animation-delay: .16s; }
+.approach-brief-signal span:nth-child(3) { animation-delay: .32s; }
+
+@keyframes approach-signal { 50% { opacity: .28; transform: scale(.72); } }
+
+.approach-object--direction { perspective: 1300px; }
+
+.approach-direction-panel {
+  position: absolute;
+  width: min(440px, 40vw);
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  overflow: hidden;
+  border: 5px solid #f7f6f2;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .5);
+  transition: transform .55s cubic-bezier(.16, 1, .3, 1), filter .4s ease;
+}
+
+.approach-direction-panel img { width: 100%; height: 100%; object-fit: cover; }
+.approach-direction-panel--left { transform: translateX(-54%) rotateY(18deg) rotateZ(-7deg) scale(.76); filter: saturate(.55) brightness(.7); }
+.approach-direction-panel--right { transform: translateX(54%) rotateY(-18deg) rotateZ(7deg) scale(.76); filter: saturate(.55) brightness(.7); }
+.approach-direction-panel--focus { z-index: 2; transform: translateZ(55px); }
+.approach-direction-panel--focus figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #111218;
+  background: #f4c64e;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.approach-object--direction:hover .approach-direction-panel--left { transform: translateX(-60%) rotateY(14deg) rotateZ(-8deg) scale(.78); }
+.approach-object--direction:hover .approach-direction-panel--right { transform: translateX(60%) rotateY(-14deg) rotateZ(8deg) scale(.78); }
+
+.approach-direction-swatches {
+  position: absolute;
+  z-index: 4;
+  bottom: 3%;
+  left: 50%;
+  display: flex;
+  gap: 6px;
+  padding: 7px;
+  border-radius: 999px;
+  background: rgba(18, 19, 25, .82);
+  backdrop-filter: blur(12px);
+  transform: translateX(-50%);
+}
+
+.approach-direction-swatches span { width: 18px; height: 18px; border-radius: 50%; background: #a89b94; }
+.approach-direction-swatches span:nth-child(2) { background: #d7b5a4; }
+.approach-direction-swatches span:nth-child(3) { background: #e7e3dc; }
+.approach-direction-swatches span:nth-child(4) { background: #323238; }
+
+.approach-object--build { width: min(1000px, 86vw); }
+.approach-bounce-cards { transform: translateZ(0); }
+.approach-bounce-cards .bounce-cards__card img { object-fit: cover !important; }
+.approach-build-count {
+  position: absolute;
+  right: 4%;
+  bottom: 3%;
+  color: #8f919b;
+  font-size: 9px;
+  letter-spacing: .1em;
+}
+
+.approach-object--deliver { height: min(50vh, 480px); }
+.approach-delivery-folder { transform: scale(1.12); }
+
+.approach-delivery-formats {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  display: flex;
+  gap: 7px;
+  transform: translateX(-50%);
+}
+
+.approach-delivery-formats span {
+  min-width: 52px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 999px;
+  color: #a8a9b1;
+  font-size: 9px;
+  text-align: center;
+}
+
+.approach-runway__caption {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  min-height: 52px;
+  animation: approach-caption-in .45s ease both;
+}
+
+.approach-runway__caption h3 {
+  margin: 0;
+  font-size: clamp(25px, 2.6vw, 40px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+.approach-runway__caption p {
+  margin: 0;
+  color: #9698a2;
+  font-size: 13px;
+}
+
+@keyframes approach-caption-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.approach-runway__steps {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: 22px;
+  padding-top: 18px;
+}
+
+.approach-runway__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .11);
+}
+
+.approach-runway__progress i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ff5148;
+  transform-origin: left;
+  transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+}
+
+.approach-runway__steps button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  color: #676973;
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+  transition: color .25s ease;
+}
+
+.approach-runway__steps button span { font-size: 9px; opacity: .65; }
+.approach-runway__steps button:hover,
+.approach-runway__steps button.is-active { color: #f7f6f2; }
+.approach-runway__steps button:focus-visible { outline: 2px solid #ff7269; outline-offset: 6px; border-radius: 2px; }
+
+@media (max-width: 900px) {
+  .approach-runway__frame { width: calc(100% - 48px); padding-top: 82px; }
+  .approach-object { width: 92vw; }
+  .approach-brief-ticket--goal { right: 1%; }
+  .approach-brief-ticket--date { left: 1%; }
+  .approach-direction-panel { width: min(430px, 54vw); }
+  .approach-object--build { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .approach-runway__pin { min-height: 690px; }
+  .approach-runway__frame {
+    width: calc(100% - 32px);
+    padding: 70px 0 16px;
+    grid-template-rows: 24px minmax(0, 1fr) auto 62px;
+    gap: 8px;
+  }
+  .approach-runway__topline h2 { font-size: 11px; }
+  .approach-object { width: 100%; height: min(48vh, 410px); min-height: 320px; }
+  .approach-brief-sheet { width: 82vw; padding: 24px; transform: rotateZ(-2deg); }
+  .approach-brief-sheet > strong { margin-top: 26px; font-size: 32px; }
+  .approach-brief-lines { margin-top: 18px; gap: 7px; }
+  .approach-brief-tags { left: 24px; bottom: 20px; }
+  .approach-brief-tags span { padding: 6px 8px; font-size: 8px; }
+  .approach-brief-ticket { min-width: 116px; padding: 12px 14px; }
+  .approach-brief-ticket strong { font-size: 12px; }
+  .approach-brief-ticket--goal { top: 4%; right: -2%; }
+  .approach-brief-ticket--date { left: -1%; bottom: 5%; }
+  .approach-brief-signal { display: none; }
+  .approach-direction-panel { width: 72vw; }
+  .approach-direction-panel--left { transform: translateX(-38%) rotateY(15deg) rotateZ(-6deg) scale(.66); }
+  .approach-direction-panel--right { transform: translateX(38%) rotateY(-15deg) rotateZ(6deg) scale(.66); }
+  .approach-direction-panel--focus { transform: translateZ(35px) scale(.9); }
+  .approach-object--direction:hover .approach-direction-panel--left { transform: translateX(-40%) rotateY(15deg) rotateZ(-6deg) scale(.66); }
+  .approach-object--direction:hover .approach-direction-panel--right { transform: translateX(40%) rotateY(-15deg) rotateZ(6deg) scale(.66); }
+  .approach-object--build { width: 100%; max-width: 100%; transform: none; }
+  .approach-build-count { display: none; }
+  .approach-delivery-folder { transform: scale(.86); }
+  .approach-delivery-formats { bottom: 4%; }
+  .approach-runway__caption { display: block; min-height: 58px; }
+  .approach-runway__caption h3 { font-size: 25px; }
+  .approach-runway__caption p { margin-top: 7px; font-size: 11px; }
+  .approach-runway__steps { gap: 7px; padding-top: 14px; }
+  .approach-runway__steps button { display: grid; gap: 4px; min-height: 34px; font-size: 9px; }
+  .approach-runway__steps button span { font-size: 8px; }
+}
+
+@media (max-height: 720px) and (min-width: 601px) {
+  .approach-runway__frame { padding-top: 72px; grid-template-rows: 24px minmax(0, 1fr) auto 58px; }
+  .approach-object { height: min(45vh, 390px); min-height: 300px; transform: scale(.9); }
+  .approach-object--build { transform: scale(.8); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .approach-runway__pin { height: auto; min-height: 720px; overflow: visible; }
+  .approach-runway__frame { min-height: 720px; }
+  .approach-runway__visual,
+  .approach-runway__caption,
+  .approach-brief-signal span { animation: none; }
+  .approach-direction-panel,
+  .approach-runway__progress i { transition: none; }
+}

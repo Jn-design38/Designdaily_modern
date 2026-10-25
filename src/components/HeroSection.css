@@ -332,6 +332,44 @@
   text-transform: uppercase;
 }
 
+/* The original identity loop replaces the former discipline ticker. */
+.hero-section .hero-container--centered {
+  min-height: calc(100svh - 96px);
+}
+
+.hero-section .hero-bottom-ticker--logos {
+  height: 96px;
+  padding: 9px 0;
+  background: rgba(17, 18, 24, .96);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: 0 -18px 42px rgba(0, 0, 0, .16);
+}
+
+.hero-logo-loop {
+  width: 100%;
+  padding-inline: clamp(12px, 2vw, 28px);
+}
+
+.hero-logo-loop .logoloop__item {
+  opacity: .72;
+  filter: grayscale(1);
+  transition: opacity .25s ease;
+}
+
+.hero-logo-loop .logoloop__content {
+  border-radius: 0;
+  background: transparent;
+}
+
+.hero-logo-loop .logoloop__item img {
+  width: var(--logoloop-logoHeight);
+  height: var(--logoloop-logoHeight);
+  object-fit: contain;
+}
+
+.hero-logo-loop .logoloop__item:hover,
+.hero-logo-loop .logoloop__item:focus-within { opacity: 1; }
+
 @keyframes tickerSlide {
   0% {
     transform: translateX(0);
@@ -388,6 +426,21 @@
   }
   .hero-bottom-ticker {
     height: 42px;
+  }
+  .hero-section .hero-container--centered {
+    min-height: calc(100svh - 78px);
+  }
+  .hero-section .hero-bottom-ticker--logos {
+    height: 78px;
+    padding-block: 7px;
+  }
+  .hero-logo-loop {
+    --logoloop-logoHeight: 56px !important;
+    --logoloop-gap: 48px !important;
+    padding-inline: 10px;
+  }
+  .hero-logo-loop .logoloop__item img {
+    width: var(--logoloop-logoHeight);
   }
   .hero-ticker-item {
     font-size: 10px;

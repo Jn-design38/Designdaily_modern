@@ -1,58 +1,6 @@
 import LogoLoop from './LogoLoop';
+import originalMarks from '../data/originalMarks';
 import './LogoShowcase.css';
-
-const originalMarks = [
-  {
-    src: '/work/tripty/02.webp',
-    alt: 'Tripty restaurant identity logo',
-    title: 'Tripty',
-    href: '/work/tripty',
-    target: '_self',
-    width: 1600,
-    height: 1200,
-    hoverColor: '#f21351',
-  },
-  {
-    src: '/work/norea/02.webp',
-    alt: 'Noréa fashion identity logo',
-    title: 'Noréa',
-    href: '/work/norea',
-    target: '_self',
-    width: 1600,
-    height: 1200,
-    hoverColor: '#a6968e',
-  },
-  {
-    src: '/work/all-organics/02.webp',
-    alt: 'All Organics leaf identity logo',
-    title: 'All Organics',
-    href: '/work/all-organics',
-    target: '_self',
-    width: 1600,
-    height: 900,
-    hoverColor: '#86dc60',
-  },
-  {
-    src: '/work/atuendo/02.webp',
-    alt: 'Atuendo fashion identity symbol',
-    title: 'Atuendo',
-    href: '/work/atuendo',
-    target: '_self',
-    width: 1600,
-    height: 1200,
-    hoverColor: '#c8cc87',
-  },
-  {
-    src: '/work/sandbox/02.webp',
-    alt: 'Sandbox Lounge identity guidelines',
-    title: 'Sandbox Lounge',
-    href: '/work/sandbox',
-    target: '_self',
-    width: 1600,
-    height: 900,
-    hoverColor: '#d3a246',
-  },
-];
 
 export default function LogoShowcase() {
   return (

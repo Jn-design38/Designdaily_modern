@@ -665,7 +665,7 @@ export default function ShowcaseFlow({ service, setService }) {
       </section>
 
       <ScopeSection setService={setService} />
-      <ApproachSection setService={setService} />
+      <ApproachSection />
       <BatchSection setService={setService} />
 
       {/* 4.8. Scale Benefit Section (Good design. A clearer direction.) with BounceCards */}

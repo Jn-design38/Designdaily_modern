@@ -2,10 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedContent from './reactbits/AnimatedContent';
+import Folder from './reactbits/Folder';
+import BounceCards from './BounceCards';
 import TiltedCard from './TiltedCard';
 import SpecularButton from './SpecularButton';
-import { Arrow, Chevron, Plus } from './Icons';
+import { Arrow, Plus } from './Icons';
 import './BulkStudio.css';
+import './ApproachSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,10 +46,18 @@ export function ScopeSection({ setService }) {
 }
 
 const stages = [
-  { title: 'Plan the batch', short: 'Brief', text: 'Your business, your audience, your next big date. We agree on what needs designing before we begin.', output: 'A clear scope. A shared priority.', image: '/approach/approach-brief.webp', alt: 'A photorealistic creative brief kit with clipboard, notes, colour swatches, and phone, isolated on a transparent background.' },
-  { title: 'Find your direction', short: 'Direction', text: 'We shape a representative design together. The right colours, character, and tone become the starting point for the whole set.', output: 'One direction, approved by you.', image: '/approach/approach-direction.webp', alt: 'A photorealistic tactile moodboard with paper, fabric, colour samples, and brass clips, isolated on a transparent background.' },
-  { title: 'Build it out', short: 'Create', text: 'The direction becomes a coordinated collection. Review each batch and bring your feedback together in one place.', output: 'Connected designs. Clear checkpoints.', image: '/approach/approach-create.webp', alt: 'A photorealistic designer workstation with display, tablet, stylus, packaging, and campaign proofs, isolated on a transparent background.' },
-  { title: 'Ready for the world', short: 'Deliver', text: 'Approved designs, organised and exported for their intended use. We agree on final formats and any editable files in your scope.', output: 'A considered handover.', image: '/approach/approach-deliver.webp', alt: 'A photorealistic coral portfolio box with organised artwork, phone approval, rolled proofs, and drive, isolated on a transparent background.' }
+  { title: 'Gather what matters.', short: 'Gather', text: 'Goals, formats, deadline.', accent: '#ff5148' },
+  { title: 'Find one direction.', short: 'Direct', text: 'One look. Agreed.', accent: '#f4c64e' },
+  { title: 'Build the full set.', short: 'Build', text: 'One system. Every piece.', accent: '#ff725f' },
+  { title: 'Send it out ready.', short: 'Deliver', text: 'Correct files. Clear handover.', accent: '#f4c64e' }
+];
+
+const buildCards = [
+  { src: '/work/seor/02.webp', alt: 'Seor campaign portrait artwork' },
+  { src: '/work/seor/04.webp', alt: 'Seor product-detail campaign artwork' },
+  { src: '/work/seor/cover.webp', alt: 'Seor campaign key visual' },
+  { src: '/work/seor/05.webp', alt: 'Seor campaign desk composition' },
+  { src: '/work/seor/06.webp', alt: 'Seor monochrome campaign artwork' }
 ];
 
 function useDepth(ref, selector, mode = 'desk') {
@@ -62,19 +73,105 @@ function useDepth(ref, selector, mode = 'desk') {
   }, [ref, selector, mode]);
 }
 
-function ApproachVisual({ active }) {
-  return <div className="approach-visual-stage">
-    <span className="approach-visual-orbit orbit-a" aria-hidden="true" />
-    <span className="approach-visual-orbit orbit-b" aria-hidden="true" />
-    <span className="approach-visual-glow" aria-hidden="true" />
-    {stages.map((stage, index) => <figure key={stage.short} className={`approach-cutout stage-${index} ${active === index ? 'is-active' : ''}`} aria-hidden={active !== index}>
-      <img src={stage.image} alt={active === index ? stage.alt : ''} width="1536" height="1536" loading={index === 0 ? 'eager' : 'lazy'} />
-    </figure>)}
-    <div className="approach-visual-meta" aria-hidden="true"><span>Design Daily / Process</span><span>0{active + 1} — 04</span></div>
+function BriefVisual() {
+  return <div className="approach-object approach-object--brief" aria-hidden="true">
+    <div className="approach-brief-sheet">
+      <div className="approach-brief-sheet__top"><span>Design Daily</span><i /></div>
+      <strong>Campaign batch</strong>
+      <div className="approach-brief-lines"><span /><span /><span /></div>
+      <div className="approach-brief-tags"><span>Social</span><span>Launch</span><span>12 pieces</span></div>
+    </div>
+    <div className="approach-brief-ticket approach-brief-ticket--goal"><span>Goal</span><strong>Be remembered</strong></div>
+    <div className="approach-brief-ticket approach-brief-ticket--date"><span>Live</span><strong>18 Nov</strong></div>
+    <div className="approach-brief-signal"><span /><span /><span /></div>
   </div>;
 }
 
-export function ApproachSection({ setService }) {
+function DirectionVisual() {
+  return <div className="approach-object approach-object--direction">
+    <figure className="approach-direction-panel approach-direction-panel--left"><img src="/work/atuendo/02.webp" alt="Atuendo identity direction" loading="lazy" /></figure>
+    <figure className="approach-direction-panel approach-direction-panel--focus"><img src="/work/norea/02.webp" alt="Selected Noréa identity direction" loading="lazy" /><figcaption>Selected</figcaption></figure>
+    <figure className="approach-direction-panel approach-direction-panel--right"><img src="/work/all-organics/02.webp" alt="All Organics identity direction" loading="lazy" /></figure>
+    <div className="approach-direction-swatches" aria-hidden="true"><span /><span /><span /><span /></div>
+  </div>;
+}
+
+function BuildVisual() {
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const resize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', resize, { passive: true });
+    return () => window.removeEventListener('resize', resize);
+  }, []);
+  const compact = viewportWidth <= 600;
+  const narrow = viewportWidth <= 900;
+  return <div className="approach-object approach-object--build">
+    <BounceCards
+      images={buildCards}
+      className="approach-bounce-cards"
+      containerWidth={compact ? 358 : narrow ? 680 : 820}
+      containerHeight={compact ? 290 : narrow ? 370 : 420}
+      cardSize={compact ? 132 : narrow ? 190 : 224}
+      spread={compact ? 54 : narrow ? 90 : 118}
+      rotation={7}
+      arc={24}
+      animationDelay={0.06}
+      animationStagger={0.05}
+      bounciness={0.52}
+      pushDistance={compact ? 36 : 82}
+      hoverScale={1.035}
+      borderWidth={5}
+      borderColor="#f7f6f2"
+      radius={8}
+    />
+    <span className="approach-build-count" aria-hidden="true">01 idea / 05 outputs</span>
+  </div>;
+}
+
+function DeliverVisual() {
+  const files = [
+    { title: 'Social exports', description: 'RGB / web ready' },
+    { title: 'Print artwork', description: 'CMYK / press ready' },
+    { title: 'Source package', description: 'Organised working files' }
+  ];
+  return <div className="approach-object approach-object--deliver">
+    <Folder
+      items={files}
+      label="Final artwork"
+      mode="flap"
+      variant="solid"
+      color="#ff5148"
+      paperColor="#f7f6f2"
+      tabPosition="left"
+      layout="spread"
+      size={1.42}
+      openOn="click"
+      defaultOpen
+      draggable
+      zoomOnClick
+      peek
+      intro
+      tilt={0.65}
+      bounce={0.48}
+      speed={1.15}
+      theme="dark"
+      className="approach-delivery-folder"
+    />
+    <div className="approach-delivery-formats" aria-hidden="true"><span>RGB</span><span>CMYK</span><span>PDF</span></div>
+  </div>;
+}
+
+function ApproachVisual({ active }) {
+  return <div className={`approach-runway__visual approach-runway__visual--${active}`} key={active} style={{ '--approach-accent': stages[active].accent }}>
+    <div className="approach-runway__wash" aria-hidden="true" />
+    {active === 0 && <BriefVisual />}
+    {active === 1 && <DirectionVisual />}
+    {active === 2 && <BuildVisual />}
+    {active === 3 && <DeliverVisual />}
+  </div>;
+}
+
+export function ApproachSection() {
   const [active, setActive] = useState(0);
   const root = useRef(null);
   const pin = useRef(null);
@@ -87,7 +184,7 @@ export function ApproachSection({ setService }) {
         trigger: root.current,
         pin: pin.current,
         start: 'top top',
-        end: () => `+=${window.innerHeight * 3.4}`,
+        end: () => `+=${window.innerHeight * 3.15}`,
         scrub: 0.45,
         pinSpacing: true,
         anticipatePin: 1,
@@ -116,26 +213,27 @@ export function ApproachSection({ setService }) {
     else window.scrollTo({ top: target, behavior: 'smooth' });
   };
 
-  return <section id="approach" className="bulk-section bulk-approach" ref={root} aria-labelledby="approach-title">
-    <div className="approach-pin" ref={pin}>
-      <div className="approach-pin__inner">
-        <div className="bulk-heading heading-split approach-heading"><div><span className="bulk-kicker">Our approach</span><h2 id="approach-title">One clear direction.<br />A whole lot of possibility.</h2></div><p><span className="approach-instruction-desktop">Scroll through the process.<br />Every step keeps the batch connected.</span><span className="approach-instruction-mobile">Scroll or tap through every step.</span></p></div>
-        <div className="approach-steps" role="group" aria-label="Explore our design process">{stages.map((stage, i) => <button type="button" key={stage.short} aria-pressed={active === i} aria-controls="approach-detail" className={active === i ? 'is-active' : ''} onClick={() => selectStage(i)}><span className="step-orbit">0{i + 1}</span><span>{stage.short}</span><span className="step-line" aria-hidden="true" /></button>)}</div>
-        <div className="approach-layout">
-          <div className="approach-copy" id="approach-detail" aria-live="polite" aria-atomic="true">
-            <span className="step-count">0{active + 1} <span>/ 04</span></span>
-            <AnimatedContent key={active} trigger="mount" distance={20} duration={0.55} tilt={3} className="approach-copy-motion">
-              <h3>{stages[active].title}</h3>
-              <p>{stages[active].text}</p>
-              <div className="approach-output"><span className="approach-output-rule" aria-hidden="true" />{stages[active].output}</div>
-            </AnimatedContent>
-            <div className="approach-navigation"><button type="button" aria-label="Previous process stage" disabled={active === 0} onClick={() => selectStage(active - 1)}><Chevron direction="left" /></button><button type="button" aria-label="Next process stage" disabled={active === stages.length - 1} onClick={() => selectStage(active + 1)}><Chevron direction="right" /></button></div>
-          </div>
-          <ApproachVisual active={active} />
+  return <section id="approach" className="approach-runway" ref={root} aria-labelledby="approach-title">
+    <div className="approach-runway__pin" ref={pin}>
+      <div className="approach-runway__frame">
+        <header className="approach-runway__topline">
+          <h2 id="approach-title"><span aria-hidden="true" />Our approach</h2>
+          <span aria-live="polite">0{active + 1} / 04</span>
+        </header>
+
+        <ApproachVisual active={active} />
+
+        <div className="approach-runway__caption" id="approach-detail" aria-live="polite" aria-atomic="true" key={`caption-${active}`}>
+          <h3>{stages[active].title}</h3>
+          <p>{stages[active].text}</p>
+        </div>
+
+        <div className="approach-runway__steps" role="group" aria-label="Explore our design process">
+          <span className="approach-runway__progress" aria-hidden="true"><i style={{ transform: `scaleX(${(active + 1) / stages.length})` }} /></span>
+          {stages.map((stage, i) => <button type="button" key={stage.short} aria-pressed={active === i} aria-controls="approach-detail" className={active === i ? 'is-active' : ''} onClick={() => selectStage(i)}><span>0{i + 1}</span>{stage.short}</button>)}
         </div>
       </div>
     </div>
-    <div className="approach-bottom"><p>Your launch date matters. Let's plan around it.</p><SpecularButton radius={999} size="md" lineColor="#ff4c42" onClick={() => jumpToInquiry('Custom batch', setService)}>Discuss your batch <Arrow diagonal /></SpecularButton></div>
   </section>;
 }
 
