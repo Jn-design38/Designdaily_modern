@@ -9,6 +9,7 @@ import projects from './data/projects.json';
 import StudioInfo from './components/StudioInfo';
 import StudioPrelude from './components/StudioPrelude';
 import StudioQuoteExpand from './components/StudioQuoteExpand';
+import useSiteReadiness from './useSiteReadiness';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
@@ -17,12 +18,14 @@ export default function App() {
   const infoType = pathname === '/scope' ? 'scope' : pathname === '/privacy' ? 'privacy' : null;
   const project = projects.find(item => pathname === `/work/${item.id}`);
   const [service, setService] = useState(new URLSearchParams(window.location.search).get('service') || '');
+  useSiteReadiness(home);
 
   // Initialize Lenis momentum smooth scrolling for buttery fluid flow
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
     let lenisInstance = null;
     let tickerHandler = null;
+    let resumeWhenReady = null;
 
     const initLenis = () => {
       if (typeof window === 'undefined' || !window.Lenis || lenisInstance) return;
@@ -40,6 +43,12 @@ export default function App() {
 
       lenisInstance = lenis;
       window.__lenis = lenis;
+
+      resumeWhenReady = () => lenis.start();
+      if (document.documentElement.classList.contains('dd-startup-pending')) {
+        lenis.stop();
+        window.addEventListener('dd-site-ready', resumeWhenReady, { once: true });
+      }
 
       tickerHandler = (time) => {
         lenis.raf(time * 1000);
@@ -63,6 +72,7 @@ export default function App() {
       return () => {
         clearInterval(checkInterval);
         clearTimeout(timer);
+        if (resumeWhenReady) window.removeEventListener('dd-site-ready', resumeWhenReady);
         if (lenisInstance) {
           if (tickerHandler) gsap.ticker.remove(tickerHandler);
           lenisInstance.destroy();
@@ -72,6 +82,7 @@ export default function App() {
     }
 
     return () => {
+      if (resumeWhenReady) window.removeEventListener('dd-site-ready', resumeWhenReady);
       if (lenisInstance) {
         if (tickerHandler) gsap.ticker.remove(tickerHandler);
         lenisInstance.destroy();

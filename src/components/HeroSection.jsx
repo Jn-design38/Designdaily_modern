@@ -56,7 +56,7 @@ export default function HeroSection() {
       </div>
       <div id="original-marks" className="hero-bottom-ticker hero-bottom-ticker--logos">
         <LogoLoop
-          logos={originalMarks}
+          logos={originalMarks.map(mark => ({ ...mark, loading: 'eager' }))}
           speed={38}
           direction="left"
           logoHeight={42}

@@ -59,6 +59,7 @@ const DriftWall = ({
   const pointerRef = useRef({ x: 0, y: 0 });
   const pointerDampedRef = useRef({ x: 0, y: 0 });
   const lastTsRef = useRef(null);
+  const visibleRef = useRef(false);
 
   const [containerHeight, setContainerHeight] = useState(600);
   const [activeId, setActiveId] = useState(null);
@@ -123,7 +124,16 @@ const DriftWall = ({
   );
 
   useEffect(() => {
+    const root = containerRef.current;
+    if (!root) return undefined;
+    let disposed = false;
+
     const animate = ts => {
+      if (disposed || !visibleRef.current || document.hidden) {
+        rafRef.current = null;
+        lastTsRef.current = null;
+        return;
+      }
       if (lastTsRef.current === null) lastTsRef.current = ts;
       const dt = Math.min(0.05, Math.max(0, ts - lastTsRef.current) / 1000);
       lastTsRef.current = ts;
@@ -164,11 +174,25 @@ const DriftWall = ({
       rafRef.current = requestAnimationFrame(animate);
     };
 
-    rafRef.current = requestAnimationFrame(animate);
+    const wake = () => {
+      if (!rafRef.current && visibleRef.current && !document.hidden) {
+        rafRef.current = requestAnimationFrame(animate);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visibleRef.current = entry.isIntersecting;
+      if (entry.isIntersecting) wake();
+    }, { rootMargin: '200px 0px' });
+    const onVisibility = () => wake();
+    observer.observe(root);
+    document.addEventListener('visibilitychange', onVisibility);
     return () => {
+      disposed = true;
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
       lastTsRef.current = null;
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', onVisibility);
     };
   }, [baseVelocities, columnMeta, pauseOnHover, parallax, reduced, applyPlaneTransform]);
 
@@ -231,7 +255,7 @@ const DriftWall = ({
   const renderTile = (item, id, colIndex) => {
     const inner = (
       <span className="drift-wall__inner">
-        <img src={item.image} alt={item.title ?? ''} loading="lazy" decoding="async" draggable={false} />
+        <img src={item.image} alt={item.title ?? ''} loading="eager" decoding="async" draggable={false} />
         <span className="drift-wall__overlay" aria-hidden="true" />
       </span>
     );

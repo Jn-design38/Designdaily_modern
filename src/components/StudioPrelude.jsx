@@ -1,7 +1,7 @@
 import DriftWall from './DriftWall';
 import './StudioPrelude.css';
 
-const volumeItems = [
+export const volumeItems = [
   { image: '/prelude/campaigns-summer-launch-v2.webp', title: 'Campaign system' },
   { image: '/work/tripty/cover.webp', title: 'Tripty identity and packaging' },
   { image: '/prelude/brand-extensions-system-v2.webp', title: 'Brand extension system' },

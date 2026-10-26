@@ -119,14 +119,23 @@ const ScrollExpand = ({
     let stageH = 0;
     let running = false;
 
-    const measure = () => {
+    let measuredWidth = 0;
+    let measuredHeight = 0;
+    const measure = (force = false) => {
       const c = propsRef.current;
-      stageH = c.useWindowScroll ? window.innerHeight : root.clientHeight;
+      const nextWidth = root.clientWidth;
+      const nextHeight = c.useWindowScroll ? window.innerHeight : root.clientHeight;
+      const widthChanged = Math.abs(nextWidth - measuredWidth) > 1;
+      const majorHeightChange = !measuredHeight || Math.abs(nextHeight - measuredHeight) / measuredHeight > 0.25;
+      if (!force && c.useWindowScroll && !widthChanged && !majorHeightChange) return false;
+      measuredWidth = nextWidth;
+      measuredHeight = nextHeight;
+      stageH = nextHeight;
       if (stageH <= 0) return;
       stage.style.height = `${stageH}px`;
       track.style.height = `${stageH * (1 + Math.max(0, c.scrollDistance) + Math.max(0, c.holdDistance))}px`;
 
-      const w = root.clientWidth || stageH;
+      const w = nextWidth || stageH;
       stage.style.setProperty('--se-title-size', `${clamp(w * 0.075, 20, 84)}px`);
 
       const initW = c.startWidth;
@@ -138,6 +147,7 @@ const ScrollExpand = ({
       stage.style.setProperty('--se-card-width', `${initW}%`);
       stage.style.setProperty('--se-card-height', `${initH}%`);
       stage.style.setProperty('--se-card-radius', `${c.startRadius}px`);
+      return true;
     };
 
     const readProgress = () => {
@@ -180,13 +190,13 @@ const ScrollExpand = ({
     };
 
     const onResize = () => {
-      measure();
+      if (!measure()) return;
       target = readProgress();
       current = target;
       applyProgress(current);
     };
 
-    measure();
+    measure(true);
     target = readProgress();
     current = target;
     applyProgress(current);
@@ -218,7 +228,7 @@ const ScrollExpand = ({
         playsInline
       />
     ) : (
-      <img ref={mediaRef} className="scroll-expand__media" src={src} alt={alt} draggable={false} />
+      <img ref={mediaRef} className="scroll-expand__media" src={src} alt={alt} loading="eager" fetchPriority="high" decoding="async" draggable={false} />
     );
 
   return (

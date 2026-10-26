@@ -15,38 +15,39 @@ import AnimatedContent from './reactbits/AnimatedContent';
 import { MOBILE_SHOWCASE_QUERY, mobileShowcasePath, animateMobileShowcase } from './mobileShowcaseFlow';
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 const SCALE_BENEFIT_IMAGES = [
   {
-    src: '/all-organics-outdoor-advertising.png',
+    src: '/optimized/home/all-organics-outdoor-advertising.webp',
     alt: 'All Organics - Outdoor Billboard Advertising',
     width: 320,
     height: 240,
     aspectRatio: '1448 / 1086'
   },
   {
-    src: '/artboard-1-dd-social.png',
+    src: '/optimized/home/artboard-1-dd-social.webp',
     alt: 'Design Daily - Brand Identity Social Creative',
     width: 236,
     height: 295,
     aspectRatio: '1508 / 1885'
   },
   {
-    src: '/tripty-logo-sketch.png',
+    src: '/optimized/home/tripty-logo-sketch.webp',
     alt: 'Tripty Branding - Hand-Drawn Logo Sketch & Construction Grid',
     width: 220,
     height: 321,
     aspectRatio: '1038 / 1515'
   },
   {
-    src: '/artboard-1-aves-social.png',
+    src: '/optimized/home/artboard-1-aves-social.webp',
     alt: 'AVES Real Estate - Social Creative Campaign',
     width: 236,
     height: 295,
     aspectRatio: '1508 / 1885'
   },
   {
-    src: '/tripty-detail-b.png',
+    src: '/optimized/home/tripty-detail-b.webp',
     alt: 'Tripty Branding - Packaging & Brand Identity Detail',
     width: 330,
     height: 232,

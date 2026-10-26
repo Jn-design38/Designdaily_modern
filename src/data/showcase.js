@@ -12,7 +12,7 @@ export const showcaseItems = [
     brief: 'Artisanal cafe branding, packaging, and interior identity rooted in sensory delight and hand-crafted craft.',
     projectId: 'tripty',
     thumbnail: {
-      src: '/covers/social-tripty-campaign.jpg',
+      src: '/optimized/covers/social-tripty-campaign.webp',
       alt: 'Tripty Social Campaign Cover',
       width: 1920,
       height: 1080
@@ -36,7 +36,7 @@ export const showcaseItems = [
     brief: 'Architectural and interior atelier identity defined by balanced geometry, editorial layouts, and timeless typography.',
     projectId: 'norea',
     thumbnail: {
-      src: '/covers/brand-identity-norea.jpg',
+      src: '/optimized/covers/brand-identity-norea.webp',
       alt: 'Noréa Brand Identity Cover',
       width: 1920,
       height: 1080
@@ -51,7 +51,7 @@ export const showcaseItems = [
     brief: 'Contemporary fashion and bespoke apparel branding with understated typography and monochrome luxury.',
     projectId: 'atuendo',
     thumbnail: {
-      src: '/covers/brand-identity-atuendo.jpg',
+      src: '/optimized/covers/brand-identity-atuendo.webp',
       alt: 'Atuendo Brand Identity Cover',
       width: 1920,
       height: 1080
@@ -66,7 +66,7 @@ export const showcaseItems = [
     brief: 'Hospitality and lounge branding merging playful mid-century character with modern urban aesthetics.',
     projectId: 'sandbox',
     thumbnail: {
-      src: '/covers/brand-identity-sandbox-lounge.jpg',
+      src: '/optimized/covers/brand-identity-sandbox-lounge.webp',
       alt: 'Sandbox Lounge Brand Identity Cover',
       width: 1920,
       height: 1080
@@ -84,7 +84,7 @@ export const showcaseItems = [
     brief: 'Luxury black-and-silver product packaging with custom dielines, tactile unboxing, and embossed finishes.',
     projectId: 'finn',
     thumbnail: {
-      src: '/covers/packaging-finn-gift-box.jpg',
+      src: '/optimized/covers/packaging-finn-gift-box.webp',
       alt: 'Finn Gift Box Packaging Cover',
       width: 1920,
       height: 1080
@@ -99,7 +99,7 @@ export const showcaseItems = [
     brief: 'Glass bottle packaging and tactile product labels engineered for memorable shelf presence.',
     projectId: 'zaro',
     thumbnail: {
-      src: '/covers/tshirt-zaro-activewear.jpg',
+      src: '/optimized/covers/tshirt-zaro-activewear.webp',
       alt: 'Zaro Activewear T-Shirt Cover',
       width: 1920,
       height: 1080
@@ -114,7 +114,7 @@ export const showcaseItems = [
     brief: 'Organic cotton t-shirt illustrations, graphic prints, and custom apparel badges people want to wear.',
     projectId: 'goodybro',
     thumbnail: {
-      src: '/covers/tshirt-goodybro-create-goodness.jpg',
+      src: '/optimized/covers/tshirt-goodybro-create-goodness.webp',
       alt: 'Goodybro Create Goodness T-Shirt Cover',
       width: 1920,
       height: 1080
@@ -132,7 +132,7 @@ export const showcaseItems = [
     brief: 'High-end real estate social campaigns featuring architectural layouts and consistent luxury tones.',
     projectId: 'aves',
     thumbnail: {
-      src: '/covers/social-aves-real-estate.jpg',
+      src: '/optimized/covers/social-aves-real-estate.webp',
       alt: 'AVES Real Estate Social Cover',
       width: 1920,
       height: 1080
@@ -147,7 +147,7 @@ export const showcaseItems = [
     brief: 'Curated social media product story with high-converting static carousel compositions and editorial angles.',
     projectId: 'seor',
     thumbnail: {
-      src: '/covers/SEOR.png',
+      src: '/optimized/covers/seor.webp',
       alt: 'Seor Campaign Cover',
       width: 1920,
       height: 1080
@@ -164,7 +164,7 @@ export const showcaseItems = [
     brief: 'Widescreen 16:9 banner campaigns and responsive display ads for premium accessories and phone covers.',
     projectId: 'apple-gears',
     thumbnail: {
-      src: '/covers/social-applegears-campaign.png',
+      src: '/optimized/covers/social-applegears-campaign.webp',
       alt: 'Apple Gears Social Campaign Cover',
       width: 1920,
       height: 1080

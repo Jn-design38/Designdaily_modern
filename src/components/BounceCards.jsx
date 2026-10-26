@@ -22,6 +22,8 @@ const toCard = item => {
   if (typeof item === 'string') return { src: item, alt: '' };
   return {
     src: item?.src,
+    srcSet: item?.srcSet,
+    sizes: item?.sizes,
     alt: item?.alt ?? '',
     width: item?.width,
     height: item?.height,
@@ -331,7 +333,11 @@ export default function BounceCards({
             {card.src && (
               <img
                 src={card.src}
+                srcSet={card.srcSet}
+                sizes={card.sizes}
                 alt={card.alt}
+                loading="lazy"
+                decoding="async"
                 draggable={false}
                 style={{
                   width: '100%',
