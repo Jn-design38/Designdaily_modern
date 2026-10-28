@@ -3,13 +3,14 @@ import gsap from 'gsap';
 import HeroSection from './components/HeroSection';
 import SiteHeader from './components/SiteHeader';
 import ShowcaseFlow from './components/ShowcaseFlow';
-import { Footer } from './components/StudioSections';
+import AgencyFooter from './components/AgencyFooter';
 import { WorkArchive, ProjectPage, NotFound } from './components/WorkPages';
 import projects from './data/projects.json';
 import StudioInfo from './components/StudioInfo';
 import StudioPrelude from './components/StudioPrelude';
 import StudioQuoteExpand from './components/StudioQuoteExpand';
 import useSiteReadiness from './useSiteReadiness';
+import GradualBlur from './components/GradualBlur';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
@@ -124,8 +125,9 @@ export default function App() {
   }, [home, archive, project, infoType]);
 
   return (
-    <div className="app-layout" id="top">
-      <SiteHeader home={home} />
+    <>
+    <div className={`app-layout${project ? ' app-layout--project' : ''}`} id="top">
+      {!project && <SiteHeader home={home} />}
       <main id="main-content">
         {home ? (
           <>
@@ -144,7 +146,10 @@ export default function App() {
           <NotFound />
         )}
       </main>
-      <Footer />
+      <AgencyFooter />
     </div>
+    <GradualBlur target="page" position="top" height="var(--page-blur-top)" strength={1.15} layers={5} curve="ease-in-out" zIndex={900} className="page-edge-blur page-edge-blur--top" />
+    <GradualBlur target="page" position="bottom" height="var(--page-blur-bottom)" strength={1.15} layers={5} curve="ease-in-out" zIndex={900} className="page-edge-blur page-edge-blur--bottom" />
+    </>
   );
 }

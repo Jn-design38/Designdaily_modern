@@ -18,7 +18,7 @@ export default function HeroSection() {
     <section id="home" className="hero-section" aria-label="Design Daily Studio">
       <div className="hero-ascii-bg" aria-hidden="true">
         <GradientASCII
-          colors={['#ef4444', '#ffda6a', '#ffda6a', '#eab308']}
+          colors={['#ff4c42', '#ff8052', '#ffbd66', '#ffd778']}
           shape="horizon"
           characters=" .·•●"
           cellSize={13}
@@ -32,7 +32,7 @@ export default function HeroSection() {
           flow={0}
           speed={0}
           gradientOpacity={1}
-          grain={0.09}
+          grain={0.06}
           variation={20}
           scrambleRadius={0.26}
         />

@@ -460,11 +460,15 @@
   backdrop-filter: blur(16px);
 }
 
-.flow-quote-star {
-  font-size: 24px;
-  color: #ff4c42;
+.flow-quote-logo {
+  display: block;
+  width: 34px;
+  height: 34px;
+  background: #ff4c42;
+  -webkit-mask: url('/brand/design-daily-icon.svg') center / contain no-repeat;
+  mask: url('/brand/design-daily-icon.svg') center / contain no-repeat;
   margin-bottom: 0.75rem;
-  filter: drop-shadow(0 0 10px rgba(255, 76, 66, 0.5));
+  filter: drop-shadow(0 0 7px rgba(255, 76, 66, 0.42));
 }
 
 .flow-quote-title {
@@ -1786,6 +1790,26 @@
 
 /* Mobile circuit: centered content and clear lanes for the hand-drawn S turns. */
 @media (max-width: 900px) {
+  .showcase-flow-container {
+    background-color: #0b0c11;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .showcase-flow-container::before { display: none; }
+  .showcase-flow-container .flow-circuit-svg {
+    height: auto;
+    overflow: hidden;
+    contain: paint;
+  }
+  .showcase-flow-container .flow-circuit-active { filter: none; }
+  .showcase-flow-container * {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .showcase-flow-container .packages-grid .package-card::before {
+    display: none;
+  }
+
   .showcase-flow-container .flow-wireframe-header-section,
   .showcase-flow-container .flow-wireframe-items-wrapper {
     width: calc(100% - 40px);

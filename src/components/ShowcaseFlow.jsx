@@ -8,8 +8,9 @@ import { Arrow, Check, Star } from './Icons';
 import { Artwork } from './Portfolio';
 import SpecularButton from './SpecularButton';
 import BounceCards from './BounceCards';
-import { ScopeSection, ApproachSection, PackageGuide, StudioFAQ } from './BulkStudio';
+import { ScopeSection, ApproachSection, PackageGuide } from './BulkStudio';
 import StudioSignature from './StudioSignature';
+import BeforeWeBegin from './BeforeWeBegin';
 import InquiryStudio from './InquiryStudio';
 import AnimatedContent from './reactbits/AnimatedContent';
 import { MOBILE_SHOWCASE_QUERY, mobileShowcasePath, animateMobileShowcase } from './mobileShowcaseFlow';
@@ -105,8 +106,12 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
         if (!root) return;
         const origin = root.getBoundingClientRect();
         const rootW = root.clientWidth;
-        const rootH = root.scrollHeight;
         const isMobile = window.matchMedia(MOBILE_SHOWCASE_QUERY).matches;
+        const finale = root.querySelector('.flow-quote-finale');
+        const finaleRect = finale?.getBoundingClientRect();
+        const rootH = isMobile && finaleRect
+          ? Math.ceil(finaleRect.bottom - origin.top)
+          : root.scrollHeight;
 
         setSize({ width: rootW, height: rootH });
 
@@ -210,14 +215,25 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
       });
     };
 
+    const isMobile = window.matchMedia(MOBILE_SHOWCASE_QUERY).matches;
     const observer = new ResizeObserver(calculatePath);
-    observer.observe(root);
-    root.querySelectorAll('[data-showcase-item]').forEach(el => observer.observe(el));
-    root.querySelectorAll('[data-item-pill]').forEach(el => observer.observe(el));
-    root.querySelectorAll('.flow-item-brief-card').forEach(el => observer.observe(el));
-    root.querySelectorAll('.flow-wireframe-meta-col').forEach(el => observer.observe(el));
+    if (isMobile) {
+      root.querySelectorAll('.flow-wireframe-header-section, .flow-wireframe-items-wrapper, [data-flow-bridge-quote], .flow-quote-finale')
+        .forEach(el => observer.observe(el));
+    } else {
+      observer.observe(root);
+      root.querySelectorAll('[data-showcase-item], [data-item-pill], .flow-item-brief-card, .flow-wireframe-meta-col')
+        .forEach(el => observer.observe(el));
+    }
 
-    window.addEventListener('resize', calculatePath);
+    let viewportWidth = window.innerWidth;
+    const onResize = () => {
+      if (!isMobile || window.innerWidth !== viewportWidth) {
+        viewportWidth = window.innerWidth;
+        calculatePath();
+      }
+    };
+    window.addEventListener('resize', onResize);
     window.addEventListener('load', calculatePath);
     document.fonts.ready.then(calculatePath);
     calculatePath();
@@ -230,7 +246,7 @@ function FlowTrail({ rootRef, activeItem, setActiveItem }) {
       clearTimeout(t1);
       clearTimeout(t2);
       observer.disconnect();
-      window.removeEventListener('resize', calculatePath);
+      window.removeEventListener('resize', onResize);
       window.removeEventListener('load', calculatePath);
     };
   }, [rootRef]);
@@ -631,7 +647,7 @@ export default function ShowcaseFlow({ service, setService }) {
       {/* 4. "Get your Quote" & "Order now" Button (directly from sketch) */}
       <section className="flow-quote-finale" id="quote" aria-labelledby="quote-title">
         <div className="flow-quote-card">
-          <Star className="flow-quote-star" />
+          <span className="flow-quote-logo" aria-hidden="true" />
           <h3 id="quote-title" className="flow-quote-title">Get your Quote</h3>
           <p className="flow-quote-desc">
             Choose a dedicated monthly package or request a custom brief tailored to your brand.
@@ -782,7 +798,7 @@ export default function ShowcaseFlow({ service, setService }) {
 
       <PackageGuide setService={setService} />
       <StudioSignature />
-      <StudioFAQ />
+      <BeforeWeBegin />
       <InquiryStudio service={service} setService={setService} />
     </div>
   );

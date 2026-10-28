@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import projects from '../data/projects.json';
 import Masonry from './Masonry';
-import Lightbox from './Lightbox';
-import { Artwork, ProjectCard } from './Portfolio';
 import { Arrow } from './Icons';
+export { default as ProjectPage } from './ProjectPage';
 
 export const categories = [
   ['all', 'All work'],
@@ -192,108 +191,6 @@ export function WorkArchive() {
   );
 }
 
-export function ProjectPage({ project }) {
-  const [open, setOpen] = useState(null);
-  const next = projects[(projects.findIndex(item => item.id === project.id) + 1) % projects.length];
-
-  return (
-    <article className="project-page wrap">
-      <a className="back-link" href="/work">
-        <Arrow /> All work
-      </a>
-
-      <header className="project-page-heading">
-        <div>
-          <div className="project-meta-pill">
-            <span className="project-meta-dot" />
-            <span>{project.discipline}</span>
-          </div>
-          <h1>{project.title}</h1>
-        </div>
-        <div>
-          <p>{project.description}</p>
-          <div className="project-tags">
-            {project.categoryIds.map(id => (
-              <a key={id} href={`/work?category=${id}`} className="project-category-tag">
-                {labelFor(id)}
-              </a>
-            ))}
-          </div>
-        </div>
-      </header>
-
-      <div className="project-hero-wrap">
-        <button
-          className="project-hero-image"
-          onClick={() => setOpen(0)}
-          aria-label="View cover artwork full size"
-        >
-          <Artwork image={project.images[0]} eager />
-          <span className="image-expand">
-            <span>View full artwork</span>
-            <Arrow diagonal />
-          </span>
-        </button>
-      </div>
-
-      <div className="project-gallery-heading">
-        <div>
-          <span className="section-note">Visual Exploration</span>
-          <h2>A closer look.</h2>
-        </div>
-        <span className="gallery-count-badge">{project.images.length} deliverable assets</span>
-      </div>
-
-      <div className="project-gallery">
-        {project.images.slice(1).map((image, index) => (
-          <figure key={image.src} className={index % 5 === 4 ? 'gallery-wide' : ''}>
-            <button
-              onClick={() => setOpen(index + 1)}
-              aria-label={`Expand ${image.alt}`}
-              className="gallery-card-btn"
-            >
-              <Artwork image={image} />
-              <span className="image-expand">
-                <Arrow diagonal />
-              </span>
-            </button>
-            <figcaption>{image.alt}</figcaption>
-          </figure>
-        ))}
-      </div>
-
-      <div className="project-end-cta">
-        <div className="cta-copy">
-          <span className="section-note">Start A Brief</span>
-          <h2>Let’s make something<br />that feels like you.</h2>
-        </div>
-        <a
-          className="button button-dark"
-          href={`/?service=${encodeURIComponent(
-            project.discipline === 'Packaging archive'
-              ? 'Something else'
-              : project.discipline.includes('Social') || project.discipline.includes('social')
-              ? 'Social creatives'
-              : project.discipline
-          )}#contact`}
-        >
-          <span>Start a conversation</span>
-          <Arrow diagonal />
-        </a>
-      </div>
-
-      <div className="next-project">
-        <div>
-          <span className="section-note">Keep exploring</span>
-          <h2>Another brief.<br />Another point of view.</h2>
-        </div>
-        <ProjectCard id={next.id} />
-      </div>
-
-      {open !== null && <Lightbox images={project.images} initialIndex={open} onClose={() => setOpen(null)} />}
-    </article>
-  );
-}
 
 export function NotFound() {
   return (

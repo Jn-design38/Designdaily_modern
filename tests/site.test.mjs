@@ -7,6 +7,19 @@ import { packages, makeInquiry, studioEmail } from '../src/data/packages.js';
 const projects = JSON.parse(fs.readFileSync(new URL('../src/data/projects.json', import.meta.url), 'utf8'));
 const publicRoot = path.resolve('public');
 
+test('installable metadata provides a standalone iPhone Home Screen experience', () => {
+  const html = fs.readFileSync(path.resolve('index.html'), 'utf8');
+  const manifest = JSON.parse(fs.readFileSync(path.resolve(publicRoot, 'site.webmanifest'), 'utf8'));
+  assert.match(html, /viewport-fit=cover/);
+  assert.match(html, /apple-mobile-web-app-capable[^>]+content="yes"/);
+  assert.match(html, /rel="manifest" href="\/site\.webmanifest"/);
+  assert.equal(manifest.display, 'standalone');
+  assert.equal(manifest.start_url, '/');
+  for (const icon of manifest.icons) {
+    assert.ok(fs.existsSync(path.resolve(publicRoot, icon.src.slice(1))), `Missing ${icon.src}`);
+  }
+});
+
 test('every project route is unique and all artwork references resolve inside public', () => {
   assert.equal(new Set(projects.map(project => project.id)).size, projects.length);
   for (const project of projects) {

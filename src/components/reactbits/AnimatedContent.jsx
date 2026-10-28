@@ -61,6 +61,7 @@ const AnimatedContent = ({
     if (typeof scroller === 'string') scroller = document.querySelector(scroller);
 
     const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    const mobile = window.matchMedia?.('(max-width: 900px)').matches ?? false;
 
     const ctx = gsap.context(() => {
       const targets = stagger > 0 && el.children.length ? Array.from(el.children) : [el];
@@ -70,6 +71,24 @@ const AnimatedContent = ({
       const mask = WIPES[wipe];
 
       gsap.set(el, { visibility: 'visible' });
+
+      // Mobile reliability takes priority over entrance effects: fast momentum
+      // scrolling must never leave a section waiting in its hidden start state.
+      if (mobile) {
+        gsap.set(targets, {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          scale: 1,
+          rotation: 0,
+          rotationX: 0,
+          rotationY: 0,
+          filter: 'none',
+          clearProps: 'maskImage,webkitMaskImage'
+        });
+        callbacksRef.current.onComplete?.();
+        return;
+      }
 
       if (reduce) {
         callbacksRef.current.onComplete?.();

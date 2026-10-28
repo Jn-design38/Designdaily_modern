@@ -78,30 +78,22 @@ export function animateMobileShowcase(root, path, length) {
     }
     return { el, distance: nearest.distance };
   });
-  let frame = 0, drawn = 0, target = 0, started = false, lastTime = 0;
+  let frame = 0;
   const paint = () => {
-    path.style.strokeDashoffset = String(length - drawn);
-    stations.forEach(({ el, distance }) => el.classList.toggle('is-lit', reduced || (started && drawn >= distance - 2)));
-  };
-  const tick = time => {
-    const dt = lastTime ? Math.min(64, time - lastTime) : 16;
-    lastTime = time;
-    drawn += (target - drawn) * (1 - Math.exp(-dt / 85));
-    if (Math.abs(target - drawn) < .3) drawn = target;
-    paint();
-    frame = drawn === target ? 0 : requestAnimationFrame(tick);
-  };
-  const update = () => {
     const y = -root.getBoundingClientRect().top + window.innerHeight * .55;
-    started = y >= samples[0].y;
+    const started = y >= samples[0].y;
     let low = 0, high = samples.length - 1;
     while (low < high) {
       const mid = Math.ceil((low + high) / 2);
       if (samples[mid].y <= y) low = mid; else high = mid - 1;
     }
-    target = reduced ? length : samples[low].distance;
-    if (reduced) { drawn = target; paint(); }
-    else if (!frame) { lastTime = 0; frame = requestAnimationFrame(tick); }
+    const drawn = reduced ? length : samples[low].distance;
+    path.style.strokeDashoffset = String(length - drawn);
+    stations.forEach(({ el, distance }) => el.classList.toggle('is-lit', reduced || (started && drawn >= distance - 2)));
+    frame = 0;
+  };
+  const update = () => {
+    if (!frame) frame = requestAnimationFrame(paint);
   };
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update, { passive: true });
