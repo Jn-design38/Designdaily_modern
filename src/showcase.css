@@ -15,7 +15,7 @@
   background-color: #0b0c11;
   color: #f4f4f7;
   padding: 5rem 0 6rem;
-  overflow-x: hidden;
+  overflow-x: clip;
   isolation: isolate;
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
 }
