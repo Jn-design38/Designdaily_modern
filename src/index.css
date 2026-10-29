@@ -1346,10 +1346,15 @@ button:disabled{cursor:default;opacity:.45}
 @media(max-width:899px){
   :root{
     --canvas-bg:#0b0c11;
-    --page-blur-top:0px;
-    --page-blur-bottom:0px;
+    --page-blur-top:48px;
+    --page-blur-bottom:48px;
   }
-  .page-edge-blur{display:none!important}
+  .site-header .pill-nav__surface,
+  .site-header .pill-nav__logo {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: rgba(22, 26, 36, 0.94) !important;
+  }
   html{background-color:var(--canvas-bg);min-height:100%}
   body{min-height:100dvh;margin:0;background-color:var(--canvas-bg);overflow-x:clip}
   #root,.app-layout{background:transparent;min-height:100dvh}

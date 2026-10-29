@@ -1,3 +1,29 @@
 .gradual-blur {
   pointer-events: none;
 }
+
+@media (max-width: 899px) {
+  .gradual-blur,
+  .gradual-blur > div {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .page-edge-blur--top {
+    height: 48px !important;
+    background: linear-gradient(180deg, var(--canvas-bg, #0b0c11) 0%, transparent 100%) !important;
+    opacity: 0.95 !important;
+    display: block !important;
+  }
+
+  .page-edge-blur--bottom {
+    height: 48px !important;
+    background: linear-gradient(0deg, var(--canvas-bg, #0b0c11) 0%, transparent 100%) !important;
+    opacity: 0.95 !important;
+    display: block !important;
+  }
+
+  .page-edge-blur > div {
+    display: none !important;
+  }
+}
