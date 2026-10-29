@@ -251,6 +251,11 @@
   transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2), box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
   box-sizing: border-box;
+  color: #ffffff;
+}
+
+.hero-cta-btn:visited {
+  color: #ffffff;
 }
 
 /* Primary CTA: Electric Coral Gradient with Specular Inset & Glow */
@@ -268,6 +273,7 @@
   box-shadow:
     0 12px 32px -2px rgba(255, 76, 66, 0.65),
     inset 0 1.2px 0 rgba(255, 255, 255, 0.55);
+  color: #ffffff;
 }
 
 .hero-cta-arrow {
@@ -284,7 +290,7 @@
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(244, 244, 247, 0.9);
+  color: #ffffff;
 }
 
 .hero-cta-btn--secondary:hover {

@@ -18,23 +18,18 @@ export default function HeroSection() {
     <section id="home" className="hero-section" aria-label="Design Daily Studio">
       <div className="hero-ascii-bg" aria-hidden="true">
         <GradientASCII
-          colors={['#ff4c42', '#ff8052', '#ffbd66', '#ffd778']}
-          shape="horizon"
+          colors={["#521e00", "#ff6800", "#ffaf42"]}
+          shape="pinch"
           characters=" .·•●"
-          cellSize={13}
+          cellSize={10}
           density={1}
-          glyphOpacity={0.52}
           glow={1.5}
-          depthOfField={0.41}
-          flicker={0.18}
-          softness={0}
-          scale={1.2}
-          flow={0}
-          speed={0}
-          gradientOpacity={1}
-          grain={0.06}
-          variation={20}
-          scrambleRadius={0.26}
+          softness={0.53}
+          scale={1.5}
+          speed={0.35}
+          grain={0.07}
+          mouseInteraction={false}
+          scrambleRadius={0.02}
         />
         <div className="hero-ascii-vignette" />
       </div>
