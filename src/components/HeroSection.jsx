@@ -18,18 +18,18 @@ export default function HeroSection() {
     <section id="home" className="hero-section" aria-label="Design Daily Studio">
       <div className="hero-ascii-bg" aria-hidden="true">
         <GradientASCII
-          colors={["#ff4c42", "#ff6800", "#ffaf42", "#ffd778"]}
+          colors={["#521e00", "#ff6800", "#ffaf42"]}
           shape="pinch"
           characters=" .·•●"
           cellSize={10}
           density={1}
-          glow={1.85}
+          glow={1.35}
           softness={0.53}
           scale={1.5}
           speed={0.35}
-          grain={0.05}
-          gradientOpacity={1.0}
-          glyphOpacity={0.88}
+          grain={0.07}
+          gradientOpacity={0.88}
+          glyphOpacity={0.65}
           mouseInteraction={false}
           scrambleRadius={0.02}
         />
