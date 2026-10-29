@@ -31,7 +31,6 @@ export default function App() {
     const initLenis = () => {
       if (typeof window === 'undefined' || !window.Lenis || lenisInstance) return;
 
-      const isMobile = typeof window !== 'undefined' && window.innerWidth < 900;
       const lenis = new window.Lenis({
         duration: 1.25,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -39,8 +38,7 @@ export default function App() {
         gestureOrientation: 'vertical',
         smoothWheel: true,
         wheelMultiplier: 1.0,
-        touchMultiplier: isMobile ? 1.0 : 2.0,
-        syncTouch: isMobile,
+        touchMultiplier: 2.0,
         infinite: false,
       });
 
