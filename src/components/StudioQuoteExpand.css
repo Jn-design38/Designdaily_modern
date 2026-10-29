@@ -183,10 +183,20 @@
 }
 
 @media (max-width: 899px) {
+  .studio-quote {
+    background: #0b0c11;
+    border-bottom: none;
+  }
+  .studio-quote__expand {
+    background:
+      radial-gradient(circle at 50% 46%, rgba(255, 81, 72, .08), transparent 34%),
+      #0b0c11;
+  }
   .studio-quote__expand .scroll-expand__stage {
     height: 100vh;
     height: 100lvh;
     min-height: auto;
+    overflow: visible;
   }
   .studio-quote__expand .scroll-expand__hint {
     bottom: calc(clamp(20px, 4vh, 36px) + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));

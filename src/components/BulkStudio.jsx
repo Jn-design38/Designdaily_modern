@@ -182,7 +182,8 @@ export function ApproachSection() {
 
   useEffect(() => {
     const media = gsap.matchMedia();
-    media.add('(prefers-reduced-motion: no-preference)', () => {
+    // Desktop: pin pin.current with GSAP ScrollTrigger
+    media.add('(min-width: 900px) and (prefers-reduced-motion: no-preference)', () => {
       const trigger = ScrollTrigger.create({
         trigger: root.current,
         pin: pin.current,
@@ -191,6 +192,26 @@ export function ApproachSection() {
         scrub: 0.45,
         pinSpacing: true,
         anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: self => {
+          const next = Math.min(stages.length - 1, Math.floor(self.progress * stages.length));
+          setActive(current => current === next ? current : next);
+        }
+      });
+      scrollTrigger.current = trigger;
+      return () => {
+        scrollTrigger.current = null;
+        trigger.kill();
+      };
+    });
+
+    // Mobile: native sticky pin, pure scroll progression without fixed pin-spacer
+    media.add('(max-width: 899px) and (prefers-reduced-motion: no-preference)', () => {
+      const trigger = ScrollTrigger.create({
+        trigger: root.current,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.45,
         invalidateOnRefresh: true,
         onUpdate: self => {
           const next = Math.min(stages.length - 1, Math.floor(self.progress * stages.length));
