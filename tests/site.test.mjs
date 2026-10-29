@@ -10,7 +10,7 @@ const publicRoot = path.resolve('public');
 test('installable metadata provides a standalone iPhone Home Screen experience', () => {
   const html = fs.readFileSync(path.resolve('index.html'), 'utf8');
   const manifest = JSON.parse(fs.readFileSync(path.resolve(publicRoot, 'site.webmanifest'), 'utf8'));
-  assert.match(html, /viewport-fit=cover/);
+  assert.match(html, /width=device-width,\s*initial-scale=1/);
   assert.match(html, /apple-mobile-web-app-capable[^>]+content="yes"/);
   assert.match(html, /rel="manifest" href="\/site\.webmanifest"/);
   assert.equal(manifest.display, 'standalone');
