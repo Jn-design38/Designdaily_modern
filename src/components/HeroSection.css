@@ -37,8 +37,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, transparent 15%, rgba(11, 12, 17, 0.52) 43%, rgba(11, 12, 17, 0.3) 60%, #0b0c11 96%),
-    radial-gradient(ellipse at 50% 32%, transparent 15%, rgba(11, 12, 17, 0.22) 60%, #0b0c11 100%);
+    linear-gradient(180deg, transparent 0%, transparent 68%, rgba(11, 12, 17, 0.45) 90%, #0b0c11 100%),
+    radial-gradient(ellipse at 50% 38%, transparent 60%, rgba(11, 12, 17, 0.2) 88%, #0b0c11 100%);
   pointer-events: none;
   z-index: 1;
 }
