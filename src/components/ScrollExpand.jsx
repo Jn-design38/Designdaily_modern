@@ -123,16 +123,32 @@ const ScrollExpand = ({
     let measuredHeight = 0;
     const measure = (force = false) => {
       const c = propsRef.current;
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 900;
       const nextWidth = root.clientWidth;
-      const nextHeight = c.useWindowScroll ? window.innerHeight : root.clientHeight;
       const widthChanged = Math.abs(nextWidth - measuredWidth) > 1;
+
+      // On mobile, ignore resize events caused only by toolbar expanding/collapsing (height changes only)
+      if (!force && isMobile && !widthChanged) return false;
+
+      let nextHeight;
+      if (isMobile) {
+        stage.style.removeProperty('height');
+        nextHeight = stage.offsetHeight || (c.useWindowScroll ? window.innerHeight : root.clientHeight);
+      } else {
+        nextHeight = c.useWindowScroll ? window.innerHeight : root.clientHeight;
+      }
+
       const majorHeightChange = !measuredHeight || Math.abs(nextHeight - measuredHeight) / measuredHeight > 0.25;
-      if (!force && c.useWindowScroll && !widthChanged && !majorHeightChange) return false;
+      if (!force && !isMobile && c.useWindowScroll && !widthChanged && !majorHeightChange) return false;
+
       measuredWidth = nextWidth;
       measuredHeight = nextHeight;
       stageH = nextHeight;
-      if (stageH <= 0) return;
-      stage.style.height = `${stageH}px`;
+      if (stageH <= 0) return false;
+
+      if (!isMobile) {
+        stage.style.height = `${stageH}px`;
+      }
       track.style.height = `${stageH * (1 + Math.max(0, c.scrollDistance) + Math.max(0, c.holdDistance))}px`;
 
       const w = nextWidth || stageH;

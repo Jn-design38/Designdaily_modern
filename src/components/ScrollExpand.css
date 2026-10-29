@@ -105,3 +105,22 @@
   pointer-events: none;
   will-change: opacity, transform;
 }
+
+@media (max-width: 899px) {
+  .scroll-expand__stage {
+    height: 100vh;
+    height: 100lvh;
+  }
+
+  .scroll-expand__title {
+    padding-bottom: calc(6% + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .scroll-expand__hint {
+    bottom: calc(1.25rem + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .scroll-expand__overlay {
+    padding-bottom: calc(6% + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+  }
+}
