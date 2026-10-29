@@ -428,7 +428,7 @@
 @media (max-width: 899px) {
   .approach-runway {
     position: relative;
-    height: 320lvh;
+    height: 320dvh;
     background: #0b0c11;
     border-block: none;
     overflow: visible;
@@ -438,7 +438,7 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    height: 100lvh;
+    height: 100dvh;
     min-height: auto;
     overflow: visible;
     background:
@@ -450,7 +450,7 @@
   .approach-runway__frame {
     width: calc(100% - 48px);
     height: 100%;
-    padding: calc(clamp(60px, 8vh, 80px) + env(safe-area-inset-top, 0px)) 0 calc(16px + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+    padding: calc(clamp(60px, 8vh, 80px) + env(safe-area-inset-top, 0px)) 0 calc(16px + env(safe-area-inset-bottom, 0px));
     box-sizing: border-box;
   }
   .approach-object { width: 92vw; }
@@ -467,7 +467,7 @@
   }
   .approach-runway__frame {
     width: calc(100% - 32px);
-    padding: calc(56px + env(safe-area-inset-top, 0px)) 0 calc(12px + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+    padding: calc(56px + env(safe-area-inset-top, 0px)) 0 calc(12px + env(safe-area-inset-bottom, 0px));
     grid-template-rows: 24px minmax(0, 1fr) auto 62px;
     gap: 8px;
     box-sizing: border-box;
