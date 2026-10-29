@@ -110,6 +110,7 @@
   .scroll-expand__stage {
     height: 100vh;
     height: 100lvh;
+    overflow: visible;
   }
 
   .scroll-expand__title {
