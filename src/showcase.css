@@ -1767,10 +1767,6 @@
     margin-top: 3.5rem;
   }
 
-  .scale-benefit {
-    margin-top: 0;
-  }
-
   .scale-benefit,
   .contact-section {
     grid-template-columns: 1fr;
