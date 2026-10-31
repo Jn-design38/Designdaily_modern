@@ -1,7 +1,22 @@
+import { useEffect, useState } from 'react';
 import ScrollExpand from './ScrollExpand';
 import './StudioQuoteExpand.css';
 
 export default function StudioQuoteExpand() {
+  const [isMobile, setIsMobile] = useState(() => (
+    typeof window !== 'undefined' ? window.innerWidth < 900 : false
+  ));
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 900);
+    window.addEventListener('resize', onResize, { passive: true });
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <section id="studio-quote" className="studio-quote" aria-label="Design Daily principle">
       <ScrollExpand

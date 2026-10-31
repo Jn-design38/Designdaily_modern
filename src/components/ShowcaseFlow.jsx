@@ -511,6 +511,18 @@ function ShowcaseRow({ item, index, total }) {
 export default function ShowcaseFlow({ service, setService }) {
   const root = useRef(null);
   const [activeItem, setActiveItem] = useState('tripty');
+  const [activePackage, setActivePackage] = useState(null);
+
+  useEffect(() => {
+    if (!activePackage) return;
+    const handleOutside = (e) => {
+      if (!e.target.closest('.package-card')) {
+        setActivePackage(null);
+      }
+    };
+    window.addEventListener('pointerdown', handleOutside, { passive: true });
+    return () => window.removeEventListener('pointerdown', handleOutside);
+  }, [activePackage]);
 
   return (
     <div ref={root} className="showcase-flow-container" id="works">
@@ -736,7 +748,13 @@ export default function ShowcaseFlow({ service, setService }) {
         <AnimatedContent distance={35} tilt={6} duration={0.9}>
         <div className="packages-grid">
           {packages.map(pack => (
-            <article className={`package-card ${pack.tierClass}`} key={pack.id}>
+            <article
+              className={`package-card ${pack.tierClass} ${activePackage === pack.id ? 'is-touched' : ''}`}
+              key={pack.id}
+              tabIndex={0}
+              onClick={() => setActivePackage(prev => prev === pack.id ? null : pack.id)}
+              onTouchStart={() => setActivePackage(pack.id)}
+            >
               {/* Floating Capsule Header Pill */}
               <div className="package-header-pill">
                 <h3 className="package-card-title">{pack.name}</h3>
