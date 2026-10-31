@@ -5,3 +5,9 @@
 .page-edge-blur {
   pointer-events: none;
 }
+
+@media (max-width: 899px) {
+  .page-edge-blur {
+    display: none !important;
+  }
+}
