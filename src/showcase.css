@@ -2019,21 +2019,32 @@
   .showcase-flow-container .flow-wireframe-meta-col {
     padding: 0;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  .showcase-flow-container .flow-wireframe-pill-wrap { margin-bottom: 24px; }
+  .showcase-flow-container .flow-wireframe-pill-wrap {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
   .showcase-flow-container .flow-item-brief-card {
     width: min(290px, calc(100% - 40px));
     padding: 18px 20px;
     background: #12131b;
+    margin-inline: auto;
+    text-align: center;
   }
-  .showcase-flow-container .flow-item-brief { font-size: 12px; line-height: 1.65; }
+  .showcase-flow-container .flow-item-brief { font-size: 12px; line-height: 1.65; text-align: center; }
   .showcase-flow-container .flow-wireframe-card,
   .showcase-flow-container .flow-card-image-link { border-radius: 18px; }
   .showcase-flow-container .flow-card-image-link { aspect-ratio: 16 / 10; max-height: none; }
   .showcase-flow-container .flow-wireframe-card:hover { transform: none; }
-  .showcase-flow-container .flow-card-bottom-info { padding: 16px 18px; }
-  .showcase-flow-container .flow-card-overlay-title { font-size: 19px; margin-bottom: 4px; }
-  .showcase-flow-container .flow-card-overlay-desc { font-size: 11px; line-height: 1.45; }
+  .showcase-flow-container .flow-card-bottom-info { padding: 16px 18px; text-align: center; }
+  .showcase-flow-container .flow-card-overlay-title { font-size: 19px; margin-bottom: 4px; text-align: center; }
+  .showcase-flow-container .flow-card-overlay-desc { font-size: 11px; line-height: 1.45; text-align: center; }
   .showcase-flow-container > [data-flow-bridge-quote] {
     width: calc(100% - 40px);
     max-width: 640px;
