@@ -183,95 +183,9 @@
 }
 
 @media (max-width: 899px) {
-  .studio-quote {
-    position: relative;
-    background: #0b0c11;
-    border-bottom: none;
-  }
-  .studio-quote__expand {
-    position: relative;
-    height: auto;
-    min-height: 100svh;
-    background:
-      radial-gradient(circle at 50% 46%, rgba(255, 81, 72, .08), transparent 34%),
-      #0b0c11;
-  }
-  .studio-quote__expand .scroll-expand__track {
-    position: relative;
-    height: auto !important;
-    min-height: 100svh;
-  }
-  .studio-quote__expand .scroll-expand__stage {
-    position: relative !important;
-    top: auto !important;
-    width: 100%;
-    height: 100svh !important;
-    min-height: 100svh;
-    overflow: hidden;
-    background-color: #0b0c11;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .studio-quote__expand .scroll-expand__frame {
-    position: absolute;
-    inset: 0;
-    clip-path: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-  .studio-quote__expand .scroll-expand__media {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 52% center;
-    transform: none !important;
-  }
-  .studio-quote__expand .scroll-expand__scrim {
-    position: absolute;
-    inset: 0;
-    opacity: 0.65 !important;
-  }
-  .studio-quote__expand .scroll-expand__overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: clamp(32px, 5vh, 48px) 24px calc(28px + env(safe-area-inset-bottom, 0px));
-    text-align: left;
-    box-sizing: border-box;
-    opacity: 1 !important;
-    transform: none !important;
-    pointer-events: auto;
-  }
-  .studio-quote__expand .scroll-expand__title,
-  .studio-quote__expand .scroll-expand__hint {
+  .studio-quote,
+  #studio-quote {
     display: none !important;
-  }
-}
-
-@media (max-width: 700px) {
-  .studio-quote__expand .scroll-expand__stage {
-    height: 100svh !important;
-    min-height: 100svh;
-  }
-  .studio-quote__expand .scroll-expand__overlay {
-    padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px));
-  }
-  .studio-quote__label {
-    font-size: 10px;
-  }
-  .studio-quote__copy blockquote {
-    margin-top: 12px;
-    font-size: clamp(20px, 5.4vw, 26px);
-    line-height: 1.15;
-  }
-  .studio-quote__expand .scroll-expand__media {
-    object-position: 52% center;
   }
 }
 
