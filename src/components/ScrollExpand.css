@@ -111,17 +111,33 @@
     height: 100vh;
     height: 100lvh;
     overflow: visible;
+    background-color: #0b0c11;
   }
 
   .scroll-expand__title {
     padding-bottom: calc(6% + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+    transition: padding-bottom 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .scroll-expand__hint {
     bottom: calc(1.25rem + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+    transition: bottom 0.25s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .scroll-expand__overlay {
     padding-bottom: calc(6% + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
+    transition: padding-bottom 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  [data-scroll-dir="down"] .scroll-expand__title {
+    padding-bottom: calc(6% + env(safe-area-inset-bottom, 0px));
+  }
+
+  [data-scroll-dir="down"] .scroll-expand__hint {
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  [data-scroll-dir="down"] .scroll-expand__overlay {
+    padding-bottom: calc(6% + env(safe-area-inset-bottom, 0px));
   }
 }

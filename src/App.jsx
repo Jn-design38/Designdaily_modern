@@ -92,6 +92,39 @@ export default function App() {
     };
   }, []);
 
+  // Passive scroll direction tracker for mobile Safari two-phase chrome resizing
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateDirection = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY;
+
+      // Minimum 6px threshold to ignore micro-jitters
+      if (Math.abs(delta) > 6) {
+        const direction = delta > 0 ? 'down' : 'up';
+        if (document.documentElement.getAttribute('data-scroll-dir') !== direction) {
+          document.documentElement.setAttribute('data-scroll-dir', direction);
+        }
+        lastScrollY = currentScrollY;
+      }
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateDirection);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   useEffect(() => {
     document.title = home
       ? 'Design Daily — One recognisable brand. Everywhere you show up.'
