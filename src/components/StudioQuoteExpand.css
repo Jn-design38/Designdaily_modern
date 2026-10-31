@@ -194,16 +194,16 @@
   }
   .studio-quote__expand .scroll-expand__stage {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
     min-height: auto;
     overflow: visible;
     background-color: #0b0c11;
   }
   .studio-quote__expand .scroll-expand__hint {
-    bottom: calc(clamp(20px, 4vh, 36px) + env(safe-area-inset-bottom, 0px));
+    bottom: calc(clamp(20px, 4vh, 36px) + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
   }
   .studio-quote__expand .scroll-expand__overlay {
-    padding-bottom: calc(clamp(32px, 5vh, 48px) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(clamp(32px, 5vh, 48px) + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -217,7 +217,7 @@
     line-height: 1.1;
   }
   .studio-quote__expand .scroll-expand__overlay {
-    padding: 24px 20px calc(clamp(32px, 5vh, 48px) + env(safe-area-inset-bottom, 0px));
+    padding: 24px 20px 44px;
   }
   .studio-quote__label {
     font-size: 10px;

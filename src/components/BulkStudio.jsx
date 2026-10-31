@@ -179,6 +179,8 @@ export function ApproachSection() {
   const root = useRef(null);
   const pin = useRef(null);
   const scrollTrigger = useRef(null);
+  const touchStartX = useRef(null);
+  const touchStartY = useRef(null);
 
   useEffect(() => {
     const media = gsap.matchMedia();
@@ -205,25 +207,7 @@ export function ApproachSection() {
       };
     });
 
-    // Mobile: native sticky pin, pure scroll progression without fixed pin-spacer
-    media.add('(max-width: 899px) and (prefers-reduced-motion: no-preference)', () => {
-      const trigger = ScrollTrigger.create({
-        trigger: root.current,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 0.45,
-        invalidateOnRefresh: true,
-        onUpdate: self => {
-          const next = Math.min(stages.length - 1, Math.floor(self.progress * stages.length));
-          setActive(current => current === next ? current : next);
-        }
-      });
-      scrollTrigger.current = trigger;
-      return () => {
-        scrollTrigger.current = null;
-        trigger.kill();
-      };
-    });
+    // Mobile: Path B interactive deck runs in normal document flow (no sticky pinning)
     return () => media.revert();
   }, []);
 
@@ -231,15 +215,36 @@ export function ApproachSection() {
     const next = Math.max(0, Math.min(stages.length - 1, index));
     setActive(next);
     const trigger = scrollTrigger.current;
-    if (!trigger) return;
-    const target = trigger.start + ((next + 0.5) / stages.length) * (trigger.end - trigger.start);
-    if (window.__lenis?.scrollTo) window.__lenis.scrollTo(target, { duration: 0.9 });
-    else window.scrollTo({ top: target, behavior: 'smooth' });
+    if (trigger) {
+      const target = trigger.start + ((next + 0.5) / stages.length) * (trigger.end - trigger.start);
+      if (window.__lenis?.scrollTo) window.__lenis.scrollTo(target, { duration: 0.9 });
+      else window.scrollTo({ top: target, behavior: 'smooth' });
+    }
+  };
+
+  const onTouchStart = e => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const onTouchEnd = e => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+      if (deltaX < 0 && active < stages.length - 1) {
+        selectStage(active + 1);
+      } else if (deltaX > 0 && active > 0) {
+        selectStage(active - 1);
+      }
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
   };
 
   return <section id="approach" className="approach-runway" ref={root} aria-labelledby="approach-title">
     <div className="approach-runway__pin" ref={pin}>
-      <div className="approach-runway__frame">
+      <div className="approach-runway__frame" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <header className="approach-runway__topline">
           <h2 id="approach-title"><span aria-hidden="true" />Our approach</h2>
           <span aria-live="polite">0{active + 1} / 04</span>
