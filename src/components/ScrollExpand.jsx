@@ -109,125 +109,173 @@ const ScrollExpand = ({
     const root = rootRef.current;
     const track = trackRef.current;
     const stage = stageRef.current;
+    const frame = frameRef.current;
+    const media = mediaRef.current;
     if (!root || !track || !stage) return;
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mql = window.matchMedia('(min-width: 900px)');
 
-    let raf = 0;
-    let current = 0;
-    let target = 0;
-    let stageH = 0;
-    let running = false;
-
-    let measuredWidth = 0;
-    let measuredHeight = 0;
-    const measure = (force = false) => {
-      const c = propsRef.current;
-      const isMobile = typeof window !== 'undefined' && window.innerWidth < 900;
-      const nextWidth = root.clientWidth;
-      const widthChanged = Math.abs(nextWidth - measuredWidth) > 1;
-
-      // On mobile, ignore resize events caused only by toolbar expanding/collapsing (height changes only)
-      if (!force && isMobile && !widthChanged) return false;
-
-      let nextHeight;
-      if (isMobile) {
-        stage.style.removeProperty('height');
-        nextHeight = stage.offsetHeight || (c.useWindowScroll ? window.innerHeight : root.clientHeight);
-      } else {
-        nextHeight = c.useWindowScroll ? window.innerHeight : root.clientHeight;
+    const resetMobile = () => {
+      track.style.removeProperty('height');
+      stage.style.removeProperty('height');
+      if (frame) frame.style.removeProperty('clip-path');
+      if (media) media.style.removeProperty('transform');
+      if (scrimRef.current) scrimRef.current.style.removeProperty('opacity');
+      if (overlayRef.current) {
+        overlayRef.current.style.removeProperty('opacity');
+        overlayRef.current.style.removeProperty('transform');
       }
+      if (titleRef.current) {
+        titleRef.current.style.removeProperty('opacity');
+        titleRef.current.style.removeProperty('transform');
+      }
+      if (hintRef.current) {
+        hintRef.current.style.removeProperty('opacity');
+        hintRef.current.style.removeProperty('transform');
+      }
+    };
 
-      const majorHeightChange = !measuredHeight || Math.abs(nextHeight - measuredHeight) / measuredHeight > 0.25;
-      if (!force && !isMobile && c.useWindowScroll && !widthChanged && !majorHeightChange) return false;
+    let cleanupDesktop = null;
 
-      measuredWidth = nextWidth;
-      measuredHeight = nextHeight;
-      stageH = nextHeight;
-      if (stageH <= 0) return false;
+    const initDesktop = () => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      if (!isMobile) {
+      let raf = 0;
+      let current = 0;
+      let target = 0;
+      let stageH = 0;
+      let running = false;
+
+      let measuredWidth = 0;
+      let measuredHeight = 0;
+      const measure = (force = false) => {
+        const c = propsRef.current;
+        const nextWidth = root.clientWidth;
+        const widthChanged = Math.abs(nextWidth - measuredWidth) > 1;
+
+        const nextHeight = c.useWindowScroll ? window.innerHeight : root.clientHeight;
+        const majorHeightChange = !measuredHeight || Math.abs(nextHeight - measuredHeight) / measuredHeight > 0.25;
+        if (!force && c.useWindowScroll && !widthChanged && !majorHeightChange) return false;
+
+        measuredWidth = nextWidth;
+        measuredHeight = nextHeight;
+        stageH = nextHeight;
+        if (stageH <= 0) return false;
+
         stage.style.height = `${stageH}px`;
-      }
-      track.style.height = `${stageH * (1 + Math.max(0, c.scrollDistance) + Math.max(0, c.holdDistance))}px`;
+        track.style.height = `${stageH * (1 + Math.max(0, c.scrollDistance) + Math.max(0, c.holdDistance))}px`;
 
-      const w = nextWidth || stageH;
-      stage.style.setProperty('--se-title-size', `${clamp(w * 0.075, 20, 84)}px`);
+        const w = nextWidth || stageH;
+        stage.style.setProperty('--se-title-size', `${clamp(w * 0.075, 20, 84)}px`);
 
-      const initW = c.startWidth;
-      const initH = c.startHeight;
-      const initIx = Math.max(0, (100 - initW) / 2);
-      const initIy = Math.max(0, (100 - initH) / 2);
-      stage.style.setProperty('--se-card-left', `${initIx}%`);
-      stage.style.setProperty('--se-card-top', `${initIy}%`);
-      stage.style.setProperty('--se-card-width', `${initW}%`);
-      stage.style.setProperty('--se-card-height', `${initH}%`);
-      stage.style.setProperty('--se-card-radius', `${c.startRadius}px`);
-      return true;
-    };
+        const initW = c.startWidth;
+        const initH = c.startHeight;
+        const initIx = Math.max(0, (100 - initW) / 2);
+        const initIy = Math.max(0, (100 - initH) / 2);
+        stage.style.setProperty('--se-card-left', `${initIx}%`);
+        stage.style.setProperty('--se-card-top', `${initIy}%`);
+        stage.style.setProperty('--se-card-width', `${initW}%`);
+        stage.style.setProperty('--se-card-height', `${initH}%`);
+        stage.style.setProperty('--se-card-radius', `${c.startRadius}px`);
+        return true;
+      };
 
-    const readProgress = () => {
-      const c = propsRef.current;
-      if (!c.enabled) return 1;
-      const span = stageH * Math.max(0.01, c.scrollDistance);
-      if (c.useWindowScroll) {
-        const top = track.getBoundingClientRect().top;
-        return clamp(-top / span, 0, 1);
-      }
-      return clamp(root.scrollTop / span, 0, 1);
-    };
+      const readProgress = () => {
+        const c = propsRef.current;
+        if (!c.enabled) return 1;
+        const span = stageH * Math.max(0.01, c.scrollDistance);
+        if (c.useWindowScroll) {
+          const top = track.getBoundingClientRect().top;
+          return clamp(-top / span, 0, 1);
+        }
+        return clamp(root.scrollTop / span, 0, 1);
+      };
 
-    const tick = () => {
-      const c = propsRef.current;
-      const k = c.smoothing <= 0 ? 1 : 1 - Math.exp(-1 / (60 * c.smoothing));
-      current += (target - current) * k;
-      if (Math.abs(target - current) < 0.0004) {
-        current = target;
-        running = false;
-      }
-      applyProgress(current);
-      raf = running ? requestAnimationFrame(tick) : 0;
-    };
+      const tick = () => {
+        const c = propsRef.current;
+        const k = c.smoothing <= 0 ? 1 : 1 - Math.exp(-1 / (60 * c.smoothing));
+        current += (target - current) * k;
+        if (Math.abs(target - current) < 0.0004) {
+          current = target;
+          running = false;
+        }
+        applyProgress(current);
+        raf = running ? requestAnimationFrame(tick) : 0;
+      };
 
-    const kick = () => {
-      if (running) return;
-      running = true;
-      if (!raf) raf = requestAnimationFrame(tick);
-    };
+      const kick = () => {
+        if (running) return;
+        running = true;
+        if (!raf) raf = requestAnimationFrame(tick);
+      };
 
-    const onScroll = () => {
-      target = readProgress();
-      if (propsRef.current.smoothing <= 0 || reduceMotion) {
+      const onScroll = () => {
+        target = readProgress();
+        if (propsRef.current.smoothing <= 0 || reduceMotion) {
+          current = target;
+          applyProgress(current);
+          return;
+        }
+        kick();
+      };
+
+      const onResize = () => {
+        if (!measure()) return;
+        target = readProgress();
         current = target;
         applyProgress(current);
-        return;
-      }
-      kick();
-    };
+      };
 
-    const onResize = () => {
-      if (!measure()) return;
+      measure(true);
       target = readProgress();
       current = target;
       applyProgress(current);
+
+      const scroller = useWindowScroll ? window : root;
+      scroller.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onResize);
+      const ro = new ResizeObserver(onResize);
+      ro.observe(root);
+
+      return () => {
+        if (raf) cancelAnimationFrame(raf);
+        scroller.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onResize);
+        ro.disconnect();
+      };
     };
 
-    measure(true);
-    target = readProgress();
-    current = target;
-    applyProgress(current);
+    const handleMatch = (e) => {
+      if (e.matches) {
+        if (!cleanupDesktop) cleanupDesktop = initDesktop();
+      } else {
+        if (cleanupDesktop) {
+          cleanupDesktop();
+          cleanupDesktop = null;
+        }
+        resetMobile();
+      }
+    };
 
-    const scroller = useWindowScroll ? window : root;
-    scroller.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize);
-    const ro = new ResizeObserver(onResize);
-    ro.observe(root);
+    if (mql.matches) {
+      cleanupDesktop = initDesktop();
+    } else {
+      resetMobile();
+    }
+
+    if (mql.addEventListener) {
+      mql.addEventListener('change', handleMatch);
+    } else if (mql.addListener) {
+      mql.addListener(handleMatch);
+    }
 
     return () => {
-      if (raf) cancelAnimationFrame(raf);
-      scroller.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
-      ro.disconnect();
+      if (mql.removeEventListener) {
+        mql.removeEventListener('change', handleMatch);
+      } else if (mql.removeListener) {
+        mql.removeListener(handleMatch);
+      }
+      if (cleanupDesktop) cleanupDesktop();
     };
   }, [applyProgress, useWindowScroll]);
 
