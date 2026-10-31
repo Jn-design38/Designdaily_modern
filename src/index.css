@@ -1346,8 +1346,8 @@ button:disabled{cursor:default;opacity:.45}
 @media(max-width:899px){
   :root{
     --canvas-bg:#0b0c11;
-    --page-blur-top:0px;
-    --page-blur-bottom:0px;
+    --page-blur-top:calc(34px + env(safe-area-inset-top, 0px));
+    --page-blur-bottom:calc(28px + env(safe-area-inset-bottom, 0px));
   }
   .site-header .pill-nav__surface,
   .site-header .pill-nav__logo {
