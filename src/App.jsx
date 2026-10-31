@@ -38,7 +38,9 @@ export default function App() {
         gestureOrientation: 'vertical',
         smoothWheel: true,
         wheelMultiplier: 1.0,
-        touchMultiplier: 2.0,
+        syncTouch: true,
+        syncTouchLerp: 0.08,
+        touchMultiplier: 1.8,
         infinite: false,
       });
 

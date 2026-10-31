@@ -56,6 +56,12 @@ const SCALE_BENEFIT_IMAGES = [
   }
 ];
 
+const SCALE_BENEFIT_IMAGES_MOBILE = SCALE_BENEFIT_IMAGES.map((img) => ({
+  ...img,
+  width: Math.round(img.width * 0.55),
+  height: Math.round(img.height * 0.55)
+}));
+
 /**
  * Appends an orthogonal bridge segment with rounded corners from current pen position.
  * Routes vertically from current Y to yBridge, horizontally across to x2, then vertically down to y2.
@@ -512,6 +518,20 @@ export default function ShowcaseFlow({ service, setService }) {
   const root = useRef(null);
   const [activeItem, setActiveItem] = useState('tripty');
   const [activePackage, setActivePackage] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_SHOWCASE_QUERY);
+    const updateMobile = (e) => setIsMobile(e.matches);
+    setIsMobile(mql.matches);
+    if (mql.addEventListener) {
+      mql.addEventListener('change', updateMobile);
+      return () => mql.removeEventListener('change', updateMobile);
+    } else {
+      mql.addListener(updateMobile);
+      return () => mql.removeListener(updateMobile);
+    }
+  }, []);
 
   useEffect(() => {
     if (!activePackage) return;
@@ -713,21 +733,21 @@ export default function ShowcaseFlow({ service, setService }) {
 
         <div className="scale-bounce-wrap" aria-label="Design Daily featured works showcase">
           <BounceCards
-            images={SCALE_BENEFIT_IMAGES}
-            containerWidth={580}
-            containerHeight={440}
-            cardSize={240}
-            spread={88}
-            rotation={10}
+            images={isMobile ? SCALE_BENEFIT_IMAGES_MOBILE : SCALE_BENEFIT_IMAGES}
+            containerWidth={isMobile ? 320 : 580}
+            containerHeight={isMobile ? 290 : 440}
+            cardSize={isMobile ? 140 : 240}
+            spread={isMobile ? 38 : 88}
+            rotation={isMobile ? 8 : 10}
             arc={0}
-            pushDistance={160}
-            hoverScale={1.1}
+            pushDistance={isMobile ? 55 : 160}
+            hoverScale={isMobile ? 1.06 : 1.1}
             bounciness={0.6}
             animationDelay={0.4}
             animationStagger={0.07}
-            borderWidth={4}
+            borderWidth={isMobile ? 3 : 4}
             borderColor="#ffffff"
-            radius={22}
+            radius={isMobile ? 16 : 22}
             shadow={true}
             enableHover={true}
           />

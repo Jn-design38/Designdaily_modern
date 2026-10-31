@@ -113,16 +113,16 @@ function BuildVisual() {
     <BounceCards
       images={buildCards}
       className="approach-bounce-cards"
-      containerWidth={compact ? 358 : narrow ? 680 : 860}
-      containerHeight={compact ? 290 : narrow ? 370 : 430}
-      cardSize={compact ? 148 : narrow ? 220 : 270}
-      spread={compact ? 78 : narrow ? 138 : 176}
+      containerWidth={compact ? 310 : narrow ? 540 : 860}
+      containerHeight={compact ? 280 : narrow ? 360 : 430}
+      cardSize={compact ? 135 : narrow ? 190 : 270}
+      spread={compact ? 62 : narrow ? 110 : 176}
       rotation={7}
       arc={24}
       animationDelay={0.06}
       animationStagger={0.05}
       bounciness={0.52}
-      pushDistance={compact ? 44 : 94}
+      pushDistance={compact ? 40 : 94}
       hoverScale={1.035}
       borderWidth={5}
       borderColor="#f7f6f2"
