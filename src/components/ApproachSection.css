@@ -452,6 +452,10 @@
     height: 100%;
     padding: calc(clamp(60px, 8vh, 80px) + env(safe-area-inset-top, 0px)) 0 calc(16px + (100lvh - 100svh) + env(safe-area-inset-bottom, 0px));
     box-sizing: border-box;
+    transition: padding-bottom 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  [data-scroll-dir="down"] .approach-runway__frame {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   }
   .approach-object { width: 92vw; }
   .approach-browser { width: 300px; height: 230px; }
@@ -471,6 +475,9 @@
     grid-template-rows: 24px minmax(0, 1fr) auto 62px;
     gap: 8px;
     box-sizing: border-box;
+  }
+  [data-scroll-dir="down"] .approach-runway__frame {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   }
   .approach-runway__topline h2 { font-size: 11px; }
   .approach-object { width: 100%; height: min(48vh, 410px); min-height: 320px; }
